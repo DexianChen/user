@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.com.huaruan.service.mapper.UserMapper" >
+
+    <resultMap id="userMap" type="cn.com.huaruan.service.model.User" >
+        <id column="user_id" property="userId" jdbcType="INTEGER" />
+        <result column="account" property="account" jdbcType="VARCHAR" />
+        <result column="password" property="password" jdbcType="VARCHAR" />
+        <result column="real_name" property="realName" jdbcType="VARCHAR" />
+        <result column="sex" property="sex" jdbcType="INTEGER" />
+        <result column="id_card" property="idCard" jdbcType="INTEGER" />
+        <result column="phone" property="phone" jdbcType="VARCHAR" />
+        <result column="address" property="address" jdbcType="TIMESTAMP" />
+        <result column="email" property="email" jdbcType="VARCHAR" />
+        <result column="picture" property="picture" jdbcType="TIMESTAMP" />
+        <result column="registered_time" property="registeredTime" jdbcType="VARCHAR" />
+    </resultMap>
+
+    <sql id="column" >
+        user_id, account, password, real_name, sex, id_card, phone, address, email, picture, registered_time
+    </sql>
+
+    <select id="selectUserList" resultMap="userMap" >
+        SELECT
+        <include refid="column" />
+        FROM TB_USER;
+    </select>
+
+    <select id="getUserById" parameterType="Integer" resultMap="userMap">
+        SELECT
+        <include refid="column" />
+        from TB_USER WHERE user_id = #{userId} LIMIT 1;
+    </select>
+
+    <insert id="insertUser" parameterType="cn.com.huaruan.service.model.User">
+        INSERT INTO TB_USER VALUES(NULL, #{}, #{}, #{}, #{}, #{}, NULL, NOW());
+    </insert>
+
+    <update id="updateUser"  parameterType="cn.com.huaruan.service.model.User">
+        UPDATE TB_USER SET
+        WHERE user_id = #{userId};
+    </update>
+</mapper>

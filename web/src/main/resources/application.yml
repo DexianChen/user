@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: web
+
+#默认使用配置
+  profiles:
+    active: dev
+  datasource:
+      url: jdbc:mysql://127.0.0.1:3306/user??useUnicode=true&characterEncoding=utf8&autoReconnect=true
+      username: root
+      password: 123456
+      driver-class-name: com.mysql.jdbc.Driver
+
+#公共配置与profiles选择无关
+mybatis:
+  typeAliasesPackage: cn.com.huaruan.model
+  mapperLocations: classpath:cn.com.huaruan.mapper/*.xml
