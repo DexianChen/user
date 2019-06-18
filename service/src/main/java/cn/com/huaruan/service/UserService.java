@@ -1,7 +1,7 @@
 package cn.com.huaruan.service;
 
-import cn.com.huaruan.service.model.RequestParamVo;
-import cn.com.huaruan.service.model.User;
+import cn.com.huaruan.model.RequestParamVo;
+import cn.com.huaruan.model.User;
 
 import java.util.List;
 
@@ -14,4 +14,7 @@ public interface UserService {
 
     void insertUser(RequestParamVo paramVo);
 
+    User getUserByAccount(String account);
+
+    User findOne(Integer userId);
 }

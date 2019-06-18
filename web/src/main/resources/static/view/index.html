@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>用户管理页面</title>
+    <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport">
+    <link rel="stylesheet" href="../plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../plugins/adminLTE/css/AdminLTE.css">
+    <link rel="stylesheet" href="../plugins/adminLTE/css/skins/_all-skins.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+	<script src="../plugins/jQuery/jquery-2.2.3.min.js"></script>
+    <script src="../plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../plugins/angularjs/angular.min.js"></script>
+    <link rel="stylesheet" href="../plugins/angularjs/pagination.css">
+    <script src="../plugins/angularjs/pagination.js"></script>
+    <script src="../js/base_pagination.js"></script>
+	<script src="../js/service/userService.js"></script>
+    <script src="../js/controller/baseController.js"></script>
+    <script src="../js/controller/userController.js"></script>
+
+</head>
+<body ng-app="user" ng-controller="userController" ng-init="" class="hold-transition skin-red sidebar-mini">
+  	<!-- .box-body -->
+	<div class="box-body">
+		<!-- 数据表格 -->
+		<div class="table-box">
+			<div class="box-tools pull-right">
+				<div class="has-feedback">
+					<button type="button" class="btn btn-default" data-toggle="modal" data-target="#editModal">新建</button>
+					账号：<input ng-model="searchEntity.account">
+					<button class="btn btn-default" ng-click="reloadList()">查询</button>
+				</div>
+			</div>
+			<!--工具栏/-->
+
+			  <!--数据列表-->
+			  <table id="dataList" class="table table-bordered table-striped table-hover dataTable">
+				  <thead>
+					  <tr>
+						  <th class="" style="padding-right:0px">
+							  <input id="selall" type="checkbox" class="icheckbox_square-blue">
+						  </th>
+						  <th>用户编号</th>
+						  <th>账号</th>
+						  <th>密码</th>
+						  <th>真实姓名</th>
+						  <th>性别</th>
+						  <th>身份证</th>
+						  <th>电话号码</th>
+						  <th>地址</th>
+						  <th>邮箱地址</th>
+						  <th>个人照片</th>
+						  <th>注册时间</th>
+						  <th>操作</th>
+					  </tr>
+				  </thead>
+				  <tbody>
+					  <tr ng-repeat="entity in list">
+						  <td><input ng-click="updateSelection($event, entity.userId)" type="checkbox" ></td>
+						  <td>{{entity.userId}}</td>
+						  <td>{{entity.account}}</td>
+						  <td>{{entity.pwd}}</td>
+						  <td>{{entity.realName}}</td>
+						  <td>
+							  <span ng-if="entity.sex == 0">男</span>
+							  <span ng-if="entity.sex == 1">女</span>
+						  </td>
+						  <td>{{entity.idCard}}</td>
+						  <td>{{entity.phone}}</td>
+						  <td>{{entity.address}}</td>
+						  <td>{{entity.emial}}</td>
+						  <td>{{entity.picture}}</td>
+						  <td>{{entity.registeredTime}}</td>
+
+						  <td class="text-center">
+							  <button type="button" class="btn bg-blue btn-xs" ng-click="findOne(entity.userId)" data-toggle="modal" data-target="#editModal">修改</button>
+							  <button>删除</button>
+						  </td>
+					  </tr>
+
+				  </tbody>
+			  </table>
+			  <!--数据列表/-->
+
+
+		</div>
+		<!-- 数据表格 /-->
+		<tm-pagination conf="paginationConf"/>
+
+
+
+	 </div>
+	<!-- /.box-body -->
+         
+<!-- 编辑窗口 -->
+<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" >
+	<div class="modal-content">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+			<h3 id="myModalLabel">编辑用户信息</h3>
+		</div>
+		<div class="modal-body">
+			<table class="table table-bordered table-striped"  width="800px">
+		      	<tr>
+		      		<td>账号</td>
+		      		<td>
+						<input class="form-control" ng-model="entity.account" placeholder="账号" />
+					</td>
+		      	</tr>
+				<tr>
+					<td>密码</td>
+					<td><input  class="form-control" ng-model="entity.pwd" placeholder="密码" />  </td>
+				</tr>
+				<tr>
+					<td>真实姓名</td>
+					<td><input  class="form-control" ng-model="entity.realName" placeholder="真实姓名" />  </td>
+				</tr>
+				<tr>
+					<td>性别</td>
+					<td>
+						<select ng-model="entity.sex">
+							<option value="0">男</option>
+							<option value="1">女</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>身份证</td>
+					<td><input  class="form-control" ng-model="entity.idCard" placeholder="身份证" />  </td>
+				</tr>
+				<tr>
+					<td>电话号码</td>
+					<td><input  class="form-control" ng-model="entity.phone" placeholder="电话号码" />  </td>
+				</tr>
+				<tr>
+					<td>地址</td>
+					<td><input  class="form-control" ng-model="entity.address" placeholder="地址" />  </td>
+				</tr>
+				<tr>
+					<td>邮箱地址</td>
+					<td><input  class="form-control" ng-model="entity.email" placeholder="邮箱地址" />  </td>
+				</tr>
+				<tr>
+					<td>个人照片</td>
+					<td><input  class="form-control" ng-model="entity.picture" placeholder="个人照片" />  </td>
+				</tr>
+			 </table>
+		</div>
+		<div class="modal-footer">
+			<button class="btn btn-success" data-dismiss="modal" ng-click="save()" aria-hidden="true">保存</button>
+			<button class="btn btn-default" data-dismiss="modal" aria-hidden="true">关闭</button>
+		</div>
+	  </div>
+	</div>
+</div>
+   
+</body>
+</html>

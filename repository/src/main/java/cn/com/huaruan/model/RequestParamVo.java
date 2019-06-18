@@ -1,22 +1,18 @@
-package cn.com.huaruan.service.model;
+package cn.com.huaruan.model;
 
 import lombok.Data;
 
-import java.util.Date;
+import java.io.Serializable;
 
 @Data
-public class User {
-    private Integer userId;
-    private String password;
+public class RequestParamVo implements Serializable {
+    private String account;
+    private String pwd;
     private String realName;
-    /**
-     * 性别, 0-男; 1-女
-     */
     private int sex;
     private String idCard;
     private String phone;
     private String address;
     private String email;
     private String picture;
-    private Date registeredTime;
 }

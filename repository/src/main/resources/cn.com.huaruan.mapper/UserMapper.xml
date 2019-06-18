@@ -1,23 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="cn.com.huaruan.service.mapper.UserMapper" >
-
-    <resultMap id="userMap" type="cn.com.huaruan.service.model.User" >
+<mapper namespace="cn.com.huaruan.mapper.UserMapper" >
+    <resultMap id="userMap" type="cn.com.huaruan.model.User" >
         <id column="user_id" property="userId" jdbcType="INTEGER" />
         <result column="account" property="account" jdbcType="VARCHAR" />
-        <result column="password" property="password" jdbcType="VARCHAR" />
+        <result column="pwd" property="pwd" jdbcType="VARCHAR" />
         <result column="real_name" property="realName" jdbcType="VARCHAR" />
         <result column="sex" property="sex" jdbcType="INTEGER" />
-        <result column="id_card" property="idCard" jdbcType="INTEGER" />
+        <result column="id_card" property="idCard" jdbcType="VARCHAR" />
         <result column="phone" property="phone" jdbcType="VARCHAR" />
-        <result column="address" property="address" jdbcType="TIMESTAMP" />
+        <result column="address" property="address" jdbcType="VARCHAR" />
         <result column="email" property="email" jdbcType="VARCHAR" />
-        <result column="picture" property="picture" jdbcType="TIMESTAMP" />
-        <result column="registered_time" property="registeredTime" jdbcType="VARCHAR" />
+        <result column="picture" property="picture" jdbcType="VARCHAR" />
+        <result column="registered_time" property="registeredTime" jdbcType="TIMESTAMP" />
     </resultMap>
 
     <sql id="column" >
-        user_id, account, password, real_name, sex, id_card, phone, address, email, picture, registered_time
+        user_id, account, pwd, real_name, sex, id_card, phone, address, email, picture, registered_time
     </sql>
 
     <select id="selectUserList" resultMap="userMap" >
@@ -26,18 +25,29 @@
         FROM TB_USER;
     </select>
 
-    <select id="getUserById" parameterType="Integer" resultMap="userMap">
-        SELECT
-        <include refid="column" />
-        from TB_USER WHERE user_id = #{userId} LIMIT 1;
-    </select>
-
-    <insert id="insertUser" parameterType="cn.com.huaruan.service.model.User">
-        INSERT INTO TB_USER VALUES(NULL, #{}, #{}, #{}, #{}, #{}, NULL, NOW());
+    <insert id="insertUser" parameterType="cn.com.huaruan.model.RequestParamVo">
+        INSERT INTO TB_USER VALUES(NULL, #{account}, #{pwd}, #{realName}, #{sex}, #{idCard}, #{phone}, #{address}, #{email}, #{picture}, NOW());
     </insert>
 
-    <update id="updateUser"  parameterType="cn.com.huaruan.service.model.User">
-        UPDATE TB_USER SET
-        WHERE user_id = #{userId};
+    <update id="updateUser"  parameterType="cn.com.huaruan.model.RequestParamVo">
+        UPDATE TB_USER SET pwd= #{pwd}, realName=#{realName}, sex=#{sex}, idCard=#{idCard}, phone=#{phone}, address=#{address}, email=#{email}, picture=#{picture}
+        WHERE account = #{account};
     </update>
+
+    <delete id="delectUser" parameterType="java.util.ArrayList">
+        DELETE FROM TB_USER
+        WHERE user_id in #{userIds};
+    </delete>
+
+    <select id="getUserByAccount" parameterType="java.lang.String" resultMap="userMap">
+        SELECT
+        <include refid="column" />
+        FROM TB_USER WHERE account = #{account} LIMIT 1;
+    </select>
+
+    <select id="findOne" parameterType="java.lang.Integer" resultMap="userMap">
+        SELECT
+        <include refid="column" />
+        FROM TB_USER WHERE user_id = #{userId} LIMIT 1;
+    </select>
 </mapper>
