@@ -30,13 +30,16 @@
     </insert>
 
     <update id="updateUser"  parameterType="cn.com.huaruan.model.RequestParamVo">
-        UPDATE TB_USER SET pwd= #{pwd}, realName=#{realName}, sex=#{sex}, idCard=#{idCard}, phone=#{phone}, address=#{address}, email=#{email}, picture=#{picture}
+        UPDATE TB_USER SET pwd= #{pwd}, real_name=#{realName}, sex=#{sex}, id_card=#{idCard}, phone=#{phone}, address=#{address}, email=#{email}, picture=#{picture}
         WHERE account = #{account};
     </update>
 
-    <delete id="delectUser" parameterType="java.util.ArrayList">
+    <delete id="deleteUser" parameterType="java.lang.Integer">
         DELETE FROM TB_USER
-        WHERE user_id in #{userIds};
+        WHERE user_id IN
+        <foreach collection="userIds" item="id" index="index" open="(" close=")" separator=",">
+            #{id}
+        </foreach>;
     </delete>
 
     <select id="getUserByAccount" parameterType="java.lang.String" resultMap="userMap">
@@ -50,4 +53,9 @@
         <include refid="column" />
         FROM TB_USER WHERE user_id = #{userId} LIMIT 1;
     </select>
+
+    <delete id="deleteOne" parameterType="java.lang.Integer">
+        DELETE FROM TB_USER
+        WHERE user_id = #{userId};
+    </delete>
 </mapper>

@@ -55,7 +55,7 @@ app.controller("userController", function ($scope, $http, $controller, userServi
         //confirm如果点击 确认 则返回true,否则false
         if(confirm("确认要删除选中的记录吗？")){
             userService.delete($scope.selectedIds).success(function (response) {
-                if(response.success){
+                if(response.status){
                     //刷新列表
                     $scope.reloadList();
                     $scope.selectedIds = [];
@@ -81,6 +81,22 @@ app.controller("userController", function ($scope, $http, $controller, userServi
         userService.findOne(userId).success(function (response) {
             $scope.entity = response;
         });
+    };
+
+    //根据id删除
+    $scope.deleteOne = function (userId) {
+        //confirm如果点击 确认 则返回true,否则false
+        if(confirm("确认要删除选中的记录吗？")){
+            userService.deleteOne(userId).success(function (response) {
+                if(response.status){
+                    //刷新列表
+                    $scope.reloadList();
+                } else {
+                    alert(response.message);
+                }
+            });
+        }
+
     };
 
 });

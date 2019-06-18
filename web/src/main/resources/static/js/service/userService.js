@@ -28,8 +28,12 @@ app.service("userService", function ($http) {
 
     //批量删除
     this.delete = function (selectedIds) {
-        return $http.get("http://localhost:8762/user/delete?ids=" + selectedIds);
+        return $http.get("http://localhost:8762/user/delete?userIds=" + selectedIds);
+    };
 
+    //根据id删除
+    this.deleteOne = function(userId){
+        return $http.get("http://localhost:8762/user/deleteOne?userId=" + userId);
     };
 
     //分页条件查询

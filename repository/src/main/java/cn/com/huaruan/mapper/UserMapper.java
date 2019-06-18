@@ -15,9 +15,11 @@ public interface UserMapper {
 
     void updateUser(RequestParamVo paramVo);
 
-    void deleteUser(Integer[] userId);
+    void deleteUser(@Param("userIds") Integer[] userIds);
 
     User getUserByAccount(String account);
 
     User findOne(@Param("userId") Integer userId);
+
+    void deleteOne(Integer userId);
 }

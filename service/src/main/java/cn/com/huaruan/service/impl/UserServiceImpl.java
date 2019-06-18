@@ -50,4 +50,9 @@ public class UserServiceImpl implements UserService {
     public User findOne(Integer userId) {
         return userMapper.findOne(userId);
     }
+
+    @Override
+    public void deleteOne(Integer userId) {
+        userMapper.deleteOne(userId);
+    }
 }

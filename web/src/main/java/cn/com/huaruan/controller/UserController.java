@@ -33,15 +33,15 @@ public class UserController {
     }
 
     @GetMapping("/delete")
-    public ResultVo deleteUser(Integer[] userIds){
+    public ResultVo deleteUser(@RequestParam("userIds") Integer[] userIds){
         try {
             userService.deleteUser(userIds);
-            return new ResultVo(true, "删除用户成功");
+            return new ResultVo(true, "批量删除用户成功");
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-        return new ResultVo(false, "删除用户失败");
+        return new ResultVo(false, "批量删除用户失败");
     }
 
     @GetMapping("/list")
@@ -68,5 +68,17 @@ public class UserController {
     @GetMapping("/findOne")
     public User findOne(Integer userId){
         return userService.findOne(userId);
+    }
+
+    @GetMapping("/deleteOne")
+    public ResultVo deleteOne(Integer userId){
+        try {
+            userService.deleteOne(userId);
+            return new ResultVo(true, "删除用户成功");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return new ResultVo(false, "删除用户失败");
     }
 }

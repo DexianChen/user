@@ -17,4 +17,6 @@ public interface UserService {
     User getUserByAccount(String account);
 
     User findOne(Integer userId);
+
+    void deleteOne(Integer userId);
 }
