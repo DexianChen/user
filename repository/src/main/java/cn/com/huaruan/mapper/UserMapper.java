@@ -22,4 +22,12 @@ public interface UserMapper {
     User findOne(@Param("userId") Integer userId);
 
     void deleteOne(Integer userId);
+
+    Integer checkAccount(String account);
+
+    Integer checkIdCard(String idCard);
+
+    Integer checkPhone(String phone);
+
+    Integer checkEmail(String email);
 }

@@ -19,4 +19,12 @@ public interface UserService {
     User findOne(Integer userId);
 
     void deleteOne(Integer userId);
+
+    Boolean checkAccount(String account);
+
+    Boolean checkIdCard(String idCard);
+
+    Boolean checkPhone(String phone);
+
+    Boolean checkEmail(String email);
 }

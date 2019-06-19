@@ -55,4 +55,32 @@ public class UserServiceImpl implements UserService {
     public void deleteOne(Integer userId) {
         userMapper.deleteOne(userId);
     }
+
+    @Override
+    public Boolean checkAccount(String account) {
+        Integer number = userMapper.checkAccount(account);
+
+        return number > 0;
+    }
+
+    @Override
+    public Boolean checkIdCard(String idCard) {
+        Integer number = userMapper.checkIdCard(idCard);
+
+        return number > 0;
+    }
+
+    @Override
+    public Boolean checkPhone(String phone) {
+        Integer number = userMapper.checkPhone(phone);
+
+        return number > 0;
+    }
+
+    @Override
+    public Boolean checkEmail(String email) {
+        Integer number = userMapper.checkEmail(email);
+
+        return number > 0;
+    }
 }
