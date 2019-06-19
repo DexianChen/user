@@ -104,4 +104,17 @@ app.controller("userController", function ($scope, $http, $controller, userServi
         $scope.entity = {};
     }
 
+    //上传商品图片
+    $scope.uploadFile = function () {
+        uploadService.uploadFile().success(function (response) {
+            if(response.success){
+                $scope.image_entity.url = response.message;
+            } else {
+                alert(response.message);
+            }
+        }).error(function () {
+            alert("上传图片失败");
+        });
+    };
+
 });
