@@ -31,6 +31,11 @@ checkAccount = function(){
     }
 };
 
+//校验密码,不为空
+checkPwd = function(){
+
+};
+
 //校验真实姓名，不为空
 checkRealName = function(){
     var realName = $("#realName").val();

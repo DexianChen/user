@@ -9,19 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>service</artifactId>
+    <artifactId>platform</artifactId>
 
-    <dependencies>
-        <dependency>
-            <groupId>cn.com.huaruan</groupId>
-            <artifactId>repository</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
 
-        <dependency>
-            <groupId>cn.com.huaruan</groupId>
-            <artifactId>platform</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-    </dependencies>
 </project>

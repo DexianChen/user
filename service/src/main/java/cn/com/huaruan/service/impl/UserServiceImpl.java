@@ -4,6 +4,7 @@ import cn.com.huaruan.model.RequestParamDao;
 import cn.com.huaruan.service.UserService;
 import cn.com.huaruan.mapper.UserMapper;
 import cn.com.huaruan.model.User;
+import cn.com.huaruan.utils.MD5Util;
 import org.mybatis.spring.annotation.MapperScan;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,11 +23,28 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<User> selectUserList() {
-        return userMapper.selectUserList();
+        List<User> userList = userMapper.selectUserList();
+
+        /**
+         * 身份证以及手机的脱敏处理
+         */
+        for (User user : userList) {
+            StringBuilder idCard = new StringBuilder(user.getIdCard());
+            idCard.replace(6, 14, "********");
+            user.setIdCard(idCard.toString());
+
+            StringBuilder phone = new StringBuilder(user.getPhone());
+            phone.replace(4,8, "****");
+            user.setPhone(phone.toString());
+        }
+
+        return userList;
     }
 
     @Override
     public void updateUser(RequestParamDao requestParamDao) {
+        String md5Pwd= new MD5Util().getkeyBeanofStr(requestParamDao.getPwd());
+        requestParamDao.setPwd(md5Pwd);
         userMapper.updateUser(requestParamDao);
     }
 
@@ -37,6 +55,8 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void insertUser(RequestParamDao requestParamDao) {
+        String md5Pwd= new MD5Util().getkeyBeanofStr(requestParamDao.getPwd());
+        requestParamDao.setPwd(md5Pwd);
         userMapper.insertUser(requestParamDao);
     }
 
