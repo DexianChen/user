@@ -6,7 +6,7 @@ import cn.com.huaruan.model.User;
 import java.util.List;
 
 public interface UserService {
-    List<User> selectUserList();
+    List<User> selectUserList(String searchParam);
 
     void updateUser(RequestParamDao requestParamDao);
 

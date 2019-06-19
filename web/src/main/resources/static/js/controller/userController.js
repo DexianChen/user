@@ -68,9 +68,9 @@ app.controller("userController", function ($scope, $http, $controller, userServi
     };
 
     //分页条件查询
-    // $scope.searchEntity = {};
-    $scope.search = function () {
-        userService.search().success(function (response) {
+    $scope.searchParam = "";
+    $scope.search = function (currentPage, itemsPerPage) {
+        userService.search(currentPage, itemsPerPage, $scope.searchParam).success(function (response) {
             //设置列表
             $scope.list = response;
         });
@@ -98,5 +98,10 @@ app.controller("userController", function ($scope, $http, $controller, userServi
         }
 
     };
+
+    //新建操作时，清除之前的数据
+    $scope.clean = function () {
+        $scope.entity = {};
+    }
 
 });

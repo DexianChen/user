@@ -37,7 +37,7 @@ app.service("userService", function ($http) {
     };
 
     //分页条件查询
-    this.search = function () {
-        return $http.get("http://localhost:8762/user/list");
+    this.search = function (currentPage, itemsPerPage, searchParam) {
+        return $http.get("http://localhost:8762/user/list?searchParam=" + searchParam);
     };
 });

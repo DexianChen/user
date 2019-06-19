@@ -29,9 +29,9 @@
 		<div class="table-box">
 			<div class="box-tools pull-right">
 				<div class="has-feedback">
-					账号：<input ng-model="searchEntity.account">
+					账号：<input ng-model="searchParam">
 					<button class="btn btn-default" ng-click="reloadList()">查询</button>
-					<button type="button" class="btn btn-default" data-toggle="modal" data-target="#editModal">新建</button>
+					<button type="button" class="btn btn-default" data-toggle="modal" data-target="#editModal" ng-click="clean()">新建</button>
 					<button type="button" class="btn btn-default" data-toggle="modal" ng-click="delete()">删除</button>
 				</div>
 			</div>
@@ -127,7 +127,7 @@
 				<tr>
 					<td>性别</td>
 					<td>
-						<select ng-model="entity.sex">
+						<select ng-model="entity.sex" id="sexSelect">
 							<option value="">----请选择----</option>
 							<option value="0">男</option>
 							<option value="1">女</option>

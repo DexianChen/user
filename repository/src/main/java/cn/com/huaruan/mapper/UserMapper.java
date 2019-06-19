@@ -9,7 +9,7 @@ import java.util.List;
 
 @Repository
 public interface UserMapper {
-    List<User> selectUserList();
+    List<User> selectUserList(@Param("searchParam") String searchParam);
 
     void insertUser(RequestParamDao requestParamDto);
 

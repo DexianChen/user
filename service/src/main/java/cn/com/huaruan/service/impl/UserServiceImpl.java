@@ -22,8 +22,8 @@ public class UserServiceImpl implements UserService {
     private UserMapper userMapper;
 
     @Override
-    public List<User> selectUserList() {
-        List<User> userList = userMapper.selectUserList();
+    public List<User> selectUserList(String searchParam) {
+        List<User> userList = userMapper.selectUserList(searchParam);
 
         /**
          * 身份证以及手机的脱敏处理

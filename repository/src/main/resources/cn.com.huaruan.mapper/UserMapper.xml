@@ -19,10 +19,15 @@
         user_id, account, pwd, real_name, sex, id_card, phone, address, email, picture, registered_time
     </sql>
 
-    <select id="selectUserList" resultMap="userMap" >
+    <select id="selectUserList" parameterType="java.lang.String" resultMap="userMap" >
         SELECT
         <include refid="column" />
-        FROM TB_USER;
+        FROM TB_USER
+        <where>
+            <if test="searchParam != null">
+                account LIKE CONCAT("%",#{searchParam},"%");
+            </if>
+        </where>
     </select>
 
     <insert id="insertUser" parameterType="cn.com.huaruan.model.RequestParamDao">

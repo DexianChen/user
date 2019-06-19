@@ -47,8 +47,8 @@ public class UserController {
     }
 
     @GetMapping("/list")
-    public List<User> selectUserList(){
-        return userService.selectUserList();
+    public List<User> selectUserList(@RequestParam("searchParam") String searchParam){
+        return userService.selectUserList(searchParam);
     }
 
     @PostMapping("/insert")
