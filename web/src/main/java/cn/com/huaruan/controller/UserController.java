@@ -1,5 +1,6 @@
 package cn.com.huaruan.controller;
 
+import cn.com.huaruan.model.RequestParamDao;
 import cn.com.huaruan.model.RequestParamVo;
 import cn.com.huaruan.service.UserService;
 import cn.com.huaruan.service.impl.UserServiceImpl;
@@ -23,7 +24,8 @@ public class UserController {
     @PostMapping("/update")
     public ResultVo updateUser(@RequestBody RequestParamVo paramVo){
         try {
-            userService.updateUser(paramVo);
+            RequestParamDao requestParamDao = new RequestParamDao(paramVo);
+            userService.updateUser(requestParamDao);
             return new ResultVo(true, "更新用户成功");
         } catch (Exception e) {
             e.printStackTrace();
@@ -52,7 +54,8 @@ public class UserController {
     @PostMapping("/insert")
     public ResultVo insertUser(@RequestBody RequestParamVo paramVo){
         try {
-            userService.insertUser(paramVo);
+            RequestParamDao requestParamDao = new RequestParamDao(paramVo);
+            userService.insertUser(requestParamDao);
             return new ResultVo(true, "插入用户成功");
         } catch (Exception e) {
             e.printStackTrace();

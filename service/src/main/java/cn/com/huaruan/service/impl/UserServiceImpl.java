@@ -1,6 +1,6 @@
 package cn.com.huaruan.service.impl;
 
-import cn.com.huaruan.model.RequestParamVo;
+import cn.com.huaruan.model.RequestParamDao;
 import cn.com.huaruan.service.UserService;
 import cn.com.huaruan.mapper.UserMapper;
 import cn.com.huaruan.model.User;
@@ -26,8 +26,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void updateUser(RequestParamVo paramVo) {
-        userMapper.updateUser(paramVo);
+    public void updateUser(RequestParamDao requestParamDao) {
+        userMapper.updateUser(requestParamDao);
     }
 
     @Override
@@ -36,8 +36,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void insertUser(RequestParamVo paramVo) {
-        userMapper.insertUser(paramVo);
+    public void insertUser(RequestParamDao requestParamDao) {
+        userMapper.insertUser(requestParamDao);
     }
 
     @Override

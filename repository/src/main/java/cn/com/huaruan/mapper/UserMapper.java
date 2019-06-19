@@ -1,6 +1,6 @@
 package cn.com.huaruan.mapper;
 
-import cn.com.huaruan.model.RequestParamVo;
+import cn.com.huaruan.model.RequestParamDao;
 import cn.com.huaruan.model.User;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
@@ -11,9 +11,9 @@ import java.util.List;
 public interface UserMapper {
     List<User> selectUserList();
 
-    void insertUser(RequestParamVo paramVo);
+    void insertUser(RequestParamDao requestParamDto);
 
-    void updateUser(RequestParamVo paramVo);
+    void updateUser(RequestParamDao requestParamDto);
 
     void deleteUser(@Param("userIds") Integer[] userIds);
 

@@ -19,6 +19,7 @@
     <script src="../js/controller/baseController.js"></script>
     <script src="../js/controller/userController.js"></script>
 	<script src="../js/validate.js"></script>
+	<script src="../js/address.js"></script>
 
 </head>
 <body ng-app="user" ng-controller="userController" ng-init="" class="hold-transition skin-red sidebar-mini">
@@ -127,6 +128,7 @@
 					<td>性别</td>
 					<td>
 						<select ng-model="entity.sex">
+							<option value="">----请选择----</option>
 							<option value="0">男</option>
 							<option value="1">女</option>
 						</select>
@@ -146,8 +148,22 @@
 				</tr>
 
 				<tr>
-					<td>地址</td>
-					<td><input  class="form-control" ng-model="entity.address" placeholder="地址" />  </td>
+					<td rowspan="2">地址</td>
+<!--					<td><input  class="form-control" ng-model="entity.address" placeholder="地址" />  </td>-->
+					<td>
+						<select name="" id="selProvince" ng-model="entity.address.province">
+							<option value="">----请选择----</option>
+						</select>
+						<select name="" id="selCity" ng-model="entity.address.city">
+							<option value="">----请选择----</option>
+						</select>
+						<select name="" id="selArea" ng-model="entity.address.area">
+							<option value="">----请选择----</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td><input  class="form-control" placeholder="请输入详细地址" ng-model="entity.address.suffix" />  </td>
 				</tr>
 
 				<tr>

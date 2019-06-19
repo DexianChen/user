@@ -25,11 +25,11 @@
         FROM TB_USER;
     </select>
 
-    <insert id="insertUser" parameterType="cn.com.huaruan.model.RequestParamVo">
+    <insert id="insertUser" parameterType="cn.com.huaruan.model.RequestParamDao">
         INSERT INTO TB_USER VALUES(NULL, #{account}, #{pwd}, #{realName}, #{sex}, #{idCard}, #{phone}, #{address}, #{email}, #{picture}, NOW());
     </insert>
 
-    <update id="updateUser"  parameterType="cn.com.huaruan.model.RequestParamVo">
+    <update id="updateUser"  parameterType="cn.com.huaruan.model.RequestParamDao">
         UPDATE TB_USER SET pwd= #{pwd}, real_name=#{realName}, sex=#{sex}, id_card=#{idCard}, phone=#{phone}, address=#{address}, email=#{email}, picture=#{picture}
         WHERE account = #{account};
     </update>
