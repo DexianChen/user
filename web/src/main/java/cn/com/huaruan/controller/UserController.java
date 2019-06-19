@@ -63,11 +63,6 @@ public class UserController {
         return new ResultVo(false, "插入用户失败");
     }
 
-    @GetMapping("/search")
-    public User getUserByAccount(String account) {
-        return userService.getUserByAccount(account);
-    }
-
     @GetMapping("/findOne")
     public User findOne(Integer userId){
         return userService.findOne(userId);

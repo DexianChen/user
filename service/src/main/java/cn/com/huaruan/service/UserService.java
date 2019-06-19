@@ -14,8 +14,6 @@ public interface UserService {
 
     void insertUser(RequestParamDao requestParamDao);
 
-    User getUserByAccount(String account);
-
     User findOne(Integer userId);
 
     void deleteOne(Integer userId);

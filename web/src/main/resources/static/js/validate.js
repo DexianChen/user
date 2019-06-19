@@ -31,9 +31,14 @@ checkAccount = function(){
     }
 };
 
-//校验密码,不为空
+//校验密码,不为空，至少6位
 checkPwd = function(){
-
+    var pwd = $("#pwd").val();
+    if (pwd == null || pwd == "" ) {
+        alert("请输入密码");
+    }else if (pwd.length < 6) {
+        alert("你的密码过于简单，请重新设置！");
+    }
 };
 
 //校验真实姓名，不为空

@@ -17,8 +17,6 @@ public interface UserMapper {
 
     void deleteUser(@Param("userIds") Integer[] userIds);
 
-    User getUserByAccount(String account);
-
     User findOne(@Param("userId") Integer userId);
 
     void deleteOne(Integer userId);

@@ -28,14 +28,16 @@ public class UserServiceImpl implements UserService {
         /**
          * 身份证以及手机的脱敏处理
          */
-        for (User user : userList) {
-            StringBuilder idCard = new StringBuilder(user.getIdCard());
-            idCard.replace(6, 14, "********");
-            user.setIdCard(idCard.toString());
+        if (userList != null && userList.size()>0){
+            for (User user : userList) {
+                StringBuilder idCard = new StringBuilder(user.getIdCard());
+                idCard.replace(6, 14, "********");
+                user.setIdCard(idCard.toString());
 
-            StringBuilder phone = new StringBuilder(user.getPhone());
-            phone.replace(4,8, "****");
-            user.setPhone(phone.toString());
+                StringBuilder phone = new StringBuilder(user.getPhone());
+                phone.replace(4,8, "****");
+                user.setPhone(phone.toString());
+            }
         }
 
         return userList;
@@ -58,12 +60,6 @@ public class UserServiceImpl implements UserService {
         String md5Pwd= new MD5Util().getkeyBeanofStr(requestParamDao.getPwd());
         requestParamDao.setPwd(md5Pwd);
         userMapper.insertUser(requestParamDao);
-    }
-
-    @Override
-    public User getUserByAccount(String account) {
-        userMapper.getUserByAccount(account);
-        return null;
     }
 
     @Override
