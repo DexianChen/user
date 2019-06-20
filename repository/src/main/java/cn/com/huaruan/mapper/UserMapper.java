@@ -9,7 +9,8 @@ import java.util.List;
 
 @Repository
 public interface UserMapper {
-    List<User> selectUserList(@Param("searchParam") String searchParam);
+    List<User> selectUserList(@Param("searchParam") String searchParam, @Param("fistIndex") Integer fistIndex,
+                              @Param("perPage") Integer perPage);
 
     void insertUser(RequestParamDao requestParamDto);
 
@@ -28,4 +29,6 @@ public interface UserMapper {
     Integer checkPhone(String phone);
 
     Integer checkEmail(String email);
+
+    Integer countSize(@Param("searchParam") String searchParam);
 }

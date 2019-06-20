@@ -20,6 +20,7 @@
     <script src="../js/controller/userController.js"></script>
 	<script src="../js/validate.js"></script>
 	<script src="../js/address.js"></script>
+	<script src="../js/service/uploadService.js"></script>
 
 </head>
 <body ng-app="user" ng-controller="userController" ng-init="" class="hold-transition skin-red sidebar-mini">
@@ -73,7 +74,9 @@
 						  <td style="text-align:center;">{{entity.phone}}</td>
 						  <td style="text-align:center;">{{entity.address}}</td>
 						  <td style="text-align:center;">{{entity.email}}</td>
-						  <td style="text-align:center;">{{entity.picture}}</td>
+						  <td style="text-align:center;">
+							  <img src="{{entity.picture}}" width=50px height=50px />
+						  </td>
 						  <td style="text-align:center;">{{entity.registeredTime}}</td>
 
 						  <td style="text-align:center;">
@@ -176,7 +179,14 @@
 
 				<tr>
 					<td>个人照片</td>
-					<td><input  class="form-control" ng-model="entity.picture" placeholder="个人照片" />  </td>
+					<td>
+						<img src="http://192.168.153.129/group1/M00/00/00/wKiZgV0LI1OADyU-AAOOhl01jt8999_big.jpg"
+							 ng-model="entity.picture" width="50px" />
+					</td>
+					<td>
+						<button class="btn btn-success" data-dismiss="modal" ng-click="uploadFile()"
+								aria-hidden="true" >上传图片</button>
+					</td>
 				</tr>
 			 </table>
 		</div>

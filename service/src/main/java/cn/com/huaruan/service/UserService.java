@@ -6,7 +6,7 @@ import cn.com.huaruan.model.User;
 import java.util.List;
 
 public interface UserService {
-    List<User> selectUserList(String searchParam);
+    List<User> selectUserList(String searchParam, String currentPage, String itemsPerPage);
 
     void updateUser(RequestParamDao requestParamDao);
 
@@ -25,4 +25,6 @@ public interface UserService {
     Boolean checkPhone(String phone);
 
     Boolean checkEmail(String email);
+
+    Integer countSize(String searchParam);
 }

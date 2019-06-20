@@ -1,11 +1,8 @@
 package cn.com.huaruan.controller;
 
-import cn.com.huaruan.model.RequestParamDao;
-import cn.com.huaruan.model.RequestParamVo;
+import cn.com.huaruan.model.*;
 import cn.com.huaruan.service.UserService;
 import cn.com.huaruan.service.impl.UserServiceImpl;
-import cn.com.huaruan.model.ResultVo;
-import cn.com.huaruan.model.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,8 +44,22 @@ public class UserController {
     }
 
     @GetMapping("/list")
-    public List<User> selectUserList(@RequestParam("searchParam") String searchParam){
-        return userService.selectUserList(searchParam);
+    public PageVo selectUserList(@RequestParam("searchParam") String searchParam,
+                                 @RequestParam("currentPage") String currentPage,
+                                 @RequestParam("itemsPerPage") String itemsPerPage){
+        List<User> userList = userService.selectUserList(searchParam, currentPage, itemsPerPage);
+
+        Integer countSize = countSize(searchParam);
+        return new PageVo(countSize, userList);
+    }
+
+    /**
+     * 统计符合条件的用户数量
+     * @param searchParam
+     * @return
+     */
+    private Integer countSize(String searchParam){
+        return userService.countSize(searchParam);
     }
 
     @PostMapping("/insert")

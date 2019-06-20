@@ -22,8 +22,10 @@ public class UserServiceImpl implements UserService {
     private UserMapper userMapper;
 
     @Override
-    public List<User> selectUserList(String searchParam) {
-        List<User> userList = userMapper.selectUserList(searchParam);
+    public List<User> selectUserList(String searchParam, String currentPage, String itemsPerPage) {
+        Integer perPage = Integer.valueOf(itemsPerPage);
+        Integer fistIndex = (Integer.valueOf(currentPage) - 1 ) * perPage;
+        List<User> userList = userMapper.selectUserList(searchParam, fistIndex, perPage);
 
         /**
          * 身份证以及手机的脱敏处理
@@ -98,5 +100,10 @@ public class UserServiceImpl implements UserService {
         Integer number = userMapper.checkEmail(email);
 
         return number > 0;
+    }
+
+    @Override
+    public Integer countSize(String searchParam) {
+        return userMapper.countSize(searchParam);
     }
 }

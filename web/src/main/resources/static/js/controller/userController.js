@@ -1,5 +1,5 @@
 //定义处理器
-app.controller("userController", function ($scope, $http, $controller, userService) {
+app.controller("userController", function ($scope, $http, $controller, userService, uploadService) {
 
     //继承controller，可以使用baseController中的所有方法
     $controller("baseController", {$scope:$scope});
@@ -75,8 +75,13 @@ app.controller("userController", function ($scope, $http, $controller, userServi
     $scope.searchParam = "";
     $scope.search = function (currentPage, itemsPerPage) {
         userService.search(currentPage, itemsPerPage, $scope.searchParam).success(function (response) {
+            // //设置列表
+            // $scope.list = response;
+
             //设置列表
-            $scope.list = response;
+            $scope.list = response.rows;
+            //更新分页导航条
+            $scope.paginationConf.totalItems = response.total;//总记录数
         });
     };
 
@@ -119,7 +124,7 @@ app.controller("userController", function ($scope, $http, $controller, userServi
     $scope.uploadFile = function () {
         uploadService.uploadFile().success(function (response) {
             if(response.success){
-                $scope.image_entity.url = response.message;
+                $scope.entity.picture = response.message;
             } else {
                 alert(response.message);
             }
