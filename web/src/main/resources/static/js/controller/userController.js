@@ -144,10 +144,13 @@ app.controller("userController", function ($scope, $http, $controller, userServi
     //上传商品图片
     $scope.uploadFile = function () {
         uploadService.uploadFile().success(function (response) {
-            if(response.success){
+            if(response.status){
+                alert($scope.entity.picture);
                 $scope.entity.picture = response.message;
+                alert($scope.entity.picture + "1231");
             } else {
-                alert(response.message);
+                alert("sadsadsaf");
+                // alert(response.message);
             }
         }).error(function () {
             alert("上传图片失败");

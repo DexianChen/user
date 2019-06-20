@@ -184,12 +184,11 @@
 				<tr>
 					<td>个人照片</td>
 					<td>
-						<img src="http://192.168.153.129/group1/M00/00/00/wKiZgV0LI1OADyU-AAOOhl01jt8999_big.jpg"
-							 ng-model="entity.picture" width="50px" />
+						<input type="file" id="file" />
+						<button ng-click="uploadFile()">上传图片</button>
 					</td>
 					<td>
-						<button class="btn btn-success" data-dismiss="modal" ng-click="uploadFile()"
-								aria-hidden="true" >上传图片</button>
+						<img src="{{entity.picture}}" width="50px" />
 					</td>
 				</tr>
 			 </table>
