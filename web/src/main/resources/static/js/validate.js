@@ -4,6 +4,8 @@
 
 //是否能够提交
 var accountCommit = false;
+var pwdCommit = false;
+var realNameCommit = false;
 var idCardCommit = false;
 var phoneCommit = false;
 var emailCommit = false;
@@ -12,7 +14,8 @@ var emailCommit = false;
 checkAccount = function(){
     var account = $("#account").val();
     if (account == null || account == "" ) {
-        alert("请输入账户名");
+        $("#accountTd").html("<span style='color: red'>请输入账户名</span>");
+        accountCommit = false;
     }else {
         $.ajax({
             //请求方式
@@ -45,9 +48,14 @@ checkAccount = function(){
 checkPwd = function(){
     var pwd = $("#pwd").val();
     if (pwd == null || pwd == "" ) {
-        alert("请输入密码");
+        $("#pwdTd").html("<span style='color: red'>请输入密码</span>");
+        pwdCommit = false;
     }else if (pwd.length < 6) {
-        alert("你的密码过于简单，请重新设置！");
+        $("#pwdTd").html("<span style='color: red'>你的密码过于简单，请重新设置！</span>");
+        pwdCommit = false;
+    }else {
+        $("#pwdTd").html("");
+        pwdCommit = true;
     }
 };
 
@@ -55,7 +63,11 @@ checkPwd = function(){
 checkRealName = function(){
     var realName = $("#realName").val();
     if (realName == null || realName == "" ) {
-        alert("请输入真实姓名");
+        $("#realNameTd").html("<span style='color: red'>请输入真实姓名</span>");
+        realNameCommit = false;
+    }else {
+        $("#realNameTd").html("");
+        realNameCommit = true;
     }
 };
 
@@ -63,7 +75,8 @@ checkRealName = function(){
 checkIdCard = function(){
     var idCard = $("#idCard").val();
     if (idCard == null || idCard == "") {
-        alert("请输入身份证信息");
+        $("#idCardTd").html("<span style='color: red'>请输入身份证信息</span>");
+        idCardCommit = false;
     }else {
         $.ajax({
             //请求方式
@@ -81,13 +94,13 @@ checkIdCard = function(){
                     var idcardReg = /^[1-9]\d{7}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}$|^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}([0-9]|X)$/;
                     if(!idcardReg.test(idCard)) {
                         // 不合法
-                        alert("身份证不合法，请重写！");
+                        $("#idCardTd").html("<span style='color: red'>身份证不合法，请重写！</span>");
+                        idCardCommit = false;
                     }
 
                     idCardCommit = true;
                 }else {
                     $("#idCardTd").html("<span style='color: red'>" + data.message +"</span>");
-
                     idCardCommit = false;
                 }
             },
@@ -102,7 +115,8 @@ checkIdCard = function(){
 checkPhone = function(){
     var phone = $("#phone").val();
     if (phone == null || phone == "") {
-        alert("请输入电话号码");
+        $("#phoneTd").html("<span style='color: red'>请输入电话号码</span>");
+        phoneCommit = false;
     }else {
         $.ajax({
             //请求方式
@@ -120,13 +134,13 @@ checkPhone = function(){
                     var phoneReg = /^1(3|4|5|7|8)\d{9}$/;
                     if(!phoneReg.test(phone)) {
                         // 不合法
-                        alert("电话号码不合法，请重写！");
+                        $("#phoneTd").html("<span style='color: red'>电话号码不合法，请重写！</span>");
+                        phoneCommit = false;
                     }
 
                     phoneCommit = true;
                 }else {
                     $("#phoneTd").html("<span style='color: red'>" + data.message +"</span>");
-
                     phoneCommit = false;
                 }
             },
@@ -141,7 +155,8 @@ checkPhone = function(){
 checkEmail = function(){
     var email = $("#email").val();
     if (email == null || email == "") {
-        alert("请输入邮箱地址");
+        $("#emailTd").html("<span style='color: red'>请输入邮箱地址</span>");
+        emailCommit = false;
     }else {
         $.ajax({
             //请求方式
@@ -159,13 +174,13 @@ checkEmail = function(){
                     var emailReg = /^([a-zA-Z]|[0-9])(\w|\-)+@[a-zA-Z0-9]+\.([a-zA-Z]{2,4})$/;
                     if(!emailReg.test(email)) {
                         // 不合法
-                        alert("邮箱地址不合法，请重写！");
+                        $("#emailTd").html("<span style='color: red'>邮箱地址不合法，请重写！</span>");
+                        emailCommit = false;
                     }
 
                     emailCommit = true;
                 }else {
                     $("#emailTd").html("<span style='color: red'>" + data.message +"</span>");
-
                     emailCommit = false;
                 }
             },
@@ -178,7 +193,7 @@ checkEmail = function(){
 
 //校验是否进行插入或更改操作
 checkForm = function () {
-    if (!accountCommit || !idCardCommit || !phoneCommit || !emailCommit){
+    if (!accountCommit || !pwdCommit || !realNameCommit || !idCardCommit || !phoneCommit || !emailCommit){
         alert("表单信息有误，请重新填写");
         $("#validateMsg").val(false);
     }else {
