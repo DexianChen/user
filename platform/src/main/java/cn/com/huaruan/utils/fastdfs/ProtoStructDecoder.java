@@ -12,7 +12,6 @@ import java.io.*;
 import java.util.*;
 import java.net.*;
 import java.lang.reflect.Array;
-import org.csource.common.*;
 
 /**
 * C struct body decoder

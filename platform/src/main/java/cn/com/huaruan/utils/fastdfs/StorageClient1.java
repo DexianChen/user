@@ -8,10 +8,12 @@
 
 package cn.com.huaruan.utils.fastdfs;
 
+import cn.com.huaruan.utils.fastdfs.common.MyException;
+import cn.com.huaruan.utils.fastdfs.common.NameValuePair;
+
 import java.io.*;
 import java.util.*;
 import java.net.*;
-import org.csource.common.*;
 
 /**
 * Storage client for 1 field file id: combined group name and filename

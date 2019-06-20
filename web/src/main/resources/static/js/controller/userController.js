@@ -27,22 +27,26 @@ app.controller("userController", function ($scope, $http, $controller, userServi
 
     //保存
     $scope.save = function () {
-        var obj;
-        if($scope.entity.userId != null){
-            //更新
-            obj = userService.update($scope.entity);
-        } else {
-            obj = userService.add($scope.entity);
-        }
-        //$scope.entity 弹出层里面双向绑定的那些表单项
-        obj.success(function (response) {
-            if(response.status){
-                //刷新列表
-                $scope.reloadList();
+        var validateMsg = $("#validateMsg").val();
+
+        if (validateMsg == "true"){
+            var obj;
+            if($scope.entity.userId != null){
+                //更新
+                obj = userService.update($scope.entity);
             } else {
-                alert(response.message);
+                obj = userService.add($scope.entity);
             }
-        });
+            //$scope.entity 弹出层里面双向绑定的那些表单项
+            obj.success(function (response) {
+                if(response.status){
+                    //刷新列表
+                    $scope.reloadList();
+                } else {
+                    alert(response.message);
+                }
+            });
+        }
 
     };
 
@@ -99,10 +103,17 @@ app.controller("userController", function ($scope, $http, $controller, userServi
 
     };
 
-    //新建操作时，清除之前的数据
+    //新建操作时，如果表单已经提交了就清除之前的数据，如果表单没有提交则保留原有数据
     $scope.clean = function () {
-        $scope.entity = {};
-    }
+        var validateMsg = $("#validateMsg").val();
+        if(validateMsg == "true"){
+            $scope.entity = {};
+
+            //选择所有以'Td'结尾的id
+            $("[id$='Td']").html("");
+        }
+
+    };
 
     //上传商品图片
     $scope.uploadFile = function () {

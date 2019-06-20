@@ -3,7 +3,6 @@ package cn.com.huaruan.utils.fastdfs;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.InputStream;
-import org.csource.fastdfs.UploadCallback;
 
 /**
 * Upload file by stream

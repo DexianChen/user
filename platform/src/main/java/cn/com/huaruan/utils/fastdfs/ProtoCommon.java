@@ -14,8 +14,9 @@ import java.io.UnsupportedEncodingException;
 import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
 import java.net.Socket;
-import org.csource.common.MyException;
-import org.csource.common.NameValuePair;
+
+import cn.com.huaruan.utils.fastdfs.common.MyException;
+import cn.com.huaruan.utils.fastdfs.common.NameValuePair;
 
 /**
 * protocol common functions

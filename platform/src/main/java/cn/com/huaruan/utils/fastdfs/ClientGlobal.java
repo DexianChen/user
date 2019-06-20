@@ -8,10 +8,11 @@
 
 package cn.com.huaruan.utils.fastdfs;
 
+import cn.com.huaruan.utils.fastdfs.common.IniFileReader;
+import cn.com.huaruan.utils.fastdfs.common.MyException;
+
 import java.net.*;
 import java.io.*;
-import java.net.*;
-import org.csource.common.*;
 
 /**
 * Global variables

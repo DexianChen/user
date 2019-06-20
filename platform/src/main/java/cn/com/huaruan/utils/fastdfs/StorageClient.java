@@ -8,6 +8,8 @@
 
 package cn.com.huaruan.utils.fastdfs;
 
+import cn.com.huaruan.utils.fastdfs.common.*;
+
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.FileOutputStream;
@@ -16,9 +18,7 @@ import java.io.FileInputStream;
 import java.io.File;
 import java.util.Arrays;
 import java.net.Socket;
-import org.csource.common.MyException;
-import org.csource.common.NameValuePair;
-import org.csource.common.Base64;
+
 
 /**
 * Storage client for 2 fields file id: group name and filename

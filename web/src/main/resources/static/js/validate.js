@@ -2,6 +2,12 @@
  * 用于前端进行信息校验
  */
 
+//是否能够提交
+var accountCommit = false;
+var idCardCommit = false;
+var phoneCommit = false;
+var emailCommit = false;
+
 //校验账户, 不为空，值唯一
 checkAccount = function(){
     var account = $("#account").val();
@@ -20,8 +26,12 @@ checkAccount = function(){
             success:function(data){
                 if (data.status) {
                     $("#accountTd").html("<span style='color: green'>" + data.message +"</span>");
+
+                    accountCommit = true;
                 }else {
                     $("#accountTd").html("<span style='color: red'>" + data.message +"</span>");
+
+                    accountCommit = false;
                 }
             },
             error:function(){
@@ -73,8 +83,12 @@ checkIdCard = function(){
                         // 不合法
                         alert("身份证不合法，请重写！");
                     }
+
+                    idCardCommit = true;
                 }else {
                     $("#idCardTd").html("<span style='color: red'>" + data.message +"</span>");
+
+                    idCardCommit = false;
                 }
             },
             error:function(){
@@ -108,8 +122,12 @@ checkPhone = function(){
                         // 不合法
                         alert("电话号码不合法，请重写！");
                     }
+
+                    phoneCommit = true;
                 }else {
                     $("#phoneTd").html("<span style='color: red'>" + data.message +"</span>");
+
+                    phoneCommit = false;
                 }
             },
             error:function(){
@@ -143,13 +161,27 @@ checkEmail = function(){
                         // 不合法
                         alert("邮箱地址不合法，请重写！");
                     }
+
+                    emailCommit = true;
                 }else {
                     $("#emailTd").html("<span style='color: red'>" + data.message +"</span>");
+
+                    emailCommit = false;
                 }
             },
             error:function(){
                 alert("服务器开小差了，请重新输入！");
             }
         });
+    }
+};
+
+//校验是否进行插入或更改操作
+checkForm = function () {
+    if (!accountCommit || !idCardCommit || !phoneCommit || !emailCommit){
+        alert("表单信息有误，请重新填写");
+        $("#validateMsg").val(false);
+    }else {
+        $("#validateMsg").val(true);
     }
 };
