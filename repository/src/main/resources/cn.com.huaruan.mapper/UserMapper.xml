@@ -45,7 +45,7 @@
         </where>
     </select>
 
-    <insert id="insertUser" parameterType="cn.com.huaruan.model.RequestParamDao">
+    <insert id="insertUser" parameterType="cn.com.huaruan.model.RequestParamVo">
         INSERT INTO TB_USER
         <trim prefix="values (" suffix=")" suffixOverrides=",">
             NULL,
@@ -68,16 +68,16 @@
                 #{phone, jdbcType=VARCHAR},
             </if>
             <if test="addressProvince != null">
-                #{address_province, jdbcType=VARCHAR},
+                #{addressProvince, jdbcType=VARCHAR},
             </if>
             <if test="addressCity != null">
-                #{address_city, jdbcType=VARCHAR},
+                #{addressCity, jdbcType=VARCHAR},
             </if>
             <if test="address_Area != null">
-                #{address_area, jdbcType=VARCHAR},
+                #{addressArea, jdbcType=VARCHAR},
             </if>
             <if test="addressDetails != null">
-                #{address_details, jdbcType=VARCHAR},
+                #{addressDetails, jdbcType=VARCHAR},
             </if>
             <if test="email != null">
                 #{email, jdbcType=VARCHAR},
@@ -89,7 +89,7 @@
         </trim>
     </insert>
 
-    <update id="updateUser"  parameterType="cn.com.huaruan.model.RequestParamDao">
+    <update id="updateUser"  parameterType="cn.com.huaruan.model.RequestParamVo">
         UPDATE TB_USER
         <trim prefix="SET" suffixOverrides=",">
             <if test="pwd != null">
@@ -108,16 +108,16 @@
                 phone=#{phone, jdbcType=VARCHAR},
             </if>
             <if test="addressProvince != null">
-                #{address_province, jdbcType=VARCHAR},
+                #{addressProvince, jdbcType=VARCHAR},
             </if>
             <if test="addressCity != null">
-                #{address_city, jdbcType=VARCHAR},
+                #{addressCity, jdbcType=VARCHAR},
             </if>
             <if test="address_Area != null">
-                #{address_area, jdbcType=VARCHAR},
+                #{addressArea, jdbcType=VARCHAR},
             </if>
             <if test="addressDetails != null">
-                #{address_details, jdbcType=VARCHAR},
+                #{addressDetails, jdbcType=VARCHAR},
             </if>
             <if test="email != null">
                 email=#{email, jdbcType=VARCHAR},

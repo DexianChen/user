@@ -12,7 +12,10 @@ public class RequestParamVo implements Serializable {
     private int sex;
     private String idCard;
     private String phone;
-    private AddressVo address;
+    private String addressProvince;
+    private String addressCity;
+    private String addressArea;
+    private String addressDetails;
     private String email;
     private String picture;
 }

@@ -72,7 +72,7 @@
 						  </td>
 						  <td style="text-align:center;">{{entity.idCard}}</td>
 						  <td style="text-align:center;">{{entity.phone}}</td>
-						  <td style="text-align:center;">{{entity.address}}</td>
+						  <td style="text-align:center;">{{entity.addressProvince}}{{entity.addressCity}}{{entity.addressArea}}{{entity.addressDetails}}</td>
 						  <td style="text-align:center;">{{entity.email}}</td>
 						  <td style="text-align:center;">
 							  <img src="{{entity.picture}}" width=50px height=50px />
@@ -172,7 +172,7 @@
 					</td>
 				</tr>
 				<tr>
-					<td><input  class="form-control" placeholder="请输入详细地址" ng-model="entity.address.suffix" />  </td>
+					<td><input  class="form-control" placeholder="请输入详细地址" ng-model="entity.addressDetails" />  </td>
 				</tr>
 
 				<tr>

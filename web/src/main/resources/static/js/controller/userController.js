@@ -25,8 +25,6 @@ app.controller("userController", function ($scope, $http, $controller, userServi
     //
     // };
 
-    $scope.entity.address = {province:"",city:"",area:"",details:""};
-
     //保存
     $scope.save = function () {
         var validateMsg = $("#validateMsg").val();
@@ -34,9 +32,9 @@ app.controller("userController", function ($scope, $http, $controller, userServi
         if (validateMsg == "true"){
             //jq获取性别,以及地址
             $scope.entity.sex = $("#sexSelect").val();
-            $scope.entity.address.province = $("#selProvince").val();
-            $scope.entity.address.city = $("#selCity").val();
-            $scope.entity.address.area = $("#selArea").val();
+            $scope.entity.addressProvince = $("#selProvince").val();
+            $scope.entity.addressCity = $("#selCity").val();
+            $scope.entity.addressArea = $("#selArea").val();
 
             var obj;
             if($scope.entity.userId != null){
@@ -99,9 +97,9 @@ app.controller("userController", function ($scope, $http, $controller, userServi
             $scope.entity = response;
             //将性别以及地址进行回显
             $("#sexSelect").val($scope.entity.sex);
-            $("#selProvince").val($scope.entity.address.province);
-            $("#selCity").val($scope.entity.address.city);
-            $("#selArea").val($scope.entity.address.area);
+            $("#selProvince").val($scope.entity.addressProvince);
+            $("#selCity").val($scope.entity.addressCity);
+            $("#selArea").val($scope.entity.addressArea);
 
         });
     };
