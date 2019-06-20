@@ -30,6 +30,12 @@ app.controller("userController", function ($scope, $http, $controller, userServi
         var validateMsg = $("#validateMsg").val();
 
         if (validateMsg == "true"){
+            //jq获取性别,以及地址
+            $scope.entity.sex = $("#sexSelect").val();
+            $scope.entity.address.province = $("#selProvince").val();
+            $scope.entity.address.city = $("#selCity").val();
+            $scope.entity.address.area = $("#selArea").val();
+
             var obj;
             if($scope.entity.userId != null){
                 //更新
@@ -89,6 +95,12 @@ app.controller("userController", function ($scope, $http, $controller, userServi
     $scope.findOne = function (userId) {
         userService.findOne(userId).success(function (response) {
             $scope.entity = response;
+            //将性别以及地址进行回显
+            $("#sexSelect").val($scope.entity.sex);
+            $("#selProvince").val($scope.entity.address.province);
+            $("#selCity").val($scope.entity.address.city);
+            $("#selArea").val($scope.entity.address.area);
+
         });
     };
 
@@ -118,6 +130,15 @@ app.controller("userController", function ($scope, $http, $controller, userServi
             $("[id$='Td']").html("");
         }
 
+    };
+
+    //关闭编辑窗口，清空数据
+    $scope.fresh = function(){
+        $("#validateMsg").val(true);
+        $scope.entity.sex = $("#sexSelect").val("");
+        $("#selProvince").val("");
+        $("#selCity").val("");
+        $("#selArea").val("");
     };
 
     //上传商品图片
