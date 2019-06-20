@@ -1,6 +1,6 @@
 package cn.com.huaruan.service;
 
-import cn.com.huaruan.model.RequestParamDao;
+import cn.com.huaruan.model.RequestParamVo;
 import cn.com.huaruan.model.User;
 
 import java.util.List;
@@ -8,11 +8,11 @@ import java.util.List;
 public interface UserService {
     List<User> selectUserList(String searchParam, String currentPage, String itemsPerPage);
 
-    void updateUser(RequestParamDao requestParamDao);
+    void updateUser(RequestParamVo requestParamVo);
 
     void deleteUser(Integer[] taskIds);
 
-    void insertUser(RequestParamDao requestParamDao);
+    void insertUser(RequestParamVo requestParamVo);
 
     User findOne(Integer userId);
 

@@ -1,6 +1,6 @@
 package cn.com.huaruan.service.impl;
 
-import cn.com.huaruan.model.RequestParamDao;
+import cn.com.huaruan.model.RequestParamVo;
 import cn.com.huaruan.service.UserService;
 import cn.com.huaruan.mapper.UserMapper;
 import cn.com.huaruan.model.User;
@@ -46,10 +46,10 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void updateUser(RequestParamDao requestParamDao) {
-        String md5Pwd= new MD5Util().getkeyBeanofStr(requestParamDao.getPwd());
-        requestParamDao.setPwd(md5Pwd);
-        userMapper.updateUser(requestParamDao);
+    public void updateUser(RequestParamVo requestParamVo) {
+        String md5Pwd= new MD5Util().getkeyBeanofStr(requestParamVo.getPwd());
+        requestParamVo.setPwd(md5Pwd);
+        userMapper.updateUser(requestParamVo);
     }
 
     @Override
@@ -58,10 +58,10 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void insertUser(RequestParamDao requestParamDao) {
-        String md5Pwd= new MD5Util().getkeyBeanofStr(requestParamDao.getPwd());
-        requestParamDao.setPwd(md5Pwd);
-        userMapper.insertUser(requestParamDao);
+    public void insertUser(RequestParamVo requestParamVo) {
+        String md5Pwd= new MD5Util().getkeyBeanofStr(requestParamVo.getPwd());
+        requestParamVo.setPwd(md5Pwd);
+        userMapper.insertUser(requestParamVo);
     }
 
     @Override

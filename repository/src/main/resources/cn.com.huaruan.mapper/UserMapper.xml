@@ -9,14 +9,17 @@
         <result column="sex" property="sex" jdbcType="INTEGER" />
         <result column="id_card" property="idCard" jdbcType="VARCHAR" />
         <result column="phone" property="phone" jdbcType="VARCHAR" />
-        <result column="address" property="address" jdbcType="VARCHAR" />
+        <result column="addressProvince" property="address_province" jdbcType="VARCHAR" />
+        <result column="addressCity" property="address_city" jdbcType="VARCHAR" />
+        <result column="addressArea" property="address_area" jdbcType="VARCHAR" />
+        <result column="addressDetails" property="address_details" jdbcType="VARCHAR" />
         <result column="email" property="email" jdbcType="VARCHAR" />
         <result column="picture" property="picture" jdbcType="VARCHAR" />
         <result column="registered_time" property="registeredTime" jdbcType="TIMESTAMP" />
     </resultMap>
 
     <sql id="column" >
-        user_id, account, pwd, real_name, sex, id_card, phone, address, email, picture, registered_time
+        user_id, account, pwd, real_name, sex, id_card, phone, address_province, address_city, address_area, address_details, email, picture, registered_time
     </sql>
 
     <select id="selectUserList" parameterType="java.lang.String" resultMap="userMap" >
@@ -64,8 +67,17 @@
             <if test="phone != null">
                 #{phone, jdbcType=VARCHAR},
             </if>
-            <if test="address != null">
-                #{address, jdbcType=VARCHAR},
+            <if test="addressProvince != null">
+                #{address_province, jdbcType=VARCHAR},
+            </if>
+            <if test="addressCity != null">
+                #{address_city, jdbcType=VARCHAR},
+            </if>
+            <if test="address_Area != null">
+                #{address_area, jdbcType=VARCHAR},
+            </if>
+            <if test="addressDetails != null">
+                #{address_details, jdbcType=VARCHAR},
             </if>
             <if test="email != null">
                 #{email, jdbcType=VARCHAR},
@@ -95,8 +107,17 @@
             <if test="phone != null">
                 phone=#{phone, jdbcType=VARCHAR},
             </if>
-            <if test="address != null">
-                address=#{address, jdbcType=VARCHAR},
+            <if test="addressProvince != null">
+                #{address_province, jdbcType=VARCHAR},
+            </if>
+            <if test="addressCity != null">
+                #{address_city, jdbcType=VARCHAR},
+            </if>
+            <if test="address_Area != null">
+                #{address_area, jdbcType=VARCHAR},
+            </if>
+            <if test="addressDetails != null">
+                #{address_details, jdbcType=VARCHAR},
             </if>
             <if test="email != null">
                 email=#{email, jdbcType=VARCHAR},

@@ -1,6 +1,6 @@
 package cn.com.huaruan.mapper;
 
-import cn.com.huaruan.model.RequestParamDao;
+import cn.com.huaruan.model.RequestParamVo;
 import cn.com.huaruan.model.User;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
@@ -12,9 +12,9 @@ public interface UserMapper {
     List<User> selectUserList(@Param("searchParam") String searchParam, @Param("fistIndex") Integer fistIndex,
                               @Param("perPage") Integer perPage);
 
-    void insertUser(RequestParamDao requestParamDto);
+    void insertUser(RequestParamVo requestParamVo);
 
-    void updateUser(RequestParamDao requestParamDto);
+    void updateUser(RequestParamVo requestParamVo);
 
     void deleteUser(@Param("userIds") Integer[] userIds);
 

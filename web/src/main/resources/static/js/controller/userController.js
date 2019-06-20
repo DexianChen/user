@@ -25,6 +25,8 @@ app.controller("userController", function ($scope, $http, $controller, userServi
     //
     // };
 
+    $scope.entity.address = {province:"",city:"",area:"",details:""};
+
     //保存
     $scope.save = function () {
         var validateMsg = $("#validateMsg").val();

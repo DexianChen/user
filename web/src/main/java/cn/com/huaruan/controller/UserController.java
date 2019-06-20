@@ -21,8 +21,7 @@ public class UserController {
     @PostMapping("/update")
     public ResultVo updateUser(@RequestBody RequestParamVo paramVo){
         try {
-            RequestParamDao requestParamDao = new RequestParamDao(paramVo);
-            userService.updateUser(requestParamDao);
+            userService.updateUser(paramVo);
             return new ResultVo(true, "更新用户成功");
         } catch (Exception e) {
             e.printStackTrace();
@@ -65,8 +64,7 @@ public class UserController {
     @PostMapping("/insert")
     public ResultVo insertUser(@RequestBody RequestParamVo paramVo){
         try {
-            RequestParamDao requestParamDao = new RequestParamDao(paramVo);
-            userService.insertUser(requestParamDao);
+            userService.insertUser(paramVo);
             return new ResultVo(true, "插入用户成功");
         } catch (Exception e) {
             e.printStackTrace();
