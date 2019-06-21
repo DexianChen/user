@@ -8,7 +8,6 @@ checkAccount = function(){
     var account = $("#account").val();
     if (account == null || account == "" ) {
         $("#accountTd").html("<span style='color: red'>请输入账户名</span>");
-        // accountCommit = false;
         return false;
     }else {
         var userId = $("#userId").val();
@@ -26,24 +25,19 @@ checkAccount = function(){
                 success:function(data){
                     if (data.status) {
                         $("#accountTd").html("<span style='color: green'>" + data.message +"</span>");
-
-                        // accountCommit = true;
                         return true;
                     }else {
                         $("#accountTd").html("<span style='color: red'>" + data.message +"</span>");
                         return false;
-                        // accountCommit = false;
                     }
                 },
                 error:function(){
                     alert("服务器开小差了，请重新输入！");
                 }
             });
-        }else {
-            // accountCommit = true;
-            return true;
         }
 
+        return true;
     }
 };
 
@@ -218,6 +212,8 @@ checkEmail = function(){
 //校验是否进行插入或更改操作
 checkForm = function () {
     if (!checkAccount() || !checkPwd() || !checkRealName() || !checkIdCard() || !checkPhone() || !checkEmail()){
+        // alert("" + checkAccount() +
+        //     ""+ checkPwd() + checkRealName() + checkIdCard() + checkPhone() + checkEmail());
         alert("表单信息有误，请重新填写");
         $("#validateMsg").val(false);
     }else {
