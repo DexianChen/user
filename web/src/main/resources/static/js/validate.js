@@ -36,7 +36,7 @@ checkAccount = function(){
                 }
             });
         }
-
+        $("#accountTd").html("");
         return true;
     }
 };
@@ -108,6 +108,7 @@ checkIdCard = function(){
             $("#idCardTd").html("<span style='color: red'>身份证不合法，请重写！</span>");
             return false;
         }else {
+            $("#idCardTd").html("");
             return true;
         }
 
@@ -155,6 +156,7 @@ checkPhone = function(){
             $("#phoneTd").html("<span style='color: red'>电话号码不合法，请重写！</span>");
             return false;
         }else {
+            $("#phoneTd").html("");
             return true;
         }
 
@@ -202,6 +204,7 @@ checkEmail = function(){
             $("#emailTd").html("<span style='color: red'>邮箱地址不合法，请重写！</span>");
             return false;
         }else {
+            $("#emailTd").html("");
             return true;
         }
 
