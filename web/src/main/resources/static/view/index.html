@@ -75,7 +75,7 @@
 						  <td style="text-align:center;">{{entity.addressProvince}}{{entity.addressCity}}{{entity.addressArea}}{{entity.addressDetails}}</td>
 						  <td style="text-align:center;">{{entity.email}}</td>
 						  <td style="text-align:center;">
-							  <img src="{{entity.picture}}" width=50px height=50px />
+							  <img src="{{entity.pictureUrl}}" width=50px height=50px />
 						  </td>
 						  <td style="text-align:center;">{{entity.registeredTime}}</td>
 
@@ -160,13 +160,13 @@
 					<td rowspan="2">地址</td>
 <!--					<td><input  class="form-control" ng-model="entity.address" placeholder="地址" />  </td>-->
 					<td>
-						<select name="" id="selProvince">
+						<select id="selProvince">
 							<option value="">----请选择----</option>
 						</select>
-						<select name="" id="selCity">
+						<select id="selCity">
 							<option value="">----请选择----</option>
 						</select>
-						<select name="" id="selArea">
+						<select id="selArea">
 							<option value="">----请选择----</option>
 						</select>
 					</td>
@@ -188,7 +188,7 @@
 						<button ng-click="uploadFile()">上传图片</button>
 					</td>
 					<td>
-						<img src="{{entity.picture}}" width="50px" />
+						<img src="{{entity.pictureUrl}}" width="50px"/>
 					</td>
 				</tr>
 			 </table>

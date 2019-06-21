@@ -23,7 +23,7 @@ public class User implements Serializable {
     private String addressArea;
     private String addressDetails;
     private String email;
-    private String picture;
+    private String pictureUrl;
     @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
     private Date registeredTime;
 }

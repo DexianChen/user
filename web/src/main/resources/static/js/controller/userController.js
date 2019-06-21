@@ -4,27 +4,6 @@ app.controller("userController", function ($scope, $http, $controller, userServi
     //继承controller，可以使用baseController中的所有方法
     $controller("baseController", {$scope:$scope});
 
-    // //查询所有品牌列表
-    // $scope.findAll = function () {
-    //     userService.findAll().success(function (response) {
-    //         $scope.list = response;
-    //     }).error(function () {
-    //         alert("查询列表失败");
-    //     });
-    //
-    // };
-    //
-    // //分页查询
-    // $scope.findPage = function (page, rows) {
-    //     userService.findPage(page, rows).success(function (response) {//response是分页对象PageResult
-    //         //设置列表
-    //         $scope.list = response.rows;
-    //         //更新分页导航条
-    //         $scope.paginationConf.totalItems = response.total;//总记录数
-    //     });
-    //
-    // };
-
     //保存
     $scope.save = function () {
         var validateMsg = $("#validateMsg").val();
@@ -145,12 +124,9 @@ app.controller("userController", function ($scope, $http, $controller, userServi
     $scope.uploadFile = function () {
         uploadService.uploadFile().success(function (response) {
             if(response.status){
-                alert($scope.entity.picture);
-                $scope.entity.picture = response.message;
-                alert($scope.entity.picture + "1231");
+                $scope.entity.pictureUrl = response.message;
             } else {
-                alert("sadsadsaf");
-                // alert(response.message);
+                alert(response.message);
             }
         }).error(function () {
             alert("上传图片失败");

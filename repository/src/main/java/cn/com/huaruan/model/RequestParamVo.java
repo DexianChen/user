@@ -17,5 +17,5 @@ public class RequestParamVo implements Serializable {
     private String addressArea;
     private String addressDetails;
     private String email;
-    private String picture;
+    private String pictureUrl;
 }

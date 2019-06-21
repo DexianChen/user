@@ -1,15 +1,5 @@
 //定义service
 app.service("userService", function ($http) {
-    // //查询所有品牌列表；this表示brandService
-    // this.findAll = function () {
-    //     return $http.get("../brand/findAll.do");
-    // };
-    //
-    // //分页查询
-    // this.findPage = function (page, rows) {
-    //     return $http.get("../brand/findPage.do?page=" + page + "&rows=" + rows);
-    //
-    // };
 
     //保存
     this.add = function (entity) {
