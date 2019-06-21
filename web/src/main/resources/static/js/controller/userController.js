@@ -80,6 +80,7 @@ app.controller("userController", function ($scope, $http, $controller, userServi
             $("#selCity").val($scope.entity.addressCity);
             $("#selArea").val($scope.entity.addressArea);
 
+            $("#userId").val(userId);
         });
     };
 
@@ -107,6 +108,8 @@ app.controller("userController", function ($scope, $http, $controller, userServi
 
             //选择所有以'Td'结尾的id
             $("[id$='Td']").html("");
+
+            $("#userId").val("");
         }
 
     };
@@ -118,6 +121,7 @@ app.controller("userController", function ($scope, $http, $controller, userServi
         $("#selProvince").val("");
         $("#selCity").val("");
         $("#selArea").val("");
+        $("#userId").val("");
     };
 
     //上传商品图片
