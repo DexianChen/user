@@ -1,0 +1,3243 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>
+    自动喷水灭火系统设计规范 GB 50084-2017
+    </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="keywords" content="资料管理平台,建筑资料,施工资料,竣工资料,安全资料,竣工验收资料,技术资料,施工方案,技术交底资料"/>
+    <style>
+        #book_page > .dir {
+            position: absolute;
+            left: -310px;
+            top: 0;
+            background-color: #fff;
+            width: 300px;
+            height: 600px;
+            overflow: auto;
+        }
+
+        #book_page > .dir > li > a {
+            font-size: 13pt;
+            font-weight: bold;
+        }
+
+        #book_page > .dir > li > ul > li > a {
+            font-size: 12pt;
+        }
+
+        #book_page > .dir.bookFixedTop {
+            position: fixed;
+            top: 2em;
+        }
+
+        #book_page > div {
+            padding: 0;
+        }
+
+        #book_page > div {
+            border-bottom: 1px solid #ddd;
+        }
+
+        #dvMenu {
+            position: fixed;
+            width: 54px;
+            height: 54px;
+            display: none;
+            background-color: #19920f;
+            color: #fff;
+            border: 5px solid #19920f;
+            right: 8px;
+            bottom: 216px;
+            font-size: 48px;
+            text-align: center;
+            cursor: pointer;
+            line-height: 54px;
+        }
+
+        #dvMenu:hover {
+            background-color: #d00;
+            border-color: #d00;
+        }
+
+        @media screen and (max-width: 1450px) {
+            #book_page > .dir {
+                display: none;
+            }
+
+            #book_page > .dir.mask_dir {
+                position: fixed;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                margin-left: 0;
+                z-index: 8000;
+                display: block;
+                width: 70%;
+                height: 100%;
+                box-shadow: 0 5px 20px #1b9c1a;
+            }
+
+            #dvMenu {
+                display: block;
+            }
+
+        }
+
+        @media screen and (max-width: 1010px) {
+            #dvMenu {
+                bottom: 162px;
+                width: 27px;
+                height: 27px;
+                font-size: 24px;
+                line-height: 27px;
+            }
+        }
+    </style>
+    <script src="../js/jquery-3.3.1.min.js"></script>
+<!--    <script src="../js/returnObjectInfo.js"></script>-->
+<!--    <script src="../js/buildChapterListAndNodeList.js"></script>-->
+    <script src="../js/ajax.js"></script>
+    <script src="../js/book_view.js"></script>
+</head>
+<body>
+<form method="post" action="./book_view.aspx?id=3669" id="form1">
+    <div class="aspNetHidden">
+        <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE"
+               value="/wEPDwUJMjQyMTg5MTM4ZGT5JgHZYQQggkptJ+RJx/ug+S/VBwYR65kWssyJKmNEMg=="/>
+    </div>
+
+    <div class="aspNetHidden">
+
+        <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="1F38980A"/>
+    </div>
+</form>
+<div id="top" class="wrap" style="display:block">
+    <div class='header'>
+        <div class='main'>
+            <a class='logoA' href='/' title='华软工程资料管理平台v2'></a>
+            <div class='right-toolber'><a href='/login.aspx?ReturnUrl=%2Fbook%2Fbook_view.aspx%3Fid%3D3669'>登录</a>
+                <script>
+                    window.onload = function () {
+                        //使当前功能可见
+                        setTimeout(function () {
+                            var navbar = $('.navbar:first>.main'),
+                                menuDiv = navbar.find('>div:first'),
+                                btnCount = menuDiv.find('>a').length,
+                                activeBtn = menuDiv.find('.active:first'),
+                                btnWidth = activeBtn.outerWidth(),
+                                margin = activeBtn.css('margin').split(' '), marginW = 0;
+
+                            marginW += margin.length == 1 ? 2 * parseFloat(margin[0]) :
+                                margin.length == 2 || margin.length == 3 ? 2 * parseFloat(margin[1]) :
+                                    margin.length == 4 ? parseFloat(margin[1]) + parseFloat(margin[3]) : 0;
+
+                            menuDiv.width(btnCount * btnWidth + btnCount * (isNaN(marginW) ? 0 : marginW) + 10);
+                            navbar.scrollLeft(activeBtn.offset().left + activeBtn.outerWidth() - navbar.width());
+                        }, 300);
+                    }
+                </script>
+                <a class='autoHide' href='tencent://message/?uin=800156910&Site=www.zlglpt.com&Menu=yes' alt='QQ在线客服'> |
+                    QQ客服</a>
+                <a target='_blank' href='/help/help.htm'> | 帮助</a>
+            </div>
+            <div class='clear'></div>
+        </div>
+    </div>
+    <div class='navbar'>
+        <div class='main'>
+            <div><a href='/project/index.aspx' target='_self'>工程管理</a><a href='/buy/buy.aspx' target='_self'>模板市场</a><a
+                    href='/book/book.aspx' target='_self' class='active'>免费资料</a><a href='/video/index.aspx'
+                                                                                    target='_self'>培训视频</a><a
+                    href='/net/ask.aspx' target='_self'>有问必答</a><a href='/servicemarket/servicemarket.aspx'
+                                                                   target='_self'>外包市场</a><a href='/net/zpqz.aspx'
+                                                                                             target='_self'>招聘求职</a><a
+                    href='/oa/index.aspx' target='_self'>OA管理</a></div>
+        </div>
+    </div>
+    <h1 style='display:none'>本平台提供如下内容的服务：建筑工程竣工验收技术资料,包括市政安全园林所有专业人防施工资料、竣工验收资料,施工方案,技术交底资料等资料的制作编辑和管理</h1></div>
+<div class="wrap" style="display:block;" id="book_view">
+    <div class="dir" id="book_dir" style="display:none"></div>
+    <div id="book_page"><h1>自动喷水灭火系统设计规范 GB 50084-2017</h1>
+        <ul class="dir">
+            <li><a id="d_3199320" href="#3199320">自动喷水灭火系统设计规范 GB 50084-2017</a>
+                <ul>
+                    <li><a id="d_3199321" href="#3199321">1 总 则</a></li>
+                    <li><a id="d_3199322" href="#3199322">2 术语和符号</a>
+                        <ul>
+                            <li><a id="d_3199323" href="#3199323">2．1 术 语</a></li>
+                            <li><a id="d_3199324" href="#3199324">2．2 符 号</a></li>
+                        </ul>
+                    </li>
+                    <li><a id="d_3199325" href="#3199325">3 设置场所火灾危险等级</a></li>
+                    <li><a id="d_3199326" href="#3199326">4 系统基本要求</a>
+                        <ul>
+                            <li><a id="d_3199327" href="#3199327">4．1 一般规定</a></li>
+                            <li><a id="d_3199328" href="#3199328">4．2 系统选型</a></li>
+                            <li><a id="d_3199329" href="#3199329">4．3 其 他</a></li>
+                        </ul>
+                    </li>
+                    <li><a id="d_3199330" href="#3199330">5 设计基本参数</a></li>
+                    <li><a id="d_3199331" href="#3199331">6 系统组件</a>
+                        <ul>
+                            <li><a id="d_3199332" href="#3199332">6．1 喷 头</a></li>
+                            <li><a id="d_3199333" href="#3199333">6．2 报警阀组</a></li>
+                            <li><a id="d_3199334" href="#3199334">6．3 水流指示器</a></li>
+                            <li><a id="d_3199335" href="#3199335">6．4 压力开关</a></li>
+                            <li><a id="d_3199336" href="#3199336">6．5 末端试水装置</a></li>
+                        </ul>
+                    </li>
+                    <li><a id="d_3199337" href="#3199337">7 喷头布置</a>
+                        <ul>
+                            <li><a id="d_3199338" href="#3199338">7．1 一般规定</a></li>
+                            <li><a id="d_3199339" href="#3199339">7．2 喷头与障碍物的距离</a></li>
+                        </ul>
+                    </li>
+                    <li><a id="d_3199340" href="#3199340">8 管 道</a></li>
+                    <li><a id="d_3199341" href="#3199341">9 水力计算</a>
+                        <ul>
+                            <li><a id="d_3199342" href="#3199342">9．1 系统的设计流量</a></li>
+                            <li><a id="d_3199343" href="#3199343">9．2 管道水力计算</a></li>
+                            <li><a id="d_3199344" href="#3199344">9．3 减压设施</a></li>
+                        </ul>
+                    </li>
+                    <li><a id="d_3199345" href="#3199345">10 供 水</a>
+                        <ul>
+                            <li><a id="d_3199346" href="#3199346">10．1 一般规定</a></li>
+                            <li><a id="d_3199347" href="#3199347">10．2 消防水泵</a></li>
+                            <li><a id="d_3199348" href="#3199348">10．3 高位消防水箱</a></li>
+                            <li><a id="d_3199349" href="#3199349">10．4 消防水泵接合器</a></li>
+                        </ul>
+                    </li>
+                    <li><a id="d_3199350" href="#3199350">11 操作与控制</a></li>
+                    <li><a id="d_3199351" href="#3199351">12 局部应用系统</a></li>
+                    <li><a id="d_3199352" href="#3199352">附录A 设置场所火灾危险等级分类</a></li>
+                    <li><a id="d_3199353" href="#3199353">附录B 塑料、橡胶的分类</a></li>
+                    <li><a id="d_3199354" href="#3199354">附录C 当量长度表</a></li>
+                    <li><a id="d_3199355" href="#3199355">附录D 减压孔板的局部阻力系数</a></li>
+                    <li><a id="d_3199356" href="#3199356">本规范用词说明</a></li>
+                    <li><a id="d_3199357" href="#3199357">引用标准名录</a></li>
+                </ul>
+            </li>
+            <li><a id="d_3199358" href="#3199358">条文说明</a>
+                <ul>
+                    <li><a id="d_3199359" href="#3199359">1 总 则</a></li>
+                    <li><a id="d_3199360" href="#3199360">2 术语和符号</a></li>
+                    <li><a id="d_3199361" href="#3199361">3 设置场所火灾危险等级</a></li>
+                    <li><a id="d_3199362" href="#3199362">4 系统基本要求</a>
+                        <ul>
+                            <li><a id="d_3199363" href="#3199363">4．1 一般规定</a></li>
+                            <li><a id="d_3199364" href="#3199364">4．2 系统选型</a></li>
+                            <li><a id="d_3199365" href="#3199365">4．3 其 他</a></li>
+                        </ul>
+                    </li>
+                    <li><a id="d_3199366" href="#3199366">5 设计基本参数</a></li>
+                    <li><a id="d_3199367" href="#3199367">6 系统组件</a>
+                        <ul>
+                            <li><a id="d_3199368" href="#3199368">6．1 喷 头</a></li>
+                            <li><a id="d_3199369" href="#3199369">6．2 报警阀组</a></li>
+                            <li><a id="d_3199370" href="#3199370">6．3 水流指示器</a></li>
+                            <li><a id="d_3199371" href="#3199371">6．4 压力开关</a></li>
+                            <li><a id="d_3199372" href="#3199372">6．5 末端试水装置</a></li>
+                        </ul>
+                    </li>
+                    <li><a id="d_3199373" href="#3199373">7 喷头布置</a>
+                        <ul>
+                            <li><a id="d_3199374" href="#3199374">7．1 一般规定</a></li>
+                            <li><a id="d_3199375" href="#3199375">7．2 喷头与障碍物的距离</a></li>
+                        </ul>
+                    </li>
+                    <li><a id="d_3199376" href="#3199376">8 管 道</a></li>
+                    <li><a id="d_3199377" href="#3199377">9 水力计算</a>
+                        <ul>
+                            <li><a id="d_3199378" href="#3199378">9．1 系统的设计流量</a></li>
+                            <li><a id="d_3199379" href="#3199379">9．2 管道水力计算</a></li>
+                            <li><a id="d_3199380" href="#3199380">9．3 减压设施</a></li>
+                        </ul>
+                    </li>
+                    <li><a id="d_3199381" href="#3199381">10 供 水</a>
+                        <ul>
+                            <li><a id="d_3199382" href="#3199382">10．1 一般规定</a></li>
+                            <li><a id="d_3199383" href="#3199383">10．2 消防水泵</a></li>
+                            <li><a id="d_3199384" href="#3199384">10．3 高位消防水箱</a></li>
+                            <li><a id="d_3199385" href="#3199385">10．4 消防水泵接合器</a></li>
+                        </ul>
+                    </li>
+                    <li><a id="d_3199386" href="#3199386">11 操作与控制</a></li>
+                    <li><a id="d_3199387" href="#3199387">12 局部应用系统</a></li>
+                </ul>
+            </li>
+        </ul>
+        <div id='3199320'>
+
+            <div>
+                <p>中华人民共和国国家标准<br>
+                    <br>
+                    <span class="STYLE7">自动喷水灭火系统设计规范</span></p>
+            </div>
+            <p align="center">Code for design of sprinkler systems<br>
+                <br>
+                <strong>GB 50084-2017</strong><br>
+                <br>
+                主编部门：中华人民共和国公安部<br>
+                批准部门：中华人民共和国住房和城乡建设部<br>
+                施行日期：2018年1月1日<br>
+                <br>
+                <strong>中华人民共和国住房和城乡建设部公告<br>
+                    第1574号<br>
+                </strong><br>
+                住房城乡建设部关于发布国家标准《自动喷水灭火系统设计规范》的公告</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;现批准《自动喷水灭火系统设计规范》为国家标准，编号为GB
+                50084-2017，自2018年1月1日起实施。其中，第5．0．1、5．0．2、5．0．4、5．0．5、5．0．6、5．0．8、5．0．15(1、2、4)、6．5．1、10．3．3、12．0．1、12．0．2、12．0．3条(款)为强制性条文，必须严格执行。原国家标准《自动喷水灭火系统设计规范》GB
+                50084-2001(2005年版)同时废止。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;本规范由我部标准定额研究所组织中国计划出版社出版发行。</p>
+            <p align="right"><strong>中华人民共和国住房和城乡建设部<br>
+                2017年5月27日</strong></p>
+            <p align="center"><strong>前言</strong></p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;根据住房城乡建设部《关于印发&lt;2008年工程建设标准规范制订、修订计划&gt;的通知》(建标[2008]102号)的要求，自动喷水灭火系统设计规范编制组经广泛调查研究，认真总结实践经验，参考有关国际标准和国外先进标准，并在广泛征求意见的基础上，编制了本规范。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;本规范的修订，遵照国家有关基本建设的方针和“预防为主、防消结合”的消防工作方针，在总结我国自动喷水灭火系统的科研成果、设计和使用现状的基础上，广泛征求了国内有关科研、设计、生产、消防监督、高校等部门的意见，同时参考了国际标准化组织和美国、英国等发达国家的相关标准，最后经有关部门共同审查定稿。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;本规范的主要技术内容是：总则、术语和符号、设置场所火灾危险等级、系统基本要求、设计基本参数、系统组件、喷头布置、管道、水力计算、供水、操作与控制、局部应用系统等。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;本规范此次修订的主要技术内容是：<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;1．重新编排了自动喷水灭火系统类型、喷头类型术语；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;2．充实民用建筑、仓库等场所自动喷水灭火系统设计的技术要求，增加自动喷水防护冷却系统的技术内容；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;3．补充了新型洒水喷头、管道的应用技术要求，特别强调依据设置场所进行系统选型以及根据喷头类型设计系统；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;4．修改现行规范中不便操作的一些条款，协调与其他规范的关系。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;本规范中以黑体字标志的条文为强制性条文，必须严格执行。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;本规范由住房城乡建设部负责管理和对强制性条文的解释，公安部负责日常管理，公安部天津消防研究所负责具体技术内容的解释。在执行过程中如有意见或建议，请寄送公安部天津消防研究所(地址：天津市南开区卫津南路110号，邮政编码：300381)。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<strong>主编单位</strong>：公安部天津消防研究所<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<strong>参编单位</strong>：公安部四川消防研究所<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;北京市公安消防总队<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;上海市公安消防总队<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;辽宁省大连市公安消防支队<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;华东建筑设计研究院有限公司<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;中国中元国际工程公司<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;深圳捷星工程实业有限公司<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;北京利华消防工程公司<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;泰科安全设备(上海)有限公司<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<strong>主要起草人</strong>：宋波 卢国建 杨丙杰 马恒 李毅 杨琦 张文华 赵克伟 黄晓家 赵永顺 张兴权 刘国祝 <font
+                        style="border: 1.5px solid #333333">曾杰</font> 黄琦 赵雷 孔祥徵<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<strong>主要审查人</strong>：方汝清 谢树俊 姜文源 赵锂 赵力军 钟尔俊 姜宁 崔长起 刘志 张兆宪</p>
+
+
+        </div>
+        <div id='3199321'>
+
+            <div>
+                <p>1 总 则 </p>
+            </div>
+            <p>1．0．1 为了正确、合理地设计自动喷水灭火系统，保护人身和财产安全，制定本规范。<br>
+                <br>
+                1．0．2 本规范适用于新建、扩建、改建的民用与工业建筑中自动喷水灭火系统的设计。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;本规范不适用于火药、炸药、弹药、火工品工厂、核电站及飞机库等特殊功能建筑中自动喷水灭火系统的设计。<br>
+                <br>
+                1．0．3 自动喷水灭火系统的设计，应密切结合保护对象的功能和火灾特点，积极采用新技术、新设备、新材料，做到安全可靠、技术先进、经济合理。<br>
+                <br>
+                1．0．4 设计采用的系统组件，必须符合国家现行的相关标准，并应符合消防产品市场准入制度的要求。<br>
+                <br>
+                1．0．5 当设置自动喷水灭火系统的建筑或建筑内场所变更用途时，应校核原有系统的适用性。当不适用时，应按本规范重新设计。<br>
+                <br>
+                1．0．6 自动喷水灭火系统的设计，除应符合本规范的规定外，尚应符合国家现行有关标准的规定。
+            </p>
+        </div>
+        <div id='3199322'>
+
+            <div>
+                <p>2 术语和符号<br>
+                    <br>
+                    2．1 术 语</p>
+            </div>
+            <p>2．1．1 自动喷水灭火系统 sprinkler systems<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;由洒水喷头、报警阀组、水流报警装置(水流指示器或压力开关)等组件，以及管道、供水设施等组成，能在发生火灾时喷水的自动灭火系统。<br>
+                <br>
+                2．1．2 闭式系统 close-type sprinkler system<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;采用闭式洒水喷头的自动喷水灭火系统。<br>
+                <br>
+                2．1．3 开式系统 open-type sprinkler system<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;采用开式洒水喷头的自动喷水灭火系统。<br>
+                <br>
+                2．1．4 湿式系统 wet pipe sprinkler system<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;准工作状态时配水管道内充满用于启动系统的有压水的闭式系统。<br>
+                <br>
+                2．1．5 干式系统 dry pipe sprinkler system<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;准工作状态时配水管道内充满用于启动系统的有压气体的闭式系统。<br>
+                <br>
+                2．1．6 预作用系统 preaction sprinkler system<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;准工作状态时配水管道内不充水，发生火灾时由火灾自动报警系统、充气管道上的压力开关联锁控制预作用装置和启动消防水泵，向配水管道供水的闭式系统。<br>
+                <br>
+                2．1．7 重复启闭预作用系统 recycling preaction sprinkler system<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;能在扑灭火灾后自动关阀、复燃时再次开阀喷水的预作用系统。<br>
+                <br>
+                2．1．8 雨淋系统 deluge sprinkler system<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;由开式洒水喷头、雨淋报警阀组等组成，发生火灾时由火灾自动报警系统或传动管控制，自动开启雨淋报警阀组和启动消防水泵，用于灭火的开式系统。<br>
+                <br>
+                2．1．9 水幕系统 drencher sprinkler system<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;由开式洒水喷头或水幕喷头、雨淋报警阀组或感温雨淋报警阀等组成，用于防火分隔或防护冷却的开式系统。<br>
+                <br>
+                2．1．10 防火分隔水幕 fire compartment drencher sprinkler system<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;由开式洒水喷头或水幕喷头、雨淋报警阀组或感温雨淋报警阀等组成，发生火灾时密集喷洒形成水墙或水帘的水幕系统。<br>
+                <br>
+                2．1．11 防护冷却水幕 cooling protection drencher sprinkler system<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;由水幕喷头、雨淋报警阀组或感温雨淋报警阀等组成，发生火灾时用于冷却防火卷帘、防火玻璃墙等防火分隔设施的水幕系统。<br>
+                <br>
+                2．1．12 防护冷却系统 cooling protection sprinkler system<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;由闭式洒水喷头、湿式报警阀组等组成，发生火灾时用于冷却防火卷帘、防火玻璃墙等防火分隔设施的闭式系统。<br>
+                <br>
+                2．1．13 作用面积 operation area of sprinkler system<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;一次火灾中系统按喷水强度保护的最大面积。<br>
+                <br>
+                2．1．14 响应时间指数 response time index(RTI)<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;闭式洒水喷头的热敏性能指标。<br>
+                <br>
+                2．1．15 快速响应洒水喷头 fast response sprinkler<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;响应时间指数RTI≤50(m·s)<sup>0.5</sup>的闭式洒水喷头。<br>
+                <br>
+                2．1．16 特殊响应洒水喷头 special response sprinkler<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;响应时间指数50＜RTI≤80(m·s)<sup>0.5</sup>的闭式洒水喷头。<br>
+                <br>
+                2．1．17 标准响应洒水喷头 standard response sprinkler<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;响应时间指数80＜RTI≤350(m·s)<sup>0.5</sup>的闭式洒水喷头。<br>
+                <br>
+                2．1．18 一只喷头的保护面积 protection area of the sprinkler<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;同一根配水支管上相邻洒水喷头的距离与相邻配水支管之间距离的乘积。<br>
+                <br>
+                2．1．19 标准覆盖面积洒水喷头 standard coverage sprinkler<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;流量系数K≥80，一只喷头的最大保护面积不超过20m<sup>2</sup>的直立型、下垂型洒水喷头及一只喷头的最大保护面积不超过18m<sup>2</sup>的边墙型洒水喷头。<br>
+                <br>
+                2．1．20 扩大覆盖面积洒水喷头 extended coverage(EC)sprinkler<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;流量系数K≥80，一只喷头的最大保护面积大于标准覆盖面积洒水喷头的保护面积，且不超过36m<sup>2</sup>的洒水喷头，包括直立型、下垂型和边墙型扩大覆盖面积洒水喷头。<br>
+                <br>
+                2．1．21 标准流量洒水喷头 standard orifice sprinkler<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;流量系数K＝80的标准覆盖面积洒水喷头。<br>
+                <br>
+                2．1．22 早期抑制快速响应喷头 early suppression fast response(ESFR)sprinkler<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;流量系数K≥161，响应时间指数RTI≤28±8(m·s)<sup>0.5</sup>，用于保护堆垛与高架仓库的标准覆盖面积洒水喷头。<br>
+                <br>
+                2．1．23 特殊应用喷头 specific application sprinkler<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;流量系数K≥161，具有较大水滴粒径，在通过标准试验验证后，可用于民用建筑和厂房高大空间场所以及仓库的标准覆盖面积洒水喷头，包括非仓库型特殊应用喷头和仓库型特殊应用喷头。<br>
+                <br>
+                2．1．24 家用喷头 residential sprinkler<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;适用于住宅建筑和非住宅类居住建筑的一种快速响应洒水喷头。<br>
+                <br>
+                2．1．25 配水干管 feed mains<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;报警阀后向配水管供水的管道。<br>
+                <br>
+                2．1．24 配水管 cross mains<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;向配水支管供水的管道。<br>
+                <br>
+                2．1．27 配水支管 branch lines<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;直接或通过短立管向洒水喷头供水的管道。<br>
+                <br>
+                2．1．28 配水管道 system pipes<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;配水干管、配水管及配水支管的总称。<br>
+                <br>
+                2．1．29 短立管 sprig<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;连接洒水喷头与配水支管的立管。<br>
+                <br>
+                2．1．30 消防洒水软管 flexible sprinkler hose fittings<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;连接洒水喷头与配水管道的挠性金属软管及洒水喷头调整固定装置。<br>
+                <br>
+                2．1．31 信号阀 signal valve<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;具有输出启闭状态信号功能的阀门。<br>
+            </p>
+
+
+        </div>
+        <div id='3199323'>
+
+            <div>
+                <p>2 术语和符号<br>
+                    <br>
+                    2．1 术 语</p>
+            </div>
+            <p>2．1．1 自动喷水灭火系统 sprinkler systems<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;由洒水喷头、报警阀组、水流报警装置(水流指示器或压力开关)等组件，以及管道、供水设施等组成，能在发生火灾时喷水的自动灭火系统。<br>
+                <br>
+                2．1．2 闭式系统 close-type sprinkler system<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;采用闭式洒水喷头的自动喷水灭火系统。<br>
+                <br>
+                2．1．3 开式系统 open-type sprinkler system<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;采用开式洒水喷头的自动喷水灭火系统。<br>
+                <br>
+                2．1．4 湿式系统 wet pipe sprinkler system<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;准工作状态时配水管道内充满用于启动系统的有压水的闭式系统。<br>
+                <br>
+                2．1．5 干式系统 dry pipe sprinkler system<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;准工作状态时配水管道内充满用于启动系统的有压气体的闭式系统。<br>
+                <br>
+                2．1．6 预作用系统 preaction sprinkler system<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;准工作状态时配水管道内不充水，发生火灾时由火灾自动报警系统、充气管道上的压力开关联锁控制预作用装置和启动消防水泵，向配水管道供水的闭式系统。<br>
+                <br>
+                2．1．7 重复启闭预作用系统 recycling preaction sprinkler system<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;能在扑灭火灾后自动关阀、复燃时再次开阀喷水的预作用系统。<br>
+                <br>
+                2．1．8 雨淋系统 deluge sprinkler system<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;由开式洒水喷头、雨淋报警阀组等组成，发生火灾时由火灾自动报警系统或传动管控制，自动开启雨淋报警阀组和启动消防水泵，用于灭火的开式系统。<br>
+                <br>
+                2．1．9 水幕系统 drencher sprinkler system<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;由开式洒水喷头或水幕喷头、雨淋报警阀组或感温雨淋报警阀等组成，用于防火分隔或防护冷却的开式系统。<br>
+                <br>
+                2．1．10 防火分隔水幕 fire compartment drencher sprinkler system<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;由开式洒水喷头或水幕喷头、雨淋报警阀组或感温雨淋报警阀等组成，发生火灾时密集喷洒形成水墙或水帘的水幕系统。<br>
+                <br>
+                2．1．11 防护冷却水幕 cooling protection drencher sprinkler system<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;由水幕喷头、雨淋报警阀组或感温雨淋报警阀等组成，发生火灾时用于冷却防火卷帘、防火玻璃墙等防火分隔设施的水幕系统。<br>
+                <br>
+                2．1．12 防护冷却系统 cooling protection sprinkler system<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;由闭式洒水喷头、湿式报警阀组等组成，发生火灾时用于冷却防火卷帘、防火玻璃墙等防火分隔设施的闭式系统。<br>
+                <br>
+                2．1．13 作用面积 operation area of sprinkler system<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;一次火灾中系统按喷水强度保护的最大面积。<br>
+                <br>
+                2．1．14 响应时间指数 response time index(RTI)<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;闭式洒水喷头的热敏性能指标。<br>
+                <br>
+                2．1．15 快速响应洒水喷头 fast response sprinkler<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;响应时间指数RTI≤50(m·s)<sup>0.5</sup>的闭式洒水喷头。<br>
+                <br>
+                2．1．16 特殊响应洒水喷头 special response sprinkler<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;响应时间指数50＜RTI≤80(m·s)<sup>0.5</sup>的闭式洒水喷头。<br>
+                <br>
+                2．1．17 标准响应洒水喷头 standard response sprinkler<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;响应时间指数80＜RTI≤350(m·s)<sup>0.5</sup>的闭式洒水喷头。<br>
+                <br>
+                2．1．18 一只喷头的保护面积 protection area of the sprinkler<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;同一根配水支管上相邻洒水喷头的距离与相邻配水支管之间距离的乘积。<br>
+                <br>
+                2．1．19 标准覆盖面积洒水喷头 standard coverage sprinkler<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;流量系数K≥80，一只喷头的最大保护面积不超过20m<sup>2</sup>的直立型、下垂型洒水喷头及一只喷头的最大保护面积不超过18m<sup>2</sup>的边墙型洒水喷头。<br>
+                <br>
+                2．1．20 扩大覆盖面积洒水喷头 extended coverage(EC)sprinkler<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;流量系数K≥80，一只喷头的最大保护面积大于标准覆盖面积洒水喷头的保护面积，且不超过36m<sup>2</sup>的洒水喷头，包括直立型、下垂型和边墙型扩大覆盖面积洒水喷头。<br>
+                <br>
+                2．1．21 标准流量洒水喷头 standard orifice sprinkler<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;流量系数K＝80的标准覆盖面积洒水喷头。<br>
+                <br>
+                2．1．22 早期抑制快速响应喷头 early suppression fast response(ESFR)sprinkler<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;流量系数K≥161，响应时间指数RTI≤28±8(m·s)<sup>0.5</sup>，用于保护堆垛与高架仓库的标准覆盖面积洒水喷头。<br>
+                <br>
+                2．1．23 特殊应用喷头 specific application sprinkler<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;流量系数K≥161，具有较大水滴粒径，在通过标准试验验证后，可用于民用建筑和厂房高大空间场所以及仓库的标准覆盖面积洒水喷头，包括非仓库型特殊应用喷头和仓库型特殊应用喷头。<br>
+                <br>
+                2．1．24 家用喷头 residential sprinkler<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;适用于住宅建筑和非住宅类居住建筑的一种快速响应洒水喷头。<br>
+                <br>
+                2．1．25 配水干管 feed mains<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;报警阀后向配水管供水的管道。<br>
+                <br>
+                2．1．24 配水管 cross mains<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;向配水支管供水的管道。<br>
+                <br>
+                2．1．27 配水支管 branch lines<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;直接或通过短立管向洒水喷头供水的管道。<br>
+                <br>
+                2．1．28 配水管道 system pipes<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;配水干管、配水管及配水支管的总称。<br>
+                <br>
+                2．1．29 短立管 sprig<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;连接洒水喷头与配水支管的立管。<br>
+                <br>
+                2．1．30 消防洒水软管 flexible sprinkler hose fittings<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;连接洒水喷头与配水管道的挠性金属软管及洒水喷头调整固定装置。<br>
+                <br>
+                2．1．31 信号阀 signal valve<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;具有输出启闭状态信号功能的阀门。<br>
+            </p>
+
+
+        </div>
+        <div id='3199324'>
+
+            <div>
+                <p>2．2 符 号</p>
+            </div>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;a——喷头与障碍物的水平距离；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;b——喷头溅水盘与障碍物底面的垂直距离；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;c——障碍物横截面的一个边长；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;C<sub>h</sub>——海澄-威廉系数；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;d——管道外径；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;d<sub>g</sub>——节流管的计算内径；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;d<sub>j</sub>——管道的计算内径；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;d<sub>k</sub>——减压孔板的孔口直径；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;e——障碍物横截面的另一个边长；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;f——喷头溅水盘与不到顶隔墙顶面的垂直间距；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;g——重力加速度；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;H——水泵扬程或系统入口的供水压力；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;H<sub>c</sub>——从城市市政管网直接抽水时城市管网的最低水压；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;H<sub>g</sub>——节流管的水头损失；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;H<sub>k</sub>——减压孔板的水头损失；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;h——最大净空高度；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;h<sub>s</sub>——最大储物高度；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;i——管道单位长度的水头损失；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;K——喷头流量系数；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;L——节流管的长度；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;n——最不利点处作用面积内的洒水喷头数；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;P——喷头工作压力；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;P<sub>0</sub>——最不利点处喷头的工作压力；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;P<sub>p</sub>——系统管道沿程和局部的水头损失；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;Q——系统设计流量；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;q——喷头流量；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;q<sub>i</sub>——最不利点处作用面积内各喷头节点的流量；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;q<sub>g</sub>——管道设计流量；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;S——喷头间距；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;S<sub>L</sub>——喷头溅水盘与顶板的距离；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;S<sub>W</sub>——喷头溅水盘与背墙的距离；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;V——管道内水的平均流速；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;V<sub>g</sub>——节流管内水的平均流速；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;V<sub>k</sub>——减压孔板后管道内水的平均流速；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;Z——最不利点处喷头与消防水池最低水位或系统入口管水平中心线之间的高程差；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;ζ——节流管中渐缩管与渐扩管的局部阻力系数之和；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;ξ——减压孔板的局部阻力系数。</p>
+
+
+        </div>
+        <div id='3199325'>
+
+            <div>
+                <p>3 设置场所火灾危险等级</p>
+            </div>
+            <p>3．0．1 设置场所的火灾危险等级应划分为轻危险级、中危险级(Ⅰ级、Ⅱ级)、严重危险级(Ⅰ级、Ⅱ级)和仓库危险级(Ⅰ级、Ⅱ级、Ⅲ级)。<br>
+                <br>
+                3．0．2 设置场所的火灾危险等级，应根据其用途、容纳物品的火灾荷载及室内空间条件等因素，在分析火灾特点和热气流驱动洒水喷头开放及喷水到位的难易程度后确定，设置场所应按本规范附录A进行分类。<br>
+                <br>
+                3．0．3 当建筑物内各场所的火灾危险性及灭火难度存在较大差异时，宜按各场所的实际情况确定系统选型与火灾危险等级。</p>
+
+
+        </div>
+        <div id='3199326'>
+
+            <div>
+                <p>4 系统基本要求<br>
+                    <br>
+                    4．1 一般规定</p>
+            </div>
+            <p>4．1．1 自动喷水灭火系统的设置场所应符合国家现行相关标准的规定。<br>
+                <br>
+                4．1．2 自动喷水灭火系统不适用于存在较多下列物品的场所：<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;1 遇水发生爆炸或加速燃烧的物品；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;2 遇水发生剧烈化学反应或产生有毒有害物质的物品；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;3 洒水将导致喷溅或沸溢的液体。<br>
+                <br>
+                4．1．3 自动喷水灭火系统的设计原则应符合下列规定：<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;1 闭式洒水喷头或启动系统的火灾探测器，应能有效探测初期火灾；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;2 湿式系统、干式系统应在开放一只洒水喷头后自动启动，预作用系统、雨淋系统和水幕系统应根据其类型由火灾探测器、闭式洒水喷头作为探测元件，报警后自动启动；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;3 作用面积内开放的洒水喷头，应在规定时间内按设计选定的喷水强度持续喷水；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;4 喷头洒水时，应均匀分布，且不应受阻挡。<br>
+            </p>
+
+
+        </div>
+        <div id='3199327'>
+
+            <div>
+                <p>4 系统基本要求<br>
+                    <br>
+                    4．1 一般规定</p>
+            </div>
+            <p>4．1．1 自动喷水灭火系统的设置场所应符合国家现行相关标准的规定。<br>
+                <br>
+                4．1．2 自动喷水灭火系统不适用于存在较多下列物品的场所：<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;1 遇水发生爆炸或加速燃烧的物品；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;2 遇水发生剧烈化学反应或产生有毒有害物质的物品；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;3 洒水将导致喷溅或沸溢的液体。<br>
+                <br>
+                4．1．3 自动喷水灭火系统的设计原则应符合下列规定：<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;1 闭式洒水喷头或启动系统的火灾探测器，应能有效探测初期火灾；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;2 湿式系统、干式系统应在开放一只洒水喷头后自动启动，预作用系统、雨淋系统和水幕系统应根据其类型由火灾探测器、闭式洒水喷头作为探测元件，报警后自动启动；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;3 作用面积内开放的洒水喷头，应在规定时间内按设计选定的喷水强度持续喷水；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;4 喷头洒水时，应均匀分布，且不应受阻挡。<br>
+            </p>
+
+
+        </div>
+        <div id='3199328'>
+
+            <div>
+                <p>4．2 系统选型</p>
+            </div>
+            <p>4．2．1 自动喷水灭火系统选型应根据设置场所的建筑特征、环境条件和火灾特点等选择相应的开式或闭式系统。露天场所不宜采用闭式系统。<br>
+                <br>
+                4．2．2 环境温度不低于4℃且不高于70℃的场所，应采用湿式系统。<br>
+                <br>
+                4．2．3 环境温度低于4℃或高于70℃的场所，应采用干式系统。<br>
+                <br>
+                4．2．4 具有下列要求之一的场所，应采用预作用系统：<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;1 系统处于准工作状态时严禁误喷的场所；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;2 系统处于准工作状态时严禁管道充水的场所；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;3 用于替代干式系统的场所。<br>
+                <br>
+                4．2．5 灭火后必须及时停止喷水的场所，应采用重复启闭预作用系统。<br>
+                <br>
+                4．2．6 具有下列条件之一的场所，应采用雨淋系统：<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;1 火灾的水平蔓延速度快、闭式洒水喷头的开放不能及时使喷水有效覆盖着火区域的场所；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;2 设置场所的净空高度超过本规范第6．1．1条的规定，且必须迅速扑救初期火灾的场所；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;3 火灾危险等级为严重危险级Ⅱ级的场所。<br>
+                <br>
+                4．2．7 符合下列条件之一的场所，宜采用设置早期抑制快速响应喷头的自动喷水灭火系统。当采用早期抑制快速响应喷头时，系统应为湿式系统，且系统设计基本参数应符合本规范第5．0．5条的规定。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;1 最大净空高度不超过13．5m且最大储物高度不超过12．0m，储物类别为仓库危险级Ⅰ、Ⅱ级或沥青制品、箱装不发泡塑料的仓库及类似场所；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;2 最大净空高度不超过12．0m且最大储物高度不超过10．5m，储物类别为袋装不发泡塑料、箱装发泡塑料和袋装发泡塑料的仓库及类似场所。<br>
+                <br>
+                4．2．8 符合下列条件之一的场所，宜采用设置仓库型特殊应用喷头的自动喷水灭火系统，系统设计基本参数应符合本规范第5．0．6条的规定。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;1 最大净空高度不超过12．0m且最大储物高度不超过10．5m，储物类别为仓库危险级Ⅰ、Ⅱ级或箱装不发泡塑料的仓库及类似场所；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;2 最大净空高度不超过7．5m且最大储物高度不超过6．0m，储物类别为袋装不发泡塑料和箱装发泡塑料的仓库及类似场所。<br>
+            </p>
+
+
+        </div>
+        <div id='3199329'>
+
+            <div>
+                <p>4．3 其 他</p>
+            </div>
+            <p>4．3．1 建筑物中保护局部场所的干式系统、预作用系统、雨淋系统、自动喷水-泡沫联用系统，可串联接入同一建筑物内的湿式系统，并应与其配水干管连接。<br>
+                <br>
+                4．3．2 自动喷水灭火系统应有下列组件、配件和设施：<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;1 应设有洒水喷头、报警阀组、水流报警装置等组件和末端试水装置，以及管道、供水设施等；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;2 控制管道静压的区段宜分区供水或设减压阀，控制管道动压的区段宜设减压孔板或节流管；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;3 应设有泄水阀(或泄水口)、排气阀(或排气口)和排污口；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;4 干式系统和预作用系统的配水管道应设快速排气阀。有压充气管道的快速排气阀入口前应设电动阀。<br>
+                <br>
+                4．3．3 防护冷却水幕应直接将水喷向被保护对象；防火分隔水幕不宜用于尺寸超过15m(宽)×8m(高)的开口(舞台口除外)。</p>
+
+
+        </div>
+        <div id='3199330'>
+            <div>
+                <p>5 设计基本参数</p>
+            </div>
+            <p><strong>5．0．1 民用建筑和厂房采用湿式系统时的设计基本参数不应低于表5．0．1的规定。</strong></p>
+            <p align="center"><strong>表5．0．1 民用建筑和厂房采用湿式系统的设计基本参数</strong><br/>
+                <img src='http://book.zlglpt.com/e4294/1001.jpg'/></p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>注：系统最不利点处洒水喷头的工作压力不应低于0．05MPa。<br/>
+                <br/>
+                5．0．2 民用建筑和厂房高大空间场所采用湿式系统的设计基本参数不应低于表5．0．2的规定。</strong></p>
+            <p align="center"><strong>表5．0．2 民用建筑和厂房高大空间场所采用湿式系统的设计基本参数</strong><br/>
+                <img src='http://book.zlglpt.com/e4294/1002.jpg'/></p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>注：1 表中未列入的场所，应根据本表规定场所的火灾危险性类比确定。</strong><br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>2
+                    当民用建筑高大空间场所的最大净空高度为12m＜h≤18m时，应采用非仓库型特殊应用喷头。</strong><br/>
+                <br/>
+                5．0．3 最大净空高度超过8m的超级市场采用湿式系统的设计基本参数应按本规范第5．0．4条和第5．0．5条的规定执行。<br/>
+                <br/>
+                <strong>5．0．4 仓库及类似场所采用湿式系统的设计基本参数应符合下列要求：</strong><br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;<strong>1
+                    当设置场所的火灾危险等级为仓库危险级Ⅰ级～Ⅲ级时，系统设计基本参数不应低于表5．0．4-1～表5．0．4-4的规定；</strong><br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;<strong>2 当仓库危险级Ⅰ级、仓库危险级Ⅱ级场所中混杂储存仓库危险级Ⅲ级物品时，系统设计基本参数不应低于表5．0．4-5的规定。</strong>
+            </p>
+            <p align="center"><strong>表5．0．4-1 仓库危险级Ⅰ级场所的系统设计基本参数</strong><br/>
+                <img src='http://book.zlglpt.com/e4294/1003.jpg'/></p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>注：1 货架储物高度大于7．5m时，应设置货架内置洒水喷头。顶板下洒水喷头的喷水强度不应低于18L／(min&#183;m<sup>2</sup>)，作用面积不应小于200m<sup>2</sup>，持续喷水时间不应小于2h。</strong><br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>2
+                    本表及表5．0．4-2、5．0．4-5中字母“J”表示货架内置洒水喷头，“J”前的数字表示货架内置洒水喷头的层数。</strong></p>
+            <p align="center"><strong>表5．0．4-2 仓库危险级Ⅱ级场所的系统设计基本参数</strong><br/>
+                <img src='http://book.zlglpt.com/e4294/1004.jpg'/></p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>注：货架储物高度大于7．5m时，应设置货架内置洒水喷头。顶板下洒水喷头的喷水强度不应低于20L／(min&#183;m<sup>2</sup>)，作用面积不应小于200m<sup>2</sup>，持续喷水时间不应小于2h。</strong>
+            </p>
+            <p align="center"><strong>表5．0．4-3 货架储存时仓库危险级Ⅲ级场所的系统设计基本参数</strong><br/>
+                <img src='http://book.zlglpt.com/e4294/1005.jpg'/></p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>注：1 作用面积不应小于200m<sup>2</sup>，持续喷水时间不应低于2h。</strong><br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>2
+                    序号4，6，7，11：货架内设置一排货架内置洒水喷头时，喷头的间距不应大于3．0m；设置两排或多排货架内置洒水喷头时，喷头的间距不应大于3．0&#215;2．4(m)。</strong><br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>3
+                    序号9：货架内设置一排货架内置洒水喷头时，喷头的间距不应大于2．4m，设置两排或多排货架内置洒水喷头时，喷头的间距不应大于2．4&#215;2．4(m)。</strong><br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>4
+                    序号8：应采用流量系数K等于161，202，242，363的洒水喷头。</strong><br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>5 序号10：应采用流量系数K等于242，363的洒水喷头。</strong><br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>6
+                    货架储物高度大于7．5m时，应设置货架内置洒水喷头，顶板下洒水喷头的喷水强度不应低于22．0L／(min&#183;m<sup>2</sup>)，作用面积不应小于200m<sup>2</sup>，持续喷水时间不应小于2h。</strong>
+            </p>
+            <p align="center"><strong>表5．0．4-4 堆垛储存时仓库危险级Ⅲ级场所的系统设计基本参数</strong><br/>
+                <img src='http://book.zlglpt.com/e4294/1006.jpg'/><br/>
+                <img src='http://book.zlglpt.com/e4294/1007.jpg'/></p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>注：1
+                A-袋装与无包装的发泡塑料橡胶；B-箱装的发泡塑料橡胶；C-袋装与无包装的不发泡塑料橡胶；D-箱装的不发泡塑料橡胶。</strong><br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>2
+                    作用面积不应小于240m<sup>2</sup>，持续喷水时间不应低于2h。</strong></p>
+            <p align="center"><strong>表5．0．4-5 仓库危险级Ⅰ级、Ⅱ级场所中混杂储存仓库危险级Ⅲ级场所物品时的系统设计基本参数</strong><br/>
+                <img src='http://book.zlglpt.com/e4294/1008.jpg'/></p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>注：1 无包装的塑料橡胶视同纸袋、塑料袋包装。</strong><br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>2
+                    货架内置洒水喷头应采用与顶板下洒水喷头相同的喷水强度，用水量应按开放6只洒水喷头确定。</strong><br/>
+                <br/>
+                <strong>5．0．5 仓库及类似场所采用早期抑制快速响应喷头时，系统的设计基本参数不应低于表5．0．5的规定。</strong></p>
+            <p align="center"><strong>表5．0．5 采用早期抑制快速响应喷头的系统设计基本参数<br/>
+                <img src='http://book.zlglpt.com/e4294/1009.jpg'/></strong></p>
+            <p><strong>5．0．6 仓库及类似场所采用仓库型特殊应用喷头时，湿式系统的设计基本参数不应低于表5．0．6的规定。</strong></p>
+            <p align="center"><strong>表5．0．6 采用仓库型特殊应用喷头的湿式系统设计基本参数</strong><br/>
+                <img src='http://book.zlglpt.com/e4294/1010.jpg'/></p>
+            <p>5．0．7
+                设置自动喷水灭火系统的仓库及类似场所，当采用货架储存时应采用钢制货架，并应采用通透层板，且层板中通透部分的面积不应小于层板总面积的50％。当采用木制货架或采用封闭层板货架时，其系统设置应按堆垛储物仓库确定。<br/>
+                <br/>
+                <strong>5．0．8
+                    货架仓库的最大净空高度或最大储物高度超过本规范第5．0．5条的规定时，应设货架内置洒水喷头，且货架内置洒水喷头上方的层间隔板应为实层板。货架内置洒水喷头的设置应符合下列规定：</strong><br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;<strong>1
+                    仓库危险级Ⅰ级、Ⅱ级场所应在自地面起每3．0m设置一层货架内置洒水喷头，仓库危险级Ⅲ级场所应在自地面起每1．5m～3．0m设置一层货架内置洒水喷头，且最高层货架内置洒水喷头与储物顶部的距离不应超过3．0m；</strong><br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;<strong>2
+                    当采用流量系数等于80的标准覆盖面积洒水喷头时，工作压力不应小于0．20MPa；当采用流量系数等于115的标准覆盖面积洒水喷头时，工作压力不应小于0．10MPa；</strong><br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;<strong>3 洒水喷头间距不应大于3m，且不应小于2m。计算货架内开放洒水喷头数量不应小于表5．0．8的规定；</strong><br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;<strong>4 设置2层及以上货架内置洒水喷头时，洒水喷头应交错布置。</strong></p>
+            <p align="center"><strong>表5．0．8 货架内开放洒水喷头数量</strong><br/>
+                <img src='http://book.zlglpt.com/e4294/1011.jpg'/></p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>注：货架内置洒水喷头超过2层时，计算流量应按最顶层2层，且每层开放洒水喷头数按本表规定值的1／2确定。</strong><br/>
+                <br/>
+                5．0．9 仓库内设置自动喷水灭火系统时，宜设消防排水设施。<br/>
+                <br/>
+                5．0．10 干式系统和雨淋系统的设计要求应符合下列规定：<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;1 干式系统的喷水强度应按本规范表5．0．1、表5．0．4-1～表5．0．4-5的规定值确定，系统作用面积应按对应值的1．3倍确定；<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;2 雨淋系统的喷水强度和作用面积应按本规范表5．0．1的规定值确定，且每个雨淋报警阀控制的喷水面积不宜大于表5．0．1中的作用面积。<br/>
+                <br/>
+                5．0．11 预作用系统的设计要求应符合下列规定：<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;1 系统的喷水强度应按本规范表5．0．1、表5．0．4-1～表5．0．4-5的规定值确定；<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;2 当系统采用仅由火灾自动报警系统直接控制预作用装置时，系统的作用面积应按本规范表5．0．1、表5．0．4-1～表5．0．4-5的规定值确定；<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;3
+                当系统采用由火灾自动报警系统和充气管道上设置的压力开关控制预作用装置时，系统的作用面积应按本规范表5．0．1、表5．0．4-1～表5．0．4-5规定值的1．3倍确定。<br/>
+                <br/>
+                5．0．12 仅在走道设置洒水喷头的闭式系统，其作用面积应按最大疏散距离所对应的走道面积确定。<br/>
+                <br/>
+                5．0．13 装设网格、栅板类通透性吊顶的场所，系统的喷水强度应按本规范表5．0．1、表5．0．4-1～表5．0．4-5规定值的1．3倍确定，且喷头布置应按本规范第7．1．13条的规定执行。<br/>
+                <br/>
+                5．0．14 水幕系统的设计基本参数应符合表5．0．14的规定：</p>
+            <p align="center"><strong>表5．0．14 水幕系统的设计基本参数</strong><br/>
+                <img src='http://book.zlglpt.com/e4294/1012.jpg'/></p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;注：1 防护冷却水幕的喷水点高度每增加1m，喷水强度应增加0．1L／(s&#183;m)，但超过9m时喷水强度仍采用1．0L／(s&#183;m)。<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2 系统持续喷水时间不应小于系统设置部位的耐火极限要求。<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3 喷头布置应符合本规范第7．1．16条的规定。<br/>
+                <br/>
+                5．0．15 当采用防护冷却系统保护防火卷帘、防火玻璃墙等防火分隔设施时，系统应独立设置，且应符合下列要求：<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;<strong>1 喷头设置高度不应超过8m；当设置高度为4m～8m时，应采用快速响应洒水喷头；</strong><br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;<strong>2 喷头设置高度不超过4m时，喷水强度不应小于0．5L／(s&#183;m)；当超过4m时，每增加1m，喷水强度应增加0．1L／(s&#183;m)；</strong><br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;3
+                喷头的设置应确保喷洒到被保护对象后布水均匀，喷头间距应为1．8m～2．4m；喷头溅水盘与防火分隔设施的水平距离不应大于0．3m，与顶板的距离应符合本规范第7．1．15条的规定；<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;<strong>4 持续喷水时间不应小于系统设置部位的耐火极限要求。</strong><br/>
+                <br/>
+                5．0．16 除本规范另有规定外，自动喷水灭火系统的持续喷水时间应按火灾延续时间不小于1h确定。<br/>
+                <br/>
+                5．0．17
+                利用有压气体作为系统启动介质的干式系统和预作用系统，其配水管道内的气压值应根据报警阀的技术性能确定；利用有压气体检测管道是否严密的预作用系统，配水管道内的气压值不宜小于0．03MPa，且不宜大于0．05MPa。
+            </p>
+
+        </div>
+        <div id='3199331'>
+
+            <div>
+                <p>6 系统组件<br>
+                    <br>
+                    6．1 喷 头</p>
+            </div>
+            <p>6．1．1 设置闭式系统的场所，洒水喷头类型和场所的最大净空高度应符合表6．1．1的规定；仅用于保护室内钢屋架等建筑构件的洒水喷头和设置货架内置洒水喷头的场所，可不受此表规定的限制。</p>
+            <p align="center"><strong>表6．1．1 洒水喷头类型和场所净空高度</strong><br>
+                <img src='http://book.zlglpt.com/e4294/1013.jpg'/></p>
+            <p>6．1．2 闭式系统的洒水喷头，其公称动作温度宜高于环境最高温度30℃。<br>
+                <br>
+                6．1．3 湿式系统的洒水喷头选型应符合下列规定：<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;1 不做吊顶的场所，当配水支管布置在梁下时，应采用直立型洒水喷头；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;2 吊顶下布置的洒水喷头，应采用下垂型洒水喷头或吊顶型洒水喷头；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;3 顶板为水平面的轻危险级、中危险级Ⅰ级住宅建筑、宿舍、旅馆建筑客房、医疗建筑病房和办公室，可采用边墙型洒水喷头；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;4 易受碰撞的部位，应采用带保护罩的洒水喷头或吊顶型洒水喷头；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;5 顶板为水平面，且无梁、通风管道等障碍物影响喷头洒水的场所，可采用扩大覆盖面积洒水喷头；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;6 住宅建筑和宿舍、公寓等非住宅类居住建筑宜采用家用喷头；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;7 不宜选用隐蔽式洒水喷头；确需采用时，应仅适用于轻危险级和中危险级Ⅰ级场所。<br>
+                <br>
+                6．1．4 干式系统、预作用系统应采用直立型洒水喷头或干式下垂型洒水喷头。<br>
+                <br>
+                6．1．5 水幕系统的喷头选型应符合下列规定：<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;1 防火分隔水幕应采用开式洒水喷头或水幕喷头；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;2 防护冷却水幕应采用水幕喷头。<br>
+                <br>
+                6．1．6 自动喷水防护冷却系统可采用边墙型洒水喷头。<br>
+                <br>
+                6．1．7 下列场所宜采用快速响应洒水喷头。当采用快速响应洒水喷头时，系统应为湿式系统。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;1 公共娱乐场所、中庭环廊；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;2 医院、疗养院的病房及治疗区域，老年、少儿、残疾人的集体活动场所；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;3 超出消防水泵接合器供水高度的楼层；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;4 地下商业场所。<br>
+                <br>
+                6．1．8 同一隔间内应采用相同热敏性能的洒水喷头。<br>
+                <br>
+                6．1．9 雨淋系统的防护区内应采用相同的洒水喷头。<br>
+                <br>
+                6．1．10 自动喷水灭火系统应有备用洒水喷头，其数量不应少于总数的1％，且每种型号均不得少于10只。<br>
+            </p>
+
+
+        </div>
+        <div id='3199332'>
+
+            <div>
+                <p>6 系统组件<br>
+                    <br>
+                    6．1 喷 头</p>
+            </div>
+            <p>6．1．1 设置闭式系统的场所，洒水喷头类型和场所的最大净空高度应符合表6．1．1的规定；仅用于保护室内钢屋架等建筑构件的洒水喷头和设置货架内置洒水喷头的场所，可不受此表规定的限制。</p>
+            <p align="center"><strong>表6．1．1 洒水喷头类型和场所净空高度</strong><br>
+                <img src='http://book.zlglpt.com/e4294/1014.jpg'/></p>
+            <p>6．1．2 闭式系统的洒水喷头，其公称动作温度宜高于环境最高温度30℃。<br>
+                <br>
+                6．1．3 湿式系统的洒水喷头选型应符合下列规定：<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;1 不做吊顶的场所，当配水支管布置在梁下时，应采用直立型洒水喷头；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;2 吊顶下布置的洒水喷头，应采用下垂型洒水喷头或吊顶型洒水喷头；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;3 顶板为水平面的轻危险级、中危险级Ⅰ级住宅建筑、宿舍、旅馆建筑客房、医疗建筑病房和办公室，可采用边墙型洒水喷头；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;4 易受碰撞的部位，应采用带保护罩的洒水喷头或吊顶型洒水喷头；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;5 顶板为水平面，且无梁、通风管道等障碍物影响喷头洒水的场所，可采用扩大覆盖面积洒水喷头；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;6 住宅建筑和宿舍、公寓等非住宅类居住建筑宜采用家用喷头；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;7 不宜选用隐蔽式洒水喷头；确需采用时，应仅适用于轻危险级和中危险级Ⅰ级场所。<br>
+                <br>
+                6．1．4 干式系统、预作用系统应采用直立型洒水喷头或干式下垂型洒水喷头。<br>
+                <br>
+                6．1．5 水幕系统的喷头选型应符合下列规定：<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;1 防火分隔水幕应采用开式洒水喷头或水幕喷头；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;2 防护冷却水幕应采用水幕喷头。<br>
+                <br>
+                6．1．6 自动喷水防护冷却系统可采用边墙型洒水喷头。<br>
+                <br>
+                6．1．7 下列场所宜采用快速响应洒水喷头。当采用快速响应洒水喷头时，系统应为湿式系统。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;1 公共娱乐场所、中庭环廊；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;2 医院、疗养院的病房及治疗区域，老年、少儿、残疾人的集体活动场所；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;3 超出消防水泵接合器供水高度的楼层；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;4 地下商业场所。<br>
+                <br>
+                6．1．8 同一隔间内应采用相同热敏性能的洒水喷头。<br>
+                <br>
+                6．1．9 雨淋系统的防护区内应采用相同的洒水喷头。<br>
+                <br>
+                6．1．10 自动喷水灭火系统应有备用洒水喷头，其数量不应少于总数的1％，且每种型号均不得少于10只。<br>
+            </p>
+
+
+        </div>
+        <div id='3199333'>
+
+            <div>
+                <p>6．2 报警阀组</p>
+            </div>
+            <p>6．2．1 自动喷水灭火系统应设报警阀组。保护室内钢屋架等建筑构件的闭式系统，应设独立的报警阀组。水幕系统应设独立的报警阀组或感温雨淋报警阀。<br>
+                <br>
+                6．2．2 串联接入湿式系统配水干管的其他自动喷水灭火系统，应分别设置独立的报警阀组，其控制的洒水喷头数计入湿式报警阀组控制的洒水喷头总数。<br>
+                <br>
+                6．2．3 一个报警阀组控制的洒水喷头数应符合下列规定：<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;1 湿式系统、预作用系统不宜超过800只；干式系统不宜超过500只；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;2 当配水支管同时设置保护吊顶下方和上方空间的洒水喷头时，应只将数量较多一侧的洒水喷头计入报警阀组控制的洒水喷头总数。<br>
+                <br>
+                6．2．4 每个报警阀组供水的最高与最低位置洒水喷头，其高程差不宜大于50m。<br>
+                <br>
+                6．2．5 雨淋报警阀组的电磁阀，其入口应设过滤器。并联设置雨淋报警阀组的雨淋系统，其雨淋报警阀控制腔的入口应设止回阀。<br>
+                <br>
+                6．2．6 报警阀组宜设在安全及易于操作的地点，报警阀距地面的高度宜为1．2m。设置报警阀组的部位应设有排水设施。<br>
+                <br>
+                6．2．7 连接报警阀进出口的控制阀应采用信号阀。当不采用信号阀时，控制阀应设锁定阀位的锁具。<br>
+                <br>
+                6．2．8 水力警铃的工作压力不应小于0．05MPa，并应符合下列规定：<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;1 应设在有人值班的地点附近或公共通道的外墙上；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;2 与报警阀连接的管道，其管径应为20mm，总长不宜大于20m。<br>
+            </p>
+
+
+        </div>
+        <div id='3199334'>
+
+            <div>
+                <p>6．3 水流指示器</p>
+            </div>
+            <p>6．3．1 除报警阀组控制的洒水喷头只保护不超过防火分区面积的同层场所外，每个防火分区、每个楼层均应设水流指示器。<br>
+                <br>
+                6．3．2 仓库内顶板下洒水喷头与货架内置洒水喷头应分别设置水流指示器。<br>
+                <br>
+                6．3．3 当水流指示器入口前设置控制阀时，应采用信号阀。<br>
+            </p>
+
+
+        </div>
+        <div id='3199335'>
+
+            <div>
+                <p>6．4 压力开关</p>
+            </div>
+            <p>6．4．1 雨淋系统和防火分隔水幕，其水流报警装置应采用压力开关。<br>
+                <br>
+                6．4．2 自动喷水灭火系统应采用压力开关控制稳压泵，并应能调节启停压力。<br>
+            </p>
+
+
+        </div>
+        <div id='3199336'>
+
+            <div>
+                <p>6．5 末端试水装置</p>
+            </div>
+            <p><strong>6．5．1 每个报警阀组控制的最不利点洒水喷头处应设末端试水装置，其他防火分区、楼层均应设直径为25mm的试水阀。</strong><br>
+                <br>
+                6．5．2
+                末端试水装置应由试水阀、压力表以及试水接头组成。试水接头出水口的流量系数，应等同于同楼层或防火分区内的最小流量系数洒水喷头。末端试水装置的出水，应采取孔口出流的方式排入排水管道，排水立管宜设伸顶通气管，且管径不应小于75mm。<br>
+                <br>
+                6．5．3 末端试水装置和试水阀应有标识，距地面的高度宜为1．5m，并应采取不被他用的措施。</p>
+
+
+        </div>
+        <div id='3199337'>
+
+            <div>
+                <p>7 喷头布置<br>
+                    <br>
+                    7．1 一般规定</p>
+            </div>
+            <p>7．1．1 喷头应布置在顶板或吊顶下易于接触到火灾热气流并有利于均匀布水的位置。当喷头附近有障碍物时，应符合本规范第7．2节的规定或增设补偿喷水强度的喷头。<br>
+                <br>
+                7．1．2
+                直立型、下垂型标准覆盖面积洒水喷头的布置，包括同一根配水支管上喷头的间距及相邻配水支管的间距，应根据设置场所的火灾危险等级、洒水喷头类型和工作压力确定，并不应大于表7．1．2的规定，且不应小于1．8m。
+            </p>
+            <p align="center"><strong>表7．1．2 直立型、下垂型标准覆盖面积洒水喷头的布置</strong><br>
+                <img src='http://book.zlglpt.com/e4294/1015.jpg'/></p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;注：1 设置单排洒水喷头的闭式系统，其洒水喷头间距应按地面不留漏喷空白点确定。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2 严重危险级或仓库危险级场所宜采用流量系数大于80的洒水喷头。<br>
+                <br>
+                7．1．3 边墙型标准覆盖面积洒水喷头的最大保护跨度与间距，应符合表7．1．3的规定：</p>
+            <p align="center"><strong>表7．1．3 边墙型标准覆盖面积洒水喷头的最大保护跨度与间距</strong><br>
+                <img src='http://book.zlglpt.com/e4294/1016.jpg'/></p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;注：1 两排相对洒水喷头应交错布置；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2 室内跨度大于两排相对喷头的最大保护跨度时，应在两排相对喷头中间增设一排喷头。<br>
+                <br>
+                7．1．4 直立型、下垂型扩大覆盖面积洒水喷头应采用正方形布置，其布置间距不应大于表7．1．4的规定，且不应小于2．4m。</p>
+            <p align="center"><strong>表7．1．4 直立型、下垂型扩大覆盖面积洒水喷头的布置间距</strong><br>
+                <img src='http://book.zlglpt.com/e4294/1017.jpg'/></p>
+            <p>7．1．5
+                边墙型扩大覆盖面积洒水喷头的最大保护跨度和配水支管上的洒水喷头间距，应按洒水喷头工作压力下能够喷湿对面墙和邻近端墙距溅水盘1．2m高度以下的墙面确定，且保护面积内的喷水强度应符合本规范表5．0．1的规定。<br>
+                <br>
+                7．1．6 除吊顶型洒水喷头及吊顶下设置的洒水喷头外，直立型、下垂型标准覆盖面积洒水喷头和扩大覆盖面积洒水喷头溅水盘与顶板的距离应为75mm～150mm，并应符合下列规定：<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;1
+                当在梁或其他障碍物底面下方的平面上布置洒水喷头时，溅水盘与顶板的距离不应大于300mm，同时溅水盘与梁等障碍物底面的垂直距离应为25mm～100mm。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;2
+                当在梁间布置洒水喷头时，洒水喷头与梁的距离应符合本规范第7．2．1条的规定。确有困难时，溅水盘与顶板的距离不应大于550mm。梁间布置的洒水喷头，溅水盘与顶板距离达到550mm仍不能符合本规范第7．2．1条的规定时，应在梁底面的下方增设洒水喷头。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;3 密肋梁板下方的洒水喷头，溅水盘与密肋梁板底面的垂直距离应为25mm～100mm。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;4 无吊顶的梁间洒水喷头布置可采用不等距方式，但喷水强度仍应符合本规范表5．0．1、表5．0．2和表5．0．4-1～表5．0．4-5的要求。<br>
+                <br>
+                7．1．7 除吊顶型洒水喷头及吊顶下设置的洒水喷头外，直立型、下垂型早期抑制快速响应喷头、特殊应用喷头和家用喷头溅水盘与顶板的距离应符合表7．1．7的规定。</p>
+            <p align="center"><strong>表7．1．7 喷头溅水盘与顶板的距离(mm)</strong><br>
+                <img src='http://book.zlglpt.com/e4294/1018.jpg'/></p>
+            <p>7．1．8 图书馆、档案馆、商场、仓库中的通道上方宜设有喷头。喷头与被保护对象的水平距离不应小于0．30m，喷头溅水盘与保护对象的最小垂直距离不应小于表7．1．8的规定。</p>
+            <p align="center"><strong>表7．1．8 喷头溅水盘与保护对象的最小垂直距离(mm)</strong><br>
+                <img src='http://book.zlglpt.com/e4294/1019.jpg'/></p>
+            <p>7．1．9 货架内置洒水喷头宜与顶板下洒水喷头交错布置，其溅水盘与上方层板的距离应符合本规范第7．1．6条的规定，与其下部储物顶面的垂直距离不应小于150mm。<br>
+                <br>
+                7．1．10 挡水板应为正方形或圆形金属板，其平面面积不宜小于0．12m<sup>2</sup>，周围弯边的下沿宜与洒水喷头的溅水盘平齐。除下列情况和相关规范另有规定外，其他场所或部位不应采用挡水板：<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;1 设置货架内置洒水喷头的仓库，当货架内置洒水喷头上方有孔洞、缝隙时，可在洒水喷头的上方设置挡水板；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;2 宽度大于本规范第7．2．3条规定的障碍物，增设的洒水喷头上方有孔洞、缝隙时，可在洒水喷头的上方设置挡水板。<br>
+                <br>
+                7．1．11 净空高度大于800mm的闷顶和技术夹层内应设置洒水喷头，当同时满足下列情况时，可不设置洒水喷头：<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;1 闷顶内敷设的配电线路采用不燃材料套管或封闭式金属线槽保护；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;2 风管保温材料等采用不燃、难燃材料制作；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;3 无其他可燃物。<br>
+                <br>
+                7．1．12 当局部场所设置自动喷水灭火系统时，局部场所与相邻不设自动喷水灭火系统场所连通的走道和连通门窗的外侧，应设洒水喷头。<br>
+                <br>
+                7．1．13 装设网格、栅板类通透性吊顶的场所，当通透面积占吊顶总面积的比例大于70％时，喷头应设置在吊顶上方，并应符合下列规定：<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;1 通透性吊顶开口部位的净宽度不应小于10mm，且开口部位的厚度不应大于开口的最小宽度；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;2 喷头间距及溅水盘与吊顶上表面的距离应符合表7．1．13的规定。</p>
+            <p align="center"><strong>表7．1．13 通透性吊顶场所喷头布置要求</strong><br>
+                <img src='http://book.zlglpt.com/e4294/1020.jpg'/></p>
+            <p>7．1．14 顶板或吊顶为斜面时，喷头的布置应符合下列要求：<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;1 喷头应垂直于斜面，并应按斜面距离确定喷头间距；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;2
+                坡屋顶的屋脊处应设一排喷头，当屋顶坡度不小于1／3时，喷头溅水盘至屋脊的垂直距离不应大于800mm；当屋顶坡度小于1／3时，喷头溅水盘至屋脊的垂直距离不应大于600mm。<br>
+                <br>
+                7．1．15 边墙型洒水喷头溅水盘与顶板和背墙的距离应符合表7．1．15的规定。</p>
+            <p align="center"><strong>表7．1．15 边墙型洒水喷头溅水盘与顶板和背墙的距离(mm)<br>
+                <img src='http://book.zlglpt.com/e4294/1021.jpg'/></strong></p>
+            <p>7．1．16 防火分隔水幕的喷头布置，应保证水幕的宽度不小于6m。采用水幕喷头时，喷头不应少于3排；采用开式洒水喷头时，喷头不应少于2排。防护冷却水幕的喷头宜布置成单排。<br>
+                <br>
+                7．1．17 当防火卷帘、防火玻璃墙等防火分隔设施需采用防护冷却系统保护时，喷头应根据可燃物的情况一侧或两侧布置；外墙可只在需要保护的一侧布置。 <br>
+            </p>
+
+
+        </div>
+        <div id='3199338'>
+
+            <div>
+                <p>7 喷头布置<br>
+                    <br>
+                    7．1 一般规定</p>
+            </div>
+            <p>7．1．1 喷头应布置在顶板或吊顶下易于接触到火灾热气流并有利于均匀布水的位置。当喷头附近有障碍物时，应符合本规范第7．2节的规定或增设补偿喷水强度的喷头。<br>
+                <br>
+                7．1．2
+                直立型、下垂型标准覆盖面积洒水喷头的布置，包括同一根配水支管上喷头的间距及相邻配水支管的间距，应根据设置场所的火灾危险等级、洒水喷头类型和工作压力确定，并不应大于表7．1．2的规定，且不应小于1．8m。
+            </p>
+            <p align="center"><strong>表7．1．2 直立型、下垂型标准覆盖面积洒水喷头的布置</strong><br>
+                <img src='http://book.zlglpt.com/e4294/1022.jpg'/></p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;注：1 设置单排洒水喷头的闭式系统，其洒水喷头间距应按地面不留漏喷空白点确定。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2 严重危险级或仓库危险级场所宜采用流量系数大于80的洒水喷头。<br>
+                <br>
+                7．1．3 边墙型标准覆盖面积洒水喷头的最大保护跨度与间距，应符合表7．1．3的规定：</p>
+            <p align="center"><strong>表7．1．3 边墙型标准覆盖面积洒水喷头的最大保护跨度与间距</strong><br>
+                <img src='http://book.zlglpt.com/e4294/1023.jpg'/></p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;注：1 两排相对洒水喷头应交错布置；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2 室内跨度大于两排相对喷头的最大保护跨度时，应在两排相对喷头中间增设一排喷头。<br>
+                <br>
+                7．1．4 直立型、下垂型扩大覆盖面积洒水喷头应采用正方形布置，其布置间距不应大于表7．1．4的规定，且不应小于2．4m。</p>
+            <p align="center"><strong>表7．1．4 直立型、下垂型扩大覆盖面积洒水喷头的布置间距</strong><br>
+                <img src='http://book.zlglpt.com/e4294/1024.jpg'/></p>
+            <p>7．1．5
+                边墙型扩大覆盖面积洒水喷头的最大保护跨度和配水支管上的洒水喷头间距，应按洒水喷头工作压力下能够喷湿对面墙和邻近端墙距溅水盘1．2m高度以下的墙面确定，且保护面积内的喷水强度应符合本规范表5．0．1的规定。<br>
+                <br>
+                7．1．6 除吊顶型洒水喷头及吊顶下设置的洒水喷头外，直立型、下垂型标准覆盖面积洒水喷头和扩大覆盖面积洒水喷头溅水盘与顶板的距离应为75mm～150mm，并应符合下列规定：<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;1
+                当在梁或其他障碍物底面下方的平面上布置洒水喷头时，溅水盘与顶板的距离不应大于300mm，同时溅水盘与梁等障碍物底面的垂直距离应为25mm～100mm。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;2
+                当在梁间布置洒水喷头时，洒水喷头与梁的距离应符合本规范第7．2．1条的规定。确有困难时，溅水盘与顶板的距离不应大于550mm。梁间布置的洒水喷头，溅水盘与顶板距离达到550mm仍不能符合本规范第7．2．1条的规定时，应在梁底面的下方增设洒水喷头。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;3 密肋梁板下方的洒水喷头，溅水盘与密肋梁板底面的垂直距离应为25mm～100mm。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;4 无吊顶的梁间洒水喷头布置可采用不等距方式，但喷水强度仍应符合本规范表5．0．1、表5．0．2和表5．0．4-1～表5．0．4-5的要求。<br>
+                <br>
+                7．1．7 除吊顶型洒水喷头及吊顶下设置的洒水喷头外，直立型、下垂型早期抑制快速响应喷头、特殊应用喷头和家用喷头溅水盘与顶板的距离应符合表7．1．7的规定。</p>
+            <p align="center"><strong>表7．1．7 喷头溅水盘与顶板的距离(mm)</strong><br>
+                <img src='http://book.zlglpt.com/e4294/1025.jpg'/></p>
+            <p>7．1．8 图书馆、档案馆、商场、仓库中的通道上方宜设有喷头。喷头与被保护对象的水平距离不应小于0．30m，喷头溅水盘与保护对象的最小垂直距离不应小于表7．1．8的规定。</p>
+            <p align="center"><strong>表7．1．8 喷头溅水盘与保护对象的最小垂直距离(mm)</strong><br>
+                <img src='http://book.zlglpt.com/e4294/1026.jpg'/></p>
+            <p>7．1．9 货架内置洒水喷头宜与顶板下洒水喷头交错布置，其溅水盘与上方层板的距离应符合本规范第7．1．6条的规定，与其下部储物顶面的垂直距离不应小于150mm。<br>
+                <br>
+                7．1．10 挡水板应为正方形或圆形金属板，其平面面积不宜小于0．12m<sup>2</sup>，周围弯边的下沿宜与洒水喷头的溅水盘平齐。除下列情况和相关规范另有规定外，其他场所或部位不应采用挡水板：<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;1 设置货架内置洒水喷头的仓库，当货架内置洒水喷头上方有孔洞、缝隙时，可在洒水喷头的上方设置挡水板；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;2 宽度大于本规范第7．2．3条规定的障碍物，增设的洒水喷头上方有孔洞、缝隙时，可在洒水喷头的上方设置挡水板。<br>
+                <br>
+                7．1．11 净空高度大于800mm的闷顶和技术夹层内应设置洒水喷头，当同时满足下列情况时，可不设置洒水喷头：<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;1 闷顶内敷设的配电线路采用不燃材料套管或封闭式金属线槽保护；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;2 风管保温材料等采用不燃、难燃材料制作；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;3 无其他可燃物。<br>
+                <br>
+                7．1．12 当局部场所设置自动喷水灭火系统时，局部场所与相邻不设自动喷水灭火系统场所连通的走道和连通门窗的外侧，应设洒水喷头。<br>
+                <br>
+                7．1．13 装设网格、栅板类通透性吊顶的场所，当通透面积占吊顶总面积的比例大于70％时，喷头应设置在吊顶上方，并应符合下列规定：<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;1 通透性吊顶开口部位的净宽度不应小于10mm，且开口部位的厚度不应大于开口的最小宽度；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;2 喷头间距及溅水盘与吊顶上表面的距离应符合表7．1．13的规定。</p>
+            <p align="center"><strong>表7．1．13 通透性吊顶场所喷头布置要求</strong><br>
+                <img src='http://book.zlglpt.com/e4294/1027.jpg'/></p>
+            <p>7．1．14 顶板或吊顶为斜面时，喷头的布置应符合下列要求：<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;1 喷头应垂直于斜面，并应按斜面距离确定喷头间距；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;2
+                坡屋顶的屋脊处应设一排喷头，当屋顶坡度不小于1／3时，喷头溅水盘至屋脊的垂直距离不应大于800mm；当屋顶坡度小于1／3时，喷头溅水盘至屋脊的垂直距离不应大于600mm。<br>
+                <br>
+                7．1．15 边墙型洒水喷头溅水盘与顶板和背墙的距离应符合表7．1．15的规定。</p>
+            <p align="center"><strong>表7．1．15 边墙型洒水喷头溅水盘与顶板和背墙的距离(mm)<br>
+                <img src='http://book.zlglpt.com/e4294/1028.jpg'/></strong></p>
+            <p>7．1．16 防火分隔水幕的喷头布置，应保证水幕的宽度不小于6m。采用水幕喷头时，喷头不应少于3排；采用开式洒水喷头时，喷头不应少于2排。防护冷却水幕的喷头宜布置成单排。<br>
+                <br>
+                7．1．17 当防火卷帘、防火玻璃墙等防火分隔设施需采用防护冷却系统保护时，喷头应根据可燃物的情况一侧或两侧布置；外墙可只在需要保护的一侧布置。 <br>
+            </p>
+
+
+        </div>
+        <div id='3199339'>
+
+            <div>
+                <p>7．2 喷头与障碍物的距离</p>
+            </div>
+            <p>7．2．1 直立型、下垂型喷头与梁、通风管道等障碍物的距离(图7．2．1)宜符合表7．2．1的规定。</p>
+            <p align="center"><img src='http://book.zlglpt.com/e4294/1029.jpg'/><br>
+                <strong>图7．2．1 喷头与梁、通风管道等障碍物的距离</strong><br>
+                1-顶板；2-直立型喷头；3-梁(或通风管道)<br>
+                <br>
+                <strong>表7．2．1 喷头与梁、通风管道等障碍物的距离(mm)</strong><br>
+                <img src='http://book.zlglpt.com/e4294/1030.jpg'/></p>
+            <p>7．2．2 特殊应用喷头溅水盘以下900mm范围内，其他类型喷头溅水盘以下450mm范围内，当有屋架等间断障碍物或管道时，喷头与邻近障碍物的最小水平距离(图7．2．2)应符合表7．2．2的规定。</p>
+            <p align="center"><img src='http://book.zlglpt.com/e4294/1031.jpg'/><br>
+                <strong>图7．2．2 喷头与邻近障碍物的最小水平距离</strong><br>
+                1-顶板；2-直立型喷头；3-屋架等间断障碍物；4-管道<br>
+                <br>
+                <strong>表7．2．2 喷头与邻近障碍物的最小水平距离(mm)</strong><br>
+                <img src='http://book.zlglpt.com/e4294/1032.jpg'/></p>
+            <p>7．2．3
+                当梁、通风管道、成排布置的管道、桥架等障碍物的宽度大于1．2m时，其下方应增设喷头(图7．2．3)；采用早期抑制快速响应喷头和特殊应用喷头的场所，当障碍物宽度大于0．6m时，其下方应增设喷头。</p>
+            <p align="center"><img src='http://book.zlglpt.com/e4294/1033.jpg'/><br>
+                <strong>图7．2．3 障碍物下方增设喷头</strong><br>
+                1-顶板；2-直立型喷头；3-下垂型喷头；4-成排布置的管道(或梁、通风管道、桥架等)</p>
+            <p>7．2．4 标准覆盖面积洒水喷头、扩大覆盖面积洒水喷头和家用喷头与不到顶隔墙的水平距离和垂直距离(图7．2．4)应符合表7．2．4的规定。</p>
+            <p align="center"><img src='http://book.zlglpt.com/e4294/1034.jpg'/><br>
+                <strong>图7．2．4 喷头与不到顶隔墙的水平距离</strong><br>
+                1-顶板；2-喷头；3-不到顶隔墙<br>
+                <br>
+                <strong>表7．2．4 喷头与不到顶隔墙的水平距离和垂直距离(mm)</strong><br>
+                <img src='http://book.zlglpt.com/e4294/1035.jpg'/></p>
+            <p>7．2．5 直立型、下垂型喷头与靠墙障碍物的距离(图7．2．5)应符合下列规定：<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;1 障碍物横截面边长小于750mm时，喷头与障碍物的距离应按下式确定：</p>
+            <p align="center"><img src='http://book.zlglpt.com/e4294/1036.jpg'/></p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;式中：a——喷头与障碍物的水平距离(mm)；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b——喷头溅水盘与障碍物底面的垂直距离(mm)；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e——障碍物横截面的边长(mm)，e＜750。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;2 障碍物横截面边长等于或大于750mm或a的计算值大于本规范表7．1．2中喷头与端墙距离的规定时，应在靠墙障碍物下增设喷头。</p>
+            <p align="center"><img src='http://book.zlglpt.com/e4294/1037.jpg'/><br>
+                <strong>图7．2．5 喷头与靠墙障碍物的距离</strong><br>
+                1-顶板；2-直立型喷头；3-靠墙障碍物；4-墙面</p>
+            <p>7．2．6
+                边墙型标准覆盖面积洒水喷头正前方1．2m范围内，边墙型扩大覆盖面积洒水喷头和边墙型家用喷头正前方2．4m范围(图7．2．6)内，顶板或吊顶下不应有阻挡喷水的障碍物，其布置要求应符合表7．2．6-1和表7．2．6-2的规定。</p>
+            <p align="center"><img src='http://book.zlglpt.com/e4294/1038.jpg'/><br>
+                <strong>图7．2．6 边墙型洒水喷头与正前方障碍物的距离</strong><br>
+                1-顶板；2-背墙；3-梁(或通风管道)；4-边墙型喷头<br>
+                <br>
+                <strong>表7．2．6-1 边墙型标准覆盖面积洒水喷头与正前方障碍物的垂直距离(mm)</strong><br>
+                <img src='http://book.zlglpt.com/e4294/1039.jpg'/><br>
+                <br>
+                <strong>表7．2．6-2 边墙型扩大覆盖面积洒水喷头和边墙型家用喷头与正前方障碍物的垂直距离(mm)</strong><br>
+                <img src='http://book.zlglpt.com/e4294/1040.jpg'/><br>
+                <img src='http://book.zlglpt.com/e4294/1041.jpg'/></p>
+            <p>7．2．7 边墙型洒水喷头两侧与顶板或吊顶下梁、通风管道等障碍物的距离(图7．2．7)，应符合表7．2．7-1和表7．2．7-2的规定。</p>
+            <p align="center"><img src='http://book.zlglpt.com/e4294/1042.jpg'/><br>
+                <strong>图7．2．7 边墙型洒水喷头与沿墙障碍物的距离</strong><br>
+                1-顶板；2-边墙型洒水喷头；3-梁(或通风管道)；<br>
+                <br>
+                <strong>表7．2．7-1 边墙型标准覆盖面积洒水喷头与沿墙障碍物底面的垂直距离(mm)</strong><br>
+                <img src='http://book.zlglpt.com/e4294/1043.jpg'/><br>
+                <br>
+                <strong>表7．2．7-2 边墙型扩大覆盖面积洒水喷头和边墙型家用喷头与沿墙障碍物底面的垂直距离(mm)</strong><br>
+                <img src='http://book.zlglpt.com/e4294/1044.jpg'/></p>
+
+
+        </div>
+        <div id='3199340'>
+
+            <div>
+                <p>8 管 道</p>
+            </div>
+            <p>8．0．1 配水管道的工作压力不应大于1．20MPa，并不应设置其他用水设施。<br>
+                <br>
+                8．0．2 配水管道可采用内外壁热镀锌钢管、涂覆钢管、铜管、不锈钢管和氯化聚氯乙烯(PVC-C)管。当报警阀入口前管道采用不防腐的钢管时，应在报警阀前设置过滤器。<br>
+                <br>
+                8．0．3
+                自动喷水灭火系统采用氯化聚氯乙烯(PVC-C)管材及管件时，设置场所的火灾危险等级应为轻危险级或中危险级Ⅰ级，系统应为湿式系统，并采用快速响应洒水喷头，且氯化聚氯乙烯(PVC-C)管材及管件应符合下列要求：<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;1 应符合现行国家标准《自动喷水灭火系统 第19部分塑料管道及管件》GB／T 5135．19的规定；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;2 应用于公称直径不超过DN80的配水管及配水支管，且不应穿越防火分区；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;3 当设置在有吊顶场所时，吊顶内应无其他可燃物，吊顶材料应为不燃或难燃装修材料；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;4 当设置在无吊顶场所时，该场所应为轻危险级场所，顶板应为水平、光滑顶板，且喷头溅水盘与顶板的距离不应大于100mm。<br>
+                <br>
+                8．0．4 洒水喷头与配水管道采用消防洒水软管连接时，应符合下列规定：<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;1 消防洒水软管仅适用于轻危险级或中危险级Ⅰ级场所，且系统应为湿式系统；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;2 消防洒水软管应设置在吊顶内；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;3 消防洒水软管的长度不应超过1．8m。<br>
+                <br>
+                8．0．5 配水管道的连接方式应符合下列要求：<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;1 镀锌钢管、涂覆钢管可采用沟槽式连接件(卡箍)、螺纹或法兰连接，当报警阀前采用内壁不防腐钢管时，可焊接连接；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;2 铜管可采用钎焊、沟槽式连接件(卡箍)、法兰和卡压等连接方式；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;3 不锈钢管可采用沟槽式连接件(卡箍)、法兰、卡压等连接方式，不宜采用焊接；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;4 氯化聚氯乙烯(PVC-C)管材、管件可采用粘接连接，氯化聚氯乙烯(PVC-C)管材、管件与其他材质管材、管件之间可采用螺纹、法兰或沟槽式连接件(卡箍)连接；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;5 铜管、不锈钢管、氯化聚氯乙烯(PVC-C)管应采用配套的支架、吊架。<br>
+                <br>
+                8．0．6
+                系统中直径等于或大于100mm的管道，应分段采用法兰或沟槽式连接件(卡箍)连接。水平管道上法兰间的管道长度不宜大于20m；立管上法兰间的距离，不应跨越3个及以上楼层。净空高度大于8m的场所内，立管上应有法兰。<br>
+                <br>
+                8．0．7 管道的直径应经水力计算确定。配水管道的布置，应使配水管入口的压力均衡。轻危险级、中危险级场所中各配水管入口的压力均不宜大于0．40MPa。<br>
+                <br>
+                8．0．8 配水管两侧每根配水支管控制的标准流量洒水喷头数量，轻危险级、中危险级场所不应超过8只，同时在吊顶上下设置喷头的配水支管，上下侧均不应超过8只。严重危险级及仓库危险级场所均不应超过6只。<br>
+                <br>
+                8．0．9 轻危险级、中危险级场所中配水支管、配水管控制的标准流量洒水喷头数量，不宜超过表8．0．9的规定。</p>
+            <p align="center"><strong>表8．0．9 轻、中危险级场所中配水支管、配水管控制的标准流量洒水喷头数量</strong><br>
+                <img src='http://book.zlglpt.com/e4294/1045.jpg'/><br>
+                <img src='http://book.zlglpt.com/e4294/1046.jpg'/></p>
+            <p>8．0．10 短立管及末端试水装置的连接管，其管径不应小于25mm。<br>
+                <br>
+                8．0．11
+                干式系统、由火灾自动报警系统和充气管道上设置的压力开关开启预作用装置的预作用系统，其配水管道充水时间不宜大于1min；雨淋系统和仅由火灾自动报警系统联动开启预作用装置的预作用系统，其配水管道充水时间不宜大于2min。<br>
+                <br>
+                8．0．12 干式系统、预作用系统的供气管道，采用钢管时，管径不宜小于15mm；采用铜管时，管径不宜小于10mm。<br>
+                <br>
+                8．0．13 水平设置的管道宜有坡度，并应坡向泄水阀。充水管道的坡度不宜小于2‰，准工作状态不充水管道的坡度不宜小于4‰。</p>
+
+
+        </div>
+        <div id='3199341'>
+
+            <div>
+                <p>9 水力计算<br>
+                    <br>
+                    9．1 系统的设计流量</p>
+            </div>
+            <br>
+            <p>9．1．1 系统最不利点处喷头的工作压力应计算确定，喷头的流量应按下式计算：</p>
+            <p align="center"><img src='http://book.zlglpt.com/e4294/1047.jpg'/></p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;式中：q——喷头流量(L／min)；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;P——喷头工作压力(MPa)；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;K——喷头流量系数。<br>
+                <br>
+                9．1．2 水力计算选定的最不利点处作用面积宜为矩形，其长边应平行于配水支管，其长度不宜小于作用面积平方根的1．2倍。<br>
+                <br>
+                9．1．3 系统的设计流量，应按最不利点处作用面积内喷头同时喷水的总流量确定，且应按下式计算：</p>
+            <p align="center"><img src='http://book.zlglpt.com/e4294/1048.jpg'/></p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;式中：Q——系统设计流量(L／s)；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;q<sub>i</sub>——最不利点处作用面积内各喷头节点的流量(L／min)；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;n——最不利点处作用面积内的洒水喷头数。<br>
+                <br>
+                9．1．4 保护防火卷帘、防火玻璃墙等防火分隔设施的防护冷却系统，系统的设计流量应按计算长度内喷头同时喷水的总流量确定。计算长度应符合下列要求：<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;1 当设置场所设有自动喷水灭火系统时，计算长度不应小于本规范第9．1．2条确定的长边长度；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;2 当设置场所未设置自动喷水灭火系统时，计算长度不应小于任意一个防火分区内所有需保护的防火分隔设施总长度之和。<br>
+                <br>
+                9．1．5
+                系统设计流量的计算，应保证任意作用面积内的平均喷水强度不低于本规范表5．0．1、表5．0．2和表5．0．4-1～表5．0．4-5的规定值。最不利点处作用面积内任意4只喷头围合范围内的平均喷水强度，轻危险、中危险级不应低于本规范表5．0．1规定值的85％；严重危险级和仓库危险级不应低于本规范表5．0．1和表5．0．4-1～表5．0．4-5的规定值。<br>
+                <br>
+                9．1．6 设置货架内置洒水喷头的仓库，顶板下洒水喷头与货架内置洒水喷头应分别计算设计流量，并应按其设计流量之和确定系统的设计流量。<br>
+                <br>
+                9．1．7 建筑内设有不同类型的系统或有不同危险等级的场所时，系统的设计流量应按其设计流量的最大值确定。<br>
+                <br>
+                9．1．8 当建筑物内同时设有自动喷水灭火系统和水幕系统时，系统的设计流量应按同时启用的自动喷水灭火系统和水幕系统的用水量计算，并应按二者之和中的最大值确定。<br>
+                <br>
+                9．1．9 雨淋系统和水幕系统的设计流量，应按雨淋报警阀控制的洒水喷头的流量之和确定。多个雨淋报警阀并联的雨淋系统，系统设计流量应按同时启用雨淋报警阀的流量之和的最大值确定。<br>
+                <br>
+                9．1．10 当原有系统延伸管道、扩展保护范围时，应对增设洒水喷头后的系统重新进行水力计算。<br>
+            </p>
+
+
+        </div>
+        <div id='3199342'>
+
+            <div>
+                <p>9 水力计算<br>
+                    <br>
+                    9．1 系统的设计流量</p>
+            </div>
+            <br>
+            <p>9．1．1 系统最不利点处喷头的工作压力应计算确定，喷头的流量应按下式计算：</p>
+            <p align="center"><img src='http://book.zlglpt.com/e4294/1049.jpg'/></p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;式中：q——喷头流量(L／min)；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;P——喷头工作压力(MPa)；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;K——喷头流量系数。<br>
+                <br>
+                9．1．2 水力计算选定的最不利点处作用面积宜为矩形，其长边应平行于配水支管，其长度不宜小于作用面积平方根的1．2倍。<br>
+                <br>
+                9．1．3 系统的设计流量，应按最不利点处作用面积内喷头同时喷水的总流量确定，且应按下式计算：</p>
+            <p align="center"><img src='http://book.zlglpt.com/e4294/1050.jpg'/></p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;式中：Q——系统设计流量(L／s)；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;q<sub>i</sub>——最不利点处作用面积内各喷头节点的流量(L／min)；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;n——最不利点处作用面积内的洒水喷头数。<br>
+                <br>
+                9．1．4 保护防火卷帘、防火玻璃墙等防火分隔设施的防护冷却系统，系统的设计流量应按计算长度内喷头同时喷水的总流量确定。计算长度应符合下列要求：<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;1 当设置场所设有自动喷水灭火系统时，计算长度不应小于本规范第9．1．2条确定的长边长度；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;2 当设置场所未设置自动喷水灭火系统时，计算长度不应小于任意一个防火分区内所有需保护的防火分隔设施总长度之和。<br>
+                <br>
+                9．1．5
+                系统设计流量的计算，应保证任意作用面积内的平均喷水强度不低于本规范表5．0．1、表5．0．2和表5．0．4-1～表5．0．4-5的规定值。最不利点处作用面积内任意4只喷头围合范围内的平均喷水强度，轻危险、中危险级不应低于本规范表5．0．1规定值的85％；严重危险级和仓库危险级不应低于本规范表5．0．1和表5．0．4-1～表5．0．4-5的规定值。<br>
+                <br>
+                9．1．6 设置货架内置洒水喷头的仓库，顶板下洒水喷头与货架内置洒水喷头应分别计算设计流量，并应按其设计流量之和确定系统的设计流量。<br>
+                <br>
+                9．1．7 建筑内设有不同类型的系统或有不同危险等级的场所时，系统的设计流量应按其设计流量的最大值确定。<br>
+                <br>
+                9．1．8 当建筑物内同时设有自动喷水灭火系统和水幕系统时，系统的设计流量应按同时启用的自动喷水灭火系统和水幕系统的用水量计算，并应按二者之和中的最大值确定。<br>
+                <br>
+                9．1．9 雨淋系统和水幕系统的设计流量，应按雨淋报警阀控制的洒水喷头的流量之和确定。多个雨淋报警阀并联的雨淋系统，系统设计流量应按同时启用雨淋报警阀的流量之和的最大值确定。<br>
+                <br>
+                9．1．10 当原有系统延伸管道、扩展保护范围时，应对增设洒水喷头后的系统重新进行水力计算。<br>
+            </p>
+
+
+        </div>
+        <div id='3199343'>
+
+            <div>
+                <p>9．2 管道水力计算</p>
+            </div>
+            <p>9．2．1 管道内的水流速度宜采用经济流速，必要时可超过5m／s，但不应大于10m／s。<br>
+                <br>
+                9．2．2 管道单位长度的沿程阻力损失应按下式计算：</p>
+            <p align="center"><img src='http://book.zlglpt.com/e4294/1051.jpg'/></p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;式中：i——管道单位长度的水头损失(kPa／m)；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d<sub>j</sub>——管道计算内径(mm)；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;q<sub>g</sub>——管道设计流量(L／min)；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C<sub>h</sub>——海澄-威廉系数，见表9．2．2。</p>
+            <p align="center"><strong>表9．2．2 不同类型管道的海澄-威廉系数</strong><br>
+                <img src='http://book.zlglpt.com/e4294/1052.jpg'/></p>
+            <p>9．2．3 管道的局部水头损失宜采用当量长度法计算，且应符合本规范附录C的规定。<br>
+                <br>
+                9．2．4 水泵扬程或系统入口的供水压力应按下式计算：</p>
+            <p align="center"><img src='http://book.zlglpt.com/e4294/1053.jpg'/></p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;式中：H——水泵扬程或系统入口的供水压力(MPa)；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;∑P<sub>p</sub>——管道沿程和局部水头损失的累计值(MPa)，报警阀的局部水头损失应按照产品样本或检测数据确定。当无上述数据时，湿式报警阀取值0．04MPa、干式报警阀取值0．02MPa、预作用装置取值0．08MPa、雨淋报警阀取值0．07MPa、水流指示器取值0．02MPa；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;P<sub>0</sub>——最不利点处喷头的工作压力(MPa)；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Z——最不利点处喷头与消防水池的最低水位或系统入口管水平中心线之间的高程差，当系统入口管或消防水池最低水位高于最不利点处喷头时，Z应取负值(MPa)；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;h<sub>c</sub>——从城市市政管网直接抽水时城市管网的最低水压(MPa)；当从消防水池吸水时，h<sub>c</sub>取0。<br>
+            </p>
+
+
+        </div>
+        <div id='3199344'>
+
+            <div>
+                <p>9．3 减压设施</p>
+            </div>
+            <p>9．3．1 减压孔板应符合下列规定：<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;1 应设在直径不小于50mm的水平直管段上，前后管段的长度均不宜小于该管段直径的5倍；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;2 孔口直径不应小于设置管段直径的30％，且不应小于20mm；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;3 应采用不锈钢板材制作。<br>
+                <br>
+                9．3．2 节流管应符合下列规定：<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;1 直径宜按上游管段直径的1／2确定；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;2 长度不宜小于1m；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;3 节流管内水的平均流速不应大于20m／s。<br>
+                <br>
+                9．3．3 减压孔板的水头损失，应按下式计算：</p>
+            <p align="center"><img src='http://book.zlglpt.com/e4294/1054.jpg'/></p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;式中：H<sub>k</sub>——减压孔板的水头损失(10<sup>-2</sup>MPa)；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;V<sub>k</sub>——减压孔板后管道内水的平均流速(m／s)；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ξ——减压孔板的局部阻力系数，取值应按本规范附录D确定。<br>
+                <br>
+                9．3．4 节流管的水头损失，应按下式计算：</p>
+            <p align="center"><img src='http://book.zlglpt.com/e4294/1055.jpg'/></p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;式中：H<sub>g</sub>——节流管的水头损失(10<sup>-2</sup>MPa)；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ζ——节流管中渐缩管与渐扩管的局部阻力系数之和，取值0．7；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;V<sub>g</sub>——节流管内水的平均流速(m／s)；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d<sub>g</sub>——节流管的计算内径(m)，取值应按节流管内径减1mm确定；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;L——节流管的长度(m)。<br>
+                <br>
+                9．3．5 减压阀的设置应符合下列规定：<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;1 应设在报警阀组入口前；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;2 入口前应设过滤器，且便于排污；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;3 当连接两个及以上报警阀组时，应设置备用减压阀；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;4 垂直设置的减压阀，水流方向宜向下；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;5 比例式减压阀宜垂直设置，可调式减压阀宜水平设置；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;6 减压阀前后应设控制阀和压力表，当减压阀主阀体自身带有压力表时，可不设置压力表；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;7 减压阀和前后的阀门宜有保护或锁定调节配件的装置。</p>
+
+
+        </div>
+        <div id='3199345'>
+
+            <div>
+                <p>10 供 水<br>
+                    <br>
+                    10．1 一般规定</p>
+            </div>
+            <p>10．1．1 系统用水应无污染、无腐蚀、无悬浮物。可由市政或企业的生产、消防给水管道供给，也可由消防水池或天然水源供给，并应确保持续喷水时间内的用水量。<br>
+                <br>
+                10．1．2 与生活用水合用的消防水箱和消防水池，其储水的水质应符合饮用水标准。<br>
+                <br>
+                10．1．3 严寒与寒冷地区，对系统中遭受冰冻影响的部分，应采取防冻措施。<br>
+                <br>
+                10．1．4 当自动喷水灭火系统中设有2个及以上报警阀组时，报警阀组前应设环状供水管道。环状供水管道上设置的控制阀应采用信号阀；当不采用信号阀时，应设锁定阀位的锁具。<br>
+            </p>
+
+
+        </div>
+        <div id='3199346'>
+
+            <div>
+                <p>10 供 水<br>
+                    <br>
+                    10．1 一般规定</p>
+            </div>
+            <p>10．1．1 系统用水应无污染、无腐蚀、无悬浮物。可由市政或企业的生产、消防给水管道供给，也可由消防水池或天然水源供给，并应确保持续喷水时间内的用水量。<br>
+                <br>
+                10．1．2 与生活用水合用的消防水箱和消防水池，其储水的水质应符合饮用水标准。<br>
+                <br>
+                10．1．3 严寒与寒冷地区，对系统中遭受冰冻影响的部分，应采取防冻措施。<br>
+                <br>
+                10．1．4 当自动喷水灭火系统中设有2个及以上报警阀组时，报警阀组前应设环状供水管道。环状供水管道上设置的控制阀应采用信号阀；当不采用信号阀时，应设锁定阀位的锁具。<br>
+            </p>
+
+
+        </div>
+        <div id='3199347'>
+
+            <div>
+                <p>10．2 消防水泵</p>
+            </div>
+            <p>10．2．1 采用临时高压给水系统的自动喷水灭火系统，宜设置独立的消防水泵，并应按一用一备或二用一备，及最大一台消防水泵的工作性能设置备用泵。当与消火栓系统合用消防水泵时，系统管道应在报警阀前分开。<br>
+                <br>
+                10．2．2 按二级负荷供电的建筑，宜采用柴油机泵作备用泵。<br>
+                <br>
+                10．2．3 系统的消防水泵、稳压泵，应采用自灌式吸水方式。采用天然水源时，消防水泵的吸水口应采取防止杂物堵塞的措施。<br>
+                <br>
+                10．2．4
+                每组消防水泵的吸水管不应少于2根。报警阀入口前设置环状管道的系统，每组消防水泵的出水管不应少于2根。消防水泵的吸水管应设控制阀和压力表；出水管应设控制阀、止回阀和压力表，出水管上还应设置流量和压力检测装置或预留可供连接流量和压力检测装置的接口。必要时，应采取控制消防水泵出口压力的措施。<br>
+            </p>
+
+
+        </div>
+        <div id='3199348'>
+
+            <div>
+                <p>10．3 高位消防水箱</p>
+            </div>
+            <p>10．3．1 采用临时高压给水系统的自动喷水灭火系统，应设高位消防水箱。自动喷水灭火系统可与消火栓系统合用高位消防水箱，其设置应符合现行国家标准《消防给水及消火栓系统技术规范》GB 50974的要求。<br>
+                <br>
+                10．3．2 高位消防水箱的设置高度不能满足系统最不利点处喷头的工作压力时，系统应设置增压稳压设施，增压稳压设施的设置应符合现行国家标准《消防给水及消火栓系统技术规范》GB 50974的规定。<br>
+                <br>
+                <strong>10．3．3 采用临时高压给水系统的自动喷水灭火系统，当按现行国家标准《消防给水及消火栓系统技术规范》GB
+                    50974的规定可不设置高位消防水箱时，系统应设气压供水设备。气压供水设备的有效水容积，应按系统最不利处4只喷头在最低工作压力下的5min用水量确定。干式系统、预作用系统设置的气压供水设备，应同时满足配水管道的充水要求。</strong><br>
+                <br>
+                10．3．4 高位消防水箱的出水管应符合下列规定：<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;1 应设止回阀，并应与报警阀入口前管道连接；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;2 出水管管径应经计算确定，且不应小于100mm。<br>
+            </p>
+
+
+        </div>
+        <div id='3199349'>
+
+            <div>
+                <p>10．4 消防水泵接合器</p>
+            </div>
+            <p>10．4．1 系统应设消防水泵接合器，其数量应按系统的设计流量确定，每个消防水泵接合器的流量宜按10L／s～15L／s计算。<br>
+                <br>
+                10．4．2 当消防水泵接合器的供水能力不能满足最不利点处作用面积的流量和压力要求时，应采取增压措施。</p>
+
+
+        </div>
+        <div id='3199350'>
+
+            <div>
+                <p>11 操作与控制</p>
+            </div>
+            <p>11．0．1 湿式系统、干式系统应由消防水泵出水干管上设置的压力开关、高位消防水箱出水管上的流量开关和报警阀组压力开关直接自动启动消防水泵。<br>
+                <br>
+                11．0．2 预作用系统应由火灾自动报警系统、消防水泵出水干管上设置的压力开关、高位消防水箱出水管上的流量开关和报警阀组压力开关直接自动启动消防水泵。<br>
+                <br>
+                11．0．3 雨淋系统和自动控制的水幕系统，消防水泵的自动启动方式应符合下列要求：<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;1
+                当采用火灾自动报警系统控制雨淋报警阀时，消防水泵应由火灾自动报警系统、消防水泵出水干管上设置的压力开关、高位消防水箱出水管上的流量开关和报警阀组压力开关直接自动启动；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;2 当采用充液(水)传动管控制雨淋报警阀时，消防水泵应由消防水泵出水干管上设置的压力开关、高位消防水箱出水管上的流量开关和报警阀组压力开关直接启动。<br>
+                <br>
+                11．0．4 消防水泵除具有自动控制启动方式外，还应具备下列启动方式：<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;1 消防控制室(盘)远程控制；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;2 消防水泵房现场应急操作。<br>
+                <br>
+                11．0．5 预作用装置的自动控制方式可采用仅有火灾自动报警系统直接控制，或由火灾自动报警系统和充气管道上设置的压力开关控制，并应符合下列要求：<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;1 处于准工作状态时严禁误喷的场所，宜采用仅有火灾自动报警系统直接控制的预作用系统；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;2 处于准工作状态时严禁管道充水的场所和用于替代干式系统的场所，宜由火灾自动报警系统和充气管道上设置的压力开关控制的预作用系统。<br>
+                <br>
+                11．0．6 雨淋报警阀的自动控制方式可采用电动、液(水)动或气动。当雨淋报警阀采用充液(水)传动管自动控制时，闭式喷头与雨淋报警阀之间的高程差，应根据雨淋报警阀的性能确定。<br>
+                <br>
+                11．0．7 预作用系统、雨淋系统和自动控制的水幕系统，应同时具备下列三种开启报警阀组的控制方式：<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;1 自动控制；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;2 消防控制室(盘)远程控制；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;3 预作用装置或雨淋报警阀处现场手动应急操作。<br>
+                <br>
+                11．0．8 当建筑物整体采用湿式系统，局部场所采用预作用系统保护且预作用系统串联接入湿式系统时，除应符合本规范第11．0．1条的规定外，预作用装置的控制方式还应符合本规范第11．0．7条的规定。<br>
+                <br>
+                11．0．9 快速排气阀入口前的电动阀应在启动消防水泵的同时开启。<br>
+                <br>
+                11．0．10
+                消防控制室(盘)应能显示水流指示器、压力开关、信号阀、消防水泵、消防水池及水箱水位、有压气体管道气压，以及电源和备用动力等是否处于正常状态的反馈信号，并应能控制消防水泵、电磁阀、电动阀等的操作。</p>
+
+
+        </div>
+        <div id='3199351'>
+
+            <div>
+                <p>12 局部应用系统</p>
+            </div>
+            <p><strong>12．0．1 局部应用系统应用于室内最大净空高度不超过8m的民用建筑中，为局部设置且保护区域总建筑面积不超过1000m<sup>2</sup>的湿式系统。设置局部应用系统的场所应为轻危险级或中危险级Ⅰ级场所。<br>
+                <br>
+                12．0．2 局部应用系统应采用快速响应洒水喷头，喷水强度应符合本规范第5．0．1条的规定，持续喷水时间不应低于0．5h。<br>
+                <br>
+                12．0．3 局部应用系统保护区域内的房间和走道均应布置喷头。喷头的选型、布置和按开放喷头数确定的作用面积应符合下列规定：</strong><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<strong>1
+                    采用标准覆盖面积洒水喷头的系统，喷头布置应符合轻危险级或中危险级Ⅰ级场所的有关规定，作用面积内开放的喷头数量应符合表12．0．3的规定。</strong></p>
+            <p align="center"><strong>表12．0．3 采用标准覆盖面积洒水喷头时作用面积内开放喷头数量</strong><br>
+                <img src='http://book.zlglpt.com/e4294/1056.jpg'/></p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>2 采用扩大覆盖面积洒水喷头的系统，喷头布置应符合本规范第7．1．4条的规定。作用面积内开放喷头数量应按不少于6只确定。</strong><br>
+                <br>
+                12．0．4 当室内消火栓系统的设计流量能满足局部应用系统设计流量时，局部应用系统可与室内消火栓合用室内消防用水量、稳压设施、消防水泵及供水管道等。当不满足时应按本规范第12．0．9条执行。<br>
+                <br>
+                12．0．5 采用标准覆盖面积洒水喷头且喷头总数不超过20只，或采用扩大覆盖面积洒水喷头且喷头总数不超过12只的局部应用系统，可不设报警阀组。<br>
+                <br>
+                12．0．6 不设报警阀组的局部应用系统，配水管可与室内消防竖管连接，其配水管的入口处应设过滤器和带有锁定装置的控制阀。<br>
+                <br>
+                12．0．7 局部应用系统应设报警控制装置。报警控制装置应具有显示水流指示器、压力开关及消防水泵、信号阀等组件状态和输出启动消防水泵控制信号的功能。<br>
+                <br>
+                12．0．8 不设报警阀组或采用消防水泵直接从市政供水管吸水的局部应用系统，应采取压力开关联动消防水泵的控制方式。不设报警阀组的系统可采用电动警铃报警。<br>
+                <br>
+                12．0．9 无室内消火栓的建筑或室内消火栓系统的设计流量不能满足局部应用系统要求时，局部应用系统的供水应符合下列规定：<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;1 市政供水能够同时保证最大生活用水量和系统的流量与压力时，城市供水管可直接向系统供水；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;2 市政供水不能同时保证最大生活用水量和系统的流量与压力，但允许消防水泵从城市供水管直接吸水时，系统可设直接从城市供水管吸水的消防水泵；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;3
+                市政供水不能同时保证最大生活用水量和系统的流量与压力，也不允许从市政供水管直接吸水时，系统应设储水池(罐)和消防水泵，储水池(罐)的有效容积应按系统用水量确定，并可扣除系统持续喷水时间内仍能连续补水的补水量；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;4 可按三级负荷供电，且可不设备用泵；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;5 应设置倒流防止器或采取其他有效防止污染生活用水的措施。</p>
+
+
+        </div>
+        <div id='3199352'>
+
+            <div>
+                <p>附录A 设置场所火灾危险等级分类</p>
+            </div>
+            <p align="center"><strong>表A 设置场所火灾危险等级分类<br>
+                <img src='http://book.zlglpt.com/e4294/1057.jpg'/></strong><br>
+                <img src='http://book.zlglpt.com/e4294/1058.jpg'/></p>
+            <p align="left">&nbsp;&nbsp;&nbsp;&nbsp;注：表中的A组、B组塑料橡胶的分类见本规范附录B。</p>
+
+
+        </div>
+        <div id='3199353'>
+
+            <div>
+                <p>附录B 塑料、橡胶的分类</p>
+            </div>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;A组：丙烯腈-丁二烯-苯乙烯共聚物(ABS)、缩醛(聚甲醛)、聚甲基丙烯酸甲酯、玻璃纤维增强聚酯(FRP)、热塑性聚酯(PET)、聚丁二烯、聚碳酸酯、聚乙烯、聚丙烯、聚苯乙烯、聚氨基甲酸酯、高增塑聚氯乙烯(PVC，如人造革、胶片等)、苯乙烯-丙烯腈(SAN)等。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;丁基橡胶、乙丙橡胶(EPDM)、发泡类天然橡胶、腈橡胶(丁腈橡胶)、聚酯合成橡胶、丁苯橡胶(SBR)等。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;B组：醋酸纤维素、醋酸丁酸纤维素、乙基纤维素、氟塑料、锦纶(锦纶6、锦纶6／6)、三聚氰胺甲醛、酚醛塑料、硬聚氯乙烯(PVC，如管道、管件等)、聚偏二氟乙烯(PVDC)、聚偏氟乙烯(PVDF)、聚氟乙烯(PVF)、脲甲醛等。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;氯丁橡胶、不发泡类天然橡胶、硅橡胶等。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;粉末、颗粒、压片状的A组塑料。</p>
+
+
+        </div>
+        <div id='3199354'>
+
+            <div>
+                <p>附录C 当量长度表</p>
+            </div>
+            <p align="center"><strong>表C 镀锌钢管件和阀门的当量长度表(m)<br>
+                <img src='http://book.zlglpt.com/e4294/1059.jpg'/></strong></p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;注：1 过滤器当量长度的取值，由生产厂提供；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2
+                当异径接头的出口直径不变而入口直径提高1级时，其当量长度应增大0．5倍；提高2级或2级以上时，其当量长度应增大1．0倍；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3
+                当采用铜管或不锈钢管时，当量长度应乘以系数1．33；当采用涂覆钢管、氯化聚氯乙烯(PVC-C)管时，当量长度应乘以系数1．51。</p>
+
+
+        </div>
+        <div id='3199355'>
+
+            <div>
+                <p>附录D 减压孔板的局部阻力系数</p>
+            </div>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;减压孔板的局部阻力系数，取值应按下式计算或按表D确定：</p>
+            <p align="center"><img src='http://book.zlglpt.com/e4294/1060.jpg'/></p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;式中：d<sub>k</sub>——减压孔板的孔口直径(m)。</p>
+            <p align="center"><strong>表D 减压孔板的局部阻力系数</strong><br>
+            </p>
+            <div align="center">
+                <table width="600" height="69" border="0">
+                    <tr>
+                        <td>d<sub>k</sub>/d<sub>j</sub></td>
+                        <td>0.3</td>
+                        <td>0.4</td>
+                        <td>0.5</td>
+                        <td>0.6</td>
+                        <td>0.7</td>
+                        <td>0.8</td>
+                    </tr>
+                    <tr>
+                        <td>ξ</td>
+                        <td>292</td>
+                        <td>83.3</td>
+                        <td>29.5</td>
+                        <td>11.7</td>
+                        <td>4.75</td>
+                        <td>1.83</td>
+                    </tr>
+                </table>
+            </div>
+
+
+        </div>
+        <div id='3199356'>
+
+            <div>
+                <p>本规范用词说明</p>
+            </div>
+            <p>1 为便于在执行本规范条文时区别对待，对要求严格程度不同的用词说明如下：<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;1)表示很严格，非这样做不可的：<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;正面词采用“必须”，反面词采用“严禁”；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;2)表示严格，在正常情况下均应这样做的：<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;正面词采用“应”，反面词采用“不应”或“不得”；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;3)表示允许稍有选择，在条件许可时首先应这样做的：<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;正面词采用“宜”，反面词采用“不宜”；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;4)表示有选择，在一定条件下可以这样做的，采用“可”。<br>
+                <br>
+                2 条文中指明应按其他有关标准执行的写法为：“应符合……的规定”或“应按……执行”。</p>
+
+
+        </div>
+        <div id='3199357'>
+
+            <div>
+                <p>引用标准名录</p>
+            </div>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;《消防给水及消火栓系统技术规范》GB 50974<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;《自动喷水灭火系统 第19部分 塑料管道及管件》GB／T 5135．19</p>
+
+
+        </div>
+        <div id='3199358'>
+
+            <div>
+                <p>中华人民共和国国家标准<br>
+                    <br>
+                    <span class="STYLE7">自动喷水灭火系统设计规范</span></p>
+            </div>
+            <p align="center"><strong>GB 50084-2017<br>
+                <br>
+                <span class="STYLE8">条文说明</span><br>
+            </strong><br>
+                编制说明</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;《自动喷水灭火系统设计规范》GB 50084-2017，经住房城乡建设部2017年5月27日以第1574号公告批准发布，原《自动喷水灭火系统设计规范》GB
+                50084-2001(2005年版)同时废止。<br>
+                &nbsp;&nbsp;&nbsp;
+                现行《自动喷水灭火系统设计规范》自实施以来，对规范自动喷水灭火系统的设计、指导自动喷水灭火系统在我国的应用和发展起到了重要的作用，但随着自动喷水灭火系统应用和研究的不断深入，以及自动喷水灭火系统产品的不断发展，现行《自动喷水灭火系统设计规范》已不能适应目前自动喷水灭火系统的应用现状和发展趋势，有必要对其进行修订。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;本规范是在《自动喷水灭火系统设计规范》GB
+                50084-2001(2005年版)的基础上修订而成，上一版的主编单位是公安部天津消防科学研究所，参编单位是北京市消防局、上海市消防局、四川省消防局、公安部四川消防科学研究所、大连市消防局、深圳市消防局、中国建筑设计研究院、天津市建筑设计院、化工部第一设计院、天津大学、深圳市捷星消防工程公司，主要起草人是韩占先、何以申、王万钢、韩磊、马恒、赵克伟、曾杰、陈正昌、刘淑金、张兴权、刘跃红、刘国祝、章崇伦、黄建跃、于志成、方雪松、孔祥徵。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;此次修订的主要内容包括：<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;1．在第2章“术语”章节重新编排了自动喷水灭火系统的系统类型、喷头类型术语。为更加清晰地划分自动喷水灭火系统类型和喷头类型，本次修订以“闭式系统和开式系统”为基础，使每个子系统的定义均落脚到闭式系统和开式系统上。同样，喷头类型也是以“闭式喷头和开式喷头”为基础，依据喷头自身的特点，从喷头的保护面积(标准覆盖面积洒水喷头、扩大覆盖面积洒水喷头)、响应时间性能(快速响应、标准响应、特殊响应)和保护场所(特殊应用喷头、早期抑制快速响应喷头和家用喷头)等方面进行定义，并最终落脚到闭式喷头和开式喷头上。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;2．为满足近年来我国不断兴起的民用建筑高大空间场所，本次修订通过开展系列全尺寸火灾试验，提出了净空高度为12m～18m的民用建筑采用湿式系统的设计基本参数，并对原规范中净空高度为8m～12m非仓库类高大净空场所系统的设计基本参数进行了修订。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;3．提出了自动喷水系统领域的一项新技术——防护冷却系统。本次修订在实体火试验的基础上，参照国外标准的规定，提出了采用防护冷却系统保护防火卷帘、防火玻璃墙等防火分隔设施的设计要求，包括喷水强度、喷头布置、水力计算等。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;4．完善了仓库场所采用自动喷水灭火系统的设计要求。按照自动喷水灭火系统的设计步骤重新调整了系统的设计基本参数，增加了最大净空高度或储物高度超过规范规定时顶板层喷头的喷水强度和作用面积，进一步细化了货架内喷头的技术要求。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;5．将第4章“系统选型”改为“系统基本要求”，特别强调依据设置场所进行系统选型以及根据喷头类型设计系统。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;6．补充了直立型和下垂型扩大覆盖面积洒水喷头、特殊应用喷头、家用喷头等喷头的应用，增加了氯化聚氯乙烯(PVC-C)管、消防洒水软管的技术内容。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;7．根据近年来我国自动喷水灭火系统的应用现状，在总结自动喷水灭火系统应用案例的基础上，严格限制了挡水板、隐蔽式洒水喷头等产品的使用。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;8．修改现行规范中不便操作的一些条款，协调与其他规范的关系。本次修订与《自动喷水灭火系统施工及验收规范》同步修订，同步发布和实施，且编制组成员60％相同，除做到两本规范协调一致外，还注重与现行国家标准《建筑设计防火规范》GB
+                50016、《消防给水及消火栓系统技术规范》GB 50974等标准的协调。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;为便于广大设计、施工、验收和监督等部门的有关人员在使用本规范时能正确理解和执行条文规定，《自动喷水灭火系统设计规范》修订组按章、节、条顺序编制了本规范的条文说明，对条文规定的目的、依据以及执行中需要注意的有关事项进行了说明，还着重对强制性条文的强制性理由作了解释。但是，本条文说明不具备与规范正文同等的法律效力，仅供使用者作为理解和把握规范规定的参考。
+            </p>
+
+
+        </div>
+        <div id='3199359'>
+
+            <div>
+                <p>1 总 则</p>
+            </div>
+            <p>1．0．1 本条规定了制定本规范的目的。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;自动喷水灭火系统是当今世界上公认的最为有效的自动灭火设施之一，是应用最广泛、用量最大的自动灭火系统。国内外应用实践证明，该系统具有安全可靠、经济实用、灭火成功率高等优点。<br>
+                &nbsp;&nbsp;&nbsp;
+                国外应用自动喷水灭火系统已有200多年的历史。在这长达两个多世纪的时间内，一些经济发达的国家，从研究到应用，从局部应用到普遍推广使用，有过许许多多成功的经验和失败的教训。在总结经验教训的基础上，制定了本国的自动喷水灭火系统设计安装规范或标准，而且进行了一次又一次的修订(如美国消防协会标准《自动喷水灭火系统安装标准》NFPA
+                13、英国标准《固定式灭火系统-自动喷水灭火系统-设计，安装和维护》BS EN12845等)。自动喷水灭火系统不仅已经在公共建筑、厂房和仓库中推广应用，而且发达国家已在住宅建筑中开始安装使用。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;在建筑防火设计中推广应用自动喷水灭火系统，能够获得巨大的社会与经济效益。表1为美国1965年统计资料，数据表明，早在技术远不如目前发达的1925～1964年间，在安装自动喷水灭火系统的建筑物中，共发生火灾75290次，控、灭火的成功率高达96．2％，其中厂房和仓库占有的比例高达87．46％。
+            </p>
+            <p align="center"><strong>表1 自动喷水灭火系统灭火效率统计表</strong><br>
+                <img src='http://book.zlglpt.com/e4294/1061.jpg'/><br>
+                <img src='http://book.zlglpt.com/e4294/1062.jpg'/></p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;注：本表根据NFPA“Fire Journal”VOL 59．No．4-July 1965编制。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;美国纽约对1969～1978年10年中1648起高层建筑自动喷水灭火系统案例的统计表明，高层办公楼的控、灭火成功率为98．4％，其他高层建筑97．7％。又如澳大利亚和新西兰，从1886年到1968年的几十年中，安装这一灭火系统的建筑物，共发生火灾5734次，灭火成功率达99．8％。有些国家和地区，近几年安装这一灭火系统的，有的灭火成功率达100％。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;国外安装自动喷水灭火系统的建筑物，将在投保时享受一定的优惠条件，一般在该系统安装后的几年时间内，因优惠而少缴的保险费就够安装系统的费用了。一般在一年半到三年的时间内，就可以抵消建设资金。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;推广应用自动喷水灭火系统，不仅可从减少火灾损失中受益，而且可减少消防总开支。如美国加利福尼亚州的费雷斯诺城，在市区制定的建筑条例中，要求在非居住区安装自动喷水灭火系统，结果使这个城市的火灾损失大大减小，从1955年到1975年的20年间，非居住区的火灾损失占该全市火灾总损失从61．6％下降至43．5％。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;我国从20世纪30年代开始应用自动喷水灭火系统，至今已有80多年的历史。首先在外国人开办的纺织厂、烟厂以及高层民用建筑中应用。如上海第十七毛纺厂是1926年由英国人所建，在厂房、库房和办公室装设了自动喷水灭火系统。1979年，该厂从日本和联邦德国引进生产设备，在新建的厂房内也设计安装了国产的湿式系统。又如上海国际饭店是1934年建成投入使用的，该建筑中所有客房、厨房、餐厅、走道、电梯间等部位均装设了喷头，并扑灭过数起初期火灾。50年代，苏联援建的一些纺织厂和我国自行设计的一些工厂中也装设了自动喷水灭火系统。1956年兴建的上海乒乓球厂，我国自行设计安装了自动喷水灭火系统，并于1978年10月成功地扑救了由于赛璐珞丝缠绕马达引起的火灾。又如1958年建的厦门纺织厂，至80年代曾4次发生火灾，均成功地将火扑灭。时至今日，该系统已经成为国际上公认的最为有效的自动扑救室内火灾的消防设施，在我国的应用范围和使用量也在不断扩展与增长。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;《自动喷水灭火系统设计规范》自1985年颁布实施以来，对指导系统的设计发挥了积极、良好的作用。几十年来，国民经济持续快速发展，新技术不断涌现，使该规范面临着不断适应新情况、解决新问题、推广新技术的社会需求。此次修订该规范的目的，是为了总结几十年来自动喷水灭火系统技术发展和工程设计积累的宝贵经验，推广科技成果，借鉴发达国家先进技术，使之更加充实与完善。<br>
+                <br>
+                1．0．2
+                本条规定了本规范的适用范围与不适用范围。新建、扩建及改建的民用与工业建筑，当设置自动喷水灭火系统时，均要求按本规范的规定设计，但火药、炸药、弹药、火工品工厂，以及核电站、飞机库等性质上超出常规的特殊建筑，不属于本规范的适用范围。上述各类性质特殊的建筑设计自动喷水灭火系统时，按其所属行业的规范设计。<br>
+                <br>
+                1．0．3
+                本条要求按本规范设计自动喷水灭火系统时，必须同时遵循国家基本建设和消防工作的有关法律法规、方针政策，并在设计中密切结合保护对象的使用功能、内部物品燃烧时的发热发烟规律，以及建筑物内部空间条件对火灾热烟气流流动规律的影响，做到使系统的设计，既能为保证安全而可靠地启动操作，又要力求技术上的先进性和经济上的合理性。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;自动喷水灭火系统的200多年的历史，一直在不断研究开发新技术、新设备与新材料，并获得持续发展和水平的不断提高。改革开放以来，我国建筑业迅速发展，兴建了一大批高层建筑、大空间建筑及地下建筑等内部空间条件复杂和功能多样的建筑物，使系统的设计不断遇到新情况、新问题。只有积极合理地吸收新技术、新设备与新材料，才能使系统的设计技术适应社会进步与发展的需求。系统采用的新技术、新设备与新材料，不仅要具备足够的成熟程度，同时还要符合可靠适用、经济合理，并与系统相配套、与规范合理衔接等条件，以避免出现偏差或错误。<br>
+                <br>
+                1．0．4 本条是对原条文的修改。本次修改根据《中华人民共和国消防法》的规定。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;本条对自动喷水灭火系统采用的组件提出了要求。自动喷水灭火系统组件属消防专用产品，质量把关至关重要，因此要求设计中采用符合现行的国家或公共安全行业标准，并经过国家级消防产品质量监督检验机构检验的产品。未经检测或检测不合格的不能采用。根据《中华人民共和国消防法》第二十四条的规定，我国对消防产品实行强制性产品认证制度，依法实行强制性产品认证的消防产品，由具有法定资质的认证机构按照国家标准、行业标准的强制性要求认证合格后，方可生产、销售、使用。对新研制的尚未制定国家标准、行业标准的消防产品，应经过技术鉴定，符合消防安全要求的，方可生产、销售、使用。为此，本条规定了系统采用的组件应符合消防产品市场准入制度的要求。<br>
+                <br>
+                1．0．5
+                经过改建后变更使用功能的建筑或建筑内某一场所，当其重要性、房间的空间条件、内部容纳物品的性质或数量以及人员密集程度发生较大变化时，要求根据改造后建筑或建筑内场所的功能和条件，按本规范对原来已有的系统进行校核。当发现原有系统已经不再适用改造后建筑时，要求按本规范和改造后建筑的条件重新设计。<br>
+                <br>
+                1．0．6
+                本规范属于强制性国家标准。本规范的制定，将针对建筑物的具体条件和防火要求，提出合理设计自动喷水灭火系统的有关规定。另外，设置自动喷水灭火系统的场所及系统设计基本要求，还要求同时执行现行国家标准《建筑设计防火规范》GB
+                50016、《汽车库、修车库、停车场设计防火规范》GB 50067、《人民防空工程设计防火规范》GB 50098等规范的相关规定。</p>
+
+
+        </div>
+        <div id='3199360'>
+
+            <div>
+                <p>2 术语和符号</p>
+            </div>
+            <p>2．1．1
+                自动喷水灭火系统具有自动探火报警和自动喷水控、灭火的优良性能，是当今国际上应用范围最广、用量最多且造价低廉的自动灭火系统。自动喷水灭火系统的类型较多，从广义上分，可分为闭式系统和开式系统；从使用功能上分，其基本类型又包括湿式系统、干式系统、预作用系统及雨淋系统和水幕系统等(表2)，其中用量最多的是湿式系统，在已安装的自动喷水灭火系统中，70％以上为湿式系统。</p>
+            <p align="center"><strong>表2 国内外常用的系统类型</strong><br>
+                <img src='http://book.zlglpt.com/e4294/1063.jpg'/></p>
+            <p>2．1．4
+                湿式系统由闭式洒水喷头、水流指示器、湿式报警阀组以及管道和供水设施等组成，管道内始终充满有压水。湿式系统必须安装在全年不结冰及不会出现过热危险的场所内，该系统在喷头动作后立即喷水，其灭火成功率高于干式系统。<br>
+                <br>
+                2．1．5
+                干式系统在准工作状态时配水管道内充有压气体，因此使用场所不受环境温度的限制。与湿式系统的区别在于，干式系统采用干式报警阀组，并设置保持配水管道内气压的充气设施。该系统适用于有冰冻危险或环境温度有可能超过70℃、使管道内的充水汽化升压的场所。干式系统的缺点是发生火灾时，配水管道必须经过排气充水过程，因此延迟了开始喷水的时间，对于可能发生蔓延速度较快火灾的场所，不适合采用此种系统。<br>
+                <br>
+                2．1．6
+                本条是对原条文的修改和补充。预作用系统由闭式喷头、预作用装置、管道、充气设备和供水设施等组成，在准工作状态时配水管道内不充水。根据预作用系统的使用场所不同，预作用装置有两种控制方式，一是仅有火灾自动报警系统一组信号联动开启，二是由火灾自动报警系统和自动喷水灭火系统闭式洒水喷头两组信号联动开启。<br>
+                <br>
+                2．1．7
+                重复启闭预作用系统与常规预作用系统的不同之处，在于其采用了一种既可输出火警信号又可在环境恢复常温时输出灭火信号的感温探测器。当其感应到环境温度超出预定值时，报警并启动消防水泵和打开具有复位功能的雨淋报警阀，为配水管道充水，并在喷头动作后喷水灭火。喷水过程中，当火场温度恢复至常温时，探测器发出关停系统的信号，在按设定条件延迟喷水一段时间后，关闭雨淋报警阀停止喷水。若火灾复燃、温度再次升高时，系统则再次启动，直至彻底灭火。<br>
+                <br>
+                2．1．8
+                雨淋系统采用开式洒水喷头和雨淋报警阀组，由火灾自动报警系统或传动管联动雨淋报警阀和消防水泵，使与雨淋报警阀连接的开式喷头同时喷水。雨淋系统通常安装在发生火灾时火势发展迅猛、蔓延迅速的场所，如舞台等。 <br>
+                <br>
+                2．1．9 水幕系统用于挡烟阻火和冷却分隔物。系统组成的特点是采用开式洒水喷头或水幕喷头，控制供水通断的阀门可根据防火需要采用雨淋报警阀组或人工操作的通用阀门，小型水幕可用感温雨淋报警阀控制。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;水幕系统包括防火分隔水幕和防护冷却水幕两种类型。防火分隔水幕利用密集喷洒形成的水墙或水帘阻火挡烟而起到防火分隔作用，防护冷却水幕则利用水的冷却作用，配合防火卷帘等分隔物进行防火分隔。<br>
+                <br>
+                2．1．12
+                本条为新增术语。本条提出了自动喷水系统的一项新技术——防护冷却系统，该系统在系统组成上与湿式系统基本一致，但其主要与防火卷帘、防火玻璃墙等防火分隔设施配合使用，通过对防火分隔设施的防护冷却，起到防火分隔功能。<br>
+                <br>
+                2．1．23 本条为新增术语。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;特殊应用喷头是指在通过试验验证的情况下，能够对一些特殊场所或部位进行有效保护的洒水喷头。考核指标主要有：特定的灭火试验、喷头的洒水分布性能试验以及喷头的热敏感性能试验等。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;非仓库型特殊应用喷头用于民用建筑和厂房高大空间场所，国内外的试验研究表明，在民用建筑和厂房高大空间场所内设置合理的自动喷水灭火系统，能提供可靠、有效的保护，但并非所有喷头均适用于此类场所，只有在给定的火灾试验模型下能够有效控、灭火的喷头才能应用。试验表明，适用于该类场所的喷头应具有流量系数大和工作压力低等特点，且喷洒的水滴粒径较大。<br>
+                &nbsp;&nbsp;&nbsp;
+                仓库型特殊应用喷头是用于高堆垛或高货架仓库的大流量特种洒水喷头，与ESFR喷头相比，其以控制火灾蔓延为目的，喷头最低工作压力较ESFR喷头低，且障碍物对喷头洒水的影响较小。<br>
+                <br>
+                2．1．24 本条为新增术语。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;家用喷头是适用于住宅建筑和宿舍、公寓等非住宅类居住建筑内的一种快速响应喷头，其作用是在火灾初期迅速启动喷洒，降低起火部位周围的火场温度及烟密度，并控制居所内火灾的扩大及蔓延。与其他类型喷头相比，家用喷头更有利于保护人员疏散。美国消防协会标准《自动喷水灭火系统安装标准》NFPA
+                13规定，家用喷头可用于住宅单元及相邻的走道内，并规定住宅单元除普通住宅外，还包括宾馆客房、宿舍、用于寄宿和出租的房间、护理房(供需要有人照顾的体弱人员居住，有医疗设施)及类似的居住单元等。并且规定，家用喷头具有3个特征：(1)适用于居住场所；(2)用于保护人员逃生；(3)具有快速响应功能。
+            </p>
+
+
+        </div>
+        <div id='3199361'>
+
+            <div>
+                <p>3 设置场所火灾危险等级</p>
+            </div>
+            <p>3．0．1、3．0．2
+                根据火灾荷载(由可燃物的性质、数量及分布状况决定)、室内空间条件(面积、高度)、人员密集程度、采用自动喷水灭火系统扑救初期火灾的难易程度，以及疏散及外部增援条件等因素，划分设置场所的火灾危险等级。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;建筑物内存在物品的性质、数量以及其结构的疏密、包装和分布状况，将决定火灾荷载及发生火灾时的燃烧速度与放热量，是划分自动喷水灭火系统设置场所火灾危险等级的重要依据。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;(1)可燃物性质对燃烧速度的影响因素，包括材料的燃烧性能、结构的疏密程度以及堆积摆放的形式等。不同性质的可燃物发生火灾时表现的燃烧性能及扑救难度不同，例如纸制品和发泡塑料制品，就具有不同的燃烧性能，造纸及纸制品厂被划归中危险级，发泡塑料及制品按固体易燃物品被划归严重危险级。火灾荷载大，燃烧时蔓延速度快、放热量大、有害气体生成量大的保护对象，需要设置反应速度快、喷水强度大以及作用面积大的系统。火灾荷载的大小，对确定设置场所火灾危险等级是十分重要的依据。表3给出了不同火灾荷载密度情况下的火灾放热量数据。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;(2)物品的摆放形式，包括密集程度及堆积高度，是划分设置场所火灾危险等级的另一个重要依据。松散堆放的可燃物，因与空气的接触面积大，燃烧时的供氧条件比紧密堆放时好，所以燃烧速度快，放热速率高，因此需求的灭火能力强。可燃物的堆积高度越大，火焰的竖向蔓延速度越快，另外由于高堆物品的遮挡作用，使喷水不易直接送达位于可燃物底部的起火部位，导致灭火难度增大，容易使火灾得以水平蔓延。为了避免这种情况的发生，要求以较大的喷水强度或具有较强穿透力的喷水，以及开放较多喷头、形成较大的喷水面积控制火势。
+            </p>
+            <p align="center"><strong>表3 火灾荷载密度与燃烧特性</strong><br>
+                <img src='http://book.zlglpt.com/e4294/1064.jpg'/></p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;(3)建筑物的室内空间条件也会影响闭式喷头受热开放时间和喷水灭火效果。小面积场所，火灾烟气流因受墙壁阻挡而很快在顶板或吊顶下积聚并淹没喷头，而使喷头热敏元件迅速升温动作；而大面积场所，火灾烟气流则可在顶板或吊顶下不受阻挡的自由流散，喷头热敏元件只受对流传热的影响，升温较慢，动作较迟钝。室内净空高度的增大，使火灾烟气流在上升过程中，与被卷吸的空气混合而逐渐降低温度和流速的作用增大，流经喷头热气流温度与速度的降低将造成喷头推迟动作。喷头开放时间的推迟，将为火灾继续蔓延提供时间，喷头开放时将面临放热速率更大，更难扑救的火势，使系统喷水控灭火的难度增大。对于喷头的洒水，则因与上升热烟气流接触的时间和距离的加大，使被热气流吹离布水轨迹和汽化的水量增大，导致送达到位的灭火水量减少，同样会加大灭火的难度。有些建筑构造，还会影响喷头的布置和均匀布水。上述影响喷头开放和喷水送达灭火的因素，由于影响系统控灭火的效果，将导致设置场所火灾危险等级的改变。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;国外标准规范大多将自动喷水灭火系统的设置场所划分为三个或四个火灾危险等级。如英国将设置场所划分为三个危险等级，即轻危险级、中轻危险级(其中又分为4组，OH1～OH4)和高危险级(其中又分为生产加工级和贮存级，每个级别又划分为4类，分别是HHP1～HHP4和HHS1～HHS4)。德国划分为四个危险等级，即Ⅰ、Ⅱ、Ⅲ、Ⅳ级，分别为轻、中、严重(其中又分为生产级和储存级)危险级。美国和日本则划分为轻、中和严重危险级。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;本规范参考了发达国家规范，又结合我国目前实际情况，将设置场所划分为四级，分别为轻、中(其中又分为Ⅰ级和Ⅱ级)、严重(其中又分为Ⅰ级和Ⅱ级)及仓库(其中又分为Ⅰ级、Ⅱ级和Ⅲ级)危险级。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;轻危险级，一般是指可燃物品较少、可燃性低和火灾发热量较低、外部增援和疏散人员较容易的场所。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;中危险级，一般是指内部可燃物数量为中等，可燃性也为中等，火灾初期不会引起剧烈燃烧的场所。大部分民用建筑和厂房划归为中危险级。根据此类场所种类多、范围广的特点，划分中Ⅰ级和中Ⅱ级，并在本规范附录A中分类予以说明。商场内物品密集、人员密集，发生火灾的频率较高，容易酿成大火造成群死群伤和高额财产损失的严重后果，因此将大规模商场列入中Ⅱ级。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;严重危险级，一般是指火灾危险性大、可燃物品数量多、火灾时容易引起猛烈燃烧并可能迅速蔓延的场所。除摄影棚、舞台葡萄架下部外，包括存在较多数量易燃固体、液体物品工厂的备料和生产车间。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;仓库火灾危险等级的划分，参考了美国消防协会标准《自动喷水灭火系统安装标准》NFPA
+                13并结合我国国情，将上述标准中的1、2、3、4类和塑料橡胶类储存货品综合归纳并简化为Ⅰ、Ⅱ、Ⅲ级仓库。其中，仓库危险级Ⅰ级与NFPA
+                13的1、2类货品相一致，仓库危险级Ⅱ级与3、4类货品一致，仓库危险级Ⅲ级为A组塑料、橡胶制品等。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;NFPA 13《自动喷水灭火系统安装标准》中关于仓储物品的分类如下：<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;1类货品，指纸箱包装的不燃货品，例如：<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;不燃食品和饮料：不燃容器包装的食品；冷冻食品、肉类；非塑料制托盘或容器盛装的新鲜水果和蔬菜；无涂蜡层或塑料覆膜的纸容器包装牛奶；不燃容器盛装，但容器外有纸箱包装的酒精含量≤20％的啤酒或葡萄酒；玻璃制品。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;金属制品：包括塑料覆面或装饰的桌椅；金属外壳家电；电动机、干电池、空铁罐、金属柜。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;其他：包括变压器、袋装水泥、电子绝缘材料、石膏板、惰性颜料、固体农药等。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;2类货品，包括木箱及多层纸箱或类似可燃材料包装的1类货品，例如：<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;纸箱包装的漆包线线圈，日光灯泡，木桶包装的酒精含量不超过20％的啤酒和葡萄酒等。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;3类货品，木材、纸张、天然纤维纺织品或C组塑料及制品，含有少量A组或B组塑料的制品，例如：<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;皮革制品如鞋、皮衣、手套、旅行袋等；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;纸制品如书报杂志、有塑料覆膜的纸制容器等；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;纺织品如天然与合成纤维及制品，不含发泡类塑料橡胶的床垫；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;木制品如门窗及家具、可燃纤维板等；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;其他如纸箱包装的烟草制品及可燃食品，塑料容器包装的不燃液体。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;4类货品，纸箱包装的含有一定量A组塑料的1、2、3类货品，小包装采用A组塑料、大包装采用纸箱包装的1、2、3类货品，B组塑料和粉状、颗粒状A组塑料，例如：<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;照相机、电话、塑料家具，含发泡类塑料填充物的床垫，含有一定量塑料的建材、电缆，塑料容器包装的物品等。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;塑料橡胶类，分为A组、B组和C组。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;A组：ABS(丙烯腈-丁二烯-苯乙烯共聚物)、缩醛(聚甲醛)、丙烯酸类(聚甲基丙烯酸甲酯)、丁基橡胶、EPDM(乙丙橡胶)、FRP(玻璃纤维增强聚酯)、发泡类天然橡胶、腈橡胶(丁腈橡胶)、PET(热塑性聚酯)、聚碳酸酯、聚酯合成橡胶、聚乙烯、聚丙烯、聚苯乙烯、聚氨基甲酸酯、PVC(高增塑聚氯乙烯，如人造革、胶片等)、SAN(苯乙烯-丙烯腈)、SBR(丁苯橡胶)。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;B组：纤维素类(醋酸纤维素、醋酸丁酸纤维素、乙基纤维素)、氯丁橡胶、氟塑料(ECTFE——乙烯-三氟氯乙烯共聚物、ETFE——乙烯-四氟乙烯共聚物、FEP——四氟乙烯-六氟丙烯共聚物)、不发泡类天然橡胶、锦纶(锦纶6、锦纶6／6)、硅橡胶。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;C组：氟塑料(PCTFE——聚三氟氯乙烯、PTFE——聚四氟乙烯)、三聚氰胺(三聚氰胺甲醛)、酚醛类、PVC(硬聚氯乙烯，如：管道、管件)、PVDC(聚偏二氯乙烯)、PVDF(聚偏氟乙烯)、PVF(聚氟乙烯)、尿素(脲甲醛)。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;本规范附录A的分类参考了国内外相关规范标准的有关规定。由于建筑物的使用功能、内部容纳物品和空间条件千差万别，不可能全部列举，设计时可根据设置场所的具体情况类比判断。现将美、英、日、德等国规范的火灾危险等级分类列出(见表4、表5、表6)，供相关人员参考。
+            </p>
+            <p align="center"><strong>表4 轻危险级场所分类</strong><br>
+                <img src='http://book.zlglpt.com/e4294/1065.jpg'/><br>
+                <br>
+                <strong>表5 中危险级场所分类</strong><br>
+                <img src='http://book.zlglpt.com/e4294/1066.jpg'/><br>
+                <img src='http://book.zlglpt.com/e4294/1067.jpg'/><br>
+                <br>
+                <strong>表6 严重危险级场所分类</strong><br>
+                <img src='http://book.zlglpt.com/e4294/1068.jpg'/><br>
+                <img src='http://book.zlglpt.com/e4294/1069.jpg'/></p>
+            <p align="left">&nbsp;&nbsp;&nbsp;&nbsp;注：德国将生产和贮存类场所(或堆场)列入Ⅲ级和Ⅳ级火灾危险级，本表将其一并列入严重危险级场所分类中，英国的严重危险级分为生产工艺和贮存两组，本表也将其一并列入严重危险级场所分类中。<br>
+                <br>
+                3．0．3 当建筑物内各场所的使用功能、火灾危险性或灭火难度存在较大差异时，要求遵循“实事求是”和“有的放矢”的原则，按各自的实际情况选择适宜的系统和确定其火灾危险等级。</p>
+
+
+        </div>
+        <div id='3199362'>
+
+            <div>
+                <p>4 系统基本要求<br>
+                    <br>
+                    4．1 一般规定</p>
+            </div>
+            <p>4．1．1 设置自动喷水灭火系统的场所，应按现行国家标准《建筑设计防火规范》GB 50016、《汽车库、修车库、停车场设计防火规范》GB 50067、《人民防空工程设计防火规范》GB
+                50098等现行国家相关标准的规定执行。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;近年来，自动喷水灭火系统在我国消防界及建筑防火设计领域中的可信赖程度不断提高。尽管如此，该系统在我国的应用范围仍与发达国家存在明显差距。是否需要设置自动喷水灭火系统，决定性的因素是火灾危险性和自动扑救初期火灾的必要性，而不是建筑规模。因此，大力提倡和推广应用自动喷水灭火系统是很有必要的。<br>
+                <br>
+                4．1．2
+                本条规定了自动喷水灭火系统不适用的范围。凡发生火灾时可以用水灭火的场所，均可采用自动喷水灭火系统。而不能用水灭火的场所，包括遇水产生可燃气体或氧气，并导致加剧燃烧或引起爆炸后果的对象，以及遇水产生有毒有害物质的对象，例如存在较多金属钾、钠、锂、钙、锶、氯化锂、氧化钠、氧化钙、碳化钙、磷化钙等的场所，则不适合采用自动喷水灭火系统。再如存放一定量原油、渣油、重油等的敞口容器(罐、槽、池)，洒水将导致喷溅或沸溢事故。<br>
+                <br>
+                4．1．3 本条是对原条文的修改和补充。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;本条提出了对设计系统的原则性要求。设置自动喷水灭火系统的目的是为了有效扑救初期火灾。大量的应用和试验证明，为了保证和提高自动喷水灭火系统的可靠性，离不开四个方面的因素。首先，闭式系统的洒水喷头或与预作用、雨淋系统和水幕系统配套使用的火灾自动报警系统，要能有效地探测初期火灾。二是对于湿式、干式系统，要在开放一只喷头后立即启动系统；预作用系统则应根据其类型由火灾探测器、闭式洒水喷头作为探测元件，报警后自动启动；雨淋系统和水幕系统则是通过火灾探测器报警或传动管控制后自动启动。三是整个灭火进程中，要保证喷水范围不超出作用面积，以及按设计确定的喷水强度持续喷水。四是要求开放喷头的出水均匀喷洒、覆盖起火范围，并不受严重阻挡。以上四个方面的因素缺一不可，系统的设计只有满足了这四个方面的技术要求，才能确保系统的可靠性。<br>
+            </p>
+
+
+        </div>
+        <div id='3199363'>
+
+            <div>
+                <p>4 系统基本要求<br>
+                    <br>
+                    4．1 一般规定</p>
+            </div>
+            <p>4．1．1 设置自动喷水灭火系统的场所，应按现行国家标准《建筑设计防火规范》GB 50016、《汽车库、修车库、停车场设计防火规范》GB 50067、《人民防空工程设计防火规范》GB
+                50098等现行国家相关标准的规定执行。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;近年来，自动喷水灭火系统在我国消防界及建筑防火设计领域中的可信赖程度不断提高。尽管如此，该系统在我国的应用范围仍与发达国家存在明显差距。是否需要设置自动喷水灭火系统，决定性的因素是火灾危险性和自动扑救初期火灾的必要性，而不是建筑规模。因此，大力提倡和推广应用自动喷水灭火系统是很有必要的。<br>
+                <br>
+                4．1．2
+                本条规定了自动喷水灭火系统不适用的范围。凡发生火灾时可以用水灭火的场所，均可采用自动喷水灭火系统。而不能用水灭火的场所，包括遇水产生可燃气体或氧气，并导致加剧燃烧或引起爆炸后果的对象，以及遇水产生有毒有害物质的对象，例如存在较多金属钾、钠、锂、钙、锶、氯化锂、氧化钠、氧化钙、碳化钙、磷化钙等的场所，则不适合采用自动喷水灭火系统。再如存放一定量原油、渣油、重油等的敞口容器(罐、槽、池)，洒水将导致喷溅或沸溢事故。<br>
+                <br>
+                4．1．3 本条是对原条文的修改和补充。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;本条提出了对设计系统的原则性要求。设置自动喷水灭火系统的目的是为了有效扑救初期火灾。大量的应用和试验证明，为了保证和提高自动喷水灭火系统的可靠性，离不开四个方面的因素。首先，闭式系统的洒水喷头或与预作用、雨淋系统和水幕系统配套使用的火灾自动报警系统，要能有效地探测初期火灾。二是对于湿式、干式系统，要在开放一只喷头后立即启动系统；预作用系统则应根据其类型由火灾探测器、闭式洒水喷头作为探测元件，报警后自动启动；雨淋系统和水幕系统则是通过火灾探测器报警或传动管控制后自动启动。三是整个灭火进程中，要保证喷水范围不超出作用面积，以及按设计确定的喷水强度持续喷水。四是要求开放喷头的出水均匀喷洒、覆盖起火范围，并不受严重阻挡。以上四个方面的因素缺一不可，系统的设计只有满足了这四个方面的技术要求，才能确保系统的可靠性。<br>
+            </p>
+
+
+        </div>
+        <div id='3199364'>
+
+            <div>
+                <p>4．2 系统选型</p>
+            </div>
+            <p>4．2．1
+                设置场所的建筑特征、环境条件和火灾特点，是合理选择系统类型和确定火灾危险等级的依据。例如：环境温度是确定选择湿式或干式系统的依据；综合考虑火灾蔓延速度、人员密集程度及疏散条件是确定是否采用快速系统的因素等。对于室外场所，由于系统受风、雨等气候条件的影响，难以使闭式喷头及时感温动作，势必难以保证灭火和控火效果，所以露天场所不适合采用闭式系统。<br>
+                <br>
+                4．2．2 湿式系统(图1)由闭式喷头、水流指示器、湿式报警阀组，以及管道和供水设施等组成，准工作状态时管道内始终充满水并保持一定压力。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;湿式系统具有以下特点与功能：<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;(1)与其他自动喷水灭火系统相比，结构相对简单，系统平时由消防水箱、稳压泵或气压给水设备等稳压设施维持管道内水的压力。发生火灾时，由闭式喷头探测火灾，水流指示器报告起火区域，消防水箱出水管上的流量开关、消防水泵出水管上的压力开关或报警阀组的压力开关输出启动消防水泵信号，完成系统的启动。系统启动后，由消防水泵向开放的喷头供水，开放的喷头将供水按不低于设计规定的喷水强度均匀喷洒，实施灭
+            </p>
+            <p align="center"><img src='http://book.zlglpt.com/e4294/1070.jpg'/><br>
+                <strong>图1 湿式系统示意图</strong><br>
+                1-消防水池；2-消防水泵；3-止回阀；4-闸阀；5-消防水泵接合器；<br>
+                6-高位消防水箱；7-湿式报警阀组；8-配水干管；9-水流指示器；10-配水管；<br>
+                11-闭式洒水喷头；12-配水支管；13-末端试水装置；14-报警控制器；<br>
+                15-泄水阀；16-压力开关；17-信号阀；18-水泵控制柜；19-流量开关</p>
+            <p>火。为了保证扑救初期火灾的效果，喷头开放后要求在持续喷水时间内连续喷水。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;(2)湿式系统适合在温度不低于4℃且不高于70℃的环境中使用，因此绝大多数的常温场所采用此类系统。经常低于4℃的场所有使管内充水冰冻的危险，高于70℃的场所管内充水汽化的加剧有破坏管道的危险。<br>
+                <br>
+                4．2．3 环境温度不适合采用湿式系统的场所，可以采用能够避免充水结冰和高温加剧汽化的干式系统或预作用系统。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;干式系统由闭式洒水喷头、管道、充气设备、干式报警阀、报警装置和供水设施等组成(图2)，在准工作状态时，干式报警阀前(水源侧)的管道内充以压力水，干式报警阀后(系统侧)的管道内充以有压气体，报警阀处于关闭状态。发生火灾时，闭式喷头受热动作，喷头开启，管道中的有压气体从喷头喷出，干式报警阀系统侧压力下降，造成干式报警阀水源侧压力大于系统侧压力，干式报警阀被自动打开，压力水进入供水管道，将剩余压缩空气从系统立管顶端或横干管最高处的排气阀或已打开的喷头处喷出，然后喷水灭火。在干式报警阀被打开的同时，通向水力警铃和压力开关的通道也被打开，水流冲击水力警铃和压力开关，压力开关直接自动启动系统消防水泵供水。
+            </p>
+            <p align="center"><img src='http://book.zlglpt.com/e4294/1071.jpg'/><br>
+                <strong>图2 干式系统示意图</strong><br>
+                1-消防水池；2-消防水泵；3-止回阀；4-闸阀；5-消防水泵接合器；<br>
+                6-高位消防水箱；7-干式报警阀组；8-配水干管；9-配水管；<br>
+                10-闭式洒水喷头；11-配水支管；12-排气阀；13-电动阀；<br>
+                14-报警控制器；15-泄水阀；16-压力开关；17-信号阀；<br>
+                18-水泵控制柜；19-流量开关；20-末端试水装置；21-水流指示器</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;干式系统与湿式系统的区别在于干式系统采用干式报警阀组，准工作状态时配水管道内充以压缩空气等有压气体。为保持气压，需要配套设置补气设施。干式系统配水管道中维持的气压，根据干式报警阀入口前管道需要维持的水压、结合干式报警阀的工作性能确定。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;闭式喷头开放后，配水管道有一个排气充水过程。系统开始喷水的时间将因排气充水过程而产生滞后，因此削弱了系统的灭火能力，这一点是干式系统的固有缺陷。<br>
+                <br>
+                4．2．4 本条对适合采用预作用系统(见图3)的场所提出了规定：</p>
+            <p align="center"><img src='http://book.zlglpt.com/e4294/1072.jpg'/><br>
+                <strong>图3 预作用系统示意图</strong><br>
+                1-消防水池；2-消防水泵；3-止回阀；4-闸阀；5-消防水泵接合器；<br>
+                6-高位消防水箱；7-预作用装置；8-配水干管；9-配水管；10-闭式洒水喷头；<br>
+                11-配水支管；12-排气阀；13-电动阀；14-报警控制器；15-泄水阀；<br>
+                16-压力开关；17-电磁阀；18-感温探测器；19-感烟探测器；20-信号阀；<br>
+                21-水泵控制柜；22-末端试水装置；23-流量开关；24-水流指示器</p>
+            <p>
+                &nbsp;&nbsp;&nbsp;&nbsp;预作用适用于准工作状态时不允许误喷而造成水渍损失的一些性质重要的建筑物内(如档案库等)，以及在准工作状态时严禁管道充水的场所(如冷库等)，也可用于替代干式系统。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;预作用系统既兼有湿式、干式系统的优点，又避免了湿式、干式系统的缺点，在不允许出现误喷或管道漏水的重要场所，可替代湿式系统使用；在低温或高温场所中替代干式系统使用，可避免喷头开启后延迟喷水的缺点。<br>
+                <br>
+                4．2．5 重复启闭预作用系统能在扑灭火灾后自动关闭报警阀、发生复燃时又能再次开启报警阀恢复喷水，适用于灭火后必须及时停止喷水，要求减少不必要水渍损失的场所。<br>
+                <br>
+                4．2．6
+                本条对适合采用雨淋系统的场所作了规定，包括火灾水平蔓延速度快的场所和室内净空高度超过本规范第6．1．1条规定、不适合采用闭式系统的场所。室内物品顶面与顶板或吊顶的距离加大，将使闭式喷头在火场中的开放时间推迟，喷头动作时间的滞后使火灾得以继续蔓延，而使开放喷头的喷水难以有效覆盖火灾范围。上述情况使闭式系统的控火能力下降，而采用雨淋系统则可消除上述不利影响。雨淋系统启动后立即大面积喷水，遏制和扑救火灾的效果更好，但水渍损失大于闭式系统，适用场所包括舞台葡萄架下部和电影摄影棚等。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;雨淋系统采用开式洒水喷头、雨淋报警阀组，由配套使用的火灾自动报警系统或传动管联动雨淋报警阀，由雨淋报警阀控制其配水管道上的全部喷头同时喷水(见图4、图5，注：可以做冷喷试验的雨淋系统，应设末端试水装置)。<br>
+                <br>
+                4．2．7 本条是对原条文的修改和补充。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;本条借鉴发达国家标准，规定了采用早期抑制快速响应喷头的自动喷水灭火系统的适用范围。自动喷水灭火系统经过长期的实践和不断的改进与创新，其灭火效能已为许多统计资料所证实。但是，也逐渐暴露出常规类型的系统不能有效扑救高堆垛仓库火灾的难点问题。自20世纪70年代中期开始，美国工厂联合保险
+            </p>
+            <p align="center"><img src='http://book.zlglpt.com/e4294/1073.jpg'/><br>
+                <strong>图4 电动启动雨琳系统示意图</strong><br>
+                1-消防水池；2-消防水泵；3-止回阀；4-闸阀；5-消防水泵接合器；<br>
+                6-高位消防水箱；7-雨淋报警阀组；8-配水干管；9-配水管；10-开式洒水喷头；<br>
+                11-配水支管；12-报警控制器；13-压力开关；14-电磁阀；15-感温探测器；<br>
+                16-感烟探测器；17-信号阀；18-水泵控制柜；19-流量开关</p>
+            <p>研究所(FM
+                Global)为扑灭和控制高堆垛仓库火灾做了大量的试验和研究工作。从理论上确定了“早期抑制、快速响应”火灾的三要素：一是喷头感应火灾的灵敏程度；二是喷头动作时刻燃烧物表面需要的灭火喷水强度；三是实际送达燃烧物表面的喷水强度。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;早期抑制快速响应喷头是专为仓库开发的一种仓库专用型喷头，对保护高堆垛和高货架仓库具有特殊的优势，试验表明，对净空高度不超过13．5m的仓库，采用ESFR喷头时可不需再装设货架内置喷头。与标准流量洒水喷头相比，该喷头在火灾初期能快速反应，且水滴产生的冲量能穿透上升的火羽流，直至燃烧物表面。
+            </p>
+            <p align="center"><img src='http://book.zlglpt.com/e4294/1074.jpg'/><br>
+                <strong>图5 充液(水)传动管启动雨淋系统示意图</strong><br>
+                1-消防水池；2-消防水泵；3-止回阀；4-闸阀；5-消防水泵接合器；<br>
+                6-高位消防水箱；7-雨淋报警阀组；8-配水干管；9-配水管；<br>
+                10-开式喷头；11-配水支管；12-报警控制器；13-压力开关；<br>
+                14-闭式洒水喷头；15-信号阀；16-水泵控制柜；17-流量开关</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;早期抑制快速响应喷头仅适用于湿式系统，因为如果用于干式系统或预作用系统，由于报警阀打开后因管道排气充水需要一定的时间，导致喷水延迟，从而达不到快速喷水灭火的目的。<br>
+                <br>
+                4．2．8 本条为新增条文。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;本条参照美国消防协会标准《自动喷水灭火系统安装标准》NFPA 13的规定，规定了仓库型特殊应用喷头自动喷水灭火系统的适用范围。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;根据国外试验情况，对于净空高度不超过12m的仓库，该喷头能够起到很好的保护作用，动作喷头数在可控制范围。本次修订新增了该类喷头及系统的设置要求，为设计人员提供了除ESFR喷头外的另一种选择，并有利于促进自动喷水灭火系统新技术和新产品的发展和应用。<br>
+            </p>
+
+
+        </div>
+        <div id='3199365'>
+
+            <div>
+                <p>4．3 其 他</p>
+            </div>
+            <p>4．3．1 当建筑物内设置多种类型的系统时，按此条规定设计，允许其他系统串联接入湿式系统的配水干管。使各个其他系统从属于湿式系统，既不相互干扰，又简化系统的构成、减少投资(见图6)。</p>
+            <p align="center"><img src='http://book.zlglpt.com/e4294/1075.jpg'/><br>
+                <strong>图6 其他系统接入湿式系统示意图</strong><br>
+                1-消防水池；2-消防水泵；3-止回阀；4-闸阀；<br>
+                5-消防水泵接合器；6-湿式报警阀组；7-其他报警阀组</p>
+            <p>4．3．2 本条规定了系统中包括的组件和必要的配件。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;1 提出了自动喷水灭火系统的基本组成。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;2 提出了设置减压孔板、节流管降低水流动压，分区供水或采用减压阀降低管道静压等控制管道压力的规定。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;3
+                设置排气阀是为了使系统的管道充水时不存留空气，设置泄水阀是为了便于检修。排气阀设在其负责区段管道的最高点，泄水阀则设在其负责区段管道的最低点。泄水阀及其连接管的管径可参考表7。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;4
+                干式系统与预作用系统设置快速排气阀，是为了使配水管道尽快排气充水。干式系统和配水管道充有压缩空气的预作用系统中为快速排气阀设置的电动阀，平时常闭，系统开始充水时打开。</p>
+            <p align="center"><strong>表7 泄水管管径(mm)<br>
+            </strong></p>
+            <div align="center">
+                <table width="600" height="112" border="0">
+                    <tr>
+                        <td>供水干管管径</td>
+                        <td>泄水管管径</td>
+                    </tr>
+                    <tr>
+                        <td>≥100</td>
+                        <td>≤50</td>
+                    </tr>
+                    <tr>
+                        <td>65～80</td>
+                        <td>≤40</td>
+                    </tr>
+                    <tr>
+                        <td>＜65</td>
+                        <td>25</td>
+                    </tr>
+                </table>
+            </div>
+            <p>4．3．3 本条规定了防火分隔水幕的适用范围。本条提出了限制民用建筑中防火分隔水幕规模的规定，目的是不推荐采用防火分隔水幕作防火分区内的防火分隔设施。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;近年各地在新建大型会展中心、商业建筑、高架仓库及条件类似的高大空间建筑时，常采用防火分隔水幕代替防火墙作为防火分区的分隔设施，以解决单层或连通层面积超出防火分区规定的问题。为了达到上述目的，防火分隔水幕长度动辄几十米，甚至上百米，造成防火分隔水幕系统的用水量很大，室内消防用水量猛增。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;此外，储存的大量消防用水不用于主动灭火而用于被动防火的做法，不符合火灾中应积极主动灭火的原则，也是一种浪费。</p>
+
+
+        </div>
+        <div id='3199366'>
+
+            <div>
+                <p>5 设计基本参数</p>
+            </div>
+            <p>5．0．1 本条规定了不同危险等级场所设置自动喷水灭火系统时的设计基本参数。表5．0．1为湿式系统设计的基本参数，其他类型系统的设计参数均是以此表为基础进行确定。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;本条依据国外标准并结合我国试验情况确定，图7为美国消防协会标准《自动喷水灭火系统安装标准》NFPA 13中规定的自动喷水灭火系统设计数据，根据NFPA
+                13的规定，每个火灾危险等级对应的曲线上的任一点均是可取的，通常情况下，为求得经济效果，多选择喷水强度大而作用面积小的一点，这也符合“大强度喷水有利于迅速控灭火和有利于缩小喷水作用面积”的试验与经验的总结，本条在制定时选取该曲线中喷水强度的上限数据，并适当加大作用面积后确定为本规范的设计基本参数。这样的技术处理，既便于设计人员操作，又提高了规范的应变能力和系统的经济性能，同时又能保证系统可靠地发挥作用。表8为英国、美国、德国和日本等国的设计基本数据。
+            </p>
+            <p align="center"><img src='http://book.zlglpt.com/e4294/1076.jpg'/><br>
+                <strong>图7 NFPA 13中规定的自动喷水灭火系统设计参数</strong></p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;对于系统最不利点处的喷头工作压力，通常情况下，当发生火灾时，自动喷水灭火系统在消防水泵启动之前由高位消防水箱或其他辅助供水设施提供初期的用水量和水压。目前国内采用较多的是高位消防水箱，这样就产生了一个矛盾：如果顶层最不利点处喷头的水压要求为0．1MPa，则屋顶水箱必须比顶层的喷头高出10m以上，将会给建筑造型和结构处理上带来很大困难，根据上述情况和参考国外有关规范，将最不利点处喷头的工作压力确定为0．05MPa，英国、德国、美国等国的规范也规定最不利点处喷头的最低工作压力为0．05MPa。<br>
+                &nbsp;&nbsp;&nbsp; 系统的喷水强度、作用面积、喷头工作压力是相互关联的，系统中喷头的工作压力应通过计算确定，降低最不利点喷头最低工作压力而产生的问题，可通过其他途径解决。</p>
+            <p align="center"><strong>表8 国外自动喷水灭火系统基本设计数据</strong><br>
+                <img src='http://book.zlglpt.com/e4294/1077.jpg'/><br>
+                <img src='http://book.zlglpt.com/e4294/1078.jpg'/><br>
+                <img src='http://book.zlglpt.com/e4294/1079.jpg'/></p>
+            <p>5．0．2 本条是对原规范第5．0．1A条的修改和补充。本条依据国内实际试验结果并结合国外标准提出。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;目前，我国一些高大空间场所逐渐兴起，而国内对于此类场所自动灭火设施的设置不尽相同。国内外相关研究机构也开展了模拟类似场所的实体灭火试验及数值模拟试验研究，目的在于解决“以往没有闭式系统保护高大空间场所的设计准则，少数未经试验、缺乏足够认识的保护方案被广泛应用”的问题，说明了此类问题具有普遍意义和试验的必要性。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;公安部天津消防研究所分别在净空高度为12m、16m和18m条件下，通过建立不同类型场所的火灾试验模型，开展了自动喷水灭火系统作用下的全尺寸灭火试验。试验采用1．5m左右高度的可燃物品(塑料、木材、纸质混合)和流量系数K等于161和K等于363的喷头，试验结果显示，第一只喷头的开放时间至关重要，如果火不能被开始动作的少数喷头熄灭的话，那么将不能被控制住。因此，对于高大空间场所来说，应在首批喷头开启后立即进行大流量喷水，而用增加喷头开启数量的方法来对付高大空间场所火灾不是解决问题的办法。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;需要说明的是，当现场火灾荷载小于试验火灾荷载时，存在闭式喷头开放时间滞后于火灾水平蔓延的可能性。本条适用于净空高度8m～18m民用建筑和净空高度8m～12m厂房高大空间场所自动喷水灭火系统的设计。当确定采用湿式系统后，应严格按本条规定确定系统设计参数。<br>
+                <br>
+                5．0．3 本条为新增条文。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;超级市场大多是带有仓储式的大空间的购物场所，既有商场的使用功能，又有仓库的储存特点，既是营业区又是仓储区。根据《商店建筑设计规范》JGJ
+                48-2014对商店建筑的分类，商店建筑包括购物中心、百货商场、超级市场、菜市场和步行商业街等。超级商场是指采取自选销售方式，以销售食品和日常生活用品为主，向顾客提供日常生活必需品为主要目的的零售商店。本次修订提出了超级市场应根据室内净高、储存方式以及储存物品的种类与高度等因素按本规范第5．0．4条和第5．0．5条的规定确定设计基本参数。<br>
+                <br>
+                5．0．4 本条是对原规范第5．0．5条的修改和补充。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;本条是对国外标准中仓库及类似场所的系统设计基本参数进行分类、归纳、合并后，充实我国规范对仓库的系统设计基本参数的规定，设计时应按喷水强度与作用面积选用喷头。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;从国外有关标准提供的数据分析，影响仓库设计参数的因素很多，包括货品的性质、堆放形式、堆积高度及室内净空高度等，各因素的变化，均影响设计参数的改变。例如，货品堆高越大，火灾竖向蔓延速度迅速越快的规律，不仅使灭火难度增大，而且使喷水因货品的阻挡而难以直接送达燃烧面，只能沿货品表面流淌后最终到达燃烧面，造成送达到位直接灭火的水量锐减。因此，货品堆高增大时，相应采用提高喷水强度的措施是必要的。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;随着我国经济的迅速发展，面对不同火灾危险性的各种仓库，本条参照美国消防协会标准《自动喷水灭火系统安装标准》NFPA
+                13，在归纳简化的基础上，提出了仓库危险级场所的系统设计基本参数。既借鉴了发达国家标准的先进技术，又使我国规范中保护仓库的系统设计参数得到了充实，符合我国现阶段的具体国情。<br>
+                &nbsp;&nbsp;&nbsp;
+                单排货架的宽度应不超过1．8m，且间隔不应小于1．1m；双排货架为单个货架或两个背靠背放置的单排货架，货架总宽为1．8m～3．6m，且间隔不小于1．1m；多排货架为货架宽度超过3．6m，或间距小于1．1m且总宽度大于3．6m的单、双排货架混合放置；可移动式货架应视为多排货架。最大净空高度是指室内地面到屋面板的垂直距离，顶板为斜面时，应为室内地面到屋脊处的垂直距离。<br>
+                <br>
+                5．0．5 本条是对原规范第5．0．6条的修改和补充。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;仓库火灾蔓延迅速、不易扑救，容易造成重大财产损失，因此是自动喷水灭火系统的重要应用对象。而扑救高堆垛和高架仓库火灾，又一直是自动喷水灭火系统的技术难点。美国耗巨资试验研究，成功开发出“特殊应用喷头”、“早期抑制快速响应喷头”等可有效扑救高堆垛、高货架仓库火灾的新技术。本条规定参考美国消防协会标准《自动喷水灭火系统安装标准》NFPA
+                13的数据，并经归纳简化后，提出了采用早期抑制快速响应喷头的系统设计参数。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;本次修订时增加了ESFR喷头的安装方式，因为安装方式对系统的灭火效果影响很大。例如国外某研究机构在一次试验中，一个直立安装于50mm(2in)支管上的喷头由于受到管道的障碍而未能控制下方的火，造成灭火失败。<br>
+                <br>
+                5．0．6 本条为新增条文。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;本条参照国外标准，提出了仓库型特殊应用喷头的设计基本参数。仓库型特殊应用喷头用于保护火灾危险等级不超过箱装发泡塑料储物的仓库，根据FM
+                Global的试验情况，在最大净空高度不超过12m、最大储物高度不超过10．5m的情况下，不需安装货架内置喷头。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;2007～2009年，FM
+                Global分别在12．0m和9．0m的最大净空高度下，采用不同的点火位置开展了数次实体火试验。试验结果显示，喷头在1min～2min内相继动作，开放喷头数为1只～8只，顶板温度为40℃～120℃。喷头动作后，能够很快扑灭可燃物，仅有主堆垛储物参与燃烧，辅助堆垛燃烧有限，几乎没有参与燃烧。<br>
+                <br>
+                5．0．7 通透性层板是指水或烟气能穿透或通过的货架层板，如网格或格栅型层板。本条规定除安装货架内置喷头的上方层板为实层隔板外，其余层板均应为通透性层板。<br>
+                <br>
+                5．0．8 本条是对原规范第5．0．7条的修改和补充。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;本条是针对我国目前货架内置喷头的应用现状，充实了货架仓库中采用货架内置喷头的设置要求。对最大净空高度或最大储物高度超过本规范第5．0．5条规定的货架仓库，仅在顶板下设置喷头，将不能满足有效控灭火的需要，而在货架内增设洒水喷头，是对顶板下布置喷头灭火能力的补充，补偿超出顶板下喷头保护范围部位的灭火能力。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;本次修订删除了ESFR自动喷水灭火系统采用货架内置洒水喷头的布置方式，原因是ESFR喷头在其允许最大净空高度内，可不设置货架内置喷头。规范不推荐采用顶板下布置ESFR喷头＋货架内置喷头的布置方式。当最大净空高度或最大储物高度超过表5．0．5的规定时，应按照本规范第5．0．4条和本条的规定布置。本表中的“注”是用于计算货架内置洒水喷头的流量，如对于仓库危险级Ⅲ级场所，安装了5层货架内置洒水喷头，货架内开放喷头数为14个，则应按最顶层和次顶层各开放7只喷头确定流量。<br>
+                <br>
+                5．0．9 仓库内系统的喷水强度大，持续喷水时间长，为避免不必要的水渍损失和增加建筑荷载，对于系统喷水强度大的仓库，有必要设置消防排水。<br>
+                <br>
+                5．0．10、5．0．11 这两条是对原规范第5．0．4条的修改和补充。<br>
+                &nbsp;&nbsp;&nbsp;
+                干式系统的配水管道内平时维持一定气压，因此系统启动后将滞后喷水，而滞后喷水无疑将增大灭火难度，等于相对削弱了系统的灭火能力，因此本条提出采用扩大作用面积的办法来补偿滞后喷水对灭火能力的影响。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;雨淋系统由雨淋报警阀控制其连接的开式洒水喷头同时喷水，有利于扑救水平蔓延速度快的火灾。但是，如果一个雨淋报警阀控制的面积过大，将会使系统的流量过大，总用水量过大，并带来较大的水渍损失，影响系统的经济性能。本规范编制组出于适当控制系统流量与总用水量的考虑，提出了雨淋系统中一个雨淋报警阀控制的喷水面积按不大于本规范规定的作用面积为宜。对大面积场所，可设多套雨淋报警阀组合控制一次灭火的保护范围。<br>
+                &nbsp;&nbsp;&nbsp;
+                对于采用由火灾自动报警系统和压力开关联动控制的预作用系统，由于其不能保证在闭式喷头动作前完成为管道充满水的预作用过程，即不能保证喷头开放后立即喷水，所以不是真正意义上的预作用系统，应视为干式系统，因此其作用面积、充水时间等应按干式系统确定。<br>
+                <br>
+                5．0．12 仅在走道设置闭式系统时，系统的作用主要是防止火灾蔓延和保护疏散通道。对此类系统的作用面积，本条提出了按各楼层走道中最大疏散距离所对应的走道面积确定。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;美国消防协会标准《自动喷水灭火系统安装标准》NFPA
+                13规定，当系统的保护范围为单排喷头时，系统作用面积为此管道上的所有喷头的保护面积，但最多不应超过7只。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;当走道的宽度为1．4m、长度为15m，喷水覆盖全部走道面积时的喷头布置及开放喷头数设置见图8。图中R为喷头有效保护半径。</p>
+            <p align="center"><img src='http://book.zlglpt.com/e4294/1080.jpg'/><br>
+                <strong>图8 仅在走廊布置喷头的示意图</strong></p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;例1：当喷头最低工作压力为0．05MPa时，喷水量为56．57L／min。为达到6．0L／(min·m<sup>2</sup>)平均喷水强度时，圆形保护面积为9．43m<sup>2</sup>，故R＝1．73m。则喷头间距S为：
+            </p>
+            <p align="center"><img src='http://book.zlglpt.com/e4294/1081.jpg'/></p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;袋形走道内布置并开放的喷头数为：15÷3.16＝4．8，确定为5只。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp; 例2：当袋形疏散走道按现行国家标准《建筑设计防火规范》GB
+                50016规定的最长疏散距离为22×1．25＝27．5(m)确定时，若走道宽度仍为1．4m，则喷水覆盖全部走道面积时的开放喷头数为：27.5÷3.16＝8．7，按本条规定确定为9只。<br>
+                <br>
+                5．0．13
+                商场等公共建筑，由于内装修的需要，往往装设网格状、条栅状等不挡烟的通透性吊顶，此类吊顶会严重阻碍喷头的洒水分布性能和动作性能，进而影响系统的控、灭火性能。因此本条提出应适当增大系统的喷水强度，并且喷头的布置仍应遵循一定的要求。<br>
+                <br>
+                5．0．14
+                防护冷却水幕用于配合防火卷帘、防火玻璃墙等防火分隔设施使用，以保证该分隔设施的完整性与隔热性。某厂曾于1995年在“国家固定灭火系统和耐火构件质量监督检验测试中心”进行过洒水防火卷帘抽检测试，90min耐火试验后，得出“未失去完整性和隔热性”的结论。本条“喷水高度为4m，喷水强度为0．5L／(m·s)”的规定，折算成对卷帘面积的平均喷水强度为7．5L／(min·m<sup>2</sup>)，可以形成水膜并有效保护钢结构不受火灾损害。喷水点的提高，将使卷帘面积的平均喷水强度下降，致使防护冷却的能力下降。所以，本条提出了喷水点高度每提高1m，喷水强度相应增加0．1L／(s·m)的规定，以补充冷却水沿分隔物下淌时受热汽化的水量损失，但喷水点高度超过9m时喷水强度仍按1．0L／(s·m)执行。对于尺寸不超过15m×8m的开口，防火分隔水幕的喷水强度仍按2L／(s·m)确定。<br>
+                <br>
+                5．0．15 本条为新增条文。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;我国现行国家标准《建筑设计防火规范》GB 50016、《人民防空工程设计防火规范》GB
+                50098均规定，防火分区间可采用防火卷帘分隔，当防火卷帘的耐火极限不符合要求时，可采用设置自动喷水灭火系统保护。《建筑设计防火规范》GB
+                50016-2014中还规定，建筑内中庭与周围连通空间，以及步行街两侧建筑商铺面向步行街一侧的围护构件采用耐火完整性不低于1．00h的非隔热性防火玻璃墙时，应设置闭式自动喷水灭火系统保护，并规定自动喷水灭火系统的设计应符合现行国家标准《自动喷水灭火系统设计规范》GB
+                50084的有关规定。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;原规范中没有规定闭式自动喷水灭火系统保护防火卷帘的设计基本参数，本次修订依据上述要求，参照国外标准及国内试验情况，提出了防护冷却系统保护防火卷帘以及非隔热性防火玻璃墙等防火分隔设施的设计基本参数。美国消防协会标准《自动喷水灭火系统安装标准》NFPA
+                13规定，当采用玻璃墙体代替防火墙时，应在玻璃墙体的两侧布置喷头，除非经过特别认证，喷头布置间距不应超过2．4m(8ft)，与玻璃的距离不超过0．3m(1ft)。并应确保喷头的布置能使喷头在动作后能淋湿所有玻璃墙体的表面，所采用的玻璃应为钢化玻璃、嵌丝玻璃或夹层玻璃等。<br>
+            </p>
+
+
+        </div>
+        <div id='3199367'>
+
+            <div>
+                <p>6 系统组件<br>
+                    <br>
+                    6．1 喷 头</p>
+            </div>
+            <p>6．1．1 本条是对原条文的修改和补充。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;设置闭式系统的场所，喷头最大允许设置高度应遵循“使喷头及时受热开放、并使开放喷头的洒水有效覆盖起火范围”这一原则，超过上述高度，喷头将不能及时受热开放，而且喷头开放后的洒水可能达不到覆盖起火范围的预期目的，出现火灾在喷水范围之外蔓延的现象，使系统不能有效发挥控灭火的作用。因此，喷头的最大允许设置高度由喷头类型、建筑使用功能等因素综合确定。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;本条参考国内外有关标准的规定及试验研究成果，分别规定了民用建筑、厂房及仓库采用闭式系统时的喷头选型以及场所的最大净空高度，并提出了用于保护钢屋架等建筑构件的闭式系统和设有货架内置洒水喷头仓库的闭式系统，最大净空高度不受限制。<br>
+                <br>
+                6．1．3 本条是对原条文的修改和补充。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;本条提出了不同使用条件下对喷头选型的规定。实际工程中，由于喷头的选型不当而造成失误的现象比较突出。不同用途和型号的喷头，分别具有不同的使用条件和安装方式。喷头的选型、安装方式、方位合理与否，将直接影响喷头的动作时间和布水效果。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;第1款是指当设置场所不设吊顶，且配水管道沿梁下布置时，火灾热气流将在上升至顶板后水平蔓延。此时只有向上安装直立型喷头，才能使热气流尽早接触和加热喷头热敏元件。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;第2款是指室内设有吊顶时，喷头将紧贴在吊顶下布置，或埋设在吊顶内，因此适合采用下垂型或吊顶型喷头，否则吊顶将阻挡洒水分布。吊顶型喷头作为一种类型，在现行国家标准《自动喷水灭火系统
+                第1部分 洒水喷头》GB 5135．1中有明确规定，即为“隐蔽安装在吊顶内，分为齐平式、嵌入式和隐蔽式三种型式。”不同安装方式的喷头，其洒水分布不同，选型时要予以充分重视。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;第3款对边墙型洒水喷头的设置提出了要求。边墙型喷头的配水管道易于布置，非常受国内设计、施工及使用单位欢迎。但国外对采用边墙型喷头有严格规定，如保护场所应为轻危险级，中危险级系统采用时须经特许；顶板必须为水平面，喷头附近不得有阻挡喷水的障碍物；洒水应喷湿一定范围墙面等。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;本款根据国内需求，按本规范对设置场所火灾危险等级的分类，以及边墙型喷头性能特点等实际情况，提出了既允许使用此种喷头，又严格使用条件的规定。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;第7款提出了隐蔽式洒水喷头的设置要求。隐蔽式洒水喷头由于具有美观性的优点，越来越受到业主的青睐。目前，该类喷头广泛地应用在一些装饰豪华、外观要求美化的场所，如商场、高级宾馆、酒店、娱乐中心等。但是，根据目前的应用现状，隐蔽式喷头存在巨大的安全隐患，主要表现在：(1)发生火灾时喷头的装饰盖板不能及时脱落；(2)装饰盖板脱落后滑竿无法下落，导致喷头溅水盘无法滑落到吊顶平面下部，喷头无法形成有效的布水；(3)喷头装饰盖板被油漆、涂料喷涂等。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;针对这一情况，规范在本次修订时提出了严格限制该类喷头的使用，规定火灾危险等级超过中危险级Ⅰ级的场所不应采用该喷头。<br>
+                <br>
+                6．1．4 为便于系统在灭火或维修后恢复准工作状态之前排尽管道中的积水，同时有利于在系统启动时排气，要求干式、预作用系统的喷头采用直立型喷头或干式下垂型喷头。<br>
+                <br>
+                6．1．5
+                本条提出了水幕系统的喷头选型要求。防火分隔水幕的作用是阻断烟和火的蔓延，当使水幕形成密集喷洒的水墙时，要求采用洒水喷头；当使水幕形成密集喷洒的水帘时，要求采用开口向下的水幕喷头。防火分隔水幕也可以同时采用上述两种喷头并分排布置。防护冷却水幕则要求采用将水喷向保护对象的水幕喷头。<br>
+                <br>
+                6．1．6
+                本条为新增条文。防护冷却系统主要与防火卷帘、防火玻璃墙等防火分隔设施配合使用，其喷头布置时应将水直接喷向保护对象，因此可采用边墙型洒水喷头。目前，国内外还有一种专门用于保护防火分隔设施的窗式喷头等特殊类型喷头，该喷头具有较好的洒水分布性能，但目前尚无国家产品标准。<br>
+                <br>
+                6．1．7
+                本条规定了快速响应洒水喷头的使用条件。大量装饰材料、家电等现代化日用品和办公用品的使用，使火灾出现蔓延速度快、有害气体生成量大和财产损失大等新特点，对自动喷水灭火系统的工作效能提出了更高的要求。国外于20世纪80年代开始生产并推广使用快速响应喷头。快速响应洒水喷头的优势在于：热敏性能明显高于标准响应喷头，可在火场中提前动作，在初起小火阶段开始喷水，使灭火的难度降低，可以做到灭火迅速、灭火用水量少，可最大限度地减少人员伤亡和火灾烧损与水渍污染造成的经济损失。现行国家标准《自动喷水灭火系统
+                第1部分 洒水喷头》GB 5135．1规定，响应时间指数(RTI)≤50(m·s)<sup>0.5</sup>为快速响应喷头，喷头的响应时间指数可通过标准“插入实验”判定。在“插入实验”给定的标准热环境中，快速响应洒水喷头的动作时间较<img
+                        src='http://book.zlglpt.com/e4294/1082.jpg'/>8玻璃球喷头快5倍。为此，本规范提出了在一些场所推荐采用快速响应洒水喷头的规定。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;与标准响应洒水喷头、特殊响应洒水喷头相比，快速响应洒水喷头仅用于湿式系统，该喷头动作灵敏，如果用于干式系统和预作用系统，会因为喷水时间延迟造成过多的喷头开放，更为严重的可能会超过系统的设计作用面积，造成设计用水量的不足。<br>
+                <br>
+                6．1．8 同一隔间内采用热敏性能、规格及安装方式一致的喷头，是为了防止混装不同喷头对系统的启动与操作造成不良影响。曾经发现某一面积达几千平方米的大型餐厅内混装<img
+                        src='http://book.zlglpt.com/e4294/1082.jpg'/>8和<img
+                        src='http://book.zlglpt.com/e4294/1082.jpg'/>5玻璃球喷头及某些高层建筑同一场所内混装下垂型、普通型喷头等错误做法。<br>
+                <br>
+                6．1．10
+                设计自动喷水灭火系统时，要求在设计资料中提出喷头备品的数量，以便在系统投入使用后，因火灾或其他原因损伤喷头时能够及时更换，缩短系统恢复准工作状态的时间。当在一个建筑工程的设计中采用了不同型号的喷头时，除了对备用喷头总量的要求外，不同型号的喷头要有各自的备品。各国规范对备用喷头的规定不尽一致，例如美国消防协会标准《自动喷水灭火系统安装标准》NFPA
+                13规定，喷头总数不超过300只时，备品数为6只；总数为300只～1000只时，备品数不少于12只；超过1000只时备品数少于24只。英国标准《固定式灭火系统-自动喷水灭火系统-设计、安装和维护》BS EN
+                12845规定，对每套自动喷水灭火系统，轻危险级不应少于6只，普通危险级不应少于24只，高危险级(生产和储存)场所不应少于36只。<br>
+            </p>
+
+
+        </div>
+        <div id='3199368'>
+
+            <div>
+                <p>6 系统组件<br>
+                    <br>
+                    6．1 喷 头</p>
+            </div>
+            <p>6．1．1 本条是对原条文的修改和补充。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;设置闭式系统的场所，喷头最大允许设置高度应遵循“使喷头及时受热开放、并使开放喷头的洒水有效覆盖起火范围”这一原则，超过上述高度，喷头将不能及时受热开放，而且喷头开放后的洒水可能达不到覆盖起火范围的预期目的，出现火灾在喷水范围之外蔓延的现象，使系统不能有效发挥控灭火的作用。因此，喷头的最大允许设置高度由喷头类型、建筑使用功能等因素综合确定。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;本条参考国内外有关标准的规定及试验研究成果，分别规定了民用建筑、厂房及仓库采用闭式系统时的喷头选型以及场所的最大净空高度，并提出了用于保护钢屋架等建筑构件的闭式系统和设有货架内置洒水喷头仓库的闭式系统，最大净空高度不受限制。<br>
+                <br>
+                6．1．3 本条是对原条文的修改和补充。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;本条提出了不同使用条件下对喷头选型的规定。实际工程中，由于喷头的选型不当而造成失误的现象比较突出。不同用途和型号的喷头，分别具有不同的使用条件和安装方式。喷头的选型、安装方式、方位合理与否，将直接影响喷头的动作时间和布水效果。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;第1款是指当设置场所不设吊顶，且配水管道沿梁下布置时，火灾热气流将在上升至顶板后水平蔓延。此时只有向上安装直立型喷头，才能使热气流尽早接触和加热喷头热敏元件。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;第2款是指室内设有吊顶时，喷头将紧贴在吊顶下布置，或埋设在吊顶内，因此适合采用下垂型或吊顶型喷头，否则吊顶将阻挡洒水分布。吊顶型喷头作为一种类型，在现行国家标准《自动喷水灭火系统
+                第1部分 洒水喷头》GB 5135．1中有明确规定，即为“隐蔽安装在吊顶内，分为齐平式、嵌入式和隐蔽式三种型式。”不同安装方式的喷头，其洒水分布不同，选型时要予以充分重视。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;第3款对边墙型洒水喷头的设置提出了要求。边墙型喷头的配水管道易于布置，非常受国内设计、施工及使用单位欢迎。但国外对采用边墙型喷头有严格规定，如保护场所应为轻危险级，中危险级系统采用时须经特许；顶板必须为水平面，喷头附近不得有阻挡喷水的障碍物；洒水应喷湿一定范围墙面等。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;本款根据国内需求，按本规范对设置场所火灾危险等级的分类，以及边墙型喷头性能特点等实际情况，提出了既允许使用此种喷头，又严格使用条件的规定。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;第7款提出了隐蔽式洒水喷头的设置要求。隐蔽式洒水喷头由于具有美观性的优点，越来越受到业主的青睐。目前，该类喷头广泛地应用在一些装饰豪华、外观要求美化的场所，如商场、高级宾馆、酒店、娱乐中心等。但是，根据目前的应用现状，隐蔽式喷头存在巨大的安全隐患，主要表现在：(1)发生火灾时喷头的装饰盖板不能及时脱落；(2)装饰盖板脱落后滑竿无法下落，导致喷头溅水盘无法滑落到吊顶平面下部，喷头无法形成有效的布水；(3)喷头装饰盖板被油漆、涂料喷涂等。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;针对这一情况，规范在本次修订时提出了严格限制该类喷头的使用，规定火灾危险等级超过中危险级Ⅰ级的场所不应采用该喷头。<br>
+                <br>
+                6．1．4 为便于系统在灭火或维修后恢复准工作状态之前排尽管道中的积水，同时有利于在系统启动时排气，要求干式、预作用系统的喷头采用直立型喷头或干式下垂型喷头。<br>
+                <br>
+                6．1．5
+                本条提出了水幕系统的喷头选型要求。防火分隔水幕的作用是阻断烟和火的蔓延，当使水幕形成密集喷洒的水墙时，要求采用洒水喷头；当使水幕形成密集喷洒的水帘时，要求采用开口向下的水幕喷头。防火分隔水幕也可以同时采用上述两种喷头并分排布置。防护冷却水幕则要求采用将水喷向保护对象的水幕喷头。<br>
+                <br>
+                6．1．6
+                本条为新增条文。防护冷却系统主要与防火卷帘、防火玻璃墙等防火分隔设施配合使用，其喷头布置时应将水直接喷向保护对象，因此可采用边墙型洒水喷头。目前，国内外还有一种专门用于保护防火分隔设施的窗式喷头等特殊类型喷头，该喷头具有较好的洒水分布性能，但目前尚无国家产品标准。<br>
+                <br>
+                6．1．7
+                本条规定了快速响应洒水喷头的使用条件。大量装饰材料、家电等现代化日用品和办公用品的使用，使火灾出现蔓延速度快、有害气体生成量大和财产损失大等新特点，对自动喷水灭火系统的工作效能提出了更高的要求。国外于20世纪80年代开始生产并推广使用快速响应喷头。快速响应洒水喷头的优势在于：热敏性能明显高于标准响应喷头，可在火场中提前动作，在初起小火阶段开始喷水，使灭火的难度降低，可以做到灭火迅速、灭火用水量少，可最大限度地减少人员伤亡和火灾烧损与水渍污染造成的经济损失。现行国家标准《自动喷水灭火系统
+                第1部分 洒水喷头》GB 5135．1规定，响应时间指数(RTI)≤50(m·s)<sup>0.5</sup>为快速响应喷头，喷头的响应时间指数可通过标准“插入实验”判定。在“插入实验”给定的标准热环境中，快速响应洒水喷头的动作时间较<img
+                        src='http://book.zlglpt.com/e4294/1085.jpg'/>8玻璃球喷头快5倍。为此，本规范提出了在一些场所推荐采用快速响应洒水喷头的规定。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;与标准响应洒水喷头、特殊响应洒水喷头相比，快速响应洒水喷头仅用于湿式系统，该喷头动作灵敏，如果用于干式系统和预作用系统，会因为喷水时间延迟造成过多的喷头开放，更为严重的可能会超过系统的设计作用面积，造成设计用水量的不足。<br>
+                <br>
+                6．1．8 同一隔间内采用热敏性能、规格及安装方式一致的喷头，是为了防止混装不同喷头对系统的启动与操作造成不良影响。曾经发现某一面积达几千平方米的大型餐厅内混装<img
+                        src='http://book.zlglpt.com/e4294/1085.jpg'/>8和<img
+                        src='http://book.zlglpt.com/e4294/1085.jpg'/>5玻璃球喷头及某些高层建筑同一场所内混装下垂型、普通型喷头等错误做法。<br>
+                <br>
+                6．1．10
+                设计自动喷水灭火系统时，要求在设计资料中提出喷头备品的数量，以便在系统投入使用后，因火灾或其他原因损伤喷头时能够及时更换，缩短系统恢复准工作状态的时间。当在一个建筑工程的设计中采用了不同型号的喷头时，除了对备用喷头总量的要求外，不同型号的喷头要有各自的备品。各国规范对备用喷头的规定不尽一致，例如美国消防协会标准《自动喷水灭火系统安装标准》NFPA
+                13规定，喷头总数不超过300只时，备品数为6只；总数为300只～1000只时，备品数不少于12只；超过1000只时备品数少于24只。英国标准《固定式灭火系统-自动喷水灭火系统-设计、安装和维护》BS EN
+                12845规定，对每套自动喷水灭火系统，轻危险级不应少于6只，普通危险级不应少于24只，高危险级(生产和储存)场所不应少于36只。<br>
+            </p>
+
+
+        </div>
+        <div id='3199369'>
+
+            <div>
+                <p>6．2 报警阀组</p>
+            </div>
+            <p>6．2．1 报警阀组在自动喷水灭火系统中有下列作用：<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;(1)湿式与干式报警阀；接通或关断报警水流，喷头动作后报警水流将驱动水力警铃和压力开关报警；防止水倒流。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;(2)雨淋报警阀：接通或关断向配水管道的供水。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;报警阀组中的试验阀，用于检验报警阀、水力警铃和压力开关的可靠性。由于报警阀和水力警铃及压力开关均采用水力驱动的工作原理，因此具有良好的可靠性和稳定性。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;为钢屋架等建筑构件建立的闭式系统，功能与用于扑救地面火灾的闭式系统不同，为便于分别管理，规定单独设置报警阀组。水幕系统与上述情况类似，也规定单独设置报警阀组或感温雨淋报警阀。<br>
+                <br>
+                6．2．2 根据本规范第4．3．1条的规定，串联接入湿式系统的干式、预作用、雨淋等其他系统，本条规定单独设置报警阀组，以便在共用配水干管的情况下独立报警。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;串联接入湿式系统的其他系统，其供水将通过湿式报警阀。湿式系统检修时，将影响串联接入的其他系统，因此规定其他系统所控制的喷头数也应计入湿式报警阀组控制喷头的总数内。<br>
+                <br>
+                6．2．3 第一款规定了一个报警阀组控制的喷头数。一是为了保证维修时，系统的关停部分不致过大；二是为了提高系统的可靠性。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;美国消防协会的统计资料表明，同样的灭火成功率，干式系统的喷头动作数要大于湿式系统，即前者的控火、灭火率要低一些，其原因主要是喷水滞后造成的。鉴于本规范已提出“干式系统配水管道应设快速排气阀”的规定，故干式报警阀组控制的喷头总数规定为不宜超过500只。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;当配水支管同时安装保护吊顶下方空间和吊顶上方空间的喷头时，由于吊顶材料的耐火性能要求执行相关规范的规定，因此吊顶一侧发生火灾时，在系统的保护下火势将不会蔓延到吊顶的另一侧。因此，对同时安装保护吊顶两侧空间喷头的共用配水支管，规定只将数量较多一侧的喷头计入报警阀组控制的喷头总数。<br>
+                <br>
+                6．2．4 本条参考英国标准《固定式灭火系统-自动喷水灭火系统一设计、安装和维护》BS EN
+                12845，规定了每个报警阀组供水的最高与最低位置喷头之间的最大位差。规定本条的目的是为了控制高、低位置喷头间的工作压力，防止其压差过大。当满足最不利点处喷头的工作压力时，同一报警阀组向较低有利位置的喷头供水时，系统流量将因喷头的工作压力上升而增大。限制同一报警阀组供水的高、低位置喷头之间的位差，是均衡流量的措施。<br>
+                <br>
+                6．2．5 雨淋报警阀配置的电磁阀，其流道的通径很小。在电磁阀入口设置过滤器，是为了防止其流道被堵塞，保证电磁阀的可靠性。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;并联设置雨淋报警阀组的系统启动时，将根据火情开启一部分雨淋报警阀。当开阀供水时，雨淋报警阀的入口水压将产生波动，有可能引起其他雨淋报警阀的误动作。为了稳定控制腔的压力，保证雨淋报警阀的可靠性，本条规定并联设置雨淋报警阀组的雨淋系统，雨淋报警阀控制腔的入口要求设有止回阀。<br>
+                <br>
+                6．2．6 本条规定报警阀的安装高度，是为了方便施工、测试与维修工作。系统启动和功能试验时，报警阀组将排放出一定量的水，故要求在设计时相应设置足够能力的排水设施。<br>
+                <br>
+                6．2．7
+                本条对连接报警阀进出口的控制阀作了规定，目的是为了防止误操作造成供水中断。我国曾发生过因阀门关闭导致灭火失败的案例，例如2000年7月某大厦26层的办公室发生火灾，办公室内的4只喷头和走道内的6只喷头爆破，但由于该楼层的自动喷水灭火系统阀门被关闭，致使自动喷水灭火系统未能发挥作用，最后由消防人员扑灭了火灾。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;本条并非强调报警阀进出口均应设置信号阀，而是强调当设置控制阀时，应采用信号阀或配置能够锁定阀板位置的锁具。一般情况下，对于系统调试时不允许水进入管网的系统，如干式系统、预作用系统和雨淋系统，需要在报警阀的出口设置信号阀。
+                <br>
+                <br>
+                6．2．8 本条是对原条文的修改和补充。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;规定水力警铃工作压力、安装位置和与报警阀组连接管的直径及长度，目的是为了保证水力警铃发出警报的位置和声强。要求安装在有人值班的地点附近或公共通道的外墙上，是保证其报警能及时被值班人员或保护场所内其他人员发现。<br>
+            </p>
+
+
+        </div>
+        <div id='3199370'>
+
+            <div>
+                <p>6．3 水流指示器</p>
+            </div>
+            <p>6．3．1
+                水流指示器的功能是及时报告发生火灾的部位，本条对系统中要求设置水流指示器的部位提出了规定，即每个防火分区和每个楼层均要求设有水流指示器。同时规定当一个湿式报警阀组仅控制一个防火分区或一个楼层的喷头时，由于报警阀组的水力警铃和压力开关已能发挥报告火灾部位的作用，故此种情况允许不设水流指示器。<br>
+                <br>
+                6．3．2 设置货架内置喷头的仓库，顶板下喷头与货架内置喷头分别设置水流指示器，有利于判断喷头的状况，故有此条规定。<br>
+                <br>
+                6．3．3 为使系统维修时关停的范围不致过大而在水流指示器入口前设置阀门时，要求该阀门采用信号阀，以便显示阀门的状态，其目的是为防止因误操作而造成配水管道断水的故障。<br>
+            </p>
+
+
+        </div>
+        <div id='3199371'>
+
+            <div>
+                <p>6．4 压力开关</p>
+            </div>
+            <p>6．4．1 雨淋系统和水幕系统采用开式喷头，平时报警阀出口后的管道内(系统侧)没有水，系统启动后的管道充水阶段，管内水的流速较快，容易损伤水流指示器，因此采用压力开关较好。<br>
+                <br>
+                6．4．2 稳压泵的启停，要求可靠地自动控制，因此规定采用消防压力开关，并要求其能够根据最不利点处喷头的工作压力调节稳压泵的启停压力。<br>
+            </p>
+
+
+        </div>
+        <div id='3199372'>
+
+            <div>
+                <p>6．5 末端试水装置</p>
+            </div>
+            <p>6．5．1 本条是对原条文的修改和补充。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;本条提出了设置末端试水装置的规定。为检验系统的可靠性、测试系统能否在开放一只喷头的最不利条件下可靠报警并正常启动，要求在每个报警阀组的供水最不利点处设置末端试水装置。末端试水装置测试的内容包括水流指示器、报警阀、压力开关、水力警铃的动作是否正常，配水管道是否畅通，以及最不利点处的喷头工作压力等。其他的防火分区与楼层，则要求装设直径25mm的试水阀，试水阀宜安装在最不利点附近或次不利点处，以便在必要时连接末端试水装置。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;本条所指的报警阀组，系指设置在闭式系统上的报警阀组。<br>
+                <br>
+                6．5．2 本条是对原条文的修改和补充。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;本条规定了末端试水装置的组成、试水接头出水口的流量系数，以及其出水的排放方式(见图9)。为了使末端试水装置能够模拟实际情况，进行开放一只喷头启动系统等试验，其试水接头出水口的流量系数，要求与同楼层或所在防火分区内采用的最小流量系数的喷头一致。例如：某酒店在客房中安装流量系数为K等于115的边墙型扩大覆盖面积洒水喷头，走廊安装下垂型标准流量洒水喷头，其所在楼层如设置末端试水装置，试水接头出水口的流量系数，要求为流量系数K等于80。当末端试水装置的出水口直接与管道或软管连接时，将改变试水接头出水口的水力状态，影响测试结果。因此本条对末端试水装置的出水提出采取孔口出流的方式排入排水管道的要求。
+            </p>
+            <p align="center"><img src='http://book.zlglpt.com/e4294/1088.jpg'/><br>
+                <strong>图9 末端试水装置图</strong><br>
+                1-最不利点处喷头；2-压力表；3-球阀；4-试水接头；5-排水漏斗</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;对于排水立管的管径，本次修订参照国家标准《建筑给水排水设计规范》GB
+                50015的要求，提出排水立管的设置要求。不通气排水立管随工作高度增加排水能力减少，以DN75为例，高度3m时排水能力1．35L／s；高度5m时排水能力0．7L／s；高度超过6m时排水能力0．5L／s；故应设伸顶通气管。设有伸顶通气管的立管，以铸铁管为例，DN50的最大排水能力1．0L／s，DN75的最大排水能力2．5L／s。排水立管的管径应根据末端试水装置试水接头的流量确定，当试水接头流量系数为K等于80时，其在工作压力为0．1MPa时的流量为1．33L／s，因此提出管径不应小于75mm的规定。<br>
+                <br>
+                6．5．3
+                本条为新增条文。本条规定了末端试水装置的设置位置，是为了保证末端试水装置的可操作性和可维护性。调研中发现有些工程的末端试水装置安装在吊顶内部，不便操作，还发现有的把末端试水装置的试水接头误作为生活用水接口使用，造成系统频繁动作等，这些都是不合理的现象。
+            </p>
+
+
+        </div>
+        <div id='3199373'>
+
+            <div>
+                <p>7 喷头布置<br>
+                    <br>
+                    7．1 一般规定</p>
+            </div>
+            <p>7．1．1 闭式洒水喷头是自动喷水灭火系统的关键组件，受火灾热气流加热开放后喷水并启动系统。能否合理地布置喷头，将决定喷头能否及时动作和按规定强度喷水。本条规定了布置喷头所应遵循的原则。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;(1)将喷头布置在顶板或吊顶下易于接触到火灾热气流的部位，有利于喷头热敏元件的及时受热；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;(2)使喷头的洒水能够均匀分布。当喷头附近有不可避免的障碍物时，应按本规范7．2节的要求布置喷头或者增设喷头，补偿因喷头的洒水受阻而不能到位灭火的水量。<br>
+                <br>
+                7．1．2
+                喷头的布置间距是自动喷水灭火系统设计的重要参数，其中设置场所的火灾危险等级对喷头布置起决定性因素。喷头间距过大会影响喷头的开放时间及系统的控、灭火效果，问距过小会造成作用面积内喷头布置过多，系统设计用水量偏大。为控制喷头与起火点之间的距离，保证喷头开放时间，又不致引起喷头开放数过多，本条提出了标准覆盖面积喷头的布置间距及喷头最大保护面积，其目的是确保喷头既能适时开放，又能使系统按设计选定的强度喷水。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;美国消防协会标准《自动喷水灭火系统安装标准》NFPA 13规定，对于轻危险级场所，当采用水力计算法设计时，一只喷头的最大保护面积为20m<sup>2</sup>，喷头最大间距为4．6m；对于普通危险级场所，喷头的最大保护面积和最大间距分别为12m<sup>2</sup>和4．6m；对于严重危险级场所和堆垛仓库，当设计喷水强度大于10L／(min·m<sup>2</sup>)时，分别为9m<sup>2</sup>和3．7m，当设计喷水强度小于10L／(min·m<sup>2</sup>)时，其值分别为12m<sup>2</sup>和4．6m。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;喷头的布置间距可根据设计选定的喷水强度、喷头的流量系数和工作压力计算。以喷头A、B、C、D为顶点的围合范围为正方形(见图10)，每只喷头的25％水量喷洒在正方形ABCD内。根据喷头的流量系数、工作压力以及喷水强度，可以求出正方形ABCD的面积和喷头之间的距离。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;例如中危险级Ⅰ级场所，当选定喷水强度为6L／(min·m<sup>2</sup>)，喷头工作压力为0．1MPa时，每只K等于80喷头的出水量为：</p>
+            <p align="center"><img src='http://book.zlglpt.com/e4294/1089.jpg'/><br>
+                <strong>图10 正方形布置喷头示意图</strong></p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;规定喷头与端墙的最大距离，是为了使喷头的洒水能够喷湿墙根地面并不留漏喷的空白点，而且能够喷湿一定范围的墙面，防止火灾沿墙面的可燃物蔓延。规定喷头与端墙的最小距离，是为了防止喷头洒水时受到墙面的遮挡。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;本条中的“注1”，对仅布置设置单排喷头的闭式系统，提出确定喷头间距的规定，其喷头间距的举例见本规范第5．0．12条条文说明；“注2”对喷水强度较大的系统，采用较大流量系数的喷头有利于降低系统的供水压力。<br>
+                <br>
+                7．1．3 本条参考国外标准，并根据边墙型标准覆盖面积洒水喷头与室内最不利点处火源的距离远、喷头受热条件较差等实际情况，规定了配水支管上喷头间的最大距离和侧喷水量跨越空间的最大保护距离。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;美国消防协会标准《自动喷水灭火系统安装标准》NFPA
+                13规定，边墙型标准覆盖面积洒水喷头仅能在轻危险级场所中使用，只有在经过特别认证后，才允许在中危险级场所按经过特别认证的条件使用。本规范表7．1．3中的规定，按边墙型标准覆盖面积喷头的前喷水量占流量的70％～80％，喷向背墙的水量占20％～30％流量的原则作了调整。中危险级Ⅰ级场所，喷头在配水支管上的最大间距确定为3m，单排布置边墙型喷头时，喷头至对面墙的最大距离为3m，一只喷头保护的最大地面面积为9m<sup>2</sup>，并要求符合喷水强度要求。<br>
+                <br>
+                7．1．4
+                本条为新增条文。直立型、下垂型扩大覆盖面积洒水喷头目前在我国的应用较少，其优点是布置间距大、喷头用量少，缺点是顶板要求采用水平、光滑顶板，且不应有障碍物。同标准覆盖面积洒水喷头一样，扩大覆盖面积洒水喷头的布置间距也是由火灾危险等级确定，为此，本条参照美国消防协会标准《自动喷水灭火系统安装标准》NFPA
+                13的要求，提出了直立型、下垂型扩大覆盖面积洒水喷头的布置间距，并强调应采用正方形布置形式。<br>
+                <br>
+                7．1．5
+                边墙型扩大覆盖面积洒水喷头在我国的应用较为普及，其优点是保护面积大，安装简便；其缺点与边墙型标准覆盖面积洒水喷头相同，即喷头与室内最不利处起火点的最大距离更远，影响喷头的受热和灭火效果，所以国外规范对此种喷头的使用条件要求很严，如喷头洒水范围内不能受到障碍物的遮挡，顶板必须是光滑且坡度不能超过1／6等。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;我国现行国家标准《自动喷水灭火系统 第12部分 扩大覆盖面洒水喷头》GB
+                5135．12-2006也规定了该喷头的布水性能、湿墙性能及灭火性能，其中湿墙性能要求该喷头打湿实验室四周墙面距吊顶的距离不大于1．5m。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;在布置要求上，本条要求该喷头应根据生产厂提供的喷头流量特性、洒水分布和喷湿墙面范围等资料，确定喷水强度和喷头的布置。图11为边墙型扩大覆盖面积洒水喷头布水及喷湿墙面示意图。
+            </p>
+            <p align="center"><img src='http://book.zlglpt.com/e4294/1090.jpg'/><br>
+                <img src='http://book.zlglpt.com/e4294/1091.jpg'/><br>
+                <strong>图11 边墙型扩大覆盖面积洒水喷头布水及喷湿墙面示意图</strong><br>
+                注：图中英制单位换算：1GPM＝0．0758L／s；1PSI＝0．0069MPa</p>
+            <p>7．1．6、7．1．7 这两条是对原条文的修改和补充。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;这两条参考美国消防协会标准《自动喷水灭火系统安装标准》NFPA
+                13的规定，提出了相应的要求。规定喷头溅水盘与顶板的距离，目的是使喷头热敏元件处于“易于接触热气流”的最佳位置。溅水盘距离顶板太近不易安装维护，且洒水易受影响；太远则升温较慢，甚至不能接触到热烟气流，使喷头不能及时开放。吊顶型喷头和吊顶下安装的喷头，其安装位置不存在远离热烟气流的现象，故不受此项规定的限制(见图12、图13)。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;梁的高度大或间距小，使顶板下布置喷头的困难增大。然而，由于梁同时具有挡烟蓄热作用，有利于位于梁间的喷头受热，为此对复杂情况提出布置喷头的补充规定。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;本条第1款是指当梁或其他障碍物的高度不超过300mm时，喷头可直接布置在障碍物底面的下方，但应保证溅水盘与顶板的距离不大于300mm。当梁的高度超过300mm时，应在梁间布置喷头，并符合第2款的规定。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;执行第2款时，喷头溅水盘不能低于梁的底面。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;第4款是指对于一些不设吊顶的场所，为避免喷头受梁、障碍物等的影响，喷头间距可按照第7．1．2条的规定采用不等距布置方式，但喷水强度应符合规范规定。</p>
+            <p align="center"><img src='http://book.zlglpt.com/e4294/1092.jpg'/><br>
+                <strong>图12 直立或下垂型标准覆盖面积洒水喷头和<br>
+                    扩大覆盖面积洒水喷头溅水盘与顶板的距离</strong><br>
+                <img src='http://book.zlglpt.com/e4294/1093.jpg'/><br>
+                <strong>图13 吊顶下喷头安装示意图</strong></p>
+            <p>7．1．8 本条规定的适用对象由仓库扩展到包括图书馆、档案馆、商场等堆物较高的场所；规定喷头溅水盘与保护对象的最小垂直距离，是保证喷头的布水在其保护范围内能完全覆盖(见图14)。<br>
+                <br>
+                7．1．9 货架内布置的喷头，如果其溅水盘与储物顶部的间距太小，喷头的洒水将因储物的阻挡而不能达到均匀分布的目的。</p>
+            <p align="center"><img src='http://book.zlglpt.com/e4294/1094.jpg'/><br>
+                <strong>图14 堆物较高场所通道上方喷头的设置</strong></p>
+            <p>7．1．10 本条是对原条文的修改和补充。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;本条规定了挡水板的适用范围和不适用范围。喷头动作所需的热量主要来自热对流，需要热的烟气流经喷头才能实现。调研中发现，有的商场、超市等采用增设挡水板的方式使喷头悬空布置，喷头与顶板的距离过大，这种布置方式使得喷头的动作大大滞后。美国消防协会标准《自动喷水灭火系统安装标准》NFPA
+                13也规定，不应采用挡水板作为辅助喷头启动的方式。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;对于货架内置喷头和障碍物下方设置的喷头，如果恰好在喷头的上方有孔洞、缝隙，为防止上部的喷头动作后淋湿下方的喷头而影响喷头动作，规定可在其上方设置挡水板。英国标准《固定式灭火系统-自动喷水灭火系统-设计、安装和维护》BS
+                EN 12845规定，安装在货架内，或者有孔洞的隔板、平台、楼板或类似位置下的喷头，当较高的喷头动作时有可能淋湿下层喷头的感温元件，喷头应设有金属挡水板，并规定该挡水板的直径为75mm～150mm。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;对挡水板的具体规定是：要求采用金属板制作，形状为圆形或正方形，其平面面积不小于0．12m<sup>2</sup>，并要求挡水板的周边向下弯边，弯边的高度要与喷头溅水盘平齐(见图15)。
+            </p>
+            <p align="center"><img src='http://book.zlglpt.com/e4294/1095.jpg'/><br>
+                <strong>图15 挡水板示意图</strong></p>
+            <p>7．1．11 本条是对原条文的修改和补充。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;当吊顶上方闷顶或技术夹层的净空高度超过800mm，且其内部有可燃物时，人员不易发现内部情况，要求设置喷头。如果该空间内部无可燃物，或有可燃物但采用防火措施加以保护，且顶板与吊顶均为非燃烧体或风管的保温材料和吊顶等采用不燃、难燃材料制作时，可不设置喷头。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;1983年冬某宾馆礼堂火灾，就是因为吊顶内电线故障起火，引燃吊顶内的可燃物，致使钢屋架很快坍塌，造成很大损失。又如1980年，美国拉斯维加斯市米高梅大饭店(20层2000个床位)的底层游乐场，由于吊顶内电气线路超负荷运转，开始是阴燃，约三四小时后火焰冒出吊顶外，长140多米的大厅在15min内成为一片火海。当时在场数千人四处奔跑。事后州消防局长感叹地说：这样的蔓延速度，即使当时有几百名消防队员在场，也是无能为力的。据介绍该建筑在设计时，大厅的上下楼层均装有自动喷水灭火系统，只有游乐大厅未装。设计人员的理由是该厅全天24h不断人，如发生火灾能及时扑救。由于起火部位在吊顶上方，而闷顶内又未设喷头，结果未能及时扑救，造成了超过1亿美元的火灾损失。<br>
+                <br>
+                7．1．12 本条强调当在建筑物的局部场所设置喷头时，其门、窗、孔洞等开口的外侧及与相邻不设喷头场所连通的走道，要求设置防止火灾从开口处蔓延的喷头。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;此种做法可起很大作用。例如1976年5月上海第一百货公司八层的火灾：同在八层的服装厂与手工艺制品厂植绒车间仅一墙之隔，服装厂装有闭式系统，而植绒车间则未装。植绒车间发生火灾后，火势经隔墙上的连通窗口向服装厂蔓延。服装厂外侧喷头受热动作后，阻断了火灾向服装厂的扩展(见图16)。
+            </p>
+            <p align="center"><img src='http://book.zlglpt.com/e4294/1096.jpg'/><br>
+                <strong>图16 服装加工厂外侧设置喷头示意图</strong></p>
+            <p>7．1．13 本条是对原条文的修改和补充。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;通透性吊顶的形式、规格、种类多种多样，其设置在给建筑空间带来美观的同时，也会削弱喷头的动作性能、布水性能和灭火性能。本条从镂空率和开口形式等方面规定了不同类型吊顶下喷头的布置要求。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;对于诸如垂片、挂板等纵向布置形成的格栅吊顶，本条要求其纵深厚度不应超过吊顶内镂空开口的最小宽度，以便即使通透率满足要求，吊顶自身的厚度也会改变喷头的洒水分布形式及水滴的冲击性能(图17)。
+            </p>
+            <p align="center"><img src='http://book.zlglpt.com/e4294/1097.jpg'/><br>
+                <strong>图17 通透性吊顶的设置要求<br>
+                    技术要求：b≤a</strong></p>
+            <p>7．1．14
+                本条要求在倾斜的屋面板、吊顶下布置的喷头，垂直于斜面安装，喷头的间距按斜面的距离确定。当房间为坡屋顶时，要求屋脊处布置一排喷头。为利于系统尽快启动和便于安装，按屋顶坡度规定了喷头溅水盘与屋脊的垂直距离：屋顶坡度≥1／3时，h不应大于0．8m；屋顶坡度＜1／3时，h不应大于0．6m(图18)。</p>
+            <p align="center"><img src='http://book.zlglpt.com/e4294/1098.jpg'/><br>
+                <strong>图18 屋脊处设置喷头示意图</strong></p>
+            <p>7．1．15 本条规定了边墙型洒水喷头与顶板及背墙的距离，目的是为了使喷头在受热时及时动作。图19为直立式边墙型标准覆盖面积洒水喷头安装示意图。</p>
+            <p align="center"><img src='http://book.zlglpt.com/e4294/1099.jpg'/><br>
+                <strong>图19 直立式边墙型喷头的安装示意图</strong></p>
+            <p>7．1．16 本条按防火分隔水幕和防护冷却水幕，分别规定了布置喷头的排数及排间距。水幕喷头的布置应当符合喷水强度和均匀布水的要求。本规范规定水幕的喷水强度按直线分布衡量，并不能出现空白点。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;(1)防火分隔水幕采用开式洒水喷头时按不少于2排布置，采用水幕喷头时按不少于3排布置。多排布置喷头的目的是为了形成具有一定厚度的水墙或多层水帘。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;(2)防护冷却水幕与防火卷帘或防火幕等防火分隔设施配套使用时，要求喷头单排布置，并将水喷向防火卷帘或防火幕等保护对象。<br>
+            </p>
+
+
+        </div>
+        <div id='3199374'>
+
+            <div>
+                <p>7 喷头布置<br>
+                    <br>
+                    7．1 一般规定</p>
+            </div>
+            <p>7．1．1 闭式洒水喷头是自动喷水灭火系统的关键组件，受火灾热气流加热开放后喷水并启动系统。能否合理地布置喷头，将决定喷头能否及时动作和按规定强度喷水。本条规定了布置喷头所应遵循的原则。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;(1)将喷头布置在顶板或吊顶下易于接触到火灾热气流的部位，有利于喷头热敏元件的及时受热；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;(2)使喷头的洒水能够均匀分布。当喷头附近有不可避免的障碍物时，应按本规范7．2节的要求布置喷头或者增设喷头，补偿因喷头的洒水受阻而不能到位灭火的水量。<br>
+                <br>
+                7．1．2
+                喷头的布置间距是自动喷水灭火系统设计的重要参数，其中设置场所的火灾危险等级对喷头布置起决定性因素。喷头间距过大会影响喷头的开放时间及系统的控、灭火效果，问距过小会造成作用面积内喷头布置过多，系统设计用水量偏大。为控制喷头与起火点之间的距离，保证喷头开放时间，又不致引起喷头开放数过多，本条提出了标准覆盖面积喷头的布置间距及喷头最大保护面积，其目的是确保喷头既能适时开放，又能使系统按设计选定的强度喷水。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;美国消防协会标准《自动喷水灭火系统安装标准》NFPA 13规定，对于轻危险级场所，当采用水力计算法设计时，一只喷头的最大保护面积为20m<sup>2</sup>，喷头最大间距为4．6m；对于普通危险级场所，喷头的最大保护面积和最大间距分别为12m<sup>2</sup>和4．6m；对于严重危险级场所和堆垛仓库，当设计喷水强度大于10L／(min·m<sup>2</sup>)时，分别为9m<sup>2</sup>和3．7m，当设计喷水强度小于10L／(min·m<sup>2</sup>)时，其值分别为12m<sup>2</sup>和4．6m。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;喷头的布置间距可根据设计选定的喷水强度、喷头的流量系数和工作压力计算。以喷头A、B、C、D为顶点的围合范围为正方形(见图10)，每只喷头的25％水量喷洒在正方形ABCD内。根据喷头的流量系数、工作压力以及喷水强度，可以求出正方形ABCD的面积和喷头之间的距离。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;例如中危险级Ⅰ级场所，当选定喷水强度为6L／(min·m<sup>2</sup>)，喷头工作压力为0．1MPa时，每只K等于80喷头的出水量为：</p>
+            <p align="center"><img src='http://book.zlglpt.com/e4294/1100.jpg'/><br>
+                <strong>图10 正方形布置喷头示意图</strong></p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;规定喷头与端墙的最大距离，是为了使喷头的洒水能够喷湿墙根地面并不留漏喷的空白点，而且能够喷湿一定范围的墙面，防止火灾沿墙面的可燃物蔓延。规定喷头与端墙的最小距离，是为了防止喷头洒水时受到墙面的遮挡。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;本条中的“注1”，对仅布置设置单排喷头的闭式系统，提出确定喷头间距的规定，其喷头间距的举例见本规范第5．0．12条条文说明；“注2”对喷水强度较大的系统，采用较大流量系数的喷头有利于降低系统的供水压力。<br>
+                <br>
+                7．1．3 本条参考国外标准，并根据边墙型标准覆盖面积洒水喷头与室内最不利点处火源的距离远、喷头受热条件较差等实际情况，规定了配水支管上喷头间的最大距离和侧喷水量跨越空间的最大保护距离。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;美国消防协会标准《自动喷水灭火系统安装标准》NFPA
+                13规定，边墙型标准覆盖面积洒水喷头仅能在轻危险级场所中使用，只有在经过特别认证后，才允许在中危险级场所按经过特别认证的条件使用。本规范表7．1．3中的规定，按边墙型标准覆盖面积喷头的前喷水量占流量的70％～80％，喷向背墙的水量占20％～30％流量的原则作了调整。中危险级Ⅰ级场所，喷头在配水支管上的最大间距确定为3m，单排布置边墙型喷头时，喷头至对面墙的最大距离为3m，一只喷头保护的最大地面面积为9m<sup>2</sup>，并要求符合喷水强度要求。<br>
+                <br>
+                7．1．4
+                本条为新增条文。直立型、下垂型扩大覆盖面积洒水喷头目前在我国的应用较少，其优点是布置间距大、喷头用量少，缺点是顶板要求采用水平、光滑顶板，且不应有障碍物。同标准覆盖面积洒水喷头一样，扩大覆盖面积洒水喷头的布置间距也是由火灾危险等级确定，为此，本条参照美国消防协会标准《自动喷水灭火系统安装标准》NFPA
+                13的要求，提出了直立型、下垂型扩大覆盖面积洒水喷头的布置间距，并强调应采用正方形布置形式。<br>
+                <br>
+                7．1．5
+                边墙型扩大覆盖面积洒水喷头在我国的应用较为普及，其优点是保护面积大，安装简便；其缺点与边墙型标准覆盖面积洒水喷头相同，即喷头与室内最不利处起火点的最大距离更远，影响喷头的受热和灭火效果，所以国外规范对此种喷头的使用条件要求很严，如喷头洒水范围内不能受到障碍物的遮挡，顶板必须是光滑且坡度不能超过1／6等。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;我国现行国家标准《自动喷水灭火系统 第12部分 扩大覆盖面洒水喷头》GB
+                5135．12-2006也规定了该喷头的布水性能、湿墙性能及灭火性能，其中湿墙性能要求该喷头打湿实验室四周墙面距吊顶的距离不大于1．5m。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;在布置要求上，本条要求该喷头应根据生产厂提供的喷头流量特性、洒水分布和喷湿墙面范围等资料，确定喷水强度和喷头的布置。图11为边墙型扩大覆盖面积洒水喷头布水及喷湿墙面示意图。
+            </p>
+            <p align="center"><img src='http://book.zlglpt.com/e4294/1101.jpg'/><br>
+                <img src='http://book.zlglpt.com/e4294/1102.jpg'/><br>
+                <strong>图11 边墙型扩大覆盖面积洒水喷头布水及喷湿墙面示意图</strong><br>
+                注：图中英制单位换算：1GPM＝0．0758L／s；1PSI＝0．0069MPa</p>
+            <p>7．1．6、7．1．7 这两条是对原条文的修改和补充。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;这两条参考美国消防协会标准《自动喷水灭火系统安装标准》NFPA
+                13的规定，提出了相应的要求。规定喷头溅水盘与顶板的距离，目的是使喷头热敏元件处于“易于接触热气流”的最佳位置。溅水盘距离顶板太近不易安装维护，且洒水易受影响；太远则升温较慢，甚至不能接触到热烟气流，使喷头不能及时开放。吊顶型喷头和吊顶下安装的喷头，其安装位置不存在远离热烟气流的现象，故不受此项规定的限制(见图12、图13)。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;梁的高度大或间距小，使顶板下布置喷头的困难增大。然而，由于梁同时具有挡烟蓄热作用，有利于位于梁间的喷头受热，为此对复杂情况提出布置喷头的补充规定。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;本条第1款是指当梁或其他障碍物的高度不超过300mm时，喷头可直接布置在障碍物底面的下方，但应保证溅水盘与顶板的距离不大于300mm。当梁的高度超过300mm时，应在梁间布置喷头，并符合第2款的规定。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;执行第2款时，喷头溅水盘不能低于梁的底面。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;第4款是指对于一些不设吊顶的场所，为避免喷头受梁、障碍物等的影响，喷头间距可按照第7．1．2条的规定采用不等距布置方式，但喷水强度应符合规范规定。</p>
+            <p align="center"><img src='http://book.zlglpt.com/e4294/1103.jpg'/><br>
+                <strong>图12 直立或下垂型标准覆盖面积洒水喷头和<br>
+                    扩大覆盖面积洒水喷头溅水盘与顶板的距离</strong><br>
+                <img src='http://book.zlglpt.com/e4294/1104.jpg'/><br>
+                <strong>图13 吊顶下喷头安装示意图</strong></p>
+            <p>7．1．8 本条规定的适用对象由仓库扩展到包括图书馆、档案馆、商场等堆物较高的场所；规定喷头溅水盘与保护对象的最小垂直距离，是保证喷头的布水在其保护范围内能完全覆盖(见图14)。<br>
+                <br>
+                7．1．9 货架内布置的喷头，如果其溅水盘与储物顶部的间距太小，喷头的洒水将因储物的阻挡而不能达到均匀分布的目的。</p>
+            <p align="center"><img src='http://book.zlglpt.com/e4294/1105.jpg'/><br>
+                <strong>图14 堆物较高场所通道上方喷头的设置</strong></p>
+            <p>7．1．10 本条是对原条文的修改和补充。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;本条规定了挡水板的适用范围和不适用范围。喷头动作所需的热量主要来自热对流，需要热的烟气流经喷头才能实现。调研中发现，有的商场、超市等采用增设挡水板的方式使喷头悬空布置，喷头与顶板的距离过大，这种布置方式使得喷头的动作大大滞后。美国消防协会标准《自动喷水灭火系统安装标准》NFPA
+                13也规定，不应采用挡水板作为辅助喷头启动的方式。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;对于货架内置喷头和障碍物下方设置的喷头，如果恰好在喷头的上方有孔洞、缝隙，为防止上部的喷头动作后淋湿下方的喷头而影响喷头动作，规定可在其上方设置挡水板。英国标准《固定式灭火系统-自动喷水灭火系统-设计、安装和维护》BS
+                EN 12845规定，安装在货架内，或者有孔洞的隔板、平台、楼板或类似位置下的喷头，当较高的喷头动作时有可能淋湿下层喷头的感温元件，喷头应设有金属挡水板，并规定该挡水板的直径为75mm～150mm。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;对挡水板的具体规定是：要求采用金属板制作，形状为圆形或正方形，其平面面积不小于0．12m<sup>2</sup>，并要求挡水板的周边向下弯边，弯边的高度要与喷头溅水盘平齐(见图15)。
+            </p>
+            <p align="center"><img src='http://book.zlglpt.com/e4294/1106.jpg'/><br>
+                <strong>图15 挡水板示意图</strong></p>
+            <p>7．1．11 本条是对原条文的修改和补充。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;当吊顶上方闷顶或技术夹层的净空高度超过800mm，且其内部有可燃物时，人员不易发现内部情况，要求设置喷头。如果该空间内部无可燃物，或有可燃物但采用防火措施加以保护，且顶板与吊顶均为非燃烧体或风管的保温材料和吊顶等采用不燃、难燃材料制作时，可不设置喷头。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;1983年冬某宾馆礼堂火灾，就是因为吊顶内电线故障起火，引燃吊顶内的可燃物，致使钢屋架很快坍塌，造成很大损失。又如1980年，美国拉斯维加斯市米高梅大饭店(20层2000个床位)的底层游乐场，由于吊顶内电气线路超负荷运转，开始是阴燃，约三四小时后火焰冒出吊顶外，长140多米的大厅在15min内成为一片火海。当时在场数千人四处奔跑。事后州消防局长感叹地说：这样的蔓延速度，即使当时有几百名消防队员在场，也是无能为力的。据介绍该建筑在设计时，大厅的上下楼层均装有自动喷水灭火系统，只有游乐大厅未装。设计人员的理由是该厅全天24h不断人，如发生火灾能及时扑救。由于起火部位在吊顶上方，而闷顶内又未设喷头，结果未能及时扑救，造成了超过1亿美元的火灾损失。<br>
+                <br>
+                7．1．12 本条强调当在建筑物的局部场所设置喷头时，其门、窗、孔洞等开口的外侧及与相邻不设喷头场所连通的走道，要求设置防止火灾从开口处蔓延的喷头。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;此种做法可起很大作用。例如1976年5月上海第一百货公司八层的火灾：同在八层的服装厂与手工艺制品厂植绒车间仅一墙之隔，服装厂装有闭式系统，而植绒车间则未装。植绒车间发生火灾后，火势经隔墙上的连通窗口向服装厂蔓延。服装厂外侧喷头受热动作后，阻断了火灾向服装厂的扩展(见图16)。
+            </p>
+            <p align="center"><img src='http://book.zlglpt.com/e4294/1107.jpg'/><br>
+                <strong>图16 服装加工厂外侧设置喷头示意图</strong></p>
+            <p>7．1．13 本条是对原条文的修改和补充。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;通透性吊顶的形式、规格、种类多种多样，其设置在给建筑空间带来美观的同时，也会削弱喷头的动作性能、布水性能和灭火性能。本条从镂空率和开口形式等方面规定了不同类型吊顶下喷头的布置要求。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;对于诸如垂片、挂板等纵向布置形成的格栅吊顶，本条要求其纵深厚度不应超过吊顶内镂空开口的最小宽度，以便即使通透率满足要求，吊顶自身的厚度也会改变喷头的洒水分布形式及水滴的冲击性能(图17)。
+            </p>
+            <p align="center"><img src='http://book.zlglpt.com/e4294/1108.jpg'/><br>
+                <strong>图17 通透性吊顶的设置要求<br>
+                    技术要求：b≤a</strong></p>
+            <p>7．1．14
+                本条要求在倾斜的屋面板、吊顶下布置的喷头，垂直于斜面安装，喷头的间距按斜面的距离确定。当房间为坡屋顶时，要求屋脊处布置一排喷头。为利于系统尽快启动和便于安装，按屋顶坡度规定了喷头溅水盘与屋脊的垂直距离：屋顶坡度≥1／3时，h不应大于0．8m；屋顶坡度＜1／3时，h不应大于0．6m(图18)。</p>
+            <p align="center"><img src='http://book.zlglpt.com/e4294/1109.jpg'/><br>
+                <strong>图18 屋脊处设置喷头示意图</strong></p>
+            <p>7．1．15 本条规定了边墙型洒水喷头与顶板及背墙的距离，目的是为了使喷头在受热时及时动作。图19为直立式边墙型标准覆盖面积洒水喷头安装示意图。</p>
+            <p align="center"><img src='http://book.zlglpt.com/e4294/1110.jpg'/><br>
+                <strong>图19 直立式边墙型喷头的安装示意图</strong></p>
+            <p>7．1．16 本条按防火分隔水幕和防护冷却水幕，分别规定了布置喷头的排数及排间距。水幕喷头的布置应当符合喷水强度和均匀布水的要求。本规范规定水幕的喷水强度按直线分布衡量，并不能出现空白点。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;(1)防火分隔水幕采用开式洒水喷头时按不少于2排布置，采用水幕喷头时按不少于3排布置。多排布置喷头的目的是为了形成具有一定厚度的水墙或多层水帘。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;(2)防护冷却水幕与防火卷帘或防火幕等防火分隔设施配套使用时，要求喷头单排布置，并将水喷向防火卷帘或防火幕等保护对象。<br>
+            </p>
+
+
+        </div>
+        <div id='3199375'>
+
+            <div>
+                <p>7．2 喷头与障碍物的距离</p>
+            </div>
+            <p>7．2．1 本条是对原条文的修改和补充，细化了不同类型喷头与障碍物的距离要求。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;当顶板下有梁、通风管道或类似障碍物，且在其附近布置喷头时，为避免梁、通风管道等障碍物对喷头洒水分布的影响，本条提出了喷头与障碍物的距离要求(见本规范图7．2．1)。喷头的布置应当同时满足本规范7．1节中喷头溅水盘与顶板距离的规定，喷头与障碍物的水平间距不小于本规范表7．2．1的规定。如有困难，则要求增设喷头。<br>
+                <br>
+                7．2．2 本条是对原条文的修改和补充。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;喷头附近如有屋架等间断障碍物或管道时，为使障碍物对喷头洒水的影响降至最小，规定喷头与上述障碍物保持一个最小的水平距离。这一水平距离，是由障碍物的最大截面尺寸或管道直径决定的(见本规范图7．2．2)。需要说明的是，本条适用于直立型、下垂型以及边墙型喷头。<br>
+                <br>
+                7．2．3 本条是对原条文的修改和补充。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;本条针对宽度大于1．2m的通风管道、成排布置的管道等水平障碍物对喷头洒水的遮挡作用，提出了增设喷头的规定，以补偿受阻部位的喷水强度，对早期抑制快速响应喷头和特殊应用喷头，提出当障碍物宽度大于0．6m时，就要求增设喷头(见本规范图7．2．3)。<br>
+                <br>
+                7．2．4 本条是对原条文的修改和补充。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;喷头附近的不到顶隔墙，将可能阻挡喷头的洒水。为了保证喷头的洒水能到达隔墙的另一侧，本条提出了不同类型喷头其溅水盘与不到顶隔墙顶面的垂直距离与水平距离的规定(见本规范图7．2．4)。需要说明的是，本条适用于直立型、下垂型以及边墙型喷头。<br>
+                <br>
+                7．2．5 顶板下靠墙处有障碍物时，将可能影响其邻近喷头的洒水。本条提出了保证洒水免受阻挡的规定。同时，还应保证障碍物下方喷头的洒水没有漏喷空白点(见本规范图7．2．5)。<br>
+                <br>
+                7．2．6、7．2．7 这两条是对原条文的修改和补充。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;这两条提出了边墙型喷头与正前方障碍物及两侧障碍物的关系。规定这两条的目的，是为了防止障碍物影响边墙型喷头的洒水分布(见本规范图7．2．6和图7．2．7)。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;本节中各种障碍物对喷水形成的阻挡，将削弱系统的灭火能力。根据喷头洒水不留空白点的要求，要求对因遮挡而形成空白点的部位增设喷头。</p>
+
+
+        </div>
+        <div id='3199376'>
+
+            <div>
+                <p>8 管 道</p>
+            </div>
+            <p>8．0．1 为保证系统的用水量，报警阀出口后的管道上不能设置其他用水设施。<br>
+                <br>
+                8．0．2 本条是对原条文的修改和补充。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;本条规定了自动喷水灭火系统报警阀后的管道选型及设置要求。对于报警阀入口前的管道，当采用内壁未经防腐涂覆处理的钢管时，要求在这段管道的末端，即报警阀的入口前设置过滤器，过滤器的规格应符合国家有关标准规范的规定，以保证配水管道的质量，避免不必要的检修。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;涂覆钢管具内部光滑、摩擦阻力小等优点，但同时也存在附着力差、涂层易脱落、易堵塞喷头等。因此，应加强该管道在进场、安装方面的要求，如严禁剧烈撞击和与尖锐物品碰触，不得抛、摔、滚、拖，不得在现场进行切割、焊接、压槽等操作等。在设计方面，涂覆钢管除水力计算与其他材质的管道不同外，其余内容基本一致。<br>
+                <br>
+                8．0．3 本条为新增条文。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;本条结合国内外的相关标准的规定、试验情况以及应用现状，规定了自动喷水灭火系统采用氯化聚氯乙烯(PVC-C)管材及管件的技术要求。氯化聚氯乙烯(PVC-C)管由特殊的氯化聚氯乙烯热塑料制成，具有重量轻，连接方法快速、可靠以及表面光滑、摩擦阻力小等优点。20世纪80年代初，欧美等国家开始在一些改造系统中采用该管材，并逐步应用成熟。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;英国、美国等国的标准中均有自动喷水灭火系统的配水管道可采用氯化聚氯乙烯(PVC-C)管的选型要求。如美国消防协会标准《自动喷水灭火系统安装标准》NFPA
+                13规定，自动喷水灭火系统采用氯化聚氯乙烯(PVC-C)管道时，可用于轻危险级和房间面积不超过37m<sup>2</sup>的中危险级场所，配水管道的公称直径不应超过80mm；对于轻危险级场所，氯化聚氯乙烯(PVC-C)管道可直接设置在被保护的房间内；对于中危险级场所，氯化聚氯乙烯(PVC-C)管道必须有绝缘体保护，或者敷设于墙里，或者是墙的另一侧等。英国标准《固定式灭火系统-自动喷水灭火系统-设计、安装和维护》BS
+                EN
+                12845规定，氯化聚氯乙烯(PVC-C)管道用于自动喷水灭火系统时，适用于其规定的轻危险级和中危险级，如办公楼、零售商店、百货公司等，不能应用于严重危险级，并规定只能用于湿式系统。另外还规定，当系统采用快速响应喷头时，允许暴露安装，但管道应紧贴水平结构楼板，并且规定禁止在室外暴露安装等。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;我国也针对“自动喷水灭火系统用氯化聚氯乙烯(PVC-C)管材及管件”开展了试验研究，研究内容包括水压试验、灭火试验和环境试验等。其中在灭火试验中，在30min的灭火试验后，对整个管网进行水压试验，加压至1．2MPa，保持5min试件无破裂漏水现象，直至加压到7．71MPa，DN50管道才破裂。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;在管网敷设方面，考虑到氯化聚氯乙烯(PVC-C)管材及管件的低温脆性以及承压能力受温差的影响较大等不利因素，应避免将氯化聚氯乙烯(PVC-C)管材及管件设置在阳光直射的区域，并远离供暖管道、蒸汽管道等热源，当确需设置在该场所时，应采取保护措施。<br>
+                <br>
+                8．0．4 本条为新增条文。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;消防洒水软管是自动喷水灭火系统中用于连接喷头与配水支管或短立管之间的管道，具有安装快速、简易以及具有防震防错位功能等优点，可方便调整喷头的高度和布置间距，以及防止由于建筑物等受到强大振动或冲击时使消防系统管道开裂或造成消防系统的崩溃等，目前，消防洒水软管在我国的应用较多，主要用于办公楼以及洁净室无尘车间等。本次修订增加了消防洒水软管的设置要求，包括设置场所的火灾危险等级、系统类型以及管道长度等。<br>
+                <br>
+                8．0．5
+                本条对不同材质配水管网的连接方式作出了规定。对于热镀锌钢管和涂覆钢管，采用沟槽式管道连接件(卡箍)、螺纹或法兰连接，不允许管段之间焊接。报警阀入口前的管道，因没有强制规定采用镀锌钢管，故管道的连接允许焊接。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;对于“沟槽式管道连接件(卡箍)、螺纹或法兰连接”方式，本规范并列推荐，无先后之分。<br>
+                <br>
+                8．0．6 为了便于检修，本条提出了要求管道分段采用法兰连接的规定，并对水平、垂直管道中法兰间的管段长度提出了要求。<br>
+                <br>
+                8．0．7
+                本条规定要求经水力计算确定管径，管道布置力求均衡配水管入口压力的规定。只有经过水力计算确定的管径，才能做到既合理又经济。在此基础上，提出了在保证喷头工作压力的前提下，限制轻、中危险级场所系统配水管入口压力不宜超过0．40MPa的规定。<br>
+                <br>
+                8．0．8、8．0．9 这两条是对原条文的修改和补充。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;控制配水管道上设置的喷头数以及限制各种直径管道控制的喷头数，目的是为了控制配水支管的长度，保证系统的可靠性和尽量均衡系统管道的水力性能，避免水头损失过大，国外标准也有类似规定(表9)。需要说明的是，这两条仅适用于标准流量洒水喷头，当采用其他类型喷头时，管道的直径仍应通过水力计算确定。
+            </p>
+            <p align="center"><strong>表9 国外标准中管道估算汇总表</strong><br>
+                <img src='http://book.zlglpt.com/e4294/1111.jpg'/><br>
+                <img src='http://book.zlglpt.com/e4294/1112.jpg'/></p>
+            <p>8．0．10 为控制小管径管道的水头损失和防止杂物堵塞管道，本条提出了短立管及末端试水装置的连接管的最小管径不小于25mm的规定。<br>
+                <br>
+                8．0．11 本条参考美国消防协会标准《自动喷水灭火系统安装标准》NFPA
+                13的有关规定，对干式、预作用及雨淋系统报警阀出口后配水管道的充水时间提出了新的要求，其目的是为了达到系统启动后立即喷水的要求。<br>
+                <br>
+                8．0．13 自动喷水灭火系统的管道要求有坡度，并坡向泄水管。规定此条的目的在于充水时易于排气，维修时易于排尽管内积水。<br>
+            </p>
+
+
+        </div>
+        <div id='3199377'>
+
+            <div>
+                <p>9 水力计算<br>
+                    <br>
+                    9．1 系统的设计流量</p>
+            </div>
+            <p>9．1．1 喷头流量的计算公式：</p>
+            <p align="center"><img src='http://book.zlglpt.com/e4294/1113.jpg'/></p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;式中：P——喷头工作压力[公式(1)单位取Pa，公式(2)单位取MPa]；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;K——喷头流量系数；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;q——喷头流量(L／min)。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;喷头最不利点处最低工作压力本规范已作出明确规定，设计中按本公式计算最不利点处作用面积内各个喷头的流量，使系统设计符合本规范要求。<br>
+                <br>
+                9．1．2 本条参照国外标准，提出了确定作用面积的方法。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;(1)英国标准《固定式灭火系统-自动喷水灭火系统-设计、安装和维护》BS EN
+                12845规定的计算方法为：应由水力计算确定系统最不利点处作用面积的位置。此作用面积的形状应尽可能接近矩形，并以一根配水支管为长边，其长度应大于或等于作用面积平方根的1．2倍。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;(2)美国消防协会标准《自动喷水灭火系统安装标准》NFPA
+                13规定：对于所有按水力计算要求确定的设计面积应是矩形面积，其长边应平行于配水支管，边长等于或大于作用面积平方根的1．2倍，喷头数若有小数就进位成整数。当配水支管的实际长度小于边长的计算值，即实际边长＜1．2<img
+                        src='http://book.zlglpt.com/e4294/1114.jpg'/>时，作用面积要扩展到该配水管邻近配水支管上的喷头。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;举例(见图20)：</p>
+            <p align="center"><img src='http://book.zlglpt.com/e4294/1115.jpg'/><br>
+                <strong>图20 NFPA-13标准中作用面积的举例</strong><br>
+                <br>
+                <img src='http://book.zlglpt.com/e4294/1116.jpg'/></p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;(3)德国标准《喷水装置规范》(1980年版)规定：首先确定作用面积的位置，再求出作用面积内的喷头数。要求各单独喷头的保护面积与作用面积内所有喷头的平均保护面积的误差不超过20％。这里相邻四个喷头之间的围合范围为一个喷头的保护面积。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;举例：当300m<sup>2</sup>的作用面积内有40个喷头时，其平均保护面积为300／40＝7．5(m<sup>2</sup>)。当布置喷头时(见图21)，一只喷头的最大保护面积为8．75m<sup>2</sup>，其偏差为17％，小于20％，因此允许喷头的间距不做调整。
+            </p>
+            <p align="center"><img src='http://book.zlglpt.com/e4294/1117.jpg'/><br>
+                <strong>图21 德国规范中作用面积的举例</strong></p>
+            <p>9．1．3 本条规定提出了系统的设计流量应按最不利点处作用面积内的喷头全部开放喷水时，所有喷头的流量之和确定，并用本规范公式9．1．3表述上述含义。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;英国标准《固定式灭火系统-自动喷水灭火系统-设计、安装和维护》BS EN
+                12845规定：应保证最不利点处作用面积内的最小喷水强度符合规定。当喷头按正方形、长方形或平行四边形布置时，喷水强度的计算，取上述四边形顶点上四个喷头的总喷水量并除以4，再除以四边形的面积求得。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;美国消防协会标准《自动喷水灭火系统安装标准》NFPA
+                13规定：作用面积内每只喷头在工作压力下的流量，应能保证不小于最小喷水强度与一个喷头保护面积的乘积。水力计算应从最不利点处喷头开始，每个喷头开放时的工作压力不应小于该点的计算压力。<br>
+                <br>
+                9．1．4 本条为新增条文。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;本条规定了采用防护冷却系统保护防火分隔设施时的系统用水量计算要求。设置场所设有自动喷水灭火系统时，发生火灾时可认为火灾不会蔓延出设定的作用面积之外，因此其保护长度也不会超出系统设计作用面积的长边长度。当该场所没有设置常规的自动喷水灭火系统时，则按照一个防火分区整体考虑。<br>
+                <br>
+                9．1．5 本条规定对任意作用面积内的平均喷水强度及最不利点处作用面积内任意4只喷头围合范围内的平均喷水强度提出了要求。<br>
+                <br>
+                9．1．6 本条规定了设有货架内置喷头自动喷水灭火系统的设计流量计算方法。对设有货架内置喷头的仓库，要求分别计算顶板下开放喷头和货架内开放喷头的设计流量后，再取二者之和，确定为系统的设计流量。<br>
+                <br>
+                9．1．7 本条是针对建筑物内设有多种类型系统，或按不同危险等级场所分别选取设计基本参数的系统，提出了出现此种复杂情况时确定系统设计流量的方法。<br>
+                <br>
+                9．1．8
+                当建筑物内同时设置自动喷水灭火系统和水幕系统时，与自动喷水灭火系统作用面积交叉或连接的水幕，将可能在火灾中同时动作，因此系统的设计流量，要求按包括与自动喷水灭火系统同时工作的水幕系统的用水量计算，并取二者之和中的最大值确定。<br>
+                <br>
+                9．1．9
+                采用多套雨淋报警阀并分区逻辑组合控制保护面积的系统，其设计流量的确定，要求首先分别计算每套雨淋报警阀的流量，然后将需要同时开启的各雨淋报警阀的流量叠加，计算总流量，并选取不同条件下计算获得的各总流量中的最大值，确定为系统的设计流量。<br>
+                <br>
+                9．1．10
+                本条提出了建筑物因扩建、改建或改变使用功能等原因，需要对原有的自动喷水灭火系统延伸管道、扩展保护范围或增设喷头时，要求重新进行水力计算的规定，以便保证系统变化后的水力特性符合本规范的规定。<br>
+            </p>
+
+
+        </div>
+        <div id='3199378'>
+
+            <div>
+                <p>9 水力计算<br>
+                    <br>
+                    9．1 系统的设计流量</p>
+            </div>
+            <p>9．1．1 喷头流量的计算公式：</p>
+            <p align="center"><img src='http://book.zlglpt.com/e4294/1118.jpg'/></p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;式中：P——喷头工作压力[公式(1)单位取Pa，公式(2)单位取MPa]；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;K——喷头流量系数；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;q——喷头流量(L／min)。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;喷头最不利点处最低工作压力本规范已作出明确规定，设计中按本公式计算最不利点处作用面积内各个喷头的流量，使系统设计符合本规范要求。<br>
+                <br>
+                9．1．2 本条参照国外标准，提出了确定作用面积的方法。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;(1)英国标准《固定式灭火系统-自动喷水灭火系统-设计、安装和维护》BS EN
+                12845规定的计算方法为：应由水力计算确定系统最不利点处作用面积的位置。此作用面积的形状应尽可能接近矩形，并以一根配水支管为长边，其长度应大于或等于作用面积平方根的1．2倍。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;(2)美国消防协会标准《自动喷水灭火系统安装标准》NFPA
+                13规定：对于所有按水力计算要求确定的设计面积应是矩形面积，其长边应平行于配水支管，边长等于或大于作用面积平方根的1．2倍，喷头数若有小数就进位成整数。当配水支管的实际长度小于边长的计算值，即实际边长＜1．2<img
+                        src='http://book.zlglpt.com/e4294/1119.jpg'/>时，作用面积要扩展到该配水管邻近配水支管上的喷头。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;举例(见图20)：</p>
+            <p align="center"><img src='http://book.zlglpt.com/e4294/1120.jpg'/><br>
+                <strong>图20 NFPA-13标准中作用面积的举例</strong><br>
+                <br>
+                <img src='http://book.zlglpt.com/e4294/1121.jpg'/></p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;(3)德国标准《喷水装置规范》(1980年版)规定：首先确定作用面积的位置，再求出作用面积内的喷头数。要求各单独喷头的保护面积与作用面积内所有喷头的平均保护面积的误差不超过20％。这里相邻四个喷头之间的围合范围为一个喷头的保护面积。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;举例：当300m<sup>2</sup>的作用面积内有40个喷头时，其平均保护面积为300／40＝7．5(m<sup>2</sup>)。当布置喷头时(见图21)，一只喷头的最大保护面积为8．75m<sup>2</sup>，其偏差为17％，小于20％，因此允许喷头的间距不做调整。
+            </p>
+            <p align="center"><img src='http://book.zlglpt.com/e4294/1122.jpg'/><br>
+                <strong>图21 德国规范中作用面积的举例</strong></p>
+            <p>9．1．3 本条规定提出了系统的设计流量应按最不利点处作用面积内的喷头全部开放喷水时，所有喷头的流量之和确定，并用本规范公式9．1．3表述上述含义。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;英国标准《固定式灭火系统-自动喷水灭火系统-设计、安装和维护》BS EN
+                12845规定：应保证最不利点处作用面积内的最小喷水强度符合规定。当喷头按正方形、长方形或平行四边形布置时，喷水强度的计算，取上述四边形顶点上四个喷头的总喷水量并除以4，再除以四边形的面积求得。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;美国消防协会标准《自动喷水灭火系统安装标准》NFPA
+                13规定：作用面积内每只喷头在工作压力下的流量，应能保证不小于最小喷水强度与一个喷头保护面积的乘积。水力计算应从最不利点处喷头开始，每个喷头开放时的工作压力不应小于该点的计算压力。<br>
+                <br>
+                9．1．4 本条为新增条文。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;本条规定了采用防护冷却系统保护防火分隔设施时的系统用水量计算要求。设置场所设有自动喷水灭火系统时，发生火灾时可认为火灾不会蔓延出设定的作用面积之外，因此其保护长度也不会超出系统设计作用面积的长边长度。当该场所没有设置常规的自动喷水灭火系统时，则按照一个防火分区整体考虑。<br>
+                <br>
+                9．1．5 本条规定对任意作用面积内的平均喷水强度及最不利点处作用面积内任意4只喷头围合范围内的平均喷水强度提出了要求。<br>
+                <br>
+                9．1．6 本条规定了设有货架内置喷头自动喷水灭火系统的设计流量计算方法。对设有货架内置喷头的仓库，要求分别计算顶板下开放喷头和货架内开放喷头的设计流量后，再取二者之和，确定为系统的设计流量。<br>
+                <br>
+                9．1．7 本条是针对建筑物内设有多种类型系统，或按不同危险等级场所分别选取设计基本参数的系统，提出了出现此种复杂情况时确定系统设计流量的方法。<br>
+                <br>
+                9．1．8
+                当建筑物内同时设置自动喷水灭火系统和水幕系统时，与自动喷水灭火系统作用面积交叉或连接的水幕，将可能在火灾中同时动作，因此系统的设计流量，要求按包括与自动喷水灭火系统同时工作的水幕系统的用水量计算，并取二者之和中的最大值确定。<br>
+                <br>
+                9．1．9
+                采用多套雨淋报警阀并分区逻辑组合控制保护面积的系统，其设计流量的确定，要求首先分别计算每套雨淋报警阀的流量，然后将需要同时开启的各雨淋报警阀的流量叠加，计算总流量，并选取不同条件下计算获得的各总流量中的最大值，确定为系统的设计流量。<br>
+                <br>
+                9．1．10
+                本条提出了建筑物因扩建、改建或改变使用功能等原因，需要对原有的自动喷水灭火系统延伸管道、扩展保护范围或增设喷头时，要求重新进行水力计算的规定，以便保证系统变化后的水力特性符合本规范的规定。<br>
+            </p>
+
+
+        </div>
+        <div id='3199379'>
+
+            <div>
+                <p>9．2 管道水力计算</p>
+            </div>
+            <p>9．2．1
+                采用经济流速是给水系统设计的基础要素，本条规定宜采用经济流速，必要时可采用较高流速。采用较高的管道流速，不利于均衡系统管道的水力特性并加大能耗；为降低管道摩阻而放大管径、采用低流速，将导致管道重量的增加，使设计的经济性能降低。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;我国《给排水设计手册》(第三册)建议，钢管内水的平均流速允许不大于5m／s，铸铁管的允许值为3m／s；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;德国规范规定，必须保证在报警阀与喷头之间的管道内，水流速度不超过10m／s，在组件配件内不超过5m／s。<br>
+                <br>
+                9．2．2 本条是对原条文的修改。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;管道沿程水头损失的计算，国内外采用的公式有以下几种：<br>
+                &nbsp;&nbsp;&nbsp; 我国现行国家标准《建筑给水排水设计规范》GB 50015和《室外给水设计规范》GB 50013采用Hazen-Williams(海澄-威廉)公式，即公式(3)：</p>
+            <p align="center"><img src='http://book.zlglpt.com/e4294/1123.jpg'/></p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;式中：i——管道单位长度水头损失(kPa／m)；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d<sub>j</sub>——管道计算内径(m)；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;q<sub>g</sub>——设计流量(m<sup>3</sup>／s)；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C<sub>h</sub>——海澄-威廉系数。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;英、美、日、德等国的自动喷水灭火系统规范，也采用海澄-威廉公式，即公式(4)：</p>
+            <p align="center"><img src='http://book.zlglpt.com/e4294/1124.jpg'/></p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;式中：p<sub>m</sub>——管道每米阻力损失(bar)；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Q<sub>m</sub>——流量(L／min)；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C——管道材质系数；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d<sub>m</sub>——管道实际内径(mm)。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;原规范采用舍维列夫公式，即公式(5)。1953年，舍维列夫根据其对旧铸铁管和旧钢管所进行的试验，提出了该经验公式，因此该公式主要适用于旧铸铁管和旧钢管。</p>
+            <p align="center"><img src='http://book.zlglpt.com/e4294/1125.jpg'/></p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;式中：i——管道的单位长度水头损失(MPa／m)；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;V——管道内水或泡沫混合液的平均流速(m／s)；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d<sub>j</sub>——管道的计算内径(m)。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;为便于比较两计算式计算结果的差异，将公式(5)除以公式(3)得公式(6)：</p>
+            <p align="center"><img src='http://book.zlglpt.com/e4294/1126.jpg'/></p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;结合本规范规定，对管径为25mm～200mm，流速为2．5m／s～10m／s的情况，计算得：对于普通钢管，k<sub>1</sub>介于1．1292～1．8217之间；对于铜管和不锈钢管，k<sub>2</sub>介于2．1233～2．9600之间。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;当系统采用镀锌钢管时，两个公式的计算结果相差不是很大。当系统采用铜管和不锈钢管时，公式(3)的计算结果要远大于公式(1)，若此时还用公式(3)进行计算，势必会造成不必要的经济浪费。而且，对于不锈钢管和铜管，在使用过程中内壁粗糙度增大的情况并不十分明显。因此，宜用公式(1)进行计算。<br>
+                <br>
+                9．2．3
+                局部水头损失的计算，英、美、日、德等国规范均采用当量长度法。为与国际惯例保持一致，本规范规定采用当量长度法计算。由于我国缺乏实验数据，故仍采用原规范条文说明中推荐的数据。美国消防协会《自动喷水灭火系统安装标准》的规定见表10。<br>
+                &nbsp;&nbsp;&nbsp; 日本、德国规范的当量长度表与表10相同。表10中的数据是按管道材质系数C＝120计算，当C＝100时，需乘以修正系数0．713。</p>
+            <p align="center"><strong>表10 美国规范当量长度表(m)</strong><br>
+                <img src='http://book.zlglpt.com/e4294/1127.jpg'/></p>
+            <p>9．2．4 本条是对原条文的修改和补充。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;本条规定了水泵扬程或系统入口供水压力的计算方法。计算中对报警阀、水流指示器局部水头损失的取值，按照相关的现行标准作了规定，其中湿式报警阀局部水头损失的取值，随产品标准修订后的要求进行了修改。要求生产厂在产品样本中说明此项指标是否符合现行标准的规定，当不符合时，要求提出相应的数据。<br>
+                &nbsp;&nbsp;&nbsp; 报警阀的局部水头损失，系参照国家标准《自动喷水灭火系统 第4部分 干式报警阀》GB 5135．4-2003和《自动喷水灭火系统 第14部分 预作用装置》GB
+                5135．14-2011的规定。<br>
+            </p>
+
+
+        </div>
+        <div id='3199380'>
+
+            <div>
+                <p>9．3 减压设施</p>
+            </div>
+            <p>9．3．1
+                本条规定了对设置减压孔板管段的要求。要求减压孔板采用不锈钢板制作，按常规确定的孔板厚度：Φ50mm～80mm时，δ＝3mm；Φ100mm～150mm时，δ＝6mm；Φ200mm时，δ＝9mm。减压孔板的结构示意图见图22。</p>
+            <p align="center"><img src='http://book.zlglpt.com/e4294/1128.jpg'/><br>
+                <strong>图22 减压孔板结构示意图</strong></p>
+            <p>9．3．2 节流管的结构示意图见图23，L<sub>1</sub>＝D<sub>1</sub>，L<sub>3</sub>＝D<sub>3</sub>。</p>
+            <p align="center"><img src='http://book.zlglpt.com/e4294/1129.jpg'/><br>
+                <strong>图23 节流管结构示意图</strong></p>
+            <p>9．3．3
+                本条规定了减压孔板水头损失的计算公式。标准孔板水头损失的计算，有各种不同的计算公式。经过反复比较，本规范选用1985年版《给水排水设计手册》第二册中介绍的公式，此公式与《工程流体力学》(东北工学院李诗久主编)、《流体力学及流体机械》(东北工学院李富成主编)、《供暖通风设计手册》及1985年版《给水排水设计手册》中介绍的公式计算结果相近。<br>
+                <br>
+                9．3．4 本条规定了节流管水头损失的计算公式。节流管的水头损失包括渐缩管、中间管段与渐扩管的水头损失。即：</p>
+            <p align="center"><img src='http://book.zlglpt.com/e4294/1130.jpg'/></p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;式中：H<sub>j</sub>——节流管的水头损失(10<sup>-2</sup>MPa)；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;H<sub>j1</sub>——渐缩管与渐扩管水头损失之和(10<sup>-2</sup>MPa)；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;H<sub>j2</sub>——中间管段水头损失(10<sup>-2</sup>MPa)。
+            </p>
+            <p align="center"><img src='http://book.zlglpt.com/e4294/1131.jpg'/></p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;式中：V<sub>j</sub>——节流管中间管段内水的平均流速(m／s)；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ζ——渐缩管与渐扩管的局部阻力系数之和；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d<sub>j</sub>——节流管中间管段的计算内径(m)；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;L——节流管中间管段的长度(m)。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;节流管管径为系统配水管道管径的1／2，渐缩角与渐扩角取α＝30°。由《建筑给水排水设计手册》(1992年版)查表得出渐缩管与渐扩管的局部阻力系数分别为0．24和0．46。取二者之和ζ＝0．7。<br>
+                <br>
+                9．3．5 本条是对原条文的修改和补充。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;本条提出了系统中设置减压阀的规定。近年来，在设计中采用减压阀作为减压措施的已经较为普遍。本条规定：<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;第1款是为了保证系统可靠动作，除水流指示器入口允许安装信号阀外，报警阀出口管道上不得随意安装其他阀件，因此要求减压阀应设置在报警阀入口前；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;第2款是为了防止堵塞，要求减压阀入口前设过滤器；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;第3款是强调为检修时不关停系统，与并联安装的报警阀连接的减压阀应设有备用的减压阀(见图24)；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;第4款的目的是为了保证减压阀稳定正常的工作，当垂直安装时，要求按水流方向向下安装；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;第6款规定当减压阀主阀体自身带有压力表时，可不设置压力表。</p>
+            <p align="center"><img src='http://book.zlglpt.com/e4294/1132.jpg'/><br>
+                <strong>图24 减压阀安装示意图</strong><br>
+                1-减压阀；2-橡胶软接头；3-过滤器；4-压力表；5-信号阀；6-报警阀；7-蝶阀或闸阀(带信号)</p>
+
+
+        </div>
+        <div id='3199381'>
+
+            <div>
+                <p>10 供 水<br>
+                    <br>
+                    10．1 一般规定</p>
+            </div>
+            <p>10．1．1 本条在相关规范规定的基础上，对水源提出了“无污染、无腐蚀、无悬浮物”的水质要求，以及保证持续供水时间内用水量的补充规定。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;目前我国自动喷水灭火系统采用的水源及其供水方式有：由市政给水管网供水、采用消防水池和采用天然水源。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;国外自动喷水灭火系统规范中也有类似的规定，例如：苏联《自动消防设计规范》中自动喷水灭火系统的供水可以是能够经常保证供给系统所需用水量的区域供水管、城市给水管和工业供水管道，河流、湖泊和池塘，井和自流井。英国《自动喷水灭火系统安装规则》规定可采用的水源有城市给水干管、高位专用水池、重力水箱、自动水泵、压力水罐。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;上面所列举水源水量不足时，必须设消防水池。除上述规定外，还要求系统的用水中不能含有可堵塞管道的纤维物或其他悬浮物。<br>
+                <br>
+                10．1．2 对与生活用水合用的消防水池和消防水箱，要求其储水的水质符合饮用水标准，以防止污染生活用水。<br>
+                <br>
+                10．1．3 为保证供水可靠性，本条提出了在严寒与寒冷地区，要求采取必要的防冻措施，避免因冰冻而造成供水不足或供水中断的现象发生。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;我国近年的火灾案例中，仍存在因缺水或供水中断而使系统失效、造成严重事故的现象，因此要高度重视供水的可靠性。国外同样存在因缺水或供水中断，而使系统不能成功灭火的现象(见表11)。
+            </p>
+            <p align="center"><strong>表11 自动喷水灭火系统不成功案例的统计表</strong><br>
+                <img src='http://book.zlglpt.com/e4294/1133.jpg'/></p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;注：本表摘自“NFPA”Fire Journal VOL 64 No．4——July 1970．<br>
+                <br>
+                10．1．4 本条是对原条文的修改和补充。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;自动喷水灭火系统是有效的自救灭火设施，将在无人操纵的条件下自动启动喷水灭火，扑救初期火灾的功效优于消火栓系统。由于该系统的灭火成功率与供水的可靠性密切相关，因此要求供水的可靠性不低于消火栓系统。出于上述考虑，对于设置两个及以上报警阀组的系统，按室内消火栓供水管道的设置标准，提出“报警阀组前应设环状供水管道”的规定(见图25)。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;本条强调在报警阀前的控制阀应采用信号阀或设置锁定阀位的锁具，目的是防止阀门误关闭，导致系统供水中断。因为环状供水管道上设置的阀门，既是报警阀的水源控制阀，又是管网检修控制阀，对于确保系统正常供水至关重要。根据美国消防协会
+            </p>
+            <p align="center"><img src='http://book.zlglpt.com/e4294/1134.jpg'/><br>
+                <strong>图25 环状供水示意图</strong><br>
+                1-消防水池；2-水泵；3-止回阀；4-闸阀(信号阀)；5-报警阀组；6-信号阀；7-水流指示器；8-闭式喷头</p>
+            <p>1925年～1959年的统计资料，在自动喷水灭火系统灭火失败的2554次案例中，由阀门关闭引起的有909次，占总数的36％。<br>
+            </p>
+
+
+        </div>
+        <div id='3199382'>
+
+            <div>
+                <p>10 供 水<br>
+                    <br>
+                    10．1 一般规定</p>
+            </div>
+            <p>10．1．1 本条在相关规范规定的基础上，对水源提出了“无污染、无腐蚀、无悬浮物”的水质要求，以及保证持续供水时间内用水量的补充规定。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;目前我国自动喷水灭火系统采用的水源及其供水方式有：由市政给水管网供水、采用消防水池和采用天然水源。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;国外自动喷水灭火系统规范中也有类似的规定，例如：苏联《自动消防设计规范》中自动喷水灭火系统的供水可以是能够经常保证供给系统所需用水量的区域供水管、城市给水管和工业供水管道，河流、湖泊和池塘，井和自流井。英国《自动喷水灭火系统安装规则》规定可采用的水源有城市给水干管、高位专用水池、重力水箱、自动水泵、压力水罐。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;上面所列举水源水量不足时，必须设消防水池。除上述规定外，还要求系统的用水中不能含有可堵塞管道的纤维物或其他悬浮物。<br>
+                <br>
+                10．1．2 对与生活用水合用的消防水池和消防水箱，要求其储水的水质符合饮用水标准，以防止污染生活用水。<br>
+                <br>
+                10．1．3 为保证供水可靠性，本条提出了在严寒与寒冷地区，要求采取必要的防冻措施，避免因冰冻而造成供水不足或供水中断的现象发生。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;我国近年的火灾案例中，仍存在因缺水或供水中断而使系统失效、造成严重事故的现象，因此要高度重视供水的可靠性。国外同样存在因缺水或供水中断，而使系统不能成功灭火的现象(见表11)。
+            </p>
+            <p align="center"><strong>表11 自动喷水灭火系统不成功案例的统计表</strong><br>
+                <img src='http://book.zlglpt.com/e4294/1135.jpg'/></p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;注：本表摘自“NFPA”Fire Journal VOL 64 No．4——July 1970．<br>
+                <br>
+                10．1．4 本条是对原条文的修改和补充。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;自动喷水灭火系统是有效的自救灭火设施，将在无人操纵的条件下自动启动喷水灭火，扑救初期火灾的功效优于消火栓系统。由于该系统的灭火成功率与供水的可靠性密切相关，因此要求供水的可靠性不低于消火栓系统。出于上述考虑，对于设置两个及以上报警阀组的系统，按室内消火栓供水管道的设置标准，提出“报警阀组前应设环状供水管道”的规定(见图25)。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;本条强调在报警阀前的控制阀应采用信号阀或设置锁定阀位的锁具，目的是防止阀门误关闭，导致系统供水中断。因为环状供水管道上设置的阀门，既是报警阀的水源控制阀，又是管网检修控制阀，对于确保系统正常供水至关重要。根据美国消防协会
+            </p>
+            <p align="center"><img src='http://book.zlglpt.com/e4294/1136.jpg'/><br>
+                <strong>图25 环状供水示意图</strong><br>
+                1-消防水池；2-水泵；3-止回阀；4-闸阀(信号阀)；5-报警阀组；6-信号阀；7-水流指示器；8-闭式喷头</p>
+            <p>1925年～1959年的统计资料，在自动喷水灭火系统灭火失败的2554次案例中，由阀门关闭引起的有909次，占总数的36％。<br>
+            </p>
+
+
+        </div>
+        <div id='3199383'>
+
+            <div>
+                <p>10．2 消防水泵</p>
+            </div>
+            <p>10．2．1 本条是对原条文的修改。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;本条提出了采用临时高压给水系统的自动喷水灭火系统宜设置独立消防水泵的规定。规定此条的目的，是为了保证系统供水的可靠性与防止干扰。按一用一备或二用一备的要求设置备用泵，比例较合理而且便于管理。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;对系统独立设置消防水泵确有困难的场所，本条规定自动喷水灭火系统可与消火栓系统合用消防水泵，但当合用消防水泵时，系统管道应在报警阀前分开，并采取措施确保消火栓系统用水不会影响自动喷水灭火系统用水。<br>
+                <br>
+                10．2．2 可靠的动力保障，也是保证可靠供水的重要措施。因此，提出了按二级负荷供电的系统，要求采用柴油机泵组做备用泵的规定。<br>
+                <br>
+                10．2．3 在本规范中重申了系统的消防水泵、稳压泵，应采取自灌式吸水方式，以及水泵吸水口要求采取防止杂物堵塞措施的规定。<br>
+                <br>
+                10．2．4 本条是对原条文的修改。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;本条对系统消防水泵进出口管道及其阀门等附件的配置提出了要求。对有必要控制消防水泵出口压力的系统，提出了要求采取相应措施的规定。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;在消防水泵出水管上设置流量和压力检测装置或预留可供连接流量压力检测装置的接口，是用于消防水泵启动运行试验时检测水泵能否满足设计所需的流量和压力要求。<br>
+            </p>
+
+
+        </div>
+        <div id='3199384'>
+
+            <div>
+                <p>10．3 高位消防水箱</p>
+            </div>
+            <p>10．3．1 本条规定了采用临时高压给水系统的自动喷水灭火系统，要求设置高位消防水箱，且允许高位消防水箱合用。设置高位消防水箱的目的在于：<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;(1)利用位差为系统提供准工作状态下所需要的水压，达到使管道内的充水保持一定压力的目的；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;(2)提供系统启动初期的用水量和水压，在消防水泵出现故障的紧急情况下应急供水，确保喷头开放后立即喷水，控制初期火灾和为外援灭火争取时间。<br>
+                <br>
+                10．3．2 本条为新增条文。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;自动喷水灭火系统中，高位消防水箱由于受到位差的限制，在向建筑物的顶层或距离较远部位供水时会出现水压不足现象，使在高位消防水箱供水期间系统的喷水强度不足，将削弱系统的控灭火能力。为此，本条提出系统高位消防水箱在不能满足最不利点处喷头的最低工作压力时，要求设置增压稳压设施。增压稳压设施一般由稳压泵和气压罐组成，稳压泵的作用是保证管网处于充满水的状态，并保证管网内的压力。因此，稳压泵的扬程应满足最不利点处喷头的最低工作压力要求。设置气压罐的目的是防止稳压泵频繁启停，并提供一定的初期水量。<br>
+                <br>
+                10．3．3 本条是对原条文的修改和补充。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;对于一些建筑高度不高的民用建筑，或者屋顶无法设置高位消防水箱的工业建筑，本条提出允许采用气压供水设备代替高位消防水箱。现行国家标准《消防给水及消火栓系统技术规范》GB
+                50974-2014规定，消防水泵在机械应急情况下应确保在报警后5min内正常工作。本条参照上述要求，规定气压给水设备的有效容积按最不利处4只喷头在最低工作压力下的5min用水量计算。<br>
+                <br>
+                10．3．4
+                本条对高位消防水箱的出水管提出了要求。要求出水管设有止回阀，是为了防止水泵及消防水泵接合器的供水倒流入水箱；要求在报警阀前接入系统管道，是为了保证及时报警；规定采用较大直径的管道，是为了减少水头损失。<br>
+            </p>
+
+
+        </div>
+        <div id='3199385'>
+
+            <div>
+                <p>10．4 消防水泵接合器</p>
+            </div>
+            <p>10．4．1
+                本条提出了设置消防水泵接合器的规定。消防水泵接合器是用于外部增援供水的措施，当系统消防水泵不能正常供水时，由消防车连接消防水泵接合器向系统的管道供水。美国巴格斯城的K商业中心仓库1981年6月21日发生火灾，由于没有设置消防水泵接合器，在缺水和过早断电的情况下，消防车无法向自动喷水灭火系统供水。上述案例说明了设置消防水泵接合器的必要性。消防水泵接合器的设置数量，要求按系统的流量与消防水泵接合器的选型确定。<br>
+                <br>
+                10．4．2
+                受消防车供水压力的限制，超过一定高度的建筑，通过消防水泵接合器由消防车向建筑物的较高部位供水，将难以实现一步到位。为解决这个问题，根据某些省市消防局的经验，规定在当地消防车供水能力接近极限的部位，设置接力供水设施。接力供水设施由接力水箱和固定的电力泵或柴油机泵、手抬泵等接力泵，以及消防水泵接合器或其他形式的接口组成。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;接力供水设施示意图见图26。</p>
+            <p align="center"><img src='http://book.zlglpt.com/e4294/1137.jpg'/><br>
+                <strong>图26 接力供水设施示意图</strong><br>
+                1-水泵；2-止回阀；3-闸阀；4-消防水泵接合器；5-接力水箱；6-止回阀；7-闸阀(常开)；8-接力水泵(固定或移动)</p>
+
+
+        </div>
+        <div id='3199386'>
+
+            <div>
+                <p>11 操作与控制</p>
+            </div>
+            <p>11．0．1～11．0．3 这三条是对原条文的修改和补充。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;这三条是根据目前国内外自动喷水灭火系统消防水泵启泵方式的应用现状，分别规定了不同类型自动喷水灭火系统消防水泵的启动方式，并与国家标准《消防给水及消火栓系统技术规范》GB
+                50974协调一致。需要说明的是，规定不同的启泵方式，并不是要求系统均应设置这几种启泵方式，而是指任意一种方式均应能直接启动消防水泵。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;对湿式与干式系统，原规范规定仅采用报警阀压力开关信号直接联锁启泵这一种启泵方式，但根据目前应用现状，压力开关存在易堵塞、启泵时间长等缺点。因此，第11．0．1条在维持原有启泵方式的基础上，新增了采用消防水泵出水干管上设置的压力开关、高位消防水箱出水管上的流量开关直接启泵方式。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;对于预作用系统，除上述启泵方式外，国内也采用火灾自动报警系统直接自动启动消防水泵的做法，即火灾自动报警系统除控制预作用装置外，另有一组信号启动消防水泵。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;对雨淋系统及自动控制的水幕系统，由于其有火灾自动报警系统控制和充液(水)传动管控制两种类型，第11．0．3条分别规定了这两种类型系统的启泵方式。<br>
+                <br>
+                11．0．4 本条规定了消防水泵的启泵方式，要求具有自动、远程启动和现场手动应急操作三种启动消防水泵的方式。<br>
+                <br>
+                11．0．5 本条为新增条文。本条规定了不同类型场所设置预作用系统时，预作用装置推荐采用的自动控制方式。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;1 准工作状态时严禁误喷的场所，采用火灾探测器一组探测信号，只有火灾探测器动作后才开启预作用装置，能有效防止喷头误动作时开启供水，造成水渍污染。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;2
+                准工作状态时严禁管道充水的场所和用于替代干式系统的场所，采用火灾探测器和闭式洒水喷头(充气管道上设置的压力开关)两组探测信号，组成“与”门，在两组信号都动作之后才打开预作用装置，能够防止其中一组探测元件误动作时启动系统。<br>
+                <br>
+                11．0．6 本条提出了雨淋系统和自动控制的水幕系统中雨淋报警阀的自动控制方式，允许采用电动、液(水)动或气动控制。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;控制充液(水)传动管上闭式喷头与雨淋报警阀之间的高程差，是为了控制与雨淋报警阀连接的充液(水)传动管内的静压，保证传动管上闭式喷头动作后能可靠地开启雨淋报警阀。<br>
+                <br>
+                11．0．7 本条是对原条文的修改和补充。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;对预作用系统、雨淋系统及自动控制的水幕系统，本条提出了要具有自动、远程启动和现场手动应急操作三种开启报警阀组的规定。手动是指现场手动启动报警阀组，控制室手动操作属远控启动。对于一些设置报警阀组数量多且布置分散的场所，可在报警阀组处设就地手动开阀设施，并设手动报警按钮。<br>
+                <br>
+                11．0．8 本条为新增条文。本条提出对于建筑物局部场所采用预作用系统，且该系统串接在湿式系统上时，预作用装置也应具备第11．0．7条规定的三种控制方式。<br>
+                <br>
+                11．0．9 本条规定了与快速排气阀连接的电动阀的控制要求，是保证干式、预作用系统有压充气管道迅速排气的措施之一。<br>
+                <br>
+                11．0．10 自动喷水灭火系统灭火失败的教训，很多是由于维护不当和误操作等原因造成的。加强对系统状态的监视与控制，能有效消除事故隐患。对系统的监视与控制要求，包括：<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;(1)监视电源及备用动力的状态；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;(2)监视系统的水源、水箱(罐)及信号阀的状态；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;(3)可靠控制水泵的启动并显示反馈信号；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;(4)可靠控制雨淋报警阀、电磁阀、电动阀的开启并显示反馈信号。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;(5)监视水流指示器、压力开关的动作和复位状态。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;(6)可靠控制补气装置，并显示气压。</p>
+
+
+        </div>
+        <div id='3199387'>
+
+            <div>
+                <p>12 局部应用系统</p>
+            </div>
+            <p>12．0．1 本条是对原条文的修改和补充。本条规定了局部应用系统的适用范围。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;近年来，随着人们对消防意识的不断加强，自动喷水灭火系统的使用日益受到人们的重视，其使用范围也得到了不同程度的增加，一些中小型商店、超市等都增设了自动喷水灭火系统。这些场所大多数是由其他用途的建筑改造或扩建而成，大多未设置自动喷水灭火系统，若按标准配置追加设置自动喷水灭火系统较为困难。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;局部应用系统与标准配置的自动喷水灭火系统相比，具有结构简单、安装方便和维护管理容易等优点，但同时存在供水可靠度低等缺点，因此在推广应用局部应用系统的同时，还应严格限制该系统的规模。<br>
+                <br>
+                12．0．2 本条是对原条文的修改和补充。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;本条规定了局部应用系统的设计基本参数要求。建筑物中局部设置自动喷水灭火系统时，按现行规范原规定条文设置供水设施往往比较困难，为此参照国内外相关规范的最低限度要求，按“保证足够喷水强度，在消防队投入增援灭火之前保证足够喷水面积和持续喷水时间”的原则，提出设计局部应用系统的具体指标，包括：喷水强度、作用面积和持续喷水时间等。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;娱乐性场所内陈设、装修装饰及悬挂的物品较多，而且多数为木材、塑料、纺织品、皮革等易燃材料制作，点燃时容易酿成火灾，且发生火灾时蔓延速度较快、放热速率的增长较快。对于一些中小型商店、超市等，此类场所可燃物品较多，且用电设施较多，因此发生火灾的可能性较大。此外，这些场所多属于人员密集场所，火灾时极易造成拥挤现象。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;规定采用快速响应喷头，是为了控制系统投入喷水、开始灭火的时间，有利于保护现场人员疏散、控制火灾及弥补作用面积的不足。局部应用系统的主要目的是扑救初期火灾，并防止火灾的大范围扩散，为人员疏散赢得时间，因此只要求持续喷水时间为0．5h，因为0．5h可以得到人员疏散和请求消防队员支援的时间。<br>
+                <br>
+                12．0．3 本条是对原条文的修改和补充。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;本章根据“在消防队投入增援灭火之前保证足够喷水面积和持续喷水时间”的原则，确定了局部应用系统的作用面积和持续喷水时间。由于局部应用系统的作用面积小于本规范表5．0．1的规定值，所以按本章规定设计的系统，控制火灾的能力偏低于按本规范第5．0．1条规定数据设计的系统。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;局部应用系统保护区域内的最大厅室，指由符合相关规范规定的隔墙围护的区域。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;采用标准覆盖面积洒水喷头可减少洒水受阻的可能性。采用扩大覆盖洒水喷头时要求严格执行本规范第1．0．4条的规定。任何不符合现行国家标准的其他喷头，本规范都不允许使用。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;美国消防协会标准《自动喷水灭火系统安装标准》NFPA
+                13规定，局部应用系统的作用面积按100m<sup>2</sup>确定，当小于100m<sup>2</sup>时，按房间实际面积计算，当采用扩大覆盖面积洒水喷头时，计算喷头数不应小于4只，当采用标准覆盖面积洒水喷头时，计算喷头数不小于5只。面积较小房间布置的喷头较少，应将房间外2只喷头计入作用面积，此要求在NFPA中是必须的、基本的要求。<br>
+                <br>
+                12．0．4 本条允许局部应用系统与室内消火栓合用消防用水量和稳压设施、消防水泵及供水管道，有利于降低造价，便于推广。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;举例说明：按室内消防用水量10L／s、火灾延续时间2h确定室内消防用水量的建筑物，其消防水池除了供给10只开放喷头的用水量外，尚可供2支水枪工作约1．5h。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;按室内消防用水量5L／s、火灾延续时间2h确定室内消防用水量的建筑物，其消防水池除了供给10只开放喷头的流量外，尚可供1支水枪工作约1h。<br>
+                <br>
+                12．0．5 本条参考美国消防协会标准《自动喷水灭火系统安装标准》NFPA 13中“喷头数量少于20只的系统可不设报警阀组”的规定，提出小规模系统可省略报警阀组、简化系统构成的规定。<br>
+                <br>
+                12．0．9 本条是对原条文的修改和补充。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;本条提出了局部应用系统的供水要求，规定系统可结合自身特点和使用场所以及工程实际情况，选择市政管网供水或生活管网供水等方式。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;本条第5款参照现行国家标准《建筑给水排水设计规范》GB
+                50015的要求，提出了从城市供水管网上接出消防用水管道时，应设置管道倒流防止器或其他有效防止倒流污染的措施。</p>
+
+
+        </div>
+    </div>
+    <div class="clear"></div>
+
+    <style>
+        #comment > h3 {
+            margin: 2em 0 1em 0
+        }
+
+        #comment .textarea {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 1em;
+            border-radius: 3px;
+            background-color: #fff;
+        }
+
+        #comment textarea {
+            height: 60px;
+            padding: 0;
+            border: 0;
+            margin: 0;
+            width: 100%;
+            outline: 0;
+        }
+
+        #comment table {
+            border-color: #ddd;
+            border-width: 0 0 1px 0;
+            width: 100%;
+            table-layout: auto
+        }
+
+        #comment td {
+            padding: 1em .5em 1em 1em;
+            border-top: 1px solid #ddd;
+        }
+
+        #comment .loadMore {
+            margin: 1em 0;
+            padding: .7em .5em;
+            background-color: #aaa;
+            color: #fff;
+            text-align: center;
+            cursor: pointer;
+        }
+    </style>
+    <div id="comment">
+        <h3>我要评论</h3>
+        <div class="edit">
+            <div class="textarea">
+                <textarea tabindex="1" autocomplete="off" accesskey="u" id="top_textarea"></textarea>
+            </div>
+            <div style="text-align:right">
+                <button onclick="comment.save()">发表评论</button>
+            </div>
+        </div>
+        <h3>用户评论</h3>
+        <table>
+            <colgroup>
+                <col style="width:40px">
+                <col>
+            </colgroup>
+            <tbody>
+
+            <tr data-cid="10">
+                <td><img class="photo" src="/share/UserPhoto.ashx?method=read&UserId=0CB7E412AF8F69C8A5418A14C45B7445"/>
+                </td>
+                <td>
+                    <h3>leon&nbsp;&nbsp;2017-09-01</h3>
+                    <p>
+                        这是我看到了最好用的一个建筑施工竣工验收统一用表网站，不光让提供企业级资料的统一监管，而且提供大量的免费资料，已经购买了此公司的模板，使用还可以，只是操作培训方面需要加强，不然有很多功能都不知怎么使用？</p>
+                </td>
+            </tr>
+
+
+            <tr data-cid="9">
+                <td><img class="photo" src="/share/UserPhoto.ashx?method=read&UserId=0C03BE6808DA2A5683A00755A1EAF629"/>
+                </td>
+                <td>
+                    <h3>goooogle&nbsp;&nbsp;2017-08-28</h3>
+                    <p>范例不错，但有些范例的填写数据太少了些，希望可以改进。</p>
+                </td>
+            </tr>
+
+
+            <tr data-cid="8">
+                <td><img class="photo" src="/share/UserPhoto.ashx?method=read&UserId=zfl"/></td>
+                <td>
+                    <h3>曾工&nbsp;&nbsp;2017-08-11</h3>
+                    <p>如果有培训视频就好了，每个省出的统表都不一样，都不知什么使用，关键还是培训要跟上。</p>
+                </td>
+            </tr>
+
+
+            <tr data-cid="7">
+                <td><img class="photo" src="/share/UserPhoto.ashx?method=read&UserId=0D298D707591732CE7E9F11E91B3F693"/>
+                </td>
+                <td>
+                    <h3>游客&nbsp;&nbsp;2017-08-01</h3>
+                    <p>如果购买了，在工程中使用不知是否方便，真的能在手机上，在工地上方便的编制表格吗？</p>
+                </td>
+            </tr>
+
+
+            <tr data-cid="6">
+                <td><img class="photo" src="/share/UserPhoto.ashx?method=read&UserId=gooddeng"/></td>
+                <td>
+                    <h3>邓为墉&nbsp;&nbsp;2017-07-08</h3>
+                    <p>感觉还可以，但有些表格是要购买才可以查看的，并没有全部免费啊。</p>
+                </td>
+            </tr>
+
+
+            <tr data-cid="5">
+                <td><img class="photo" src="/share/UserPhoto.ashx?method=read&UserId=0D17699DB3C1ED9182F35658323F23E8"/>
+                </td>
+                <td>
+                    <h3>歌手The&nbsp;&nbsp;2017-07-03</h3>
+                    <p>提供填写说明和填表范例很有价值，在手机和电脑上都可以查看，非常方便，真的是随时随地使用的。</p>
+                </td>
+            </tr>
+
+
+            <tr data-cid="4">
+                <td><img class="photo" src="/share/UserPhoto.ashx?method=read&UserId=lzp"/></td>
+                <td>
+                    <h3>林工&nbsp;&nbsp;2017-06-12</h3>
+                    <p>资料很有用，而且结构清晰，表格规范，关键是的可以免费使用，华软公司真是良心公司啊！</p>
+                </td>
+            </tr>
+
+
+            <tr data-cid="3">
+                <td><img class="photo" src="/share/UserPhoto.ashx?method=read&UserId=0BFD15BC1EC3AF920C91E568971CD13C"/>
+                </td>
+                <td>
+                    <h3>李天一&nbsp;&nbsp;2017-06-11</h3>
+                    <p>此资料是否是免费的？</p>
+                </td>
+            </tr>
+
+
+            <tr data-cid="2">
+                <td><img class="photo" src="/share/UserPhoto.ashx?method=read&UserId=0E3AE45022C01045201F707C1467D37C"/>
+                </td>
+                <td>
+                    <h3>张工&nbsp;&nbsp;2017-05-21</h3>
+                    <p>是否是最新版本的规范</p>
+                </td>
+            </tr>
+
+
+            <tr data-cid="1">
+                <td><img class="photo" src="/share/UserPhoto.ashx?method=read&UserId=0BBFF63B96EDA70B0ABB702B70B61A80"/>
+                </td>
+                <td>
+                    <h3>游客&nbsp;&nbsp;2017-05-01</h3>
+                    <p>这是最新版本的的统一用表吗？</p>
+                </td>
+            </tr>
+
+
+            </tbody>
+        </table>
+        <div class="loadMore" onclick="comment.loadMore()">加载更多</div>
+        <script>
+            comment = {
+                tmpl: '<tr data-cid="{cid}"><td style="width:40px"><img src="/share/UserPhoto.ashx?method=read&UserId={UserId}"/></td>' +
+                    '<td>' +
+                    '<h3>{UserName}&nbsp;&nbsp;{createTime}</h3>' +
+                    '<p>{content}</p>' +
+                    '</td></tr>',
+                save: function () {
+                    var content = $.trim($('#top_textarea').val());
+                    if (!content || content.length < 3) {
+                        jAlert('必须最少输入三个文字');
+                        return;
+                    }
+                    var param = {
+                        pageName: 'book_view.aspx',
+                        queryValue: '3669',
+                        content: content
+                    }
+                    $.post("/net/ucComment.ashx?method=save", param, function (res) {
+                        if (res.success) {
+                            myalert('成功保存评论！');
+                            $('#top_textarea').val('');
+                            var tbody = $('#comment>table:first>tbody');
+                            var html = comment.tmpl.format({
+                                UserId: session.UserId ? session.UserId : '',
+                                UserName: '游客',
+                                createTime: '刚才',
+                                content: param.content
+                            });
+                            tbody.prepend(html);
+                        } else {
+                            jAlert(res.message);
+                        }
+                    }, 'json')
+                },
+                loadMore: function () {
+                    var tbody = $('#comment>table:first>tbody');
+                    var param = {
+                        pageName: 'book_view.aspx',
+                        queryValue: '3669',
+                        cid: tbody.children('tr:last').data('cid')
+                    }
+                    $.get("/net/ucComment.ashx?method=loadMore", param, function (res) {
+                        if (!res.success) {
+                            jAlert(res.message);
+                            return;
+                        }
+
+                        var data = res.data, html = [];
+                        if (!data.length) {
+                            jAlert('没有更多评论了');
+                            return;
+                        }
+                        for (var i = 0, len = data.length; i < len; i++) {
+                            html.push(comment.tmpl.format(data[i]));
+                        }
+                        tbody.append(html.join(''));
+                    }, 'json')
+                }
+            }
+        </script>
+    </div>
+</div>
+<div class="wrap">
+    <div class='footer'>
+        <p style='font-size:1.1em;'>汇聚资料管理人，打造资料生态圈 </p>
+        <p>
+            <a href='http://www.huaruan.com.cn' target='_blank'>华软科技</a>版权所有&nbsp;
+            Tel：<a href='tel:020-85566580'>020-85566332</a>&nbsp;
+            <a href='/help/help.htm' target='_blank'>帮助文档</a>&nbsp;
+            <a href='tencent://message/?uin=800156910&Site=www.zlglpt.com&Menu=yes'
+               title='QQ在线客服，华软公司统一的QQ客服号：800156910'><img src='/css/images/qq_service.png'/></a>
+        </p>
+        <p><img src='/images/QRCode.png' alt='网站二维码'/><img src='/images/QRCode-wx.png' alt='网站二维码'
+                                                           style='margin-left: 1em'/></p></div>
+    <h1 style='display:none'>本平台提供如下内容的服务：建筑工程竣工验收技术资料,包括市政安全园林所有专业人防施工资料、竣工验收资料,施工方案,技术交底资料等资料的制作编辑和管理</h1>
+
+</div>
+<script>
+    $(function () {
+        //使表格在手机显示OK
+        $('#book_page table').wrap('<div style="overflow:auto"></div>');
+
+        var $book_view = $('#book_view')
+            , _top = $book_view.offset().top
+
+        var $dir = $('#book_page > .dir');
+
+        $(window).scroll(function (e) {
+            var $win = $(this)
+                , winWidh = $win.width()
+                , winTop = $win.scrollTop();
+
+            if (winWidh <= 1450) return;
+            if (winTop >= _top) {
+                $dir.css({'position': 'fixed', 'left': $dir.offset().left + 'px'});
+            } else {
+                $dir.css({'position': 'absolute', 'left': '-310px'});
+            }
+
+        });
+
+        $('#book_page').on('click', '.mask_dir a', function () {
+            book.dirHide();
+        });
+    })
+    $(document.body).ShareUL();
+    $(document.body).append('<div id="dvMenu" onclick="book.dirShow();">≡</div>');
+
+    book = {
+        dirShow: function () {
+            var $dvMask = $('.mask_div');
+            if (!$dvMask.length) {
+                $dvMask = $('<div class="mask_div" onclick="book.dirHide()"><div>');
+                //移动端阻止滚动
+                $dvMask.on('touchmove', function (e) {
+                    e.preventDefault();
+                }, false);
+
+                $(document.body).append($dvMask);
+            }
+            $dvMask.show();
+
+            var $dir = $('#book_page > .dir')
+                , _left = $dir.css('left')
+                , _position = $dir.css('position');
+            $dir.addClass('mask_dir').data({'left': _left, 'position': _position}).css({
+                'left': 0,
+                'position': 'fixed'
+            });
+        },
+        dirHide: function () {
+            $('.mask_div').hide();
+
+            var $dir = $('#book_page > .dir')
+                , _left = $dir.data('left')
+                , _position = $dir.data('position');
+            $dir.removeClass('mask_dir').css({'left': _left, 'position': _position});
+        }
+    }
+</script>
+
+</body>
+</html>
+
