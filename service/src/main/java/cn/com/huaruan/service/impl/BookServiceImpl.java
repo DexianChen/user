@@ -16,74 +16,40 @@ import java.util.List;
 public class BookServiceImpl implements BookService {
     @Override
     public void saveChapter(List<ChapterVo> chapterList) {
-        // 用去去重，但这么写不太好 TODO
-        HashSet<ChapterVo> chapterVoSet = new HashSet<>();
-        // 去重后的新集合
-        ArrayList<ChapterVo> chapterVos = new ArrayList<>();
 
-        for (ChapterVo chapterVo : chapterList) {
-            boolean duplicate = chapterVoSet.add(chapterVo);
-
-            if (duplicate){
-                chapterVos.add(chapterVo);
-            }
-        }
-
-//        for (ChapterVo chapterVo : chapterVos) {
-//            System.out.println(chapterVo);
-//        }
     }
 
     @Override
     public void saveNode(List<NodeVo> nodeList) {
-        // 用去去重，但这么写不太好 TODO
-        HashSet<NodeVo> nodeVoSet = new HashSet<>();
-        // 去重后的新集合
-        ArrayList<NodeVo> nodeVos = new ArrayList<>();
 
-        for (NodeVo nodeVo : nodeList) {
-            boolean duplicate = nodeVoSet.add(nodeVo);
-
-            if (duplicate){
-                nodeVos.add(nodeVo);
-            }
-        }
-
-        for (NodeVo nodeVo : nodeVos) {
-            System.out.println(nodeVo);
-        }
     }
 
     @Override
     public void saveItem(List<ItemVo> itemList, List<ItemDescriptionVo> itemDescriptionList) {
-        // 用去去重，但这么写不太好 TODO
-        HashSet<ItemVo> itemVoSet = new HashSet<>();
-        // 去重后的新集合
-        ArrayList<ItemVo> itemVos = new ArrayList<>();
-
-        for (ItemVo itemVo : itemList) {
-            boolean duplicate = itemVoSet.add(itemVo);
-
-            if (duplicate){
-                ItemVo completeItemVo = buildItem(itemVo, itemDescriptionList);
-                itemVos.add(completeItemVo);
-//                System.out.println(itemVo.getItemId() + "-->" +itemVo.getItemDescription() + "-->" + completeItemVo.getItemDescription());
-            }
+        List<ItemVo> completeItemList = buildItem(itemList, itemDescriptionList);
+        for (ItemVo itemVo : completeItemList) {
+            System.out.println(itemVo.toString());
         }
 
-        for (ItemVo itemVo : itemVos) {
-//            System.out.println(itemVo);
-        }
     }
 
-    private ItemVo buildItem(ItemVo itemVo, List<ItemDescriptionVo> itemDescriptionList) {
+    /**
+     * 将条文说明列表信息插入到条文列表信息中，构建完整的条文列表信息
+     * @param itemList
+     * @param itemDescriptionList
+     * @return
+     */
+    private List<ItemVo> buildItem(List<ItemVo> itemList, List<ItemDescriptionVo> itemDescriptionList) {
         for (ItemDescriptionVo itemDescriptionVo : itemDescriptionList) {
-            boolean matching = itemDescriptionVo.getId().contains(itemVo.getItemId());
-            if (matching){
-                itemVo.setItemDescription(itemDescriptionVo.getDescription());
-                return itemVo;
+            for (ItemVo itemVo : itemList) {
+                boolean matching = itemDescriptionVo.getId().contains(itemVo.getItemId());
+                if (matching){
+                    itemVo.setItemDescription(itemDescriptionVo.getDescription());
+                    //匹配则跳出本循环
+                    break;
+                }
             }
         }
-        return itemVo;
+        return itemList;
     }
 }

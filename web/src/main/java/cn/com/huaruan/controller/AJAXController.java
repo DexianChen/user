@@ -72,8 +72,13 @@ public class AJAXController {
     @PostMapping("/book/chapter")
     public ResultVo saveChapter(@RequestParam("chapterList")String chapterListStr) {
         List<ChapterVo> chapterList = JSON.parseArray(chapterListStr, ChapterVo.class);
-        bookService.saveChapter(chapterList);
-        return null;
+
+        try {
+            bookService.saveChapter(chapterList);
+            return new ResultVo(true, "保存章列表信息成功");
+        } catch (Exception e) {
+            return new ResultVo(false, "保存章列表信息失败");
+        }
     }
 
     /**
@@ -84,8 +89,13 @@ public class AJAXController {
     @PostMapping("/book/node")
     public ResultVo saveNode(@RequestParam("nodeList")String nodeListStr) {
         List<NodeVo> nodeList = JSON.parseArray(nodeListStr, NodeVo.class);
-        bookService.saveNode(nodeList);
-        return null;
+
+        try {
+            bookService.saveNode(nodeList);
+            return new ResultVo(true, "保存节列表信息成功");
+        } catch (Exception e) {
+            return new ResultVo(false, "保存节列表信息失败");
+        }
     }
 
     /**
@@ -95,10 +105,16 @@ public class AJAXController {
      * @return
      */
     @PostMapping("/book/item")
-    public ResultVo saveItem(@RequestParam("itemList")String itemListStr, @RequestParam("itemDescriptionList")String itemDescriptionListStr) {
+    public ResultVo saveItem(@RequestParam("itemList")String itemListStr,
+                             @RequestParam("itemDescriptionList")String itemDescriptionListStr) {
         List<ItemVo> itemList = JSON.parseArray(itemListStr, ItemVo.class);
         List<ItemDescriptionVo> itemDescriptionList = JSON.parseArray(itemDescriptionListStr, ItemDescriptionVo.class);
-        bookService.saveItem(itemList, itemDescriptionList);
-        return null;
+
+        try {
+            bookService.saveItem(itemList, itemDescriptionList);
+            return new ResultVo(true, "保存节列表信息成功");
+        } catch (Exception e) {
+            return new ResultVo(false, "保存节列表信息失败");
+        }
     }
 }

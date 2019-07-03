@@ -11,7 +11,7 @@ $(function () {
      * 构建章列表和节列表信息
      * $("#book_page div:not('[id]')").find("p")  id为book_page的div后代不含id属性的div标签下所有p标签元素
      */
-    var array = $("#book_page div:not('[id]')").find("p").toArray();
+    var array = $("#3199320").nextUntil("#3199358").children("div").find("p").toArray();
     $.each(array, function (index, value) {
         var html = $(value).html();
 
@@ -53,15 +53,16 @@ $(function () {
     /**
      * 构建条文列表信息
      * $("#3199320").nextAll().children("p")  id为3199320的div后所有同辈元素的所有子代p标签元素
+     * 3199352 附录A所在的div
      */
-    var itemArray = $("#3199320").nextAll().children("p").toArray();
+    var itemArray = $("#3199320").nextUntil("#3199352").children("p").toArray();
     var itemId = "";
     var itemContent = "";
     var item_chapterId = "";
     var item_nodeId = "";
     $.each(itemArray, function (index, v1) {
         var array1 = $(v1).text().trim().split("。\n");
-        $.each(array1, function (index, value){
+        $.each(array1, function (index1, value){
             // 含有句号表明有条文编号所在, 否则为文本信息
             if (value.trim().indexOf("．") == 1 || value.trim().indexOf("．") == 2){
                 if (itemId != ""){
@@ -76,51 +77,52 @@ $(function () {
                 itemContent += value.substring(value.indexOf(" ")).trim();
             }else {
                 itemContent += value;
+            }
+        });
+        // 最后一个元素
+        if (index == itemArray.length - 1) {
+            item = {"chapterId":item_chapterId, "nodeId":item_nodeId, "itemId":itemId, "itemContent":itemContent, "itemDescription":""};
+            itemList.push(item);
+        }
+    });
 
-                // 最后一个元素
-                if (index == itemArray.length - 1) {
-                    item = {"chapterId":item_chapterId, "nodeId":item_nodeId, "itemId":itemId, "itemContent":itemContent, "itemDescription":""};
-                    itemList.push(item);
+    /**
+     * 获取条文说明列表信息
+     * @type {Array}
+     */
+    var itemDescriptionList = [];
+    var itemDescriptionObject = {"id":"","description":""};
+    var id = "";
+    var description = "";
+    var itemDescriptionArray = $("#3199358").nextAll().children("p").toArray();
+    // alert(returnObjectInfo($("#book_page div").has("span[class='STYLE8']").nextAll().children("p")));
+    $.each(itemDescriptionArray, function (index, v1) {
+        var array1 = $(v1).text().trim().split("。\n");
+        $.each(array1, function (index1, value) {
+            if (value.trim().indexOf("．") == 1 || value.trim().indexOf("．") == 2){
+                if (id != ""){
+                    itemDescriptionObject = {"id":id, "description":description};
+                    itemDescriptionList.push(itemDescriptionObject);
+                    description = "";
                 }
+                value = value.trim();
+                id = value.substring(0, value.indexOf(" ")).trim();
+                description += value.trim().substring(value.indexOf(" "));
+            }else {
+                description += value;
             }
         });
 
+        // 添加最后一个元素
+        if (index == itemDescriptionArray.length - 1) {
+            itemDescriptionObject = {"id":id, "description":description};
+            itemDescriptionList.push(itemDescriptionObject);
+        }
     });
 
-    // // 获取条文说明
-    // var itemDescriptionList = [];
-    // var itemDescriptionObject = {"id":"","description":""};
-    // var id = "";
-    // var description = "";
-    // var itemDescriptionArray = $("#book_page div").has("span[class='STYLE8']").nextAll().children("p").toArray();
-    // // alert(returnObjectInfo($("#book_page div").has("span[class='STYLE8']").nextAll().children("p")));
-    // $.each(itemDescriptionArray, function (index, value) {
-    //     var html = $(value).html().split("<br>");
-    //     $.each(html, function (index, value) {
-    //         if (value.indexOf("．") != -1){
-    //             value = value.trim();
-    //             if (id != ""){
-    //                 itemDescriptionObject = {"id":id, "description":description};
-    //                 itemDescriptionList.push(itemDescriptionObject);
-    //                 description = "";
-    //             }
-    //             id = value.substring(0, value.indexOf(" ")).trim();
-    //             description += value.trim().substring(value.indexOf(" "));
-    //         }else {
-    //             description += value;
-    //
-    //             // 添加最后一个元素
-    //             if (index == html.length - 1) {
-    //                 itemDescriptionObject = {"id":id, "description":description};
-    //                 itemDescriptionList.push(itemDescriptionObject);
-    //             }
-    //         }
-    //     });
-    // });
-
-    // sendChapterInfo(chapterList);
-    // sendNodeInfo(nodeList);
-    // sendItemInfo(itemList, itemDescriptionList);
+    sendChapterInfo(chapterList);
+    sendNodeInfo(nodeList);
+    sendItemInfo(itemList, itemDescriptionList);
 
     // $.each(chapterList, function (index, value) {
     //     alert(value.chapterId + "   " + value.chapterTitle);
@@ -130,12 +132,12 @@ $(function () {
     //     alert(value.nodeId + "--->" + value.content);
     // });
 
-    $.each(itemList, function (index, value) {
-        if (value.itemId.indexOf("12")!=-1) {
-            alert(value.itemId + "--->" + value.itemContent);
-        }
-
-    });
+    // $.each(itemList, function (index, value) {
+    //     if (value.itemId.indexOf("12．0．9")!=-1) {
+    //         alert(value.itemId + "--->" + value.itemContent);
+    //     }
+    //
+    // });
 
     // $.each(itemDescriptionList, function (index, value) {
     //     if (value.id.indexOf("12")!=-1) {

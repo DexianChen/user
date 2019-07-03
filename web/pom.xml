@@ -24,14 +24,14 @@
         </dependency>
     </dependencies>
 
-    <build>
-        <resources>
-            <resource>
-                <includes>
-                    <include>**/*.css</include>
-                    <include>**/*.js</include>
-                </includes>
-            </resource>
-        </resources>
-    </build>
+    <!--<build>-->
+        <!--<resources>-->
+            <!--<resource>-->
+                <!--<includes>-->
+                    <!--<include>**/*.css</include>-->
+                    <!--<include>**/*.js</include>-->
+                <!--</includes>-->
+            <!--</resource>-->
+        <!--</resources>-->
+    <!--</build>-->
 </project>
