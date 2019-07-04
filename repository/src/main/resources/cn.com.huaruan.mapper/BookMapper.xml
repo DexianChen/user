@@ -19,14 +19,14 @@
         INSERT INTO tb_node VALUES
         <foreach collection="nodeList" item="node" index="index" separator=",">
             ( NULL,
-            <if test="chapter.chapterId != null">
-                #{chapter.chapterId, jdbcType=VARCHAR},
+            <if test="node.chapterId != null">
+                #{node.chapterId, jdbcType=VARCHAR},
             </if>
             <if test="node.nodeId != null">
                 #{node.nodeId, jdbcType=VARCHAR},
             </if>
-            <if test="node.nodeTitle != null">
-                #{node.nodeTitle, jdbcType=TEXT}
+            <if test="node.nodeContent != null">
+                #{node.nodeContent, jdbcType=LONGVARCHAR}
             </if>
             )
         </foreach>

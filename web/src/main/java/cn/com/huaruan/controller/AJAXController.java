@@ -100,6 +100,7 @@ public class AJAXController {
             bookService.saveNode(nodeList);
             return new ResultVo(true, "保存节列表信息成功");
         } catch (Exception e) {
+            logger.error("错误信息" + e);
             return new ResultVo(false, "保存节列表信息失败");
         }
     }
@@ -120,6 +121,7 @@ public class AJAXController {
             bookService.saveItem(itemList, itemDescriptionList);
             return new ResultVo(true, "保存条文列表信息成功");
         } catch (Exception e) {
+            logger.error("错误信息" + e);
             return new ResultVo(false, "保存条文列表信息失败");
         }
     }
@@ -137,6 +139,7 @@ public class AJAXController {
             bookService.saveOther(otherList);
             return new ResultVo(true, "保存其他列表信息(包括前言和附录等)成功");
         } catch (Exception e) {
+            logger.error("错误信息" + e);
             return new ResultVo(false, "保存其他列表信息(包括前言和附录等)失败");
         }
     }
