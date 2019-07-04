@@ -46,6 +46,7 @@ public class BookServiceImpl implements BookService {
                 boolean matching = itemDescriptionVo.getId().trim().equals(itemVo.getItemId().trim());
                 if (matching) {
                     itemVo.setItemDescription(itemDescriptionVo.getDescription());
+                    System.out.println(itemVo.getItemId().trim() + "---->");
                     //匹配则跳出本循环
                     break;
                 } else {

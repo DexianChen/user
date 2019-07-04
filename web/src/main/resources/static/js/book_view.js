@@ -68,14 +68,20 @@ $(function () {
         $.each(array1, function (index1, value){
             value = value.trim();
 
-            // 含有句号表明有条文编号所在, 否则为文本信息
-            if (value.trim().indexOf("．") == 1 || value.trim().indexOf("．") == 2){
+            // 含有句号表明有条文编号所在, 还有一种情况是加粗文字开头，否则为文本信息
+            if (value.trim().indexOf("．") == 1 || value.trim().indexOf("．") == 2
+                || (value.trim().indexOf("<strong>") == 0 && value.trim().indexOf("．") == 9)
+                || (value.trim().indexOf("<strong>") == 0 && value.trim().indexOf("．") == 10)){
                 if (itemId != ""){
                     item = {"chapterId":item_chapterId, "nodeId":item_nodeId, "itemId":itemId, "itemContent":itemContent, "itemDescription":""};
                     itemList.push(item);
                     itemContent = "";
                 }
-                itemId = value.substring(0, value.indexOf(" "));
+                if (value.trim().indexOf("<strong>") == 0){
+                    itemId = value.substring(8, value.indexOf(" "));
+                }else {
+                    itemId = value.substring(0, value.indexOf(" "));
+                }
                 item_chapterId = itemId.split("．")[0];
                 item_nodeId = itemId.split("．")[1];
                 itemContent += value.substring(value.indexOf(" ")).trim();
@@ -170,6 +176,12 @@ $(function () {
     // $.each(itemDescriptionList, function (index, value) {
     //     if (value.id.indexOf("6．5．2")!=-1) {
     //         alert(value.id + "--->" + value.description);
+    //     }
+    // });
+
+    // $.each(itemList, function (index, value) {
+    //     if (value.itemId.indexOf("12．")!=-1) {
+    //         alert(value.itemId + "--->");
     //     }
     // });
 });
