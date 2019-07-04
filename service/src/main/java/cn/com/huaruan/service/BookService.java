@@ -1,9 +1,6 @@
 package cn.com.huaruan.service;
 
-import cn.com.huaruan.model.ChapterVo;
-import cn.com.huaruan.model.ItemDescriptionVo;
-import cn.com.huaruan.model.ItemVo;
-import cn.com.huaruan.model.NodeVo;
+import cn.com.huaruan.model.*;
 
 import java.util.List;
 
@@ -30,4 +27,10 @@ public interface BookService {
      * @param itemDescriptionList
      */
     void saveItem(List<ItemVo> itemList, List<ItemDescriptionVo> itemDescriptionList);
+
+    /**
+     * 保存其他列表信息(包括前言和附录等)
+     * @param otherList
+     */
+    void saveOther(List<OtherVo> otherList);
 }

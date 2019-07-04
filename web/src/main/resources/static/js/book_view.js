@@ -3,9 +3,11 @@ $(function () {
     var chapterList = [];
     var nodeList = [];
     var itemList = [];
+    var otherInfoList = [];
     var chapter = {"chapterId":"", "chapterTitle":""};
     var node = {"chapterId":"", "nodeId":"", "nodeContent":""};
     var item = {"chapterId":"", "nodeId":"", "itemId":"", "itemContent":"", "itemDescription":""};
+    var otherInfo = {"title":"", "content":""};
 
     /**
      * 构建章列表和节列表信息
@@ -52,6 +54,7 @@ $(function () {
 
     /**
      * 构建条文列表信息
+     * 3199320  前言所在div
      * $("#3199320").nextAll().children("p")  id为3199320的div后所有同辈元素的所有子代p标签元素
      * 3199352 附录A所在的div
      */
@@ -61,8 +64,10 @@ $(function () {
     var item_chapterId = "";
     var item_nodeId = "";
     $.each(itemArray, function (index, v1) {
-        var array1 = $(v1).text().trim().split("。\n");
+        var array1 = $(v1).html().split("<br>");
         $.each(array1, function (index1, value){
+            value = value.trim();
+
             // 含有句号表明有条文编号所在, 否则为文本信息
             if (value.trim().indexOf("．") == 1 || value.trim().indexOf("．") == 2){
                 if (itemId != ""){
@@ -70,11 +75,12 @@ $(function () {
                     itemList.push(item);
                     itemContent = "";
                 }
-                value = value.trim();
                 itemId = value.substring(0, value.indexOf(" "));
                 item_chapterId = itemId.split("．")[0];
                 item_nodeId = itemId.split("．")[1];
                 itemContent += value.substring(value.indexOf(" ")).trim();
+            }else if (value.indexOf("<img") != -1){
+                itemContent += " " + value.substring(value.indexOf("http"), value.indexOf("\">")) + " ";
             }else {
                 itemContent += value;
             }
@@ -88,6 +94,7 @@ $(function () {
 
     /**
      * 获取条文说明列表信息
+     *  3199358 条文说明前言所在的div位置
      * @type {Array}
      */
     var itemDescriptionList = [];
@@ -95,19 +102,20 @@ $(function () {
     var id = "";
     var description = "";
     var itemDescriptionArray = $("#3199358").nextAll().children("p").toArray();
-    // alert(returnObjectInfo($("#book_page div").has("span[class='STYLE8']").nextAll().children("p")));
     $.each(itemDescriptionArray, function (index, v1) {
-        var array1 = $(v1).text().trim().split("。\n");
+        var array1 = $(v1).html().split("<br>");
         $.each(array1, function (index1, value) {
-            if (value.trim().indexOf("．") == 1 || value.trim().indexOf("．") == 2){
+            value = value.trim();
+            if (value.indexOf("．") == 1 || value.indexOf("．") == 2){
                 if (id != ""){
                     itemDescriptionObject = {"id":id, "description":description};
                     itemDescriptionList.push(itemDescriptionObject);
                     description = "";
                 }
-                value = value.trim();
-                id = value.substring(0, value.indexOf(" ")).trim();
-                description += value.trim().substring(value.indexOf(" "));
+                id = value.substring(0, value.indexOf(" "));
+                description += value.substring(value.indexOf(" "));
+            }else if (value.indexOf("<img") != -1){
+                description += " " + value.substring(value.indexOf("http"), value.indexOf("\">")) + " ";
             }else {
                 description += value;
             }
@@ -120,29 +128,48 @@ $(function () {
         }
     });
 
-    sendChapterInfo(chapterList);
-    sendNodeInfo(nodeList);
+    /**
+     * 获取前言以及附录等信息
+     */
+    // 获取前言
+    var introductionTitle = $("#book_page > div:first > div").text();
+    var introductionContent = $("#book_page > div:first > p").text();
+    otherInfoList.push({"title":introductionTitle, "content":introductionContent});
+
+    /* 获取其他信息
+        3199352 附录A所在的div位置
+        3199358 条文说明前言所在的div位置
+     */
+    var otherInfoArray = $("#3199351").nextUntil("#3199359").toArray();
+    $.each(otherInfoArray, function (index,value) {
+        var childrenEle = $(value).children();
+        var title = $(childrenEle).eq(0).text();
+        var contentArray = $(childrenEle).eq(0).nextAll();
+        var content = "";
+        $.each(contentArray, function (index, v1) {
+            var html = $(v1).html()
+
+            if(html.indexOf("<img") != -1){
+                // 含有图片的内容
+                content += " " + html.substring(html.indexOf("http")).replace("\">","") + " ";
+            }else {
+                content += html;
+            }
+        });
+        otherInfoList.push({"title":title, "content":content});
+    });
+
+    /**
+     * 将书籍信息包装好后采取AJAX的方式发送到后台
+     */
+    // sendChapterInfo(chapterList);
+    // sendNodeInfo(nodeList);
     sendItemInfo(itemList, itemDescriptionList);
-
-    // $.each(chapterList, function (index, value) {
-    //     alert(value.chapterId + "   " + value.chapterTitle);
-    // });
-
-    // $.each(nodeList, function (index, value) {
-    //     alert(value.nodeId + "--->" + value.content);
-    // });
-
-    // $.each(itemList, function (index, value) {
-    //     if (value.itemId.indexOf("12．0．9")!=-1) {
-    //         alert(value.itemId + "--->" + value.itemContent);
-    //     }
-    //
-    // });
+    // sendOtherInfo(otherInfoList);
 
     // $.each(itemDescriptionList, function (index, value) {
-    //     if (value.id.indexOf("12")!=-1) {
+    //     if (value.id.indexOf("6．5．2")!=-1) {
     //         alert(value.id + "--->" + value.description);
     //     }
     // });
-
 });

@@ -112,9 +112,26 @@ public class AJAXController {
 
         try {
             bookService.saveItem(itemList, itemDescriptionList);
-            return new ResultVo(true, "保存节列表信息成功");
+            return new ResultVo(true, "保存条文列表信息成功");
         } catch (Exception e) {
-            return new ResultVo(false, "保存节列表信息失败");
+            return new ResultVo(false, "保存条文列表信息失败");
+        }
+    }
+
+    /**
+     * 用于保存书籍的其他列表信息(包括前言和附录等)
+     * @param otherListStr
+     * @return
+     */
+    @PostMapping("/book/other")
+    public ResultVo saveOther(@RequestParam("otherList")String otherListStr) {
+        List<OtherVo> otherList = JSON.parseArray(otherListStr, OtherVo.class);
+
+        try {
+            bookService.saveOther(otherList);
+            return new ResultVo(true, "保存其他列表信息(包括前言和附录等)成功");
+        } catch (Exception e) {
+            return new ResultVo(false, "保存其他列表信息(包括前言和附录等)失败");
         }
     }
 }
