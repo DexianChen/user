@@ -1,36 +1,37 @@
 package cn.com.huaruan.service.impl;
 
+import cn.com.huaruan.mapper.BookMapper;
 import cn.com.huaruan.model.*;
 import cn.com.huaruan.service.BookService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
 public class BookServiceImpl implements BookService {
+    @Autowired
+    private BookMapper bookMapper;
+
     @Override
     public void saveChapter(List<ChapterVo> chapterList) {
-
+//        bookMapper.saveChapter(chapterList);
     }
 
     @Override
     public void saveNode(List<NodeVo> nodeList) {
-
+        bookMapper.saveNode(nodeList);
     }
 
     @Override
     public void saveItem(List<ItemVo> itemList, List<ItemDescriptionVo> itemDescriptionList) {
         List<ItemVo> completeItemList = buildItem(itemList, itemDescriptionList);
-        for (ItemVo itemVo : completeItemList) {
-//            System.out.println(itemVo.toString());
-        }
+//        bookMapper.saveItem(completeItemList);
     }
 
     @Override
     public void saveOther(List<OtherVo> otherList) {
-//        for (OtherVo otherVo : otherList) {
-//            System.out.println(otherVo.toString());
-//        }
+//        bookMapper.saveOther(otherList);
     }
 
     /**
@@ -46,7 +47,6 @@ public class BookServiceImpl implements BookService {
                 boolean matching = itemDescriptionVo.getId().trim().equals(itemVo.getItemId().trim());
                 if (matching) {
                     itemVo.setItemDescription(itemDescriptionVo.getDescription());
-                    System.out.println(itemVo.getItemId().trim() + "---->");
                     //匹配则跳出本循环
                     break;
                 } else {

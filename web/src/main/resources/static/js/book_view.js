@@ -4,10 +4,6 @@ $(function () {
     var nodeList = [];
     var itemList = [];
     var otherInfoList = [];
-    var chapter = {"chapterId":"", "chapterTitle":""};
-    var node = {"chapterId":"", "nodeId":"", "nodeContent":""};
-    var item = {"chapterId":"", "nodeId":"", "itemId":"", "itemContent":"", "itemDescription":""};
-    var otherInfo = {"title":"", "content":""};
 
     /**
      * 构建章列表和节列表信息
@@ -26,28 +22,30 @@ $(function () {
             if (html.indexOf("<br>") == -1) {
                 // ．非句号，从页面拷贝过来，不含该符号的即为章
                 if (html.indexOf("．") == -1) {
-                    chapter = {"chapterId":html.substring(0,firstSpace_index), "chapterTitle":html.substring(firstSpace_index).trim()};
-                    chapterList.push(chapter);
+                    chapterList.push({"chapterId":html.substring(0,firstSpace_index),
+                                        "chapterTitle":html.substring(firstSpace_index).trim()});
                 }else {
                     //含该符号则为节或条纹
                     var htmlSplit = html.substring(0,firstSpace_index).split("．");
                     var lenght = htmlSplit.length;
                     if (lenght == 2){
                         // 没带章的节
-                        node = {"chapterId":html.substring(0,html.indexOf("．")), "nodeId":html.substring(0,html.indexOf("．")+2), "nodeContent":html.substring(html.indexOf("．")+2).trim()};
-                        nodeList.push(node);
+                        nodeList.push({"chapterId":html.substring(0,html.indexOf("．")),
+                                         "nodeId":html.substring(0,html.indexOf("．")+2),
+                                         "nodeContent":html.substring(html.indexOf("．")+2).trim()});
                     }
                 }
             }else {
                 //带着节的章，则截取
-                chapter = {"chapterId":html.substring(0,firstSpace_index), "chapterTitle":html.substring(firstSpace_index, html.indexOf("<br>")).trim()};
-                chapterList.push(chapter);
+                chapterList.push({"chapterId":html.substring(0,firstSpace_index),
+                                    "chapterTitle":html.substring(firstSpace_index, html.indexOf("<br>")).trim()});
 
                 //带着章的节，则截取
                 var nodeStr = html.substring(html.indexOf("<br>")+4);
                 nodeStr = nodeStr.substring(nodeStr.indexOf("<br>")+4).trim();
-                node = {"chapterId":nodeStr.substring(0,nodeStr.indexOf("．")), "nodeId":nodeStr.substring(0,nodeStr.indexOf("．")+2), "nodeContent":nodeStr.substring(nodeStr.indexOf("．")+2).trim()};
-                nodeList.push(node);
+                nodeList.push({"chapterId":nodeStr.substring(0,nodeStr.indexOf("．")),
+                                 "nodeId":nodeStr.substring(0,nodeStr.indexOf("．")+2),
+                                 "nodeContent":nodeStr.substring(nodeStr.indexOf("．")+2).trim()});
             }
         }
     });
@@ -73,8 +71,8 @@ $(function () {
                 || (value.trim().indexOf("<strong>") == 0 && value.trim().indexOf("．") == 9)
                 || (value.trim().indexOf("<strong>") == 0 && value.trim().indexOf("．") == 10)){
                 if (itemId != ""){
-                    item = {"chapterId":item_chapterId, "nodeId":item_nodeId, "itemId":itemId, "itemContent":itemContent, "itemDescription":""};
-                    itemList.push(item);
+                    itemList.push({"chapterId":item_chapterId, "nodeId":item_nodeId, "itemId":itemId,
+                        "itemContent":itemContent, "itemDescription":""});
                     itemContent = "";
                 }
                 if (value.trim().indexOf("<strong>") == 0){
@@ -93,8 +91,8 @@ $(function () {
         });
         // 最后一个元素
         if (index == itemArray.length - 1) {
-            item = {"chapterId":item_chapterId, "nodeId":item_nodeId, "itemId":itemId, "itemContent":itemContent, "itemDescription":""};
-            itemList.push(item);
+            itemList.push({"chapterId":item_chapterId, "nodeId":item_nodeId, "itemId":itemId,
+                "itemContent":itemContent, "itemDescription":""});
         }
     });
 
@@ -129,8 +127,7 @@ $(function () {
 
         // 添加最后一个元素
         if (index == itemDescriptionArray.length - 1) {
-            itemDescriptionObject = {"id":id, "description":description};
-            itemDescriptionList.push(itemDescriptionObject);
+            itemDescriptionList.push({"id":id, "description":description});
         }
     });
 
@@ -168,20 +165,8 @@ $(function () {
     /**
      * 将书籍信息包装好后采取AJAX的方式发送到后台
      */
-    // sendChapterInfo(chapterList);
-    // sendNodeInfo(nodeList);
+    sendChapterInfo(chapterList);
+    sendNodeInfo(nodeList);
     sendItemInfo(itemList, itemDescriptionList);
-    // sendOtherInfo(otherInfoList);
-
-    // $.each(itemDescriptionList, function (index, value) {
-    //     if (value.id.indexOf("6．5．2")!=-1) {
-    //         alert(value.id + "--->" + value.description);
-    //     }
-    // });
-
-    // $.each(itemList, function (index, value) {
-    //     if (value.itemId.indexOf("12．")!=-1) {
-    //         alert(value.itemId + "--->");
-    //     }
-    // });
+    sendOtherInfo(otherInfoList);
 });

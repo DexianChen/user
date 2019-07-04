@@ -3,7 +3,10 @@ package cn.com.huaruan.controller;
 import cn.com.huaruan.model.*;
 import cn.com.huaruan.service.BookService;
 import cn.com.huaruan.service.UserService;
+import cn.com.huaruan.service.impl.UserServiceImpl;
 import com.alibaba.fastjson.JSON;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,6 +18,8 @@ import java.util.List;
 @RestController
 @RequestMapping("/ajax")
 public class AJAXController {
+    private final Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
+
     @Autowired
     private UserService userService;
     @Autowired
@@ -77,6 +82,7 @@ public class AJAXController {
             bookService.saveChapter(chapterList);
             return new ResultVo(true, "保存章列表信息成功");
         } catch (Exception e) {
+            logger.error("错误信息" + e);
             return new ResultVo(false, "保存章列表信息失败");
         }
     }
