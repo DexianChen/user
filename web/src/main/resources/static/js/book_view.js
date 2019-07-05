@@ -121,7 +121,7 @@ $(function () {
                     description = "";
                 }
                 id = value.substring(0, value.indexOf(" "));
-                description += value.substring(value.indexOf(" "));
+                description += value.substring(value.indexOf(" ")).trim();
             }else if (value.indexOf("<img") != -1){
                 description += " " + value.substring(value.indexOf("http"), value.indexOf("\">")) + " ";
             }else {
