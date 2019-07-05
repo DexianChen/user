@@ -6,10 +6,10 @@
         <foreach collection="chapterList" item="chapter" index="index" separator=",">
             ( NULL,
             <if test="chapter.chapterId != null">
-                #{chapter.chapterId, jdbcType=VARCHAR},
+                #{chapter.chapterId, jdbcType=CHAR},
             </if>
             <if test="chapter.chapterTitle != null">
-                #{chapter.chapterTitle, jdbcType=VARCHAR}
+                #{chapter.chapterTitle, jdbcType=CHAR}
             </if>
             )
         </foreach>
@@ -20,13 +20,50 @@
         <foreach collection="nodeList" item="node" index="index" separator=",">
             ( NULL,
             <if test="node.chapterId != null">
-                #{node.chapterId, jdbcType=VARCHAR},
+                #{node.chapterId, jdbcType=CHAR},
             </if>
             <if test="node.nodeId != null">
-                #{node.nodeId, jdbcType=VARCHAR},
+                #{node.nodeId, jdbcType=CHAR},
             </if>
-            <if test="node.nodeContent != null">
-                #{node.nodeContent, jdbcType=LONGVARCHAR}
+            <if test="node.nodeTitle != null">
+                #{node.nodeTitle, jdbcType=CHAR}
+            </if>
+            )
+        </foreach>
+    </insert>
+
+    <insert id="saveItem" parameterType="java.util.List">
+        INSERT INTO tb_item VALUES
+        <foreach collection="itemList" item="item" index="index" separator=",">
+            ( NULL,
+            <if test="item.chapterId != null">
+                #{item.chapterId, jdbcType=CHAR},
+            </if>
+            <if test="item.nodeId != null">
+                #{item.nodeId, jdbcType=CHAR},
+            </if>
+            <if test="item.itemId != null">
+                #{item.itemId, jdbcType=CHAR},
+            </if>
+            <if test="item.itemContent != null">
+                #{item.itemContent, jdbcType=LONGVARCHAR},
+            </if>
+            <if test="item.itemDescription != null">
+                #{item.itemDescription, jdbcType=LONGVARCHAR}
+            </if>
+            )
+        </foreach>
+    </insert>
+
+    <insert id="saveOther" parameterType="java.util.List">
+        INSERT INTO tb_other VALUES
+        <foreach collection="otherList" item="other" index="index" separator=",">
+            ( NULL,
+            <if test="other.title != null">
+                #{other.title, jdbcType=LONGVARCHAR},
+            </if>
+            <if test="other.content != null">
+                #{other.content, jdbcType=LONGVARCHAR}
             </if>
             )
         </foreach>

@@ -24,11 +24,11 @@ public interface BookMapper {
      * 保存条文列表信息
      * @param itemList
      */
-    void saveItem(List<ItemVo> itemList);
+    void saveItem(@Param("itemList") List<ItemVo> itemList);
 
     /**
      * 保存其他列表信息(包括前言和附录等)
      * @param otherList
      */
-    void saveOther(List<OtherVo> otherList);
+    void saveOther(@Param("otherList") List<OtherVo> otherList);
 }

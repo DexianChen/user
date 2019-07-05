@@ -20,13 +20,13 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public void saveNode(List<NodeVo> nodeList) {
-        bookMapper.saveNode(nodeList);
+//        bookMapper.saveNode(nodeList);
     }
 
     @Override
     public void saveItem(List<ItemVo> itemList, List<ItemDescriptionVo> itemDescriptionList) {
         List<ItemVo> completeItemList = buildItem(itemList, itemDescriptionList);
-//        bookMapper.saveItem(completeItemList);
+        bookMapper.saveItem(completeItemList);
     }
 
     @Override

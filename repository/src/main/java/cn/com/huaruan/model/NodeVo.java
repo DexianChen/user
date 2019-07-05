@@ -8,5 +8,5 @@ import java.io.Serializable;
 public class NodeVo implements Serializable {
     private String chapterId;
     private String nodeId;
-    private String nodeContent;
+    private String nodeTitle;
 }

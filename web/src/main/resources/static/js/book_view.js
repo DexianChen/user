@@ -32,7 +32,7 @@ $(function () {
                         // 没带章的节
                         nodeList.push({"chapterId":html.substring(0,html.indexOf("．")),
                                          "nodeId":html.substring(0,html.indexOf("．")+2),
-                                         "nodeContent":html.substring(html.indexOf("．")+2).trim()});
+                                         "nodeTitle":html.substring(html.indexOf("．")+2).trim()});
                     }
                 }
             }else {
@@ -45,7 +45,7 @@ $(function () {
                 nodeStr = nodeStr.substring(nodeStr.indexOf("<br>")+4).trim();
                 nodeList.push({"chapterId":nodeStr.substring(0,nodeStr.indexOf("．")),
                                  "nodeId":nodeStr.substring(0,nodeStr.indexOf("．")+2),
-                                 "nodeContent":nodeStr.substring(nodeStr.indexOf("．")+2).trim()});
+                                 "nodeTitle":nodeStr.substring(nodeStr.indexOf("．")+2).trim()});
             }
         }
     });
@@ -135,8 +135,8 @@ $(function () {
      * 获取前言以及附录等信息
      */
     // 获取前言
-    var introductionTitle = $("#book_page > div:first > div").text();
-    var introductionContent = $("#book_page > div:first > p").text();
+    var introductionTitle = $("#book_page > div:first > div").text().trim();
+    var introductionContent = $("#book_page > div:first > p").text().trim();
     otherInfoList.push({"title":introductionTitle, "content":introductionContent});
 
     /* 获取其他信息
@@ -146,11 +146,11 @@ $(function () {
     var otherInfoArray = $("#3199351").nextUntil("#3199359").toArray();
     $.each(otherInfoArray, function (index,value) {
         var childrenEle = $(value).children();
-        var title = $(childrenEle).eq(0).text();
+        var title = $(childrenEle).eq(0).text().trim();
         var contentArray = $(childrenEle).eq(0).nextAll();
         var content = "";
         $.each(contentArray, function (index, v1) {
-            var html = $(v1).html()
+            var html = $(v1).html().trim();
 
             if(html.indexOf("<img") != -1){
                 // 含有图片的内容
