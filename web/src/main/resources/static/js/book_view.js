@@ -3,6 +3,7 @@ $(function () {
     var chapterList = [];
     var nodeList = [];
     var itemList = [];
+    var itemDescriptionList = [];
     var otherInfoList = [];
 
     /**
@@ -52,9 +53,9 @@ $(function () {
 
     /**
      * 构建条文列表信息
-     * 3199320  前言所在div
-     * $("#3199320").nextAll().children("p")  id为3199320的div后所有同辈元素的所有子代p标签元素
-     * 3199352 附录A所在的div
+     * 3199320  前言所在div   3199352 附录A所在的div
+     * $("#3199320").nextUntil("#3199352").children("p")
+     * 从id为3199320的div到从id为3199352的div区间内所有同辈div元素的所有子代p标签元素
      */
     var itemArray = $("#3199320").nextUntil("#3199352").children("p").toArray();
     var itemId = "";
@@ -62,24 +63,29 @@ $(function () {
     var item_chapterId = "";
     var item_nodeId = "";
     $.each(itemArray, function (index, v1) {
+        // 获取每个元素的html内容，以 <br> 进行切割
         var array1 = $(v1).html().split("<br>");
         $.each(array1, function (index1, value){
+            // 去掉前后空格
             value = value.trim();
 
-            // 含有句号表明有条文编号所在, 还有一种情况是加粗文字开头，否则为文本信息
+            // 去掉空格后前一两位含有句号表明有条文编号所在, 还有一种情况是加粗条文编号开头，否则为文本信息，需累加
             if (value.trim().indexOf("．") == 1 || value.trim().indexOf("．") == 2
-                || (value.trim().indexOf("<strong>") == 0 && value.trim().indexOf("．") == 9)
-                || (value.trim().indexOf("<strong>") == 0 && value.trim().indexOf("．") == 10)){
+                || (value.trim().replace("<strong>", "").indexOf("．") == 1)
+                || (value.trim().replace("<strong>", "").indexOf("．") == 2)){
+                // 条文编号不为空才添加进列表，添加后编号变为下一个
                 if (itemId != ""){
                     itemList.push({"chapterId":item_chapterId, "nodeId":item_nodeId, "itemId":itemId,
                         "itemContent":itemContent, "itemDescription":""});
                     itemContent = "";
                 }
                 if (value.trim().indexOf("<strong>") == 0){
+                    // 加粗条文编号开头
                     itemId = value.substring(8, value.indexOf(" "));
                 }else {
                     itemId = value.substring(0, value.indexOf(" "));
                 }
+                // 从条文编号中获取章、节编号
                 item_chapterId = itemId.split("．")[0];
                 item_nodeId = itemId.split("．")[1];
                 itemContent += value.substring(value.indexOf(" ")).trim();
@@ -99,10 +105,9 @@ $(function () {
     /**
      * 获取条文说明列表信息
      *  3199358 条文说明前言所在的div位置
-     * @type {Array}
+     * $("#3199358").nextAll().children("p")
+     * id为3199358的div后所有同辈div元素的所有子代p标签元素
      */
-    var itemDescriptionList = [];
-    var itemDescriptionObject = {"id":"","description":""};
     var id = "";
     var description = "";
     var itemDescriptionArray = $("#3199358").nextAll().children("p").toArray();
@@ -112,8 +117,7 @@ $(function () {
             value = value.trim();
             if (value.indexOf("．") == 1 || value.indexOf("．") == 2){
                 if (id != ""){
-                    itemDescriptionObject = {"id":id, "description":description};
-                    itemDescriptionList.push(itemDescriptionObject);
+                    itemDescriptionList.push({"id":id, "description":description});
                     description = "";
                 }
                 id = value.substring(0, value.indexOf(" "));
@@ -133,6 +137,8 @@ $(function () {
 
     /**
      * 获取前言以及附录等信息
+     * $("#book_page > div:first > div").text()     id为book_page的子代第一个div的子代div元素的文本信息
+     * $("#book_page > div:first > p").text()       id为book_page的子代第一个div的子代p元素的文本信息
      */
     // 获取前言
     var introductionTitle = $("#book_page > div:first > div").text().trim();
@@ -142,11 +148,15 @@ $(function () {
     /* 获取其他信息
         3199352 附录A所在的div位置
         3199358 条文说明前言所在的div位置
+        从id为3199352的div到从id为3199358的div区间内所有同辈div元素
      */
     var otherInfoArray = $("#3199351").nextUntil("#3199359").toArray();
     $.each(otherInfoArray, function (index,value) {
+        // 获取子代元素
         var childrenEle = $(value).children();
+        // 取其第一个子代元素
         var title = $(childrenEle).eq(0).text().trim();
+        // 取其第一个以后的子代元素
         var contentArray = $(childrenEle).eq(0).nextAll();
         var content = "";
         $.each(contentArray, function (index, v1) {

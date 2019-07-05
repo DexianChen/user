@@ -15,12 +15,12 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public void saveChapter(List<ChapterVo> chapterList) {
-//        bookMapper.saveChapter(chapterList);
+        bookMapper.saveChapter(chapterList);
     }
 
     @Override
     public void saveNode(List<NodeVo> nodeList) {
-//        bookMapper.saveNode(nodeList);
+        bookMapper.saveNode(nodeList);
     }
 
     @Override
@@ -31,7 +31,7 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public void saveOther(List<OtherVo> otherList) {
-//        bookMapper.saveOther(otherList);
+        bookMapper.saveOther(otherList);
     }
 
     /**

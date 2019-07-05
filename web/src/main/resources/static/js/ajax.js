@@ -15,7 +15,7 @@ $(function () {
             url:'http://localhost:8762/ajax/book/chapter',
             //服务器返回的数据类型
             dataType:'json',
-            //发送到服务器的数据
+            //发送到服务器的数据，转换为json格式
             data:{chapterList: JSON.stringify(chapterList)},
             success:function(data){
                 if (data.status) {
@@ -42,7 +42,7 @@ $(function () {
             url:'http://localhost:8762/ajax/book/node',
             //服务器返回的数据类型
             dataType:'json',
-            //发送到服务器的数据
+            //发送到服务器的数据，转换为json格式
             data:{nodeList: JSON.stringify(nodeList)},
             success:function(data){
                 if (data.status) {
@@ -70,7 +70,7 @@ $(function () {
             url:'http://localhost:8762/ajax/book/item',
             //服务器返回的数据类型
             dataType:'json',
-            //发送到服务器的数据
+            //发送到服务器的数据，转换为json格式
             data:{
                 itemList: JSON.stringify(itemList),
                 itemDescriptionList: JSON.stringify(itemDescriptionList)
@@ -100,7 +100,7 @@ $(function () {
             url:'http://localhost:8762/ajax/book/other',
             //服务器返回的数据类型
             dataType:'json',
-            //发送到服务器的数据
+            //发送到服务器的数据，转换为json格式
             data:{otherList: JSON.stringify(otherList)},
             success:function(data){
                 if (data.status) {
