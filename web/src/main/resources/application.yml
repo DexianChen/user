@@ -16,3 +16,11 @@ mybatis:
   mapperLocations: classpath:cn.com.huaruan.mapper/*.xml
   configuration:
     map-underscore-to-camel-case: true
+
+# 快递鸟配置信息
+kdniao:
+  eBusinessId: 1554532
+  appKey: dc571760-2bb4-41e4-944d-a5f34c826391
+  expressQueryReqUrl: http://api.kdniao.com/Ebusiness/EbusinessOrderHandle.aspx
+  expressSubscribeReqUrl: http://api.kdniao.com/api/dist
+  subscribeQueryReqUrl: ""
