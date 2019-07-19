@@ -85,7 +85,7 @@ public class KdniaoServiceImpl implements KdniaoService {
         ExpressSubscribeQueryResponseVo responseVo = new ExpressSubscribeQueryResponseVo();
         responseVo.setEBusinessId(eBusinessId);
         responseVo.setUpdateTime(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));
-        return null;
+        return new ResultVo(true, null);
     }
 
     /**
