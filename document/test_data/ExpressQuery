@@ -1,7 +1,7 @@
 # 快递鸟即时查询测试数据
 
 {
-    "OrderCode": "",
-    "ShipperCode": "SF",
-    "LogisticCode": "118650888018"
+    "orderCode": "",
+    "shipperCode": "SF",
+    "logisticCode": "118650888018"
 }

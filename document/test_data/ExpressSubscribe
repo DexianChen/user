@@ -1,36 +1,38 @@
 # 快递鸟物流订阅测试数据
 
 {
-    "ShipperCode":"SF",
-    "OrderCode":"SF201608081055208281",
-    "LogisticCode":"3100707578976",
-    "PayType":"1",
-    "ExpType":"1",
-    "CustomerName":"",
-    "CustomerPwd":"",
-    "MonthCode":"",
-    "IsNotice":"0",
-    "Sender":{
-        "Name":"1255760",
-        "Tel":"",
-        "Mobile":"13700000000",
-        "ProvinceName":"广东省",
-        "CityName":"深圳市",
-        "ExpAreaName":"福田区",
-        "Address":"测试地址"
+    "shipperCode":"SF",
+    "orderCode":"SF201608081055208281",
+    "logisticCode":"3100707578976",
+    "payType":"1",
+    "expType":"1",
+    "customerName":"",
+    "customerPwd":"",
+    "monthCode":"",
+    "isNotice":"0",
+    "sender":{
+        "name":"1255760",
+        "tel":"",
+        "mobile":"13700000000",
+        "provinceName":"广东省",
+        "cityName":"深圳市",
+        "expAreaName":"福田区",
+        "address":"测试地址"
     },
-    "Receiver":{
-        "Name":"1255760",
-        "Tel":"",
-        "Mobile":"13800000000",
-        "ProvinceName":"广东省",
-        "CityName":"深圳市",
-        "ExpAreaName":"龙华新区",
-        "Address":"测试地址2"
+    "receiver":{
+        "name":"1255760",
+        "tel":"",
+        "mobile":"13700000000",
+        "provinceName":"广东省",
+        "cityName":"深圳市",
+        "expAreaName":"福田区",
+        "address":"测试地址"
     },
-    "Commodity":[
+    "commodity":[
         {
-            "GoodsName":"书本"
+            "goodsName":"书本",
+            "goodsQuantity":1,
+            "goodsWeight":1.0
         }
     ]
 }
