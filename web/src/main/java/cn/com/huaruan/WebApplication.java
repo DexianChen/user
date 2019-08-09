@@ -8,8 +8,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication
 @EnableSwagger2
-@ComponentScan(basePackages = {"cn.com.huaruan.mapper", "cn.com.huaruan.service", "cn.com.huaruan.controller"
-        , "cn.com.huaruan.conf"})
+@ComponentScan(basePackages = {"cn.com.huaruan.mapper", "cn.com.huaruan.service", "cn.com.huaruan.controller"})
 public class WebApplication extends SpringBootServletInitializer {
     public static void main(String[] args) {
         SpringApplication.run(WebApplication.class);
