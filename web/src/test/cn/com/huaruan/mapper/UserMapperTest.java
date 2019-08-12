@@ -2,7 +2,6 @@ package cn.com.huaruan.mapper;
 
 import cn.com.huaruan.model.RequestParamVo;
 import cn.com.huaruan.model.User;
-import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
