@@ -7,10 +7,10 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.domain.Sort;
 import org.springframework.data.elasticsearch.core.ElasticsearchTemplate;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -64,5 +64,29 @@ public class ElasticSearchTest {
         List<User> userList = userMapper.selectUserList("", 0, 10);
         // 接收对象集合，实现批量新增
         userRepository.saveAll(userList);
+    }
+
+    /**
+     * 修改
+     */
+    @Test
+    public void update(){
+        User user = new User();
+        user.setUserId(8);
+        user.setAccount("jack");
+        userRepository.save(user);
+    }
+
+    /**
+     * 查询,含对userId的降序查询
+     */
+    @Test
+    public void testQueryAll(){
+        // 查找所有
+        Iterable<User> list = this.userRepository.findAll(Sort.by("userId").ascending());
+
+        for (User user : list){
+            System.out.println(user.toString());
+        }
     }
 }
