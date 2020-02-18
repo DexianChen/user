@@ -10,6 +10,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ * @author cdx
+ * date 2020-02-18
+ * 表单校验
+ */
 @RestController
 @RequestMapping("/ajax")
 public class AJAXController {
@@ -18,47 +23,14 @@ public class AJAXController {
     @Autowired
     private MenuService menuService;
 
-    @PostMapping("/account")
-    public ResultVo checkAccount(String account) {
-        Boolean isExist = menuService.checkAccount(account);
+    @PostMapping("/name")
+    public ResultVo checkName(String name) {
+        Boolean isExist = menuService.checkName(name);
 
         if (isExist) {
-            return new ResultVo(false, "该账户已存在！");
+            return new ResultVo(false, "该菜式已存在！");
         } else {
-            return new ResultVo(true, "该账户可被注册");
-        }
-    }
-
-    @PostMapping("/idCard")
-    public ResultVo checkIdCard(String idCard) {
-        Boolean isExist = menuService.checkIdCard(idCard);
-
-        if (isExist) {
-            return new ResultVo(false, "该身份证已存在！");
-        } else {
-            return new ResultVo(true, "该身份证可用于注册");
-        }
-    }
-
-    @PostMapping("/phone")
-    public ResultVo checkPhone(String phone) {
-        Boolean isExist = menuService.checkPhone(phone);
-
-        if (isExist) {
-            return new ResultVo(false, "该手机号已存在！");
-        } else {
-            return new ResultVo(true, "该手机号可用于注册");
-        }
-    }
-
-    @PostMapping("/email")
-    public ResultVo checkEmail(String email) {
-        Boolean isExist = menuService.checkEmail(email);
-
-        if (isExist) {
-            return new ResultVo(false, "该邮箱已存在！");
-        } else {
-            return new ResultVo(true, "该邮箱可用于注册");
+            return new ResultVo(true, "该菜式可被添加");
         }
     }
 }

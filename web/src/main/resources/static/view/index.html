@@ -70,7 +70,43 @@
 							  <img src="{{entity.pictureUrl}}" width=50px height=50px />
 						  </td>
 						  <td style="text-align:center;">{{entity.step}}</td>
-						  <td style="text-align:center;">{{entity.score}}</td>
+						  <td style="text-align:center;">
+							  <span ng-if="entity.score == 1">
+								  <img src="../img/fullStar.png" height="20"width="20"/>
+								  <img src="../img/noneStar.png" height="20" width="20"/>
+								  <img src="../img/noneStar.png" height="20" width="20"/>
+								  <img src="../img/noneStar.png" height="20" width="20"/>
+								  <img src="../img/noneStar.png" height="20" width="20"/>
+							  </span>
+							  <span ng-if="entity.score == 2">
+								  <img src="../img/fullStar.png" height="20"width="20"/>
+								  <img src="../img/fullStar.png" height="20" width="20"/>
+								  <img src="../img/noneStar.png" height="20" width="20"/>
+								  <img src="../img/noneStar.png" height="20" width="20"/>
+								  <img src="../img/noneStar.png" height="20" width="20"/>
+							  </span>
+							  <span ng-if="entity.score == 3">
+								  <img src="../img/fullStar.png" height="20"width="20"/>
+								  <img src="../img/fullStar.png" height="20" width="20"/>
+								  <img src="../img/fullStar.png" height="20" width="20"/>
+								  <img src="../img/noneStar.png" height="20" width="20"/>
+								  <img src="../img/noneStar.png" height="20" width="20"/>
+							  </span>
+							  <span ng-if="entity.score == 4">
+								  <img src="../img/fullStar.png" height="20"width="20"/>
+								  <img src="../img/fullStar.png" height="20" width="20"/>
+								  <img src="../img/fullStar.png" height="20" width="20"/>
+								  <img src="../img/fullStar.png" height="20" width="20"/>
+								  <img src="../img/noneStar.png" height="20" width="20"/>
+							  </span>
+							  <span ng-if="entity.score == 5">
+								  <img src="../img/fullStar.png" height="20"width="20"/>
+								  <img src="../img/fullStar.png" height="20" width="20"/>
+								  <img src="../img/fullStar.png" height="20" width="20"/>
+								  <img src="../img/fullStar.png" height="20" width="20"/>
+								  <img src="../img/fullStar.png" height="20" width="20"/>
+							  </span>
+						  </td>
 						  <td style="text-align:center;">{{entity.evaluateContent}}</td>
 						  <td style="text-align:center;">
 							  <button type="button" class="btn bg-blue btn-xs" ng-click="findOne(entity.userId)" data-toggle="modal" data-target="#editModal">修改</button>
@@ -104,7 +140,7 @@
 			<table class="table table-bordered table-striped"  width="800px">
 				<input type="hidden" id="menuId" />
 		      	<tr>
-		      		<td>菜式名称</td>
+		      		<td><span style="color: red">*</span> 菜式名称</td>
 		      		<td>
 						<input class="form-control" ng-model="entity.name" placeholder="菜谱名称" id="name" onblur="checkName()" />
 					</td>
@@ -138,20 +174,17 @@
 
 				<tr>
 					<td>做法步骤</td>
-					<td><input class="form-control" ng-model="entity.step" placeholder="步骤" id="step" onblur="checkStep()" />  </td>
-					<td width="100px" id="stepTd"></td>
+					<td><input class="form-control" ng-model="entity.step" placeholder="步骤"/>  </td>
 				</tr>
 
 				<tr>
 					<td>评分</td>
-					<td><input  class="form-control" ng-model="entity.score" placeholder="评分" id="score" onblur="checkScore()"/>  </td>
-					<td width="100px" id="scoreTd"></td>
+					<td><input  class="form-control" ng-model="entity.score" placeholder="评分"/>  </td>
 				</tr>
 
 				<tr>
 					<td>评价内容</td>
-					<td><input  class="form-control" ng-model="entity.evaluateContent" placeholder="评分" id="evaluateContent" onblur="checkEvaluateContent()"/>  </td>
-					<td width="100px" id="evaluateContentTd"></td>
+					<td><input  class="form-control" ng-model="entity.evaluateContent" placeholder="评价内容"/>  </td>
 				</tr>
 
 			 </table>

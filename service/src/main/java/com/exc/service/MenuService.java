@@ -2,6 +2,7 @@ package com.exc.service;
 
 import com.exc.model.Menu;
 import com.exc.model.RequestParamVo;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -28,19 +29,19 @@ public interface MenuService {
      * 插入菜谱
      * @param requestParamVo 菜谱实体
      */
+    @Transactional(rollbackFor = Exception.class)
     void insertMenu(RequestParamVo requestParamVo);
 
     Menu findOne(Integer userId);
 
     void deleteOne(Integer userId);
 
-    Boolean checkAccount(String account);
-
-    Boolean checkIdCard(String idCard);
-
-    Boolean checkPhone(String phone);
-
-    Boolean checkEmail(String email);
+    /**
+     * 校验菜式名称是否重复
+     * @param name 菜式名称
+     * @return 是否重复
+     */
+    Boolean checkName(String name);
 
     Integer countSize(String searchParam);
 }

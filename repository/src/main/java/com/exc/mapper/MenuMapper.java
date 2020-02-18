@@ -55,13 +55,12 @@ public interface MenuMapper {
      */
     void deleteOne(Integer menuId);
 
-    Integer checkAccount(String account);
-
-    Integer checkIdCard(String idCard);
-
-    Integer checkPhone(String phone);
-
-    Integer checkEmail(String email);
+    /**
+     * 校验菜式名称是否重复
+     * @param name 菜式名称
+     * @return 是否重复
+     */
+    Integer checkName(@Param("name")String name);
 
     Integer countSize(@Param("searchParam") String searchParam);
 }

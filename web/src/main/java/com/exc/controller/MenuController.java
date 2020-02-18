@@ -60,11 +60,6 @@ public class MenuController {
         return new PageVo(countSize, menuList);
     }
 
-    /**
-     * 统计符合条件的菜谱数量
-     * @param searchParam
-     * @return
-     */
     private Integer countSize(String searchParam){
         return menuService.countSize(searchParam);
     }

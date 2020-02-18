@@ -42,25 +42,10 @@
 
     <insert id="insertMenu" parameterType="com.exc.model.RequestParamVo">
         INSERT INTO menu
-        <trim prefix="values (" suffix=")" suffixOverrides=",">
-            NULL,name,
-            <if test="taste != null">
-                #{taste, jdbcType=INTEGER},
-            </if>
-            <if test="pictureUrl != null">
-                #{pictureUrl, jdbcType=VARCHAR},
-            </if>
-            <if test="step != null">
-                #{step, jdbcType=VARCHAR},
-            </if>
-            <if test="score != null">
-                #{score, jdbcType=INTEGER},
-            </if>
-            <if test="evaluate_content != null">
-                #{evaluate_content, jdbcType=VARCHAR},
-            </if>
-            NOW(),NULL
-        </trim>
+        (menu_id, name, taste, picture_url, step,
+        score, evaluate_content, create_time, update_time)
+        values (NULL, #{name}, #{taste, jdbcType=INTEGER}, #{pictureUrl, jdbcType=VARCHAR},#{step, jdbcType=VARCHAR},
+        #{score, jdbcType=INTEGER}, #{evaluateContent, jdbcType=VARCHAR}, NOW(),NULL)
     </insert>
 
     <!--<update id="updateUser"  parameterType="com.exc.model.RequestParamVo">-->
@@ -122,19 +107,7 @@
         <!--WHERE user_id = #{userId};-->
     <!--</delete>-->
 
-    <!--<select id="checkAccount" parameterType="java.lang.String" resultType="java.lang.Integer">-->
-        <!--SELECT COUNT(1) FROM menu WHERE account = #{account};-->
-    <!--</select>-->
-
-    <!--<select id="checkIdCard" parameterType="java.lang.String" resultType="java.lang.Integer">-->
-        <!--SELECT COUNT(1) FROM menu WHERE id_card = #{idCard};-->
-    <!--</select>-->
-
-    <!--<select id="checkPhone" parameterType="java.lang.String" resultType="java.lang.Integer">-->
-        <!--SELECT COUNT(1) FROM menu WHERE phone = #{phone};-->
-    <!--</select>-->
-
-    <!--<select id="checkEmail" parameterType="java.lang.String" resultType="java.lang.Integer">-->
-        <!--SELECT COUNT(1) FROM menu WHERE email = #{email};-->
-    <!--</select>-->
+    <select id="checkName" parameterType="java.lang.String" resultType="java.lang.Integer">
+        SELECT COUNT(1) FROM menu WHERE name = #{name};
+    </select>
 </mapper>
