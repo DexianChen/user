@@ -4,7 +4,6 @@ import com.exc.model.RequestParamVo;
 import com.exc.service.MenuService;
 import com.exc.mapper.MenuMapper;
 import com.exc.model.Menu;
-import com.exc.utils.MD5Util;
 import org.mybatis.spring.annotation.MapperScan;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -34,8 +33,6 @@ public class MenuServiceImpl implements MenuService {
 
     @Override
     public void updateMenu(RequestParamVo requestParamVo) {
-        String md5Pwd= new MD5Util().getkeyBeanofStr(requestParamVo.getPwd());
-        requestParamVo.setPwd(md5Pwd);
         menuMapper.updateMenu(requestParamVo);
     }
 
@@ -46,8 +43,6 @@ public class MenuServiceImpl implements MenuService {
 
     @Override
     public void insertMenu(RequestParamVo requestParamVo) {
-        String md5Pwd= new MD5Util().getkeyBeanofStr(requestParamVo.getPwd());
-        requestParamVo.setPwd(md5Pwd);
         menuMapper.insertMenu(requestParamVo);
     }
 

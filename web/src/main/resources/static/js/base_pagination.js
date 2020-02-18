@@ -1,1 +1,1 @@
-var app = angular.module("user", ["pagination"]);
+var app = angular.module("menu", ["pagination"]);

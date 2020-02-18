@@ -2,6 +2,11 @@ package com.exc.model;
 
 import java.io.Serializable;
 
+/**
+ * @author cdx
+ * date 2020-02-18
+ * 响应实体类
+ */
 public class ResultVo implements Serializable {
     private static final long serialVersionUID = -8211501960615037081L;
     /**

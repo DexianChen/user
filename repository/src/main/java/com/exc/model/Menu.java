@@ -18,7 +18,7 @@ public class Menu implements Serializable {
     private Integer menuId;
 
     /**
-     * 菜谱名称
+     * 菜式名称
      */
     private String name;
 
@@ -38,9 +38,14 @@ public class Menu implements Serializable {
     private String step;
 
     /**
-     * 评价
+     * 评分
      */
-    private Integer evaluate;
+    private Integer score;
+
+    /**
+     * 评价内容
+     */
+    private Integer evaluateContent;
 
     /**
      * 创建时间
@@ -94,12 +99,20 @@ public class Menu implements Serializable {
         this.step = step;
     }
 
-    public Integer getEvaluate() {
-        return evaluate;
+    public Integer getScore() {
+        return score;
     }
 
-    public void setEvaluate(Integer evaluate) {
-        this.evaluate = evaluate;
+    public void setScore(Integer score) {
+        this.score = score;
+    }
+
+    public Integer getEvaluateContent() {
+        return evaluateContent;
+    }
+
+    public void setEvaluateContent(Integer evaluateContent) {
+        this.evaluateContent = evaluateContent;
     }
 
     public Date getCreateTime() {

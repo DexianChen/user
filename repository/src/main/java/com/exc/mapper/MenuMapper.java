@@ -17,12 +17,12 @@ public interface MenuMapper {
     /**
      * 查询菜谱列表
      * @param searchParam 搜索参数
-     * @param fistIndex 页码
-     * @param perPage 每页大小
+     * @param currentPage 当前页码
+     * @param itemsPerPage 每页大小
      * @return 菜谱列表
      */
-    List<Menu> listMenu(@Param("searchParam") String searchParam, @Param("fistIndex") Integer fistIndex,
-                              @Param("perPage") Integer perPage);
+    List<Menu> listMenu(@Param("searchParam") String searchParam, @Param("currentPage") Integer currentPage,
+                              @Param("itemsPerPage") Integer itemsPerPage);
 
     /**
      * 插入菜谱

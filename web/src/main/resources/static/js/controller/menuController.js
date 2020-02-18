@@ -9,11 +9,7 @@ app.controller("menuController", function ($scope, $http, $controller, menuServi
         var validateMsg = $("#validateMsg").val();
 
         if (validateMsg == "true"){
-            //jq获取性别,以及地址
-            $scope.entity.sex = $("#sexSelect").val();
-            $scope.entity.addressProvince = $("#selProvince").val();
-            $scope.entity.addressCity = $("#selCity").val();
-            $scope.entity.addressArea = $("#selArea").val();
+            $scope.entity.taste = $("#sexSelect").val();
 
             var obj;
             if($scope.entity.menuId != null){
@@ -60,9 +56,6 @@ app.controller("menuController", function ($scope, $http, $controller, menuServi
     $scope.searchParam = "";
     $scope.search = function (currentPage, itemsPerPage) {
         menuService.search(currentPage, itemsPerPage, $scope.searchParam).success(function (response) {
-            // //设置列表
-            // $scope.list = response;
-
             //设置列表
             $scope.list = response.rows;
             //更新分页导航条
