@@ -29,7 +29,7 @@
 		<div class="table-box">
 			<div class="box-tools pull-right">
 				<div class="has-feedback">
-					账号：<input ng-model="searchParam">
+					菜式名称：<input ng-model="searchParam">
 					<button class="btn btn-default" ng-click="reloadList()">查询</button>
 					<button type="button" class="btn btn-default" data-toggle="modal" data-target="#editModal" ng-click="clean()">新建</button>
 					<button type="button" class="btn btn-default" data-toggle="modal" ng-click="delete()">删除</button>
@@ -56,7 +56,7 @@
 				  </thead>
 				  <tbody>
 					  <tr ng-repeat="entity in list">
-						  <td style="text-align:center;"><input ng-click="updateSelection($event, entity.userId)" type="checkbox" ></td>
+						  <td style="text-align:center;"><input ng-click="updateSelection($event, entity.menuId)" type="checkbox" ></td>
 						  <td style="text-align:center;">{{entity.menuId}}</td>
 						  <td style="text-align:center;">{{entity.name}}</td>
 						  <td style="text-align:center;">

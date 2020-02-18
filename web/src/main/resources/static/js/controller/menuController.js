@@ -31,26 +31,26 @@ app.controller("menuController", function ($scope, $http, $controller, menuServi
 
     };
 
-    // //批量删除
-    // $scope.delete = function () {
-    //     if($scope.selectedIds.length == 0){
-    //         alert("请选择要删除的记录");
-    //         return ;
-    //     }
-    //     //confirm如果点击 确认 则返回true,否则false
-    //     if(confirm("确认要删除选中的记录吗？")){
-    //         menuService.delete($scope.selectedIds).success(function (response) {
-    //             if(response.status){
-    //                 //刷新列表
-    //                 $scope.reloadList();
-    //                 $scope.selectedIds = [];
-    //             } else {
-    //                 alert(response.message);
-    //             }
-    //         });
-    //     }
-    //
-    // };
+    //批量删除
+    $scope.delete = function () {
+        if($scope.selectedIds.length == 0){
+            alert("请选择要删除的记录");
+            return ;
+        }
+        //confirm如果点击 确认 则返回true,否则false
+        if(confirm("确认要删除选中的记录吗？")){
+            menuService.delete($scope.selectedIds).success(function (response) {
+                if(response.status){
+                    //刷新列表
+                    $scope.reloadList();
+                    $scope.selectedIds = [];
+                } else {
+                    alert(response.message);
+                }
+            });
+        }
+
+    };
 
     //分页条件查询
     $scope.searchParam = "";
@@ -109,17 +109,17 @@ app.controller("menuController", function ($scope, $http, $controller, menuServi
         $("#menuId").val("");
     };
 
-    // //上传商品图片
-    // $scope.uploadFile = function () {
-    //     uploadService.uploadFile().success(function (response) {
-    //         if(response.status){
-    //             $scope.entity.pictureUrl = response.message;
-    //         } else {
-    //             alert(response.message);
-    //         }
-    //     }).error(function () {
-    //         alert("上传图片失败");
-    //     });
-    // };
+    //上传商品图片
+    $scope.uploadFile = function () {
+        uploadService.uploadFile().success(function (response) {
+            if(response.status){
+                $scope.entity.pictureUrl = response.message;
+            } else {
+                alert(response.message);
+            }
+        }).error(function () {
+            alert("上传图片失败");
+        });
+    };
 
 });

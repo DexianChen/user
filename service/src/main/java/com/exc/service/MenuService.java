@@ -28,7 +28,11 @@ public interface MenuService {
      */
     void updateMenu(RequestParamVo requestParamVo);
 
-    void deleteMenu(Integer[] taskIds);
+    /**
+     * 批量删除菜谱
+     * @param menuIds 菜谱id列表
+     */
+    void deleteMenu(Integer[] menuIds);
 
     /**
      * 插入菜谱

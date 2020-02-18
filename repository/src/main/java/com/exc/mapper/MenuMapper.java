@@ -40,7 +40,7 @@ public interface MenuMapper {
      * 批量删除菜谱
      * @param menuIds 菜谱id列表
      */
-    void deleteMenu(@Param("MenuIds") Integer[] menuIds);
+    void deleteMenu(@Param("menuIds") Integer[] menuIds);
 
     /**
      * 根据id获取菜谱
