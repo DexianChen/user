@@ -72,21 +72,21 @@ app.controller("menuController", function ($scope, $http, $controller, menuServi
         });
     };
 
-    // //根据id删除
-    // $scope.deleteOne = function (menuId) {
-    //     //confirm如果点击 确认 则返回true,否则false
-    //     if(confirm("确认要删除选中的记录吗？")){
-    //         menuService.deleteOne(menuId).success(function (response) {
-    //             if(response.status){
-    //                 //刷新列表
-    //                 $scope.reloadList();
-    //             } else {
-    //                 alert(response.message);
-    //             }
-    //         });
-    //     }
-    //
-    // };
+    //根据id删除
+    $scope.deleteOne = function (menuId) {
+        //confirm如果点击 确认 则返回true,否则false
+        if(confirm("确认要删除选中的记录吗？")){
+            menuService.deleteOne(menuId).success(function (response) {
+                if(response.status){
+                    //刷新列表
+                    $scope.reloadList();
+                } else {
+                    alert(response.message);
+                }
+            });
+        }
+
+    };
 
     //新建操作时，如果表单已经提交了就清除之前的数据，如果表单没有提交则保留原有数据
     $scope.clean = function () {

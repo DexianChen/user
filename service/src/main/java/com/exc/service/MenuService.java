@@ -44,7 +44,11 @@ public interface MenuService {
      */
     Menu findOne(@Param("menuId") Integer menuId);
 
-    void deleteOne(Integer userId);
+    /**
+     * 根据id删除菜谱
+     * @param menuId 菜谱id
+     */
+    void deleteOne(Integer menuId);
 
     /**
      * 校验菜式名称是否重复

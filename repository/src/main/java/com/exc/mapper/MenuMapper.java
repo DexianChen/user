@@ -53,7 +53,7 @@ public interface MenuMapper {
      * 根据id删除菜谱
      * @param menuId 菜谱id
      */
-    void deleteOne(Integer menuId);
+    void deleteOne(@Param("menuId") Integer menuId);
 
     /**
      * 校验菜式名称是否重复

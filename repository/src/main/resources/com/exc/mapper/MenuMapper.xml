@@ -68,7 +68,7 @@
             </if>
             update_time = NOW()
         </trim>
-        WHERE name = #{name}
+        WHERE name = #{name};
     </update>
 
     <!--<delete id="deleteUser" parameterType="java.lang.Integer">-->
@@ -85,10 +85,10 @@
         FROM menu WHERE menu_id = #{menuId} LIMIT 1;
     </select>
 
-    <!--<delete id="deleteOne" parameterType="java.lang.Integer">-->
-        <!--DELETE FROM menu-->
-        <!--WHERE user_id = #{userId};-->
-    <!--</delete>-->
+    <delete id="deleteOne" parameterType="java.lang.Integer">
+        DELETE FROM menu
+        WHERE menu_id = #{menuId} LIMIT 1;
+    </delete>
 
     <select id="checkName" parameterType="java.lang.String" resultType="java.lang.Integer">
         SELECT COUNT(1) FROM menu WHERE name = #{name};
