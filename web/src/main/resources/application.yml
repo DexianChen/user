@@ -8,7 +8,15 @@ spring:
       url: jdbc:mysql://localhost:3306/db_menu?useUnicode=true&characterEncoding=utf8&autoReconnect=true
       username: root
       password: 123456
-      driver-class-name: com.mysql.jdbc.Driver
+      druid:
+        initial-size: 5 #连接池初始化大小
+        min-idle: 10 #最小空闲连接数
+        max-active: 20 #最大连接数
+        web-stat-filter:
+          exclusions: "*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*" #不统计这些请求数据
+        stat-view-servlet: #访问监控网页的登录用户名和密码
+          login-username: druid
+          login-password: druid
 
 #公共配置与profiles选择无关
 mybatis:
