@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>用户管理页面</title>
-    <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport">
+    <title>菜谱管理页面</title>
+    <meta content="width=device-width,initial-scale=1,maximum-scale=1,menu-scalable=no" name="viewport">
     <link rel="stylesheet" href="../plugins/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../plugins/adminLTE/css/AdminLTE.css">
     <link rel="stylesheet" href="../plugins/adminLTE/css/skins/_all-skins.min.css">
@@ -15,15 +15,15 @@
     <link rel="stylesheet" href="../plugins/angularjs/pagination.css">
     <script src="../plugins/angularjs/pagination.js"></script>
     <script src="../js/base_pagination.js"></script>
-	<script src="../js/service/userService.js"></script>
+	<script src="../js/service/menuService.js"></script>
     <script src="../js/controller/baseController.js"></script>
-    <script src="../js/controller/userController.js"></script>
+    <script src="../js/controller/menuController.js"></script>
 	<script src="../js/validate.js"></script>
 	<script src="../js/address.js"></script>
 	<script src="../js/service/uploadService.js"></script>
 
 </head>
-<body ng-app="user" ng-controller="userController" ng-init="" class="hold-transition skin-red sidebar-mini">
+<body ng-app="menu" ng-controller="menuController" ng-init="" class="hold-transition skin-red sidebar-mini">
   	<!-- .box-body -->
 	<div class="box-body">
 		<!-- 数据表格 -->
@@ -45,40 +45,32 @@
 						  <th class="" style="padding-right:0px" style="text-align:center;">
 							  <input id="selall" type="checkbox" class="icheckbox_square-blue">
 						  </th>
-						  <th style="text-align:center;">用户编号</th>
-						  <th style="text-align:center;">账号</th>
-						  <th style="text-align:center;">密码</th>
-						  <th style="text-align:center;">真实姓名</th>
-						  <th style="text-align:center;">性别</th>
-						  <th style="text-align:center;">身份证</th>
-						  <th style="text-align:center;">电话号码</th>
-						  <th style="text-align:center;">地址</th>
-						  <th style="text-align:center;">邮箱地址</th>
-						  <th style="text-align:center;">个人照片</th>
-						  <th style="text-align:center;">注册时间</th>
+						  <th style="text-align:center;">菜谱编号</th>
+						  <th style="text-align:center;">菜谱名称</th>
+						  <th style="text-align:center;">味道</th>
+						  <th style="text-align:center;">照片</th>
+						  <th style="text-align:center;">步骤</th>
+						  <th style="text-align:center;">评价</th>
 						  <th style="text-align:center;">操作</th>
 					  </tr>
 				  </thead>
 				  <tbody>
 					  <tr ng-repeat="entity in list">
 						  <td style="text-align:center;"><input ng-click="updateSelection($event, entity.userId)" type="checkbox" ></td>
-						  <td style="text-align:center;">{{entity.userId}}</td>
-						  <td style="text-align:center;">{{entity.account}}</td>
-						  <td style="text-align:center;">{{entity.pwd}}</td>
-						  <td style="text-align:center;">{{entity.realName}}</td>
+						  <td style="text-align:center;">{{entity.menuId}}</td>
+						  <td style="text-align:center;">{{entity.name}}</td>
 						  <td style="text-align:center;">
-							  <span ng-if="entity.sex == 0">男</span>
-							  <span ng-if="entity.sex == 1">女</span>
+							  <span ng-if="entity.taste == 0">酸</span>
+							  <span ng-if="entity.taste == 1">甜</span>
+							  <span ng-if="entity.taste == 2">苦</span>
+							  <span ng-if="entity.taste == 3">辣</span>
+							  <span ng-if="entity.taste == 4">咸</span>
 						  </td>
-						  <td style="text-align:center;">{{entity.idCard}}</td>
-						  <td style="text-align:center;">{{entity.phone}}</td>
-						  <td style="text-align:center;">{{entity.addressProvince}}{{entity.addressCity}}{{entity.addressArea}}{{entity.addressDetails}}</td>
-						  <td style="text-align:center;">{{entity.email}}</td>
 						  <td style="text-align:center;">
 							  <img src="{{entity.pictureUrl}}" width=50px height=50px />
 						  </td>
-						  <td style="text-align:center;">{{entity.registeredTime}}</td>
-
+						  <td style="text-align:center;">{{entity.step}}</td>
+						  <td style="text-align:center;">{{entity.evaluate}}</td>
 						  <td style="text-align:center;">
 							  <button type="button" class="btn bg-blue btn-xs" ng-click="findOne(entity.userId)" data-toggle="modal" data-target="#editModal">修改</button>
 							  <button type="button" class="btn bg-red btn-xs" ng-click="deleteOne(entity.userId)" data-toggle="modal" >删除</button>
@@ -105,80 +97,35 @@
 	<div class="modal-content">
 		<div class="modal-header">
 			<button type="button" class="close" data-dismiss="modal" aria-hidden="true" id="topClose" ng-click="fresh()">×</button>
-			<h3 id="myModalLabel">编辑用户信息</h3>
+			<h3 id="myModalLabel">编辑菜谱信息</h3>
 		</div>
 		<div class="modal-body">
 			<table class="table table-bordered table-striped"  width="800px">
-				<input type="hidden" id="userId" />
+				<input type="hidden" id="menuId" />
 		      	<tr>
-		      		<td>账号</td>
+		      		<td>菜谱名称</td>
 		      		<td>
-						<input class="form-control" ng-model="entity.account" placeholder="账号" id="account" onblur="checkAccount()" />
+						<input class="form-control" ng-model="entity.name" placeholder="菜谱名称" id="name" onblur="checkName()" />
 					</td>
-					<td width="100px" id="accountTd"></td>
+					<td width="100px" id="nameTd"></td>
 		      	</tr>
 
 				<tr>
-					<td>密码</td>
-					<td><input  class="form-control" type="password" ng-model="entity.pwd" placeholder="密码" id="pwd" onblur="checkPwd()" />  </td>
-					<td width="100px" id="pwdTd"></td>
-				</tr>
-
-				<tr>
-					<td>真实姓名</td>
-					<td><input  class="form-control" ng-model="entity.realName" placeholder="真实姓名" id="realName" onblur="checkRealName()"/>  </td>
-					<td width="100px" id="realNameTd"></td>
-				</tr>
-
-				<tr>
-					<td>性别</td>
+					<td>味道</td>
 					<td>
-						<select id="sexSelect">
+						<select id="tasteSelect">
 							<option value="">----请选择----</option>
-							<option value="0">男</option>
-							<option value="1">女</option>
+							<option value="0">酸</option>
+							<option value="1">甜</option>
+							<option value="2">苦</option>
+							<option value="3">辣</option>
+							<option value="4">咸</option>
 						</select>
 					</td>
 				</tr>
 
 				<tr>
-					<td>身份证</td>
-					<td><input  class="form-control" ng-model="entity.idCard" placeholder="身份证" id="idCard" onblur="checkIdCard()" />  </td>
-					<td width="100px" id="idCardTd"></td>
-				</tr>
-
-				<tr>
-					<td>电话号码</td>
-					<td><input  class="form-control" ng-model="entity.phone" placeholder="电话号码" id="phone" onblur="checkPhone()"/>  </td>
-					<td width="100px" id="phoneTd"></td>
-				</tr>
-
-				<tr>
-					<td rowspan="2">地址</td>
-					<td>
-						<select id="selProvince">
-							<option value="">----请选择----</option>
-						</select>
-						<select id="selCity">
-							<option value="">----请选择----</option>
-						</select>
-						<select id="selArea">
-							<option value="">----请选择----</option>
-						</select>
-					</td>
-				</tr>
-				<tr>
-					<td><input  class="form-control" placeholder="请输入详细地址" ng-model="entity.addressDetails" />  </td>
-				</tr>
-
-				<tr>
-					<td>邮箱地址</td>
-					<td><input  class="form-control" ng-model="entity.email" placeholder="邮箱地址" id="email" onblur="checkEmail()"/>  </td>
-					<td width="100px" id="emailTd"></td>
-				</tr>
-
-				<tr>
-					<td>个人照片</td>
+					<td>照片</td>
 					<td>
 						<input type="file" id="file" />
 						<button ng-click="uploadFile()">上传图片</button>
@@ -187,6 +134,19 @@
 						<img src="{{entity.pictureUrl}}" width="50px"/>
 					</td>
 				</tr>
+
+				<tr>
+					<td>步骤</td>
+					<td><input class="form-control" ng-model="entity.step" placeholder="步骤" id="step" onblur="checkStep()" />  </td>
+					<td width="100px" id="stepTd"></td>
+				</tr>
+
+				<tr>
+					<td>评价</td>
+					<td><input  class="form-control" ng-model="entity.evaluate" placeholder="评价" id="evaluate" onblur="checkEvaluate()"/>  </td>
+					<td width="100px" id="evaluateTd"></td>
+				</tr>
+
 			 </table>
 		</div>
 		<div class="modal-footer">
