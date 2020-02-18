@@ -2,6 +2,7 @@ package com.exc.service;
 
 import com.exc.model.Menu;
 import com.exc.model.RequestParamVo;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
@@ -21,6 +22,10 @@ public interface MenuService {
      */
     List<Menu> listMenu(String searchParam, String currentPage, String itemsPerPage);
 
+    /**
+     * 更新菜谱
+     * @param requestParamVo 菜谱实体
+     */
     void updateMenu(RequestParamVo requestParamVo);
 
     void deleteMenu(Integer[] taskIds);
@@ -32,7 +37,12 @@ public interface MenuService {
     @Transactional(rollbackFor = Exception.class)
     void insertMenu(RequestParamVo requestParamVo);
 
-    Menu findOne(Integer userId);
+    /**
+     * 根据id获取菜谱
+     * @param menuId 菜谱id
+     * @return 菜谱
+     */
+    Menu findOne(@Param("menuId") Integer menuId);
 
     void deleteOne(Integer userId);
 

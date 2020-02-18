@@ -48,45 +48,28 @@
         #{score, jdbcType=INTEGER}, #{evaluateContent, jdbcType=VARCHAR}, NOW(),NULL)
     </insert>
 
-    <!--<update id="updateUser"  parameterType="com.exc.model.RequestParamVo">-->
-        <!--UPDATE menu-->
-        <!--<trim prefix="SET" suffixOverrides=",">-->
-            <!--<if test="pwd != null">-->
-                <!--pwd = #{pwd, jdbcType=VARCHAR},-->
-            <!--</if>-->
-            <!--<if test="realName != null">-->
-                <!--real_name = #{realName, jdbcType=VARCHAR},-->
-            <!--</if>-->
-            <!--<if test="sex != null">-->
-                <!--sex = #{sex, jdbcType=INTEGER},-->
-            <!--</if>-->
-            <!--<if test="idCard != null">-->
-                <!--id_card = #{idCard, jdbcType=VARCHAR},-->
-            <!--</if>-->
-            <!--<if test="phone != null">-->
-                <!--phone = #{phone, jdbcType=VARCHAR},-->
-            <!--</if>-->
-            <!--<if test="addressProvince != null">-->
-                <!--address_province = #{addressProvince, jdbcType=VARCHAR},-->
-            <!--</if>-->
-            <!--<if test="addressCity != null">-->
-                <!--address_city = #{addressCity, jdbcType=VARCHAR},-->
-            <!--</if>-->
-            <!--<if test="addressArea != null">-->
-                <!--address_area = #{addressArea, jdbcType=VARCHAR},-->
-            <!--</if>-->
-            <!--<if test="addressDetails != null">-->
-                <!--address_details = #{addressDetails, jdbcType=VARCHAR},-->
-            <!--</if>-->
-            <!--<if test="email != null">-->
-                <!--email = #{email, jdbcType=VARCHAR},-->
-            <!--</if>-->
-            <!--<if test="pictureUrl != null">-->
-                <!--picture_url = #{pictureUrl, jdbcType=VARCHAR},-->
-            <!--</if>-->
-        <!--</trim>-->
-        <!--WHERE account = #{account};-->
-    <!--</update>-->
+    <update id="updateMenu"  parameterType="com.exc.model.RequestParamVo">
+        UPDATE menu
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="taste != null">
+                pwd = #{taste, jdbcType=INTEGER},
+            </if>
+            <if test="pictureUrl != null">
+                picture_url = #{pictureUrl, jdbcType=VARCHAR},
+            </if>
+            <if test="step != null">
+                step = #{step, jdbcType=VARCHAR},
+            </if>
+            <if test="score != null">
+                score = #{score, jdbcType=INTEGER},
+            </if>
+            <if test="evaluateContent != null">
+                evaluate_content = #{evaluateContent, jdbcType=VARCHAR},
+            </if>
+            update_time = NOW()
+        </trim>
+        WHERE name = #{name}
+    </update>
 
     <!--<delete id="deleteUser" parameterType="java.lang.Integer">-->
         <!--DELETE FROM menu-->
@@ -96,11 +79,11 @@
         <!--</foreach>;-->
     <!--</delete>-->
 
-    <!--<select id="findOne" parameterType="java.lang.Integer" resultMap="menuMap">-->
-        <!--SELECT-->
-        <!--<include refid="column" />-->
-        <!--FROM menu WHERE user_id = #{userId} LIMIT 1;-->
-    <!--</select>-->
+    <select id="findOne" parameterType="java.lang.Integer" resultMap="menuMap">
+        SELECT
+        <include refid="column" />
+        FROM menu WHERE menu_id = #{menuId} LIMIT 1;
+    </select>
 
     <!--<delete id="deleteOne" parameterType="java.lang.Integer">-->
         <!--DELETE FROM menu-->

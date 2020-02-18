@@ -2,9 +2,6 @@ package com.exc.controller;
 
 import com.exc.model.ResultVo;
 import com.exc.service.MenuService;
-import com.exc.service.impl.MenuServiceImpl;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,9 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/ajax")
-public class AJAXController {
-    private final Logger logger = LoggerFactory.getLogger(MenuServiceImpl.class);
-
+public class AjaxController {
     @Autowired
     private MenuService menuService;
 

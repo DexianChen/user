@@ -2,12 +2,9 @@ package com.exc.controller;
 
 import com.exc.model.ResultVo;
 import com.exc.service.MenuService;
-import com.exc.service.impl.MenuServiceImpl;
 import com.exc.model.Menu;
 import com.exc.model.PageVo;
 import com.exc.model.RequestParamVo;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,7 +18,6 @@ import java.util.List;
 @RestController
 @RequestMapping("/menu")
 public class MenuController {
-    private final Logger logger = LoggerFactory.getLogger(MenuServiceImpl.class);
 
     @Autowired
     private MenuService menuService;
@@ -39,9 +35,9 @@ public class MenuController {
     }
 
     @GetMapping("/delete")
-    public ResultVo deleteMenu(@RequestParam("userIds") Integer[] userIds){
+    public ResultVo deleteMenu(@RequestParam("menuIds") Integer[] menuIds){
         try {
-            menuService.deleteMenu(userIds);
+            menuService.deleteMenu(menuIds);
             return new ResultVo(true, "批量删除菜谱成功");
         } catch (Exception e) {
             e.printStackTrace();
@@ -76,14 +72,14 @@ public class MenuController {
     }
 
     @GetMapping("/findOne")
-    public Menu findOne(Integer userId){
-        return menuService.findOne(userId);
+    public Menu findOne(Integer menuId){
+        return menuService.findOne(menuId);
     }
 
     @GetMapping("/deleteOne")
-    public ResultVo deleteOne(Integer userId){
+    public ResultVo deleteOne(Integer menuId){
         try {
-            menuService.deleteOne(userId);
+            menuService.deleteOne(menuId);
             return new ResultVo(true, "删除菜谱成功");
         } catch (Exception e) {
             e.printStackTrace();

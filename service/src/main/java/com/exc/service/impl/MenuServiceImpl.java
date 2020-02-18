@@ -37,8 +37,8 @@ public class MenuServiceImpl implements MenuService {
     }
 
     @Override
-    public void deleteMenu(Integer[] userIds) {
-        menuMapper.deleteMenu(userIds);
+    public void deleteMenu(Integer[] menuIds) {
+        menuMapper.deleteMenu(menuIds);
     }
 
     @Override
@@ -47,13 +47,13 @@ public class MenuServiceImpl implements MenuService {
     }
 
     @Override
-    public Menu findOne(Integer userId) {
-        return menuMapper.findOne(userId);
+    public Menu findOne(Integer menuId) {
+        return menuMapper.findOne(menuId);
     }
 
     @Override
-    public void deleteOne(Integer userId) {
-        menuMapper.deleteOne(userId);
+    public void deleteOne(Integer menuId) {
+        menuMapper.deleteOne(menuId);
     }
 
     @Override

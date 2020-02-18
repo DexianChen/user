@@ -7,6 +7,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
+/**
+ * @author cdx
+ * date 2020-02-18
+ * 上传图片
+ */
 @RequestMapping("/upload")
 @RestController
 public class UploadController {

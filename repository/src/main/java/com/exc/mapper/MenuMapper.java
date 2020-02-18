@@ -47,7 +47,7 @@ public interface MenuMapper {
      * @param menuId 菜谱id
      * @return 菜谱
      */
-    Menu findOne(@Param("MenuId") Integer menuId);
+    Menu findOne(@Param("menuId") Integer menuId);
 
     /**
      * 根据id删除菜谱
