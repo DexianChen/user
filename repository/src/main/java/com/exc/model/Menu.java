@@ -45,7 +45,7 @@ public class Menu implements Serializable {
     /**
      * 评价内容
      */
-    private Integer evaluateContent;
+    private String evaluateContent;
 
     /**
      * 创建时间
@@ -107,11 +107,11 @@ public class Menu implements Serializable {
         this.score = score;
     }
 
-    public Integer getEvaluateContent() {
+    public String getEvaluateContent() {
         return evaluateContent;
     }
 
-    public void setEvaluateContent(Integer evaluateContent) {
+    public void setEvaluateContent(String evaluateContent) {
         this.evaluateContent = evaluateContent;
     }
 

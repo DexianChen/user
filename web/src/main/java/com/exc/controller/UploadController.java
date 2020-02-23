@@ -22,7 +22,7 @@ public class UploadController {
             String file_ext_name = file.getOriginalFilename().
                     substring(file.getOriginalFilename().lastIndexOf(".")+1);
             FastDFSClient fastDFSClient = new
-                    FastDFSClient("E:\\IDEA Project\\user\\web\\src\\main\\resources\\fastdfs\\tracker.conf");
+                    FastDFSClient("F:\\IDEA_Project\\menu\\web\\src\\main\\resources\\fastdfs\\tracker.conf");
             String url = fastDFSClient.uploadFile(file.getBytes(),
                     file_ext_name);
             return new ResultVo(true, url);

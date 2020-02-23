@@ -9,7 +9,7 @@ app.controller("menuController", function ($scope, $http, $controller, menuServi
         var validateMsg = $("#validateMsg").val();
 
         if (validateMsg == "true"){
-            $scope.entity.taste = $("#sexSelect").val();
+            $scope.entity.taste = $("#tasteSelect").val();
 
             var obj;
             if($scope.entity.menuId != null){
