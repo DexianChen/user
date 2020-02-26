@@ -4,8 +4,9 @@
     <resultMap id="menuMap" type="com.exc.model.Menu" >
         <id column="menu_id" property="menuId" jdbcType="BIGINT" />
         <result column="name" property="name" jdbcType="VARCHAR" />
-        <result column="taste" property="taste" jdbcType="INTEGER" />
+        <result column="taste" property="taste" jdbcType="VARCHAR" />
         <result column="picture_url" property="pictureUrl" jdbcType="VARCHAR" />
+        <result column="category" property="category" jdbcType="VARCHAR" />
         <result column="step" property="step" jdbcType="VARCHAR" />
         <result column="score" property="score" jdbcType="INTEGER" />
         <result column="evaluate_content" property="evaluateContent" jdbcType="VARCHAR" />
@@ -19,7 +20,7 @@
 
     <select id="listMenu" parameterType="java.lang.String" resultMap="menuMap" >
         SELECT
-        <include refid="column" />
+        menu_id, name, taste, picture_url, category, score
         FROM menu
         <where>
             <if test="searchParam != null">

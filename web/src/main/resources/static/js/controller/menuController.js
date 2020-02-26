@@ -8,6 +8,8 @@ app.controller("menuController", function ($scope, $http, $controller, menuServi
     $scope.save = function () {
         var validateMsg = $("#validateMsg").val();
 
+        alert($("#tasteSelect").val());
+
         if (validateMsg == "true"){
             $scope.entity.taste = $("#tasteSelect").val();
 

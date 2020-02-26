@@ -23,14 +23,19 @@ public class Menu implements Serializable {
     private String name;
 
     /**
-     * 味道, 0-酸,1-甜,2-苦,3-辣,4-咸
+     * 味道
      */
-    private Integer taste;
+    private String taste;
 
     /**
      * 菜谱图片
      */
     private String pictureUrl;
+
+    /**
+     * 分类
+     */
+    private String category;
 
     /**
      * 做法步骤
@@ -75,11 +80,11 @@ public class Menu implements Serializable {
         this.name = name;
     }
 
-    public Integer getTaste() {
+    public String getTaste() {
         return taste;
     }
 
-    public void setTaste(Integer taste) {
+    public void setTaste(String taste) {
         this.taste = taste;
     }
 
@@ -89,6 +94,14 @@ public class Menu implements Serializable {
 
     public void setPictureUrl(String pictureUrl) {
         this.pictureUrl = pictureUrl;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     public String getStep() {
