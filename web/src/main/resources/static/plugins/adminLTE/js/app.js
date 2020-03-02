@@ -669,14 +669,14 @@ function _init() {
     });
 
     function start(box) {
-      //Add overlay and loading img
+      //Add overlay and loading images
       box.append(overlay);
 
       settings.onLoadStart.call(box);
     }
 
     function done(box) {
-      //Remove overlay and loading img
+      //Remove overlay and loading images
       box.find(overlay).remove();
 
       settings.onLoadDone.call(box);

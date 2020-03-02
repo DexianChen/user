@@ -1,6 +1,6 @@
 //**************************************************************
 // jQZoom allows you to realize a small magnifier window,close
-// to the image or images on your web page easily.
+// to the images or images on your web page easily.
 //
 // jqZoom version 2.1
 // Author Doc. Ing. Renzi Marco(www.mind-projects.it)
@@ -16,8 +16,8 @@
 				xzoom: 200,//zoomed width default width
 				yzoom: 200,//zoomed div default width
 				offset: 25,	//zoomed div default offset
-				position: "right",//zoomed div default position,offset position is to the right of the image
-				lens:1, //zooming lens over the image,by default is 1;
+				position: "right",//zoomed div default position,offset position is to the right of the images
+				lens:1, //zooming lens over the images,by default is 1;
 				preload: 1
 			};
 
@@ -31,19 +31,19 @@
 		    var imageLeft = this.offsetLeft;
 		    var imageRight = this.offsetRight;
 		    var imageTop =  $(this).get(0).offsetTop;
-		    var imageWidth = $(this).children('img').get(0).offsetWidth;
-		    var imageHeight = $(this).children('img').get(0).offsetHeight;
+		    var imageWidth = $(this).children('images').get(0).offsetWidth;
+		    var imageHeight = $(this).children('images').get(0).offsetHeight;
 
 
-            noalt= $(this).children("img").attr("alt");
+            noalt= $(this).children("images").attr("alt");
 
-		    var bigimage = $(this).children("img").attr("jqimg");
+		    var bigimage = $(this).children("images").attr("jqimg");
 
-            $(this).children("img").attr("alt",'');
+            $(this).children("images").attr("alt",'');
 
 		    if($("div.zoomdiv").get().length == 0){
 
-		    $(this).after("<div class='zoomdiv'><img class='bigimg' src='"+bigimage+"'/></div>");
+		    $(this).after("<div class='zoomdiv'><images class='bigimg' src='"+bigimage+"'/></div>");
 
 
 		    $(this).append("<div class='jqZoomPup'>&nbsp;</div>");
@@ -158,7 +158,7 @@
 				    });
 		    },function(){
 
-               $(this).children("img").attr("alt",noalt);
+               $(this).children("images").attr("alt",noalt);
 		       $(document.body).unbind("mousemove");
 		       if(settings.lens){
 		       $("div.jqZoomPup").remove();
@@ -175,11 +175,11 @@
 
 		$(this).each(function(){
 
-        var imagetopreload= $(this).children("img").attr("jqimg");
+        var imagetopreload= $(this).children("images").attr("jqimg");
 
         var content = jQuery('div.jqPreload'+count+'').html();
 
-        jQuery('div.jqPreload'+count+'').html(content+'<img src=\"'+imagetopreload+'\">');
+        jQuery('div.jqPreload'+count+'').html(content+'<images src=\"'+imagetopreload+'\">');
 
 		});
 

@@ -14,7 +14,7 @@ $(function () {
 //        success:function(data){
 //            $.each(data, function (index, list) {
 //             $("#seckill").append(
-//                 "<li class='seckill-item'><div class='pic' ><img src='" + list["img"] + "' alt=''></div><div class='intro'><span>" + list["desc"] + "</span></div>"
+//                 "<li class='seckill-item'><div class='pic' ><images src='" + list["images"] + "' alt=''></div><div class='intro'><span>" + list["desc"] + "</span></div>"
 //                 + "<div class='price'><b class='sec-price'>￥" + list["n-price"] + "</b><b class='ever-price'>￥" + list["o-price"] + "</b></div>"
 //                 + "<div class='num'><div>已售" + list["saled"] + "</div><div class='progress'>"
 //                 + "<div class='sui-progress progress-danger'><span style='width: 70%;' class='bar'></span></div>"
