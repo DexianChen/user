@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author cdx
@@ -47,13 +48,8 @@ public class MenuController {
     }
 
     @GetMapping("/list")
-    public PageVo listMenu(@RequestParam("searchParam") String searchParam,
-                                 @RequestParam("currentPage") String currentPage,
-                                 @RequestParam("itemsPerPage") String itemsPerPage){
-        List<Menu> menuList = menuService.listMenu(searchParam, currentPage, itemsPerPage);
-
-        Integer countSize = countSize(searchParam);
-        return new PageVo(countSize, menuList);
+    public Map<String, List<?>> listMenu(@RequestParam("searchParam") String searchParam){
+        return menuService.listMenu(searchParam);
     }
 
     private Integer countSize(String searchParam){

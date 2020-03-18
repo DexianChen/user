@@ -1,8 +1,5 @@
 //定义处理器
-app.controller("menuController", function ($scope, $http, $controller, menuService, uploadService) {
-
-    //继承controller，可以使用baseController中的所有方法
-    $controller("baseController", {$scope:$scope});
+app.controller("menuController", function ($scope, $http, menuService, uploadService) {
 
     //保存
     $scope.save = function () {
@@ -56,12 +53,14 @@ app.controller("menuController", function ($scope, $http, $controller, menuServi
 
     //分页条件查询
     $scope.searchParam = "";
-    $scope.search = function (currentPage, itemsPerPage) {
-        menuService.search(currentPage, itemsPerPage, $scope.searchParam).success(function (response) {
-            //设置列表
-            $scope.list = response.rows;
-            //更新分页导航条
-            $scope.paginationConf.totalItems = response.total;//总记录数
+    $scope.search = function () {
+        menuService.search($scope.searchParam).success(function (response) {
+            $scope.carouselDesignsList = response.carouselDesignsList;
+            $scope.stapleFoodList = response.stapleFoodList;
+            $scope.snackList = response.snackList;
+            $scope.soupList = response.soupList;
+            $scope.sweetMeatsList = response.sweetMeatsList;
+            $scope.dressingList = response.dressingList;
         });
     };
 

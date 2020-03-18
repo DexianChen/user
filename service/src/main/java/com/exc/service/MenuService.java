@@ -6,6 +6,7 @@ import org.apache.ibatis.annotations.Param;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author cdx
@@ -16,11 +17,9 @@ public interface MenuService {
     /**
      * 查询菜谱列表
      * @param searchParam 搜索参数
-     * @param currentPage 当前页码
-     * @param itemsPerPage 每页大小
      * @return 菜谱列表
      */
-    List<Menu> listMenu(String searchParam, String currentPage, String itemsPerPage);
+    Map<String, List<?>> listMenu(String searchParam);
 
     /**
      * 更新菜谱

@@ -1,5 +1,6 @@
 package com.exc.mapper;
 
+import com.exc.model.CarouselDesigns;
 import com.exc.model.RequestParamVo;
 import com.exc.model.Menu;
 import org.apache.ibatis.annotations.Param;
@@ -63,4 +64,5 @@ public interface MenuMapper {
     Integer checkName(@Param("name")String name);
 
     Integer countSize(@Param("searchParam") String searchParam);
+
 }

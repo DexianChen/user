@@ -27,8 +27,7 @@ app.service("menuService", function ($http) {
     };
 
     //分页条件查询
-    this.search = function (currentPage, itemsPerPage, searchParam) {
-        return $http.get("http://localhost:8762/menu/list?searchParam=" + searchParam + "&currentPage=" + currentPage
-        + "&itemsPerPage=" + itemsPerPage);
+    this.search = function (searchParam) {
+        return $http.get("http://localhost:8762/menu/list?searchParam=" + searchParam);
     };
 });

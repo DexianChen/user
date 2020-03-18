@@ -1,4 +1,5 @@
-<html><head>
+<html>
+<head>
     <meta charset="utf-8">
     <title>咸鱼菜谱网</title>
     <meta name="keywords" content="菜谱">
@@ -6,10 +7,18 @@
     <meta name="viewport" content="width=device-width">
     <meta property="qc:admins" content="">
     <link rel="stylesheet" href="../css/index.css">
-    <script src="../js/imgfun.js"></script>
+    <script src="../plugins/jQuery/jquery-2.2.3.min.js"></script>
+    <script src="../plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../plugins/angularjs/angular.min.js"></script>
+    <link rel="stylesheet" href="../plugins/angularjs/pagination.css">
+    <script src="../plugins/angularjs/pagination.js"></script>
+    <script src="../js/base_pagination.js"></script>
+    <script src="../js/controller/menuController.js"></script>
+    <script src="../js/service/menuService.js"></script>
+    <script src="../js/service/uploadService.js"></script>
 </head>
 
-<body>
+<body ng-app="menu" ng-controller="menuController" ng-init="search()">
 <!-- 搜索栏 -->
 <div class="c_head">
     <div class="w1000m">
@@ -17,12 +26,10 @@
         <a class="c_abtn1" href="" target="_parent"><i class="i i8"></i>发布菜谱</a>
         <!-- search -->
         <div class="c_search">
-            <form name="so" method="GET" action="http://www.chinacaipu.com/index/search" target="_blank">
-                <div class="c_keyword">
-                    <input placeholder="搜索菜谱、专题、食材、用户" value="" name="keyword" autocomplete="off" autofocus="true" x-webkit-speech="" x-webkit-grammar="builtin:translate">
-                </div>
-                <input class="input_search" type="submit" value="搜索">
-            </form>
+            <div class="c_keyword">
+                <input placeholder="搜索菜谱、专题、食材、用户" ng-model="searchParam">
+            </div>
+            <button class="input_search" ng-click="reloadList()"></button>
         </div>
     </div>
 </div>
@@ -32,55 +39,44 @@
     <div class="c_nav_wrap">
         <div class="c_navl" id="">
             <a class="cur" href="">首页</a>
-            <a class="c_nav2" href="">菜谱大全<i class="i i7"></i></a>
-            <a href="">健康养生</a>
-            <a href="">美食专题</a>
-            <a href="">食材大全</a>
-            <a href="">美食发烧友</a>
+            <a class="c_nav2" data-to="stapleFood">美味主食</a>
+            <a class="c_nav2" data-to="snack">休闲小吃</a>
+            <a class="c_nav2" data-to="soup">浓郁靓汤</a>
+            <a class="c_nav2" data-to="sweetMeats">精致甜品</a>
+            <a class="c_nav2" data-to="dressing">健康调味</a>
         </div>
     </div>
 </div>
 
-
+<div id="left"><img src="../images/top.jpg" width="50px" height="50px"/></div>
 <!-- 轮播图 -->
 <div class="w1000m">
     <div class="i_con0" id="i-slider_l">
-        <div class="i_bigwrap">
-            <ul class="i_bigimgs" style="width: 5050px; left: 0px;">
-                <li>
-                    <a class="i_bi1" href="" alt="2018 春分"><strong></strong></a>
-                    <a class="i_bi2" href=""><img src="" alt="潮汕腌蟹"><strong>潮汕腌蟹</strong></a>
-                </li><li>
-                <a class="i_bi1" href="" alt=""><strong></strong></a>
-                <a class="i_bi2" href=""><img src="" alt="枸杞叶瘦肉汤"><strong>枸杞叶瘦肉汤</strong></a>
-            </li><li>
-                <a class="i_bi1" href="" alt=""><strong></strong></a>
-                <a class="i_bi2" href=""><img src="" alt="芥兰炒排骨"><strong>芥兰炒排骨</strong></a>
-            </li><li>
-                <a class="i_bi1" href="" alt="儿童餐"><strong></strong></a>
-                <a class="i_bi2" href=""><img src="" alt="番茄豆腐"><strong>番茄豆腐</strong></a>
-            </li><li>
-                <a class="i_bi1" href="" alt="蜂蜜"><strong></strong></a>
-                <a class="i_bi2" href=""><img src="" alt="茶香虾"><strong>茶香虾</strong></a>
 
-            </li></ul>
+        <div class="i_bigwrap">
+            <ul class="i_bigimgs" style="width: 5050px; left: 0px;" ng-repeat="item in carouselDesignsList track by $index">
+                <li>
+                    <a class="i_bi1" href="{{item.href}}"><img ng-src="{{item.src}}" alt="{{item.alt}}"></a>
+                    <a class="i_bi2" href="{{item.href}}"><img ng-src="{{item.src}}" alt="{{item.alt}}"><strong>{{item.alt}}</strong></a>
+                </li>
+            </ul>
             <ul class="i_bigcur">
-                <li class="on">
-                </li><li class="">
-            </li><li class="">
-            </li><li class="">
-            </li><li class="">
-            </li></ul>
+                <li class="on"></li>
+                <li class=""></li>
+                <li class=""></li>
+                <li class=""></li>
+                <li class=""></li>
+            </ul>
         </div>
         <div class="i_bigarrow">
-            <a class="i_bigprev"><img alt="" src=""></a>
-            <a class="i_bignext"><img alt="" src=""></a>
+            <a class="i_bigprev"><img alt="左滑" src="../images/carouselDesigns/arrowl.png"></a>
+            <a class="i_bignext"><img alt="右滑" src="../images/carouselDesigns/arrowr.png"></a>
         </div>
     </div>
 </div>
 
 <!-- 美味主食 -->
-<div class="i_bg2">
+<div class="i_bg2" id="stapleFood">
     <div class="w1000m" id="zgcp">
         <div class="c_tit">
             <strong>
@@ -95,14 +91,15 @@
         </div>
 
         <div class="c_con">
-            <ul class="i_con1" id="jp_list">
-                <li class="pic"><a href=""><img class="fl" src="" alt="蒜香糖醋虾仁" onload="cssImgResize(this,120,150)" width="200" height="150" style="margin: 0px -40px;"></a><span class="c"><strong><a href="">蒜香糖醋虾仁</a></strong><p>来自大海的生物都含有丰富的钙源，特别是海虾，好吃营养丰富做法又很多，最通常的做法就是</p></span>
-                </li><li class="pic"><a href=""><img class="fl" src="" alt="鱼香肉丝" onload="cssImgResize(this,120,150)" width="224" height="150" style="margin: 0px -52px;"></a><span class="c"><strong><a href="">鱼香肉丝</a></strong><p>今天来做一道超级下饭的鱼香肉丝，每次做这个都可以多吃两碗饭，用安珑不沾煎锅来烹饪这道</p></span>
-            </li><li class="pic"><a href=""><img class="fl" src="" alt="美味减脂餐-芹菜炒香菇" onload="cssImgResize(this,120,150)" width="200" height="150" style="margin: 0px -40px;"></a><span class="c"><strong><a href="">美味减脂餐-芹菜炒香菇</a></strong><p>真心是很素很素的一个菜，调味也只有盐 鸡精而已，切勿再去添加别的调味料，虽然素面朝天</p></span>
-            </li><li class="pic"><a href=""><img class="fl" src="" alt="健康减脂餐—蔬菜鸡胸肉" onload="cssImgResize(this,120,150)" width="200" height="150" style="margin: 0px -40px;"></a><span class="c"><strong><a href="">健康减脂餐—蔬菜鸡胸肉</a></strong><p>随着人们生活水平的不断提高，食物不断推新，很多小伙伴在美食面前就不禁不住诱惑了，在美</p></span>
-            </li><li class="pic"><a href=""><img class="fl" src="" alt="爽口金针菇" onload="cssImgResize(this,120,150)" width="225" height="150" style="margin: 0px -52px;"></a><span class="c"><strong><a href="">爽口金针菇</a></strong><p>今天做的这道凉拌金针菇非常爽口，更是“爱辣星人”的福音。剁好的辣椒圈用热油一泼，再配</p></span>
-            </li><li class="pic"><a href=""><img class="fl" src="" alt="素炒饼丝" onload="cssImgResize(this,120,150)" width="224" height="150" style="margin: 0px -52px;"></a><span class="c"><strong><a href="">素炒饼丝</a></strong><p>今天的炒饼丝我没有放肉，打了2个鸡蛋炒碎放在饼丝上，颜色很漂亮，看着就有食欲。别看是</p></span>
-
+            <ul class="i_con1" id="jp_list" ng-repeat="item in stapleFoodList track by $index">
+                <li class="pic">
+                    <a href="{{item.href}}">
+                        <img class="fl" ng-src="{{item.src}}" alt="{{item.alt}}" onload="cssImgResize(this,120,150)" width="200" height="150" style="margin: 0px -40px;">
+                    </a>
+                    <span class="c">
+                        <strong><a href="{{item.href}}">{{item.alt}}</a></strong><p>{{item.desc}}</p>
+                    </span>
+                </li>
             </li></ul>
         </div>
     </div>
@@ -110,7 +107,7 @@
 </div>
 
 <!-- 休闲小吃 -->
-<div class="w1000m clearfix">
+<div class="w1000m clearfix" id="snack">
     <div class="w660">
         <div id="slsc">
             <div class="c_tit">
@@ -118,26 +115,18 @@
                     <a href="">休闲小吃</a>
                     <span class="c_h22i">seasonal&nbsp;food</span>
                 </strong>
-                <!--<div class="c_sortitems" id="tabnav">-->
-                    <!--<a class="c_sitem c_sitem_cur" rel="188">蔬菜</a>-->
-                    <!--<a class="c_sitem" rel="187">水果</a>-->
-                    <!--<a class="c_sitem" rel="186">谷物</a>-->
-                    <!--<a class="c_sitem" rel="185">生鲜</a>-->
-                <!--</div>-->
             </div>
             <div class="i_con2">
-                <a href=""><img alt="冬瓜" src=""><strong>冬瓜</strong></a>
-                <a href=""><img alt="红薯" src=""><strong>红薯</strong></a>
-                <a href=""><img alt="冬笋" src=""><strong>冬笋</strong></a>
-                <a href=""><img alt="毛豆" src=""><strong>毛豆</strong></a>
-                <a href=""><img alt="胡萝卜" src=""><strong>胡萝卜</strong></a>
+                <ul ng-repeat="item in snackList track by $index">
+                        <a href="{{item.href}}"><img alt="{{item.alt}}" ng-src="{{item.src}}"><strong>{{item.alt}}</strong></a>
+                </ul>
             </div>
         </div>
     </div>
 </div>
 
 <!-- 浓郁靓汤 -->
-<div class="i_bg2 mt20">
+<div class="i_bg2 mt20" id="soup">
     <div class="w1000m clearfix">
         <div class="w660">
             <div class="c_tit">
@@ -148,80 +137,65 @@
                 &lt;     <a class="c_abtn2" href=""><i class="i i9"></i>更多菜谱</a>
             </div>
             <div class="i_con3">
-                <ul>
-                <li><a href=""><img alt="炝拌油菜花" onload="cssImgResize(this,190,220)" src="" width="290" height="220" style="margin: 0px -50px;"><strong>炝拌油菜花</strong></a>
-                </li><li><a href=""><img alt="椰香水果捞" onload="cssImgResize(this,190,220)" src="" width="332" height="220" style="margin: 0px -71px;"><strong>椰香水果捞</strong></a>
-                </li><li><a href=""><img alt="苹果酥" onload="cssImgResize(this,190,220)" src="" width="293" height="220" style="margin: 0px -51px;"><strong>苹果酥</strong></a>
-                </li><li><a href=""><img alt="草莓欧蕾" onload="cssImgResize(this,190,220)" src="" width="330" height="220" style="margin: 0px -70px;"><strong>草莓欧蕾</strong></a>
-                </li><li><a href=""><img alt="蛋包饭" onload="cssImgResize(this,190,220)" src="" width="293" height="220" style="margin: 0px -51px;"><strong>蛋包饭</strong></a>
-                </li><li><a href=""><img alt="照烧鸡肉披萨" onload="cssImgResize(this,190,220)" src="" width="329" height="220" style="margin: 0px -69px;"><strong>照烧鸡肉披萨</strong></a>
-                </li></ul>
+                <ul ng-repeat="item in soupList track by $index">
+                    <li>
+                        <a href="{{item.href}}">
+                            <img alt="{{item.alt}}" onload="cssImgResize(this,190,220)" ng-src="{{item.src}}" width="290" height="220" style="margin: 0px -50px;">
+                            <strong>{{item.alt}}</strong>
+                        </a>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
 </div>
 
 <!-- 精致甜品 -->
-<div class="w1000m">
+<div class="w1000m" id="sweetMeats">
     <div>
         <div class="c_tit">
             <strong>
-                <a href="http://www.chinacaipu.com/zt/cpzt.html">精致甜品</a>
+                <a href="">精致甜品</a>
                 <span class="c_h21i">food&nbsp;topic</span>
             </strong>
-            <a class="c_abtn2" href="http://www.chinacaipu.com/zt/cpzt.html"><i class="i i9"></i>更多专题</a>
+            <a class="c_abtn2" href=""><i class="i i9"></i>更多专题</a>
         </div>
         <div class="i_con4" id="i-slider_s">
             <div class="i_sulwrap">
-                <ul class="clearfix" style="width: 2880px;">
-                <li><a href=""><img src="" alt="美食or美色 谁说不可兼得"></a>
-                </li><li><a href=""><img src="" alt="爱自己要趁“早”"></a>
-                </li><li><a href=""><img src="" alt="葵花宝典之白领养生"></a>
-                </li><li><a href=""><img src="" alt="秋葵百科"></a>
-                </li><li><a href=""><img src="" alt="秋季养生"></a>
-                </li><li><a href=""><img src="" alt="燕窝的功效与作用"></a>
-                </li><li><a href=""><img src="" alt="米饭怎么做好吃"></a>
-                </li><li><a href=""><img src="" alt="猪肝怎么做好吃"></a>
-                </li><li><a href=""><img src="" alt="懒人厨房"></a>
-                </li></ul>
+                <ul class="clearfix" style="width: 2880px;" ng-repeat="item in sweetMeatsList track by $index">
+                    <li><a href="{{item.href}}">
+                        <img ng-src="{{item.src}}" alt="{{item.alt}}"></a>
+                    </li>
+                </ul>
             </div>
-            <!--<div class="i_sarrow">-->
-                <!--<a class="i_sprev"><img alt="" src="http://www.chinacaipu.com/static/20150505/images/arrowl.png"></a>-->
-                <!--<a class="i_snext"><img alt="" src="http://www.chinacaipu.com/static/20150505/images/arrowr.png"></a>-->
-            <!--</div>-->
         </div>
 
     </div>
 </div>
 
-<!-- 健康调味料 -->
-<div class="i_bg2 mt20">
+<!-- 健康调味 -->
+<div class="i_bg2 mt20" id="dressing">
     <div class="w1000m">
         <div class="c_tit">
             <strong>
-                <a href="">健康调味料</a>
+                <a href="">健康调味</a>
                 <span class="c_h21i">Health&nbsp;News</span>
             </strong>
         </div>
         <div class="c_con">
-            <ul class="i_con5">
-                <!--                -->                                                                                <li class="i_scon5">
+            <ul class="i_con5" ng-repeat="item in dressingList track by $index">
+                <!--                -->
+                <li class="i_scon5">
                 <div class="i_tit">
-                    <strong>健康调味料</strong>
-                    <a class="c_abtn3" href=""><i class="i i9"></i>更多</a>
+                    <strong>健康调味</strong>
+                    <a class="c_abtn3" href="">
+                        <i class="i i9"></i>更多
+                    </a>
                 </div>
                 <div class="i_sci5">
-                    <a class="cur" href=""><img src="" alt="两种睡姿竟有补肾奇效  中医教你怎么睡"></a>
-                    <a class="" href=""><img src="" alt="人体去火三大穴位，所有火气通通赶走！"></a>
-                    <a class="" href=""><img src="" alt="按摩承浆穴的作用与功效"></a>
-                    <a class="" href=""><img src="" alt="完骨穴：春季祛风用它！眼睛疲劳用它！"></a>
+                    <a class="cur" href="{{item.href}}"><img ng-src="{{item.src}}" alt="{{item.alt}}"></a>
                 </div>
-                <ul class="i_scof5">
-                    <li><a href="">两种睡姿竟有补肾奇效  中医教你怎么睡</a></li>
-                    <li><a href="">人体去火三大穴位，所有火气通通赶走！</a></li>
-                    <li><a href="">按摩承浆穴的作用与功效</a></li>
-                    <li><a href="">完骨穴：春季祛风用它！眼睛疲劳用它！</a></li>
-                </ul>
+                <li class="i_scof5"><a href="{{item.href}}">{{item.alt}}</a></li>
             </ul>
         </div>
     </div>
