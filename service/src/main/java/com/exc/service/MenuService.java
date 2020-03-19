@@ -61,4 +61,10 @@ public interface MenuService {
     Boolean checkName(String name);
 
     Integer countSize(String searchParam);
+
+    /**
+     * 初始化编辑页面
+     * @return 初始化数据map
+     */
+    Map<String,List<?>> initEdit();
 }

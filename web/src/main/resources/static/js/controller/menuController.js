@@ -1,33 +1,24 @@
 //定义处理器
 app.controller("menuController", function ($scope, $http, menuService, uploadService) {
+    $scope.menu = {
+        name: '',
+        taste: [],
+        category: []
+    };
 
     //保存
-    $scope.save = function () {
-        var validateMsg = $("#validateMsg").val();
-
-        alert($("#tasteSelect").val());
-
-        if (validateMsg == "true"){
-            $scope.entity.taste = $("#tasteSelect").val();
-
-            var obj;
-            if($scope.entity.menuId != null){
-                //更新
-                obj = menuService.update($scope.entity);
+    $scope.saveMenu = function () {
+        $scope.menu.taste = $scope.selected;
+        var obj = menuService.saveMenu($scope.menu);
+        //$scope.entity 弹出层里面双向绑定的那些表单项
+        obj.success(function (response) {
+            if(response.status){
+                //刷新列表
+                $scope.reloadList();
             } else {
-                obj = menuService.add($scope.entity);
+                alert(response.message);
             }
-            //$scope.entity 弹出层里面双向绑定的那些表单项
-            obj.success(function (response) {
-                if(response.status){
-                    //刷新列表
-                    $scope.reloadList();
-                } else {
-                    alert(response.message);
-                }
-            });
-        }
-
+        });
     };
 
     //批量删除
@@ -123,4 +114,36 @@ app.controller("menuController", function ($scope, $http, menuService, uploadSer
         });
     };
 
+    // 初始化编辑页面
+    $scope.initEdit = function () {
+        menuService.initEdit().success(function (response) {
+            $scope.tasteList = response.tasteList;
+            $scope.categoryList = response.categoryList;
+        })
+    };
+
+    $scope.selected = [];
+    var updateSelected = function(action, id) {
+        if(action == 'add' & $scope.selected.indexOf(id) == -1) $scope.selected.push(id);
+        if(action == 'remove' && $scope.selected.indexOf(id) != -1) $scope.selected.splice($scope.selected.indexOf(id), 1);
+    };
+
+    $scope.updateSelection = function($event, id) {
+        var checkbox = $event.target;
+        var action = (checkbox.checked ? 'add' : 'remove');
+        updateSelected(action, id);
+    };
+
+    $scope.isSelected = function(id) {
+        return $scope.selected.indexOf(id) >= 0;
+    };   /*checkbox选中*/
+
+    $scope.selectAll = function() {
+        $scope.selected = [];
+        if($scope.select_all) {
+            angular.forEach($scope.tasteList, function (i) {
+                $scope.selected.push(i.id);
+            })
+        }
+    };
 });

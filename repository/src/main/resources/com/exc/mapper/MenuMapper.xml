@@ -41,11 +41,11 @@
         </where>
     </select>
 
-    <insert id="insertMenu" parameterType="com.exc.model.RequestParamVo">
+    <insert id="insertMenu" parameterType="com.exc.model.Menu">
         INSERT INTO menu
-        (menu_id, name, taste, picture_url, step,
+        (menu_id, name, taste, category, picture_url, step,
         score, evaluate_content, create_time, update_time)
-        values (NULL, #{name}, #{taste, jdbcType=INTEGER}, #{pictureUrl, jdbcType=VARCHAR},#{step, jdbcType=VARCHAR},
+        values (NULL, #{name}, #{taste, jdbcType=VARCHAR}, #{category, jdbcType=VARCHAR}, #{pictureUrl, jdbcType=VARCHAR},#{step, jdbcType=VARCHAR},
         #{score, jdbcType=INTEGER}, #{evaluateContent, jdbcType=VARCHAR}, NOW(),NULL)
     </insert>
 

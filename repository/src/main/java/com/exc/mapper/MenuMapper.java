@@ -1,6 +1,5 @@
 package com.exc.mapper;
 
-import com.exc.model.CarouselDesigns;
 import com.exc.model.RequestParamVo;
 import com.exc.model.Menu;
 import org.apache.ibatis.annotations.Param;
@@ -27,9 +26,9 @@ public interface MenuMapper {
 
     /**
      * 插入菜谱
-     * @param requestParamVo 菜谱实体
+     * @param menu 菜谱实体
      */
-    void insertMenu(RequestParamVo requestParamVo);
+    void insertMenu(Menu menu);
 
     /**
      * 更新菜谱

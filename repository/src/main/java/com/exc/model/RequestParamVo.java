@@ -17,9 +17,14 @@ public class RequestParamVo implements Serializable {
     private String name;
 
     /**
-     * 味道, 0-酸,1-甜,2-苦,3-辣,4-咸
+     * 味道, 1-酸,2-甜,3-苦,4-辣,5-咸
      */
-    private Integer taste;
+    private Integer[] taste;
+
+    /**
+     * 分类, 1-美味主食,2-休闲小吃,3-浓郁靓汤,4-精致甜品,5-健康调味
+     */
+    private String category;
 
     /**
      * 菜谱图片
@@ -49,12 +54,20 @@ public class RequestParamVo implements Serializable {
         this.name = name;
     }
 
-    public Integer getTaste() {
+    public Integer[] getTaste() {
         return taste;
     }
 
-    public void setTaste(Integer taste) {
+    public void setTaste(Integer[] taste) {
         this.taste = taste;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     public String getPictureUrl() {

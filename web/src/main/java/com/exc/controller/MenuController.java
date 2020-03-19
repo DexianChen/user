@@ -1,10 +1,9 @@
 package com.exc.controller;
 
+import com.exc.model.Menu;
+import com.exc.model.RequestParamVo;
 import com.exc.model.ResultVo;
 import com.exc.service.MenuService;
-import com.exc.model.Menu;
-import com.exc.model.PageVo;
-import com.exc.model.RequestParamVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -82,5 +81,10 @@ public class MenuController {
         }
 
         return new ResultVo(false, "删除菜谱失败");
+    }
+
+    @GetMapping("/initEdit")
+    public Map<String, List<?>> initEdit(){
+        return menuService.initEdit();
     }
 }

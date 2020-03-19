@@ -3,6 +3,7 @@ package com.exc.service.impl;
 import com.exc.mapper.*;
 import com.exc.model.*;
 import com.exc.service.MenuService;
+import org.apache.commons.lang3.StringUtils;
 import org.mybatis.spring.annotation.MapperScan;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -36,6 +37,10 @@ public class MenuServiceImpl implements MenuService {
     private SweetMeatsMapper sweetMeatsMapper;
     @Autowired
     private DressingMapper dressingMapper;
+    @Autowired
+    private TasteMapper tasteMapper;
+    @Autowired
+    private CategoryMapper categoryMapper;
 
     @Override
     public Map<String, List<?>> listMenu(String searchParam) {
@@ -80,7 +85,15 @@ public class MenuServiceImpl implements MenuService {
 
     @Override
     public void insertMenu(RequestParamVo requestParamVo) {
-        menuMapper.insertMenu(requestParamVo);
+        Menu menu = new Menu();
+        menu.setName(requestParamVo.getName());
+        menu.setTaste(StringUtils.join(requestParamVo.getTaste(), ","));
+        menu.setCategory(requestParamVo.getCategory());
+        menu.setStep(requestParamVo.getStep());
+        menu.setScore(requestParamVo.getScore());
+        menu.setEvaluateContent(requestParamVo.getEvaluateContent());
+
+        menuMapper.insertMenu(menu);
     }
 
     @Override
@@ -103,5 +116,20 @@ public class MenuServiceImpl implements MenuService {
     @Override
     public Integer countSize(String searchParam) {
         return menuMapper.countSize(searchParam);
+    }
+
+    @Override
+    public Map<String, List<?>> initEdit() {
+        HashMap<String, List<?>> resultMap = new HashMap<>(8);
+
+        // 获取味道列表
+        List<Taste> tasteList = tasteMapper.list();
+        resultMap.put("tasteList", tasteList);
+
+        // 获取分类列表
+        List<Category> categoryList = categoryMapper.list();
+        resultMap.put("categoryList", categoryList);
+
+        return resultMap;
     }
 }
