@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.exc.mapper.SweetMeatsMapper" >
-    <select id="list" resultType="com.exc.model.SweetMeats">
-        SELECT s.id, s.href, s.alt, s.src FROM sweet_meats s limit 6
-    </select>
-</mapper>

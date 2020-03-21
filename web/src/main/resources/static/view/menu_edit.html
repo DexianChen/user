@@ -88,7 +88,7 @@
 
 									<div class="col-md-2 title editer">做法步骤</div>
                                     <div class="col-md-10 data editer">
-                                       	<textarea name="content" style="width:800px;height:400px;visibility:hidden;" ></textarea>
+                                       	<textarea name="content" style="width:800px;height:400px;visibility:hidden;" ng-model="menu.step"></textarea>
                                     </div>
 		                           
 		                            <div class="col-md-2 title rowHeight2x">评分</div>
@@ -98,7 +98,7 @@
 
 									<div class="col-md-2 title editer">评分内容</div>
 									<div class="col-md-10 data editer">
-										<textarea name="content" style="width:800px;height:400px;visibility:hidden;" ></textarea>
+										<textarea name="content" style="width:800px;height:400px;visibility:hidden;" ng-model="menu.evaluateContent"></textarea>
 									</div>
 
                                 </div>
@@ -117,14 +117,15 @@
 											    <th class="sorting">菜品名称</th>
 											    <th class="sorting">图片</th>
                                                 <th class="sorting">操作</th>
+											</tr>
 							            </thead>
 					                    <tbody>
-					                      <tr ng-repeat="vo in menu">
+					                      <tr ng-repeat="item for item in menu">
 									            <td>
-									            	{{menu.name}}
+									            	{{item.name}}
 									            </td>
 									            <td>
-									           		<img alt="" src="{{menu.pictureUrl}}" width="100px" height="100px">
+									           		<img alt="" ng-src="{{item.pictureUrl}}" width="100px" height="100px">
 									            </td>
                                               <td>
                                                   <button type="button" ng-click="deleteMenu()" class="btn btn-default" title="删除" ><i class="fa fa-trash-o"></i> 删除</button>

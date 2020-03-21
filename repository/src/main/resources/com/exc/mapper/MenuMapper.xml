@@ -94,4 +94,24 @@
     <select id="checkName" parameterType="java.lang.String" resultType="java.lang.Integer">
         SELECT COUNT(1) FROM menu WHERE name = #{name};
     </select>
+
+    <select id="listStapleFood" resultMap="menuMap">
+        SELECT menu_id, name, picture_url FROM menu where category = '1' limit 6
+    </select>
+
+    <select id="listSnack" resultMap="menuMap">
+        SELECT menu_id, name, picture_url FROM menu where category = '2' limit 5
+    </select>
+
+    <select id="listSoup" resultMap="menuMap">
+        SELECT menu_id, name, picture_url FROM menu where category = '3' limit 6
+    </select>
+
+    <select id="listSweetMeats" resultMap="menuMap">
+        SELECT menu_id, name, picture_url FROM menu where category = '4' limit 3
+    </select>
+
+    <select id="listDressing" resultMap="menuMap">
+        SELECT menu_id, name, picture_url FROM menu where category = '5' limit 4
+    </select>
 </mapper>

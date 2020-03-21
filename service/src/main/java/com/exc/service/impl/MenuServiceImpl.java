@@ -28,16 +28,6 @@ public class MenuServiceImpl implements MenuService {
     @Autowired
     private CarouselDesignsMapper carouselDesignsMapper;
     @Autowired
-    private StapleFoodMapper stapleFoodMapper;
-    @Autowired
-    private SnackMapper snackMapper;
-    @Autowired
-    private SoupMapper soupMapper;
-    @Autowired
-    private SweetMeatsMapper sweetMeatsMapper;
-    @Autowired
-    private DressingMapper dressingMapper;
-    @Autowired
     private TasteMapper tasteMapper;
     @Autowired
     private CategoryMapper categoryMapper;
@@ -51,23 +41,23 @@ public class MenuServiceImpl implements MenuService {
         resultMap.put("carouselDesignsList", carouselDesignsList);
 
         // 获取美味主食
-        List<StapleFood> stapleFoodList = stapleFoodMapper.list();
+        List<Menu> stapleFoodList = menuMapper.listStapleFood();
         resultMap.put("stapleFoodList", stapleFoodList);
 
         // 获取休闲小吃
-        List<Snack> snackList = snackMapper.list();
+        List<Menu> snackList = menuMapper.listSnack();
         resultMap.put("snackList", snackList);
 
         // 获取浓郁靓汤
-        List<Soup> soupList = soupMapper.list();
+        List<Menu> soupList = menuMapper.listSoup();
         resultMap.put("soupList", soupList);
 
         // 获取精致甜品
-        List<SweetMeats> sweetMeatsList = sweetMeatsMapper.list();
+        List<Menu> sweetMeatsList = menuMapper.listSweetMeats();
         resultMap.put("sweetMeatsList", sweetMeatsList);
 
         // 获取健康调味
-        List<Dressing> dressingList = dressingMapper.list();
+        List<Menu> dressingList = menuMapper.listDressing();
         resultMap.put("dressingList", dressingList);
 
         return resultMap;
@@ -92,6 +82,7 @@ public class MenuServiceImpl implements MenuService {
         menu.setStep(requestParamVo.getStep());
         menu.setScore(requestParamVo.getScore());
         menu.setEvaluateContent(requestParamVo.getEvaluateContent());
+        menu.setPictureUrl(requestParamVo.getPictureUrl());
 
         menuMapper.insertMenu(menu);
     }

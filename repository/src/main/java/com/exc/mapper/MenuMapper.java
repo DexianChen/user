@@ -64,4 +64,33 @@ public interface MenuMapper {
 
     Integer countSize(@Param("searchParam") String searchParam);
 
+    /**
+     * 获取美味主食列表
+     * @return 美味主食列表
+     */
+    List<Menu> listStapleFood();
+
+    /**
+     * 获取休闲小吃列表
+     * @return 休闲小吃列表
+     */
+    List<Menu> listSnack();
+
+    /**
+     * 获取浓郁靓汤列表
+     * @return 浓郁靓汤列表
+     */
+    List<Menu> listSoup();
+
+    /**
+     * 获取精致甜品列表
+     * @return 精致甜品列表
+     */
+    List<Menu> listSweetMeats();
+
+    /**
+     * 获取健康调味列表
+     * @return 健康调味列表
+     */
+    List<Menu> listDressing();
 }

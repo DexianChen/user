@@ -105,7 +105,7 @@ app.controller("menuController", function ($scope, $http, menuService, uploadSer
     $scope.uploadFile = function () {
         uploadService.uploadFile().success(function (response) {
             if(response.status){
-                $scope.entity.pictureUrl = response.message;
+                $scope.menu.pictureUrl = response.message;
             } else {
                 alert(response.message);
             }
@@ -122,6 +122,7 @@ app.controller("menuController", function ($scope, $http, menuService, uploadSer
         })
     };
 
+    // 勾选味道
     $scope.selected = [];
     var updateSelected = function(action, id) {
         if(action == 'add' & $scope.selected.indexOf(id) == -1) $scope.selected.push(id);
