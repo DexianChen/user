@@ -9,6 +9,8 @@ app.controller("menuController", function ($scope, $http, menuService, uploadSer
     //保存
     $scope.saveMenu = function () {
         $scope.menu.taste = $scope.selected;
+        $scope.menu.step = step.html();
+        $scope.menu.evaluateContent = evaluateContent.html();
         var obj = menuService.saveMenu($scope.menu);
         //$scope.entity 弹出层里面双向绑定的那些表单项
         obj.success(function (response) {

@@ -89,7 +89,58 @@ public class MenuServiceImpl implements MenuService {
 
     @Override
     public Menu findOne(Integer menuId) {
-        return menuMapper.findOne(menuId);
+        Menu menu = menuMapper.findOne(menuId);
+        String taste = menu.getTaste();
+        String[] tasteArray = taste.split(",");
+        StringBuilder builder = new StringBuilder();
+        for (int i=0; i<=tasteArray.length-1; i++) {
+            String tasteStr = tasteArray[i];
+            switch (tasteStr) {
+                case "1":
+                    builder.append("酸");
+                    break;
+                case "2":
+                    builder.append("甜");
+                    break;
+                case "3":
+                    builder.append("苦");
+                    break;
+                case "4":
+                    builder.append("辣");
+                    break;
+                case "5":
+                    builder.append("咸");
+                    break;
+                default: break;
+            }
+            if (i != tasteArray.length-1) {
+                builder.append("、");
+            }
+        }
+        menu.setTaste(builder.toString());
+
+        String categoryStr = null;
+        switch (menu.getCategory()) {
+            case "1":
+                categoryStr = "美味主食";
+                break;
+            case "2":
+                categoryStr = "休闲小吃";
+                break;
+            case "3":
+                categoryStr = "浓郁靓汤";
+                break;
+            case "4":
+                categoryStr = "精致甜品";
+                break;
+            case "5":
+                categoryStr = "健康调味";
+                break;
+            default: break;
+        }
+        menu.setCategory(categoryStr);
+
+        return menu;
     }
 
     @Override

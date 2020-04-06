@@ -15,7 +15,7 @@
     </resultMap>
 
     <sql id="column" >
-        menu_id, name, taste, picture_url, step, score, evaluate_content, create_time, update_time
+        menu_id, name, taste, picture_url, category, step, score, evaluate_content, create_time, update_time
     </sql>
 
     <select id="listMenu" parameterType="java.lang.String" resultMap="menuMap" >

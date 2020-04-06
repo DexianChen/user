@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+    <title>菜品详情页</title>
+    <link rel="stylesheet" type="text/css" href="../css/webbase.css" />
+    <link rel="stylesheet" type="text/css" href="../css/pages-item.css" />
+    <link rel="stylesheet" type="text/css" href="../css/pages-zoom.css" />
+    <link rel="stylesheet" type="text/css" href="../css/widget-cartPanelView.css" />
+    <script src="../js/plugins/jquery/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="../plugins/angularjs/angular.min.js"> </script>
+    <script type="text/javascript" src="../js/base.js"> </script>
+    <script type="text/javascript" src="../js/controller/itemController.js"> </script>
+    <script src="../js/service/menuService.js"></script>
+</head>
+
+<body ng-app="menu" ng-controller="itemController" ng-init="loadMenu()">
+            <div class="py-container">
+                <div id="item">
+                    <div class="crumb-wrap">
+                        <ul class="sui-breadcrumb">
+                            <li>
+                                <a href="#">{{menu.category}}</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--product-info-->
+                    <div class="product-info">
+                        <div class="fl preview-wrap">
+                            <!--放大镜效果-->
+                            <div class="zoom">
+                                <!--默认第一个预览-->
+                                <div id="preview" class="spec-preview">
+                                    <span class="jqzoom">
+                                        <img ng-src="{{menu.pictureUrl}}" width="400px" height="400px" />
+                                    </span>
+                                </div>
+                                <!--&lt;!&ndash;下方的缩略图&ndash;&gt;-->
+                                <!--<div class="spec-scroll">-->
+                                    <!--<a class="prev">&lt;</a>-->
+                                    <!--&lt;!&ndash;左右按钮&ndash;&gt;-->
+                                    <!--<div class="items">-->
+                                        <!--<ul>-->
+                                            <!--<li><img src="${image.url}" bimg="${image.url}" onmousemove="preview(this)" /></li>-->
+                                        <!--</ul>-->
+                                    <!--</div>-->
+                                    <!--<a class="next">&gt;</a>-->
+                                <!--</div>-->
+                            </div>
+                        </div>
+                        <div class="fr itemInfo-wrap">
+                            <div class="sku-name">
+                                <h4>{{menu.name}}</h4>
+                            </div>
+                            <!--<div class="news"><span>${goods.caption!}</span></div>-->
+                            <div class="summary">
+                                <div class="summary-wrap">
+                                    <div class="fl title">
+                                        <i>味　　道</i>
+                                    </div>
+                                    <div class="fl price">
+                                        <em>{{menu.taste}}</em>
+                                    </div>
+                                </div>
+                                <div class="summary-wrap">
+                                    <div class="fl title">
+                                        <i>菜品分类</i>
+                                    </div>
+                                    <div class="fl fix-width">
+                                        <em class="t-gray">{{menu.category}}</em>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="support">
+                                <div class="summary-wrap">
+                                    <div class="fl title">
+                                        <i>评 分</i>
+                                    </div>
+                                    <div class="fl fix-width">
+                                        <em class="t-gray">{{menu.score}}</em>
+                                    </div>
+                                </div>
+                                <div class="summary-wrap">
+                                    <div class="fl title">
+                                        <i>创建时间</i>
+                                    </div>
+                                    <div class="fl fix-width">
+                                        <em class="t-gray">{{menu.createTime}}</em>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--product-detail-->
+                    <div class="clearfix product-detail">
+                        <div class="fr detail">
+                            <div class="tab-main intro">
+                                <ul class="sui-nav nav-tabs tab-wraped">
+                                    <li id="oneLi">
+                                        <a href="#one" data-toggle="tab"  onclick="clickOne()">
+                                            <span>做法步骤</span>
+                                        </a>
+                                    </li>
+                                    <li id="twoLi" class="active">
+                                        <a href="#two" data-toggle="tab" onclick="clickTwo()">
+                                            <span>评价内容</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <div class="clearfix"></div>
+                                <div class="tab-content tab-wraped">
+                                    <div id="oneDiv" class="tab-pane">
+                                        <!--<ul class="goods-intro unstyled">-->
+                                            <!--<li>${cai.text}：${cai.value}</li>-->
+                                        <!--</ul>-->
+                                        <div class="intro-detail">
+                                            {{menu.step}}
+                                        </div>
+                                    </div>
+                                    <div id="twoDiv" class="tab-pane active">
+                                        <div class="intro-detail">
+                                            {{menu.evaluateContent}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+</body>
+
+<script type="text/javascript">
+    // 点击做法步骤
+    clickOne = function () {
+        $('#twoLi').removeAttr("class");
+        $('#twoDiv').removeAttr("class","active").css("display","none");
+        $('#oneLi').attr("class","active");
+        $('#oneDiv').attr("class","tab-pane active").css("display","block");
+    };
+
+    // 点击评价内容
+    clickTwo = function () {
+        $('#oneLi').removeAttr("class");
+        $('#oneDiv').removeAttr("class","active").css("display","none");
+        $('#twoLi').attr("class","active");
+        $('#twoDiv').attr("class","tab-pane active").css("display","block");
+    };
+</script>
+</html>

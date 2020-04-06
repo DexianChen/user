@@ -88,7 +88,7 @@
 
 									<div class="col-md-2 title editer">做法步骤</div>
                                     <div class="col-md-10 data editer">
-                                       	<textarea name="content" style="width:800px;height:400px;visibility:hidden;" ng-model="menu.step"></textarea>
+                                       	<textarea name="step" style="width:800px;height:400px;visibility:hidden;" ng-model="menu.step"></textarea>
                                     </div>
 		                           
 		                            <div class="col-md-2 title rowHeight2x">评分</div>
@@ -98,7 +98,7 @@
 
 									<div class="col-md-2 title editer">评分内容</div>
 									<div class="col-md-10 data editer">
-										<textarea name="content" style="width:800px;height:400px;visibility:hidden;" ng-model="menu.evaluateContent"></textarea>
+										<textarea name="evaluateContent" style="width:800px;height:400px;visibility:hidden;" ng-model="menu.evaluateContent"></textarea>
 									</div>
 
                                 </div>
@@ -199,11 +199,16 @@
 <!-- 正文区域 /-->
 <script type="text/javascript">
 
-	var editor;
+	var step;
+	var evaluateContent;
 	KindEditor.ready(function(K) {
-		editor = K.create('textarea[name="content"]', {
+		step = K.create('textarea[name="step"]', {
 			allowFileManager : true
 		});
+
+        evaluateContent = K.create('textarea[name="evaluateContent"]', {
+            allowFileManager : true
+        });
 	});
 
 </script>

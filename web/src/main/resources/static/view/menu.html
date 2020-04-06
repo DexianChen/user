@@ -56,8 +56,8 @@
         <div class="i_bigwrap">
             <ul class="i_bigimgs" style="width: 5050px; left: 0px;">
                 <li ng-repeat="item in carouselDesignsList track by $index">
-                    <a class="i_bi1" href="{{item.menuId}}"><img ng-src="{{item.pictureUrl}}" alt="{{item.name}}"></a>
-                    <a class="i_bi2" href="{{item.menuId}}"><img ng-src="{{item.pictureUrl}}" alt="{{item.name}}"><strong>{{item.name}}</strong></a>
+                    <a class="i_bi1" href="{{item.href}}"><img ng-src="{{item.src}}" alt="{{item.alt}}"></a>
+                    <a class="i_bi2" href="{{item.href}}"><img ng-src="{{item.src}}" alt="{{item.alt}}"><strong>{{item.alt}}</strong></a>
                 </li>
             </ul>
             <ul class="i_bigcur">
@@ -93,11 +93,11 @@
         <div class="c_con">
             <ul class="i_con1" id="jp_list">
                 <li class="pic" ng-repeat="item in stapleFoodList track by $index">
-                    <a href="{{item.menuId}}">
+                    <a href="/view/item.html?menuId={{item.menuId}}">
                         <img class="fl" ng-src="{{item.pictureUrl}}" alt="{{item.name}}" onload="cssImgResize(this,120,150)" width="200" height="150" style="margin: 0px -40px;">
                     </a>
                     <span class="c">
-                        <strong><a href="{{item.menuId}}">{{item.name}}</a></strong><p>{{item.desc}}</p>
+                        <strong><a href="/view/item.html?menuId={{item.menuId}}">{{item.name}}</a></strong><p>{{item.desc}}</p>
                     </span>
                 </li>
             </li></ul>
@@ -112,12 +112,12 @@
         <div id="slsc">
             <div class="c_tit">
                 <strong>
-                    <a href="">休闲小吃</a>
+                    <a href="/view/item.html?menuId={{item.menuId}}">休闲小吃</a>
                     <span class="c_h22i">seasonal&nbsp;food</span>
                 </strong>
             </div>
             <div class="i_con2">
-                <a href="{{item.menuId}}" ng-repeat="item in snackList track by $index"><img alt="{{item.name}}" ng-src="{{item.pictureUrl}}"><strong>{{item.name}}</strong></a>
+                <a href="/view/item.html?menuId={{item.menuId}}" ng-repeat="item in snackList track by $index"><img alt="{{item.name}}" ng-src="{{item.pictureUrl}}"><strong>{{item.name}}</strong></a>
             </div>
         </div>
     </div>
@@ -129,7 +129,7 @@
         <div class="w660">
             <div class="c_tit">
                 <strong>
-                    <a href="">浓郁靓汤</a>
+                    <a href="/view/item.html?menuId={{item.menuId}}">浓郁靓汤</a>
                     <span class="c_h24i">selected&nbsp;menu</span>
                 </strong>
                 &lt;     <a class="c_abtn2" href=""><i class="i i9"></i>更多菜谱</a>
@@ -137,7 +137,7 @@
             <div class="i_con3">
                 <ul>
                     <li ng-repeat="item in soupList track by $index">
-                        <a href="{{item.menuId}}">
+                        <a href="/view/item.html?menuId={{item.menuId}}">
                             <img alt="{{item.name}}" onload="cssImgResize(this,190,220)" ng-src="{{item.pictureUrl}}" width="290" height="220" style="margin: 0px -50px;">
                             <strong>{{item.name}}</strong>
                         </a>
@@ -156,12 +156,12 @@
                 <a href="">精致甜品</a>
                 <span class="c_h21i">food&nbsp;topic</span>
             </strong>
-            <a class="c_abtn2" href=""><i class="i i9"></i>更多专题</a>
+            <a class="c_abtn2" href="/view/item.html?menuId={{item.menuId}}"><i class="i i9"></i>更多专题</a>
         </div>
         <div class="i_con4" id="i-slider_s">
             <div class="i_sulwrap">
                 <ul class="clearfix" style="width: 2880px;">
-                    <li ng-repeat="item in sweetMeatsList track by $index"><a href="{{item.menuId}}">
+                    <li ng-repeat="item in sweetMeatsList track by $index"><a href="/view/item.html?menuId={{item.menuId}}">
                         <img ng-src="{{item.pictureUrl}}" alt="{{item.name}}"></a>
                     </li>
                 </ul>
@@ -190,7 +190,7 @@
                         </a>
                     </div>
                     <div class="i_sci5">
-                        <a class="cur" href="{{item.menuId}}"><img ng-src="{{item.pictureUrl}}" alt="{{item.name}}"></a>
+                        <a class="cur" href="/view/item.html?menuId={{item.menuId}}"><img ng-src="{{item.pictureUrl}}" alt="{{item.name}}"></a>
                     </div>
                     <ul class="i_scof5">
                         <li class="i_scof5"><a href="{{item.menuId}}">{{item.name}}</a></li>
